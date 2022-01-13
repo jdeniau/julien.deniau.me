@@ -43,16 +43,16 @@ export default function App() {
             <nav>
               <ul>
                 <li>
-                  <Link to={`${prefix}#intro`}>Welcome</a>
+                  <Link to={`${prefix}#intro`}>Welcome</Link>
                 </li>
                 <li>
-                  <Link to={`${prefix}#talks`}>My talks</a>
+                  <Link to={`${prefix}#talks`}>My talks</Link>
                 </li>
                 <li>
-                  <Link to={`${prefix}#blog`}>Blog</a>
+                  <Link to={`${prefix}#blog`}>Blog</Link>
                 </li>
                 <li>
-                  <Link to={`${prefix}#contact`}>Get in touch</a>
+                  <Link to={`${prefix}#contact`}>Get in touch</Link>
                 </li>
               </ul>
             </nav>
