@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>TypeScript</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/tomorrow.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>TypeScript</h1>
+        </section>
+
+        <section>
+          <h2>C'est quoi TypeScript ?</h2>
+          <blockquote>
+            TypeScript is <br />
+            a <strong>typed superset</strong> of <strong>JavaScript</strong
+            ><br />
+            that compiles to
+            <strong>plain JavaScript</strong>.
+          </blockquote>
+        </section>
+
+        <section>
+          <h3>En JavaScript</h3>
+          <section>
+            <pre><code data-trim data-noescape data-line-numbers="1-3|5|7" class="javascript">
+function greeter(person) {
+  return "Hello, " + person;
+}
+
+greeter('Michel');
+
+// Hello, Michel
+</code></pre>
+          </section>
+
+          <section>
+            <pre><code data-trim data-noescape data-line-numbers="5|7" class="javascript">
+function greeter(person) {
+  return "Hello, " + person;
+}
+
+greeter({ firstname: 'Michel', lastname: 'Michel' });
+
+// Hello, [object Object]
+</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>En TypeScript</h3>
+
+          <section>
+            <p>On ajoute le typage (<strong>Type</strong>Script)</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-3|5|7" class="typescript">
+function greeter(person: string) {
+  return "Hello, " + person;
+}
+
+greeter('Michel');
+
+// Hello, Michel
+</code></pre>
+          </section>
+
+          <section>
+            <pre><code data-trim data-noescape data-line-numbers="5|7-8" class="typescript">
+function greeter(person: string) {
+  return "Hello, " + person;
+}
+
+greeter({ firstname: 'Michel', lastname: 'Michel' });
+
+// Argument of type '{ firstname: string; lastname: string; }'
+// is not assignable to parameter of type 'string'.
+</code></pre>
+          </section>
+
+          <section>
+            <p>Attention !</p>
+            <p>Le code compilé reste du JavaScript "classique".</p>
+
+            <pre><code data-trim data-noescape class="javascript">
+function greeter(person) {
+  return "Hello, " + person;
+}
+
+greeter('Michel');
+</code></pre>
+          </section>
+          <section>
+            <div>On peut aussi typer les retours de fonction :</div>
+            <pre><code data-trim data-noescape class="typescript">
+function nbLetter(str: string): number {
+  return str.length;
+}
+	</code></pre>
+
+            <div>et des fonction fléchées :</div>
+            <pre><code data-trim data-noescape class="typescript">
+const nbLetter = (str: string): number => str.length;
+</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <blockquote>TypeScript, c'est PHPStan pour JavaScript</blockquote>
+        </section>
+
+        <section>
+          <h2>Les types "basiques"</h2>
+
+          <section data-markdown>
+            <textarea data-template>
+			  Booléens:
+
+			  ```typescript
+			  let isActive: boolean = true;
+			  ```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+			  Nombres
+
+			  ```typescript
+			  let n: number = 8;
+			  ```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				Chaines de caractères
+
+				```typescript
+				let name: string = 'Michel';
+				```
+			</textarea
+            >
+          </section>
+
+          <section>
+            Tableaux
+            <pre><code data-trim data-noescape class="typescript">				
+				let list: number[] = [1, 2, 3]; 
+			</code></pre>
+            ou alors la forme plus explicite :
+
+            <pre><code data-trim data-noescape class="typescript">
+				let list: Array&lt;number&gt; = [1, 2, 3];
+			</code></pre>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				Tuples
+
+				Tableaux typés de longueur fixe
+
+				```typescript
+				// Declare a tuple type
+				let x: [string, number];
+
+				// Initialize it
+				x = ["hello", 10]; // OK
+
+				// Initialize it incorrectly
+				x = [10, "hello"]; // Error
+				```
+
+				x[0] sera bien reconnu comme `string`
+				
+				et x[1] comme `number`
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				Enum
+
+				```typescript
+				enum Color { Red, Green, Blue }
+				let c: Color = Color.Green;
+				```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				"any"
+
+				```typescript
+				let notSure: any = 4;
+				notSure = "maybe a string instead";
+				notSure = false; // okay, definitely a boolean
+				```
+
+				A éviter au maximum. Permet éventuellement la transformation JS → TS progressive
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				void
+
+				```typescript
+				function warnUser(): void {
+				  console.log("This is my warning message");
+				}
+				```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				null et undefined
+
+				```typescript
+				// Not much else we can assign to these variables!
+				let u: undefined = undefined;
+				let n: null = null;
+				```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				never
+
+				Représente quelque chose qui ne doit jamais arriver.
+
+				```typescript
+				// Function returning never must have unreachable end point
+				function error(message: string): never {
+				  throw new Error(message);
+				}
+				```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				object
+
+				```typescript
+				declare function create(o: object | null): void;
+
+				create({ prop: 0 }); // OK
+				create(null); // OK
+
+				create(42); // Error
+				create("string"); // Error
+				create(false); // Error
+				create(undefined); // Error
+				```
+			</textarea
+            >
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				conversion de type
+
+				
+				```typescript
+				let someValue: any = "this is a string";
+				
+				let strLength: number = (someValue as string).length;
+				```
+
+				Façon de dire au compilateur :
+				
+				"Ne t'inquiètes pas, je sais ce que je fais."
+			</textarea
+            >
+          </section>
+        </section>
+
+        <section>
+          <h2>Un peu de POO</h2>
+        </section>
+
+        <section>
+          <h3>Les interfaces</h3>
+
+          <section>
+            <ul>
+              <li>Pas d'interfaces en JavaScript</li>
+              <li>TypeScript vérifie la "forme" des objets</li>
+              <li>
+                En TypeScript, les interface permettent juste de nommer une
+                "forme"
+              </li>
+            </ul>
+
+            <aside class="notes">
+              Ce qui change totallement du PHP, et qui m'a vraiment posé
+              problèmes parfois, mon esprit étant trop habitué aux autres
+              languages objets
+            </aside>
+          </section>
+
+          <section>
+            <pre><code data-trim data-noescape data-line-numbers="1-2|5-6" class="typescript">
+				function printLabel(labeledObj: { label: string }) {
+				  console.log(labeledObj.label);
+				}
+				
+				let myObj = {size: 10, label: "Size 10 Object"};
+				printLabel(myObj);
+			</code></pre>
+
+            <div class="fragment">
+              <p>👍</p>
+              <p>"myObj" a bien une clé "label" de type "string"</p>
+            </div>
+          </section>
+
+          <section>
+            On peut extraire la définition de "l'interface"
+            <pre><code data-trim data-noescape data-line-numbers="1-5" class="typescript">
+interface LabeledValue {
+  label: string;
+}
+
+function printLabel(labeledObj: LabeledValue) {
+  console.log(labeledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+			</code></pre>
+
+            <aside class="notes">
+              Pas besoin de définir que `myObj` implémente l'interface
+              contrairement au PHP, du moment que sa "forme" est un sur-ensemble
+              de la valeur attendue
+            </aside>
+          </section>
+
+          <section>
+            Propriétés optionnelles
+
+            <pre><code data-trim data-noescape data-line-numbers="1-3,7,13" class="typescript">
+interface SquareConfig {
+  width?: number;
+}
+
+function createSquare(config: SquareConfig): {area: number} {
+  let newSquare = { area: 100 };
+  if (config.width) {
+    newSquare.area = config.width * config.width;
+  }
+  return newSquare;
+}
+
+let mySquare = createSquare({});
+				</code></pre>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+				readonly
+
+				```typescript
+				interface Point {
+				  readonly x: number;
+				  readonly y: number;
+				}
+				```
+
+				```typescript
+				let p1: Point = { x: 10, y: 20 };
+				p1.x = 5; // error!
+				```
+
+				Équivalent de "const" pour les propriétés
+			</textarea
+            >
+
+            <aside class="notes">
+              Surement assez puissant, je ne m'en suis jamais servi cela dit
+            </aside>
+          </section>
+
+          <section>
+            <h3>Les classes</h3>
+
+            <p>Une classe peut imlémenter une interface</p>
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1-4|6-14">
+			interface ClockInterface {
+			  currentTime: Date;
+			  setTime(d: Date): void;
+			}
+			
+			class Clock implements ClockInterface {
+			  currentTime: Date = new Date();
+
+			  constructor(h: number, m: number) { }
+
+			  setTime(d: Date) {
+			    this.currentTime = d;
+			  }
+			}
+			</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>private, protected, public</h3>
+
+          <section>
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="2-5|7-8|10-13">
+class Human {
+  // public par défaut
+  firstname: string;
+  // idem
+  public lastname: string;
+
+  // accessible aux enfants uniquement, mais en JS ça reste public
+  protected religion: string;
+
+  // accessible à personne, mais en JS ça reste public, à éviter
+  private sex: string;
+  // fonctionnalité ECMAScript, vraiment privé, à privilégier
+  #salary: number;
+}
+			</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Les fonctions</h2>
+
+          <section>
+            En JavaScript, les paramètres de fonctions sont tous facultatifs:
+
+            <pre><code data-trim data-noescape class="javascript">
+			  function buildName(firstName, lastName) {
+			    console.log(firstName, lastName);
+			  }
+
+			  buildName(); // log : undefined, undefined
+			  </code></pre>
+          </section>
+
+          <section>
+            En TypeScript, tous les paramètres sont requis, sauf si ils sont
+            notés comme facultatifs:
+            <pre><code data-trim data-noescape class="javascript">
+			  function buildName(firstName: string, lastName?: string) {
+			    console.log(firstName, lastName);
+			  }
+  
+			  buildName(); // Erreur
+			  buildName('Michel'); // OK, log: Michel, undefined
+			  buildName('Michel', 'Michel'); // OK
+			  buildName('Michel', 'Michel', 'Michel'); // Erreur
+			  </code></pre>
+          </section>
+
+          <section>
+            Une interface peut définir une fonction:
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1-3|5|6-9">
+			interface SearchFunc {
+			  (source: string, subString: string): boolean;
+			}
+			
+			let mySearch: SearchFunc;
+			mySearch = function(source: string, subString: string): boolean {
+			  let result = source.search(subString);
+			  return result > -1;
+			}
+
+			function callMe(fn: SearchFunc) {
+			  // ...
+			}
+			</code></pre>
+
+            <aside class="notes">
+              JavaScript, le language de la fonction : callback, promises,
+              évènements, etc.
+            </aside>
+          </section>
+
+          <section>
+            On peut aussi les définir "inline
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="6-8">
+			let mySearch = function(source: string, subString: string): boolean {
+			  let result = source.search(subString);
+			  return result > -1;
+			}
+
+			function callMe(fn: (source: string, subString: string) => boolean) {
+			  // ...
+			}
+			</code></pre>
+
+            <aside class="notes">
+              Mais c'est très vite illisible, ça va bien pour "bootstraper".
+              Notez les `:` qui se "transforment en flèche.
+            </aside>
+          </section>
+
+          <section>
+            <h3>Retours dynamiques de fonctions</h3>
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="3-9|1-2|11-12">
+function doWeirdStuff(x: number): number;
+function doWeirdStuff(x: string): boolean;
+function doWeirdStuff(x): any {
+  if (typeof x === 'number') {
+    return x * 2;
+  }
+
+  return x.length > 3;
+}
+
+let n = doWeirdStuff(8); // n est de type "number"
+let b = doWeirdStuff('this is weird'); // n est de type "boolean"
+</code></pre>
+
+            <aside class="notes">
+              On peut typer dynamiquement le retour des fonction en fonction de
+              ses paramètres en entrée.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Les génériques</h2>
+
+          <section>
+            Imaginez cette belle fonction
+
+            <pre><code data-trim data-noescape class="typescript">
+              function identity(arg) {
+                return arg;
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            Sans les génériques, il faudrait soit typer avec les valeurs,
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1">
+              function identity(arg: number): number {
+                return arg;
+              }
+            </code></pre>
+
+            soit noter les types en "any"
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1">
+              function identity(arg: any): any {
+                return arg;
+              }
+            </code></pre>
+
+            <aside class="notes">
+              En faisant cela, on perd l'information que le type ne change pas,
+              rien ne garanti qu'un "string" passé en entrée n'est pas un "int"
+              en sortie (hormis le fait de lire l'implémentation).
+            </aside>
+          </section>
+
+          <section>
+            <pre><code data-trim data-noescape class="typescript">
+            function identity&lt;T&gt;(arg: T): T {
+              return arg;
+            }
+
+            let output = identity&lt;string&gt;("myString");
+            //       ^ = let output: string
+            </code></pre>
+
+            <aside class="notes">
+              Les génériques permettent de garder l'information de type en
+              fonction de la façon dont on a typé l'appel. Ici, on indique
+              explicitement que le générique est de type "string"
+            </aside>
+          </section>
+          <section>
+            <pre><code data-trim data-noescape class="typescript">
+            function identity&lt;T&gt;(arg: T): T {
+              return arg;
+            }
+
+            let output = identity("myString");
+            //       ^ = let output: string
+            </code></pre>
+
+            <aside class="notes">
+              On peut aussi laisser l'intelligence au compilateur de detecter le
+              type du générique en fonction des paramètres d'entrée
+            </aside>
+          </section>
+
+          <section>
+            Les classes peuvent aussi être "génériques" :
+
+            <pre><code data-trim data-noescape class="typescript">
+            class GenericNumber&lt;T&gt; {
+              zeroValue: T;
+              add: (x: T, y: T) => T;
+            }
+            
+            let myGenericNumber = new GenericNumber&lt;number&gt;();
+            myGenericNumber.zeroValue = 0;
+            myGenericNumber.add = function(x, y) {
+              return x + y;
+            };
+            </code></pre>
+          </section>
+
+          <section>
+            Un type générique peut étendre un autre type
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1-8|10-12|14">
+            interface Lengthwise {
+              length: number;
+            }
+            
+            function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
+              console.log(arg.length);
+              return arg;
+            }
+
+            loggingIdentity(3);
+            // Argument of type 'number' is not assignable 
+            // to parameter of type 'Lengthwise'.
+
+            loggingIdentity({ length: 10, value: 3 }); // OK
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Interface vs Type</h2>
+
+          <section>
+            <div class="flex">
+              <div>
+                <pre><code data-trim data-noescape class="typescript">
+                interface Animal {
+                  name: string
+                }
+                
+                interface Bear extends Animal {
+                  honey: boolean
+                }
+                </code></pre>
+              </div>
+              <div>
+                <pre><code data-trim data-noescape class="typescript">
+                type Animal = {
+                  name: string
+                }
+    
+                type Bear = Animal &amp; { 
+                  honey: Boolean 
+                }
+                </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <dl>
+              <dt>Interfaces</dt>
+              <dd>proche du principe "ouvert/fermé" de la POO</dd>
+              <dt>Types</dt>
+              <dd>permet de faire plus de choses (union, tuples)</dd>
+            </dl>
+
+            <aside class="notes">
+              Typescript recommande les interfaces.<br />
+              Je préfère personellement la notation "type" car permet de faire
+              plus de choses.<br />
+              J'ai été perdu au début à faire des `instanceof SomeInterface`
+              mais cela ne fonctionne pas.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Types utilitaires</h2>
+
+          Typescript propose plusieurs types "utilitaires":
+
+          <ul>
+            <li>Partial&lt;Type&gt;, Required&lt;Type&gt;</li>
+            <li>Readonly&lt;Type&gt;</li>
+            <li>Record&lt;Keys,Type&gt;</li>
+            <li>Pick&lt;Type, Keys&gt;, Omit&lt;Type, Keys&gt;</li>
+            <li>etc.</li>
+          </ul>
+
+          <div>
+            <a
+              href="https://www.typescriptlang.org/docs/handbook/utility-types.html"
+            >
+              voir les types utilitaires
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2>React</h2>
+
+          <section>
+            Migrer un composant React en TypeScript :
+
+            <pre><code data-trim data-noescape class="javascript">
+            import PropTypes from 'prop-types';
+            import React from 'react';
+
+            function Controls({ zoomIn, zoomOut }) {
+              return (
+                &lt;div&gt;
+                  &lt;button onClick={zoomIn}&gt;&#43;&lt;/button&gt;
+                  &lt;button onClick={zoomOut}&gt;&minus;&lt;/button&gt;
+                &lt;/div&gt;
+              );
+            }
+            Controls.propTypes = {
+              zoomIn: PropTypes.func.isRequired,
+              zoomOut: PropTypes.func.isRequired,
+            };
+           </code></pre>
+          </section>
+
+          <section>
+            Migrer un composant React en TypeScript :
+
+            <pre><code data-trim data-noescape class="diff">
+            -import PropTypes from 'prop-types';
+             import React from 'react';
+
+            -function Controls({ zoomIn, zoomOut }) {
+            +function Controls({ zoomIn, zoomOut }: ControlsProps): React.ReactElement {
+               return (
+                 // ...
+               );
+             }
+            -Controls.propTypes = {
+            -  zoomIn: PropTypes.func.isRequired,
+            -  zoomOut: PropTypes.func.isRequired,
+            -};
+            +type ControlsProps = {
+            +  zoomIn: () => void;
+            +  zoomOut: () => void;
+            +};
+           </code></pre>
+          </section>
+
+          <section>
+            <h3>Pour les composants "classes"</h3>
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="3-9|11|12-14|16|23">
+import React, { Component, ReactElement } from 'react';
+
+type State = {
+  counter: number;
+}
+type Props = {
+  reset: () => void;
+  seatId: number | null;
+};
+
+class CountThisSeat extends Component&lt;Props, State&gt; {
+  static defaultProps = {
+    seatId: null,
+  };
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      counter: 0,
+    }
+  }
+
+  render(): ReactElement {
+    // render component, it should be the same as JavaScript version
+  }
+}
+              </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Redux</h2>
+
+          <section>
+            <h3>Les reducers</h3>
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1,2|4-12|14|16-25|27">
+            const SEND_MESSAGE = 'SEND_MESSAGE';
+            const LOGIN = 'LOGIN';
+
+            type SendMessageAction = {
+              type: typeof SEND_MESSAGE;
+              message: string;
+            }
+
+            type LoginAction = {
+              type: typeof LOGIN;
+              username: string;
+            }
+
+            type AppActionTypes = SendMessageAction | LoginAction;
+
+            type AppState = {
+              messages: Array&lt;string&gt;
+              loggedId: boolean;
+              username?: string;
+            }
+
+            const initialState: AppState = {
+              messages: [],
+              loggedId: false,
+            }
+
+            function appReducer(state = initialState, action: AppActionTypes) {
+              switch (action.type) {
+                // ...
+              }
+            }
+              
+              </code></pre>
+          </section>
+
+          <section>
+            <h3>Les actions</h3>
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="">
+            // TypeScript infers that this function is returning SendMessageAction
+            export function sendMessage(newMessage: string): AppActionTypes {
+              return {
+                type: SEND_MESSAGE,
+                payload: newMessage
+              }
+            }
+            
+            export function login(username: string): AppActionTypes {
+              return {
+                type: LOGIN,
+                username,
+              }
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>connect, useSelector, useDispatch, redux-thunk</h3>
+
+            Pas mal de cas différents, le mieux étant de lire la doc
+            <a href="https://redux.js.org/recipes/usage-with-typescript/"
+              >redux</a
+            >
+            et
+            <a href="https://react-redux.js.org/using-react-redux/static-typing"
+              >react-redux</a
+            >
+            sur le sujet.
+          </section>
+
+          <section>
+            Pro-tip : couper en trois les props venant du "state", du "dispatch"
+            et les autres:
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1-11|13|15">
+            type ReduxStateProps = {
+              messages: Array&lt;string&gt;;
+            }
+
+            type DispatchProps = {
+              sendMessage: (message: string): AppActionTypes;
+            }
+            
+            type OwnProps = {
+              theme: string;
+            }
+
+            type Props = ReduxStateProps & DispatchProps & OwnProps;
+
+            function SomeComponent(props: Props): ReactElement {
+              return (
+                // ...
+              );
+            }
+
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Guide de migration pratique</h2>
+          </section>
+
+          <section>
+            TOUS les fichiers contenant du JSX doivent avoir l'extension `.tsx`
+            comtrairement au `.js` / `.jsx`
+          </section>
+
+          <section>
+            <ol>
+              <li>Migrer les fichiers "utils"</li>
+              <li>Migrer les fichiers react "utils" (contextes, hooks)</li>
+              <li>
+                Migrer avant tout les composants : simple "conversion" de
+                prop-types
+                <ol>
+                  <li>composants les plus bas niveau (sans dépendances)</li>
+                  <li>
+                    Fichiers plus complexes. Un fichier ne devrait être converti
+                    à TS que si ses dépendances le sont.
+                  </li>
+                  <li>Séparer les props "redux" des autres</li>
+                </ol>
+              </li>
+
+              <li>Les reducers</li>
+              <li>Les containers</li>
+              <li>Les actions</li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Divers en vrac</h2>
+          </section>
+
+          <section>
+            <h3>Types généraux</h3>
+            N'utisez pas Object, Number, String, Boolean et Symbol.<br />
+            Utilisez object, number, string, boolean et symbol (notez la
+            majuscule).
+
+            <aside>
+              <a
+                href="https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#general-types"
+                >Do's and Don'ts</a
+              >
+            </aside>
+          </section>
+
+          <section>
+            <h3>undefined > null ?</h3>
+
+            <pre><code data-trim data-noescape class="typescript">
+            // avec null
+            type Props = { id: null | number };
+            function constructor ({ id = null }: Props) {}
+            
+            // avec undefined
+            type Props = { id?: number };
+            function constructor ({ id }: Props) {}
+            </code></pre>
+
+            <ul>
+              <li>type plus lisible</li>
+              <li>une assignation de moins</li>
+              <li>
+                les "key" react ne doivent pas être null, mais peuvent être
+                undefined
+              </li>
+              <li>
+                genéralement la même chose, sauf en cas de comparaison stricte
+                avec `null`
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Default props avec valeur null</h3>
+
+            <pre><code data-trim data-noescape class="typescript" data-line-numbers="1-9|11-20|22-28|30-36">
+// imaginez ce composant
+function Foo({ eventDateId }) {}
+
+Foo.defaultProps = {
+  eventDateId: null,
+};
+Foo.propTypes = {
+  eventDateId: PropTypes.number,
+};
+
+// Ceci est plutôt faux. La vrai definition est:
+Foo.defaultProps = {
+  eventDateId: null,
+};
+Foo.propTypes = {
+  eventDateId: PropTypes.oneOfType(
+    PropTypes.number,
+    PropTypes.null,
+    ),
+};
+
+// et du coup en TypeScript:
+Foo.defaultProps = {
+  eventDateId: null,
+};
+Foo.propTypes = {
+  eventDateId: number | null,
+};
+
+// là aussi, mieux avec `undefined`
+Foo.defaultProps = {
+  eventDateId: undefined,
+};
+Foo.propTypes = {
+  eventDateId?: number,
+};
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Les prop-types</h3>
+            <ul>
+              <li>TypeScript = au moment de la compilation</li>
+              <li>prop-types = au moment de l'execution</li>
+            </ul>
+
+            <p>
+              Convertir les types TS en prop-types ?
+              <a
+                href="https://github.com/milesj/babel-plugin-typescript-to-proptypes"
+              >
+                babel-plugin-typescript-to-proptypes
+              </a>
+            </p>
+
+            <aside class="notes">
+              prop-types est limité aux composants react, et est bien moins
+              puissant que TypeScript (callback, etc.)<br />
+              Théoriquement typescript remplace avantageusement prop-types<br />
+              Cela dit, prop-types à l'avantage de tester en "live" la valeur,
+              et est utile en cas d'appel API (on attend une string, mais en
+              fait on a un objet)<br />
+              Dur de se passer aussi des prop-types tant que tout le code n'est
+              pas migré
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+            "
+          >
+            <img src="dist/typegif.gif" style="margin: 0" />
+            <span
+              style="
+                text-shadow: 0 0 3px black;
+                color: #fff;
+                margin-bottom: 16px;
+                margin-left: 10px;
+              "
+              >OF SCRIPT</span
+            >
+          </div>
+          <p>Des questions ?</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
