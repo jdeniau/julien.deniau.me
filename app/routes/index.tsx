@@ -91,12 +91,12 @@ export default function Index() {
 
       {/*  talks */}
       <section id="talks" className="wrapper style2 spotlights">
-        {talks.map((post: Talk) => (
-          <section>
-            {post.image && (
-              <a href={post.url ?? '#'} className="image">
+        {talks.map((talk: Talk) => (
+          <section key={talk.url}>
+            {talk.image && (
+              <a href={talk.url ?? '#'} className="image">
                 <img
-                  src={post.image}
+                  src={talk.image}
                   alt=""
                   data-position="center center"
                   data-size="contain"
@@ -106,18 +106,18 @@ export default function Index() {
             )}
             <div className="content">
               <div className="inner">
-                <h2>{post.title}</h2>
-                {post.description && <p>{post.description}</p>}
+                <h2>{talk.title}</h2>
+                {talk.description && <p>{talk.description}</p>}
                 <ul className="actions">
                   <li>
-                    <a href={post.url} className="button">
-                      {post.urlText}
+                    <a href={talk.url} className="button">
+                      {talk.urlText}
                     </a>
                   </li>
-                  {post.secondaryUrl && (
+                  {talk.secondaryUrl && (
                     <li>
-                      <a href={post.secondaryUrl} className="button">
-                        {post.secondaryUrlText}
+                      <a href={talk.secondaryUrl} className="button">
+                        {talk.secondaryUrlText}
                       </a>
                     </li>
                   )}
@@ -140,7 +140,7 @@ export default function Index() {
             </p> */}
           <div className="features">
             {posts.map((post) => (
-              <section>
+              <section key={post.slug}>
                 {post.icon && (
                   // some example icons: code, lock, cog, desktop, link, gem, …
                   <span className={`icon solid major fa-${post.icon}`}></span>

@@ -59,9 +59,15 @@
         $this.addClass('active').addClass('active-locked');
       })
       .each(function () {
-        var $this = $(this),
-          id = $this.attr('href'),
-          $section = $(id);
+        var $this = $(this);
+        var id = $this.attr('href');
+        if (id.charAt(0) !== '#' && id.substr(0, 2) !== '/#') {
+          return;
+        }
+        if (id.substr(0, 2) === '/#') {
+          id = id.substr(1);
+        }
+        var $section = $(id);
 
         // No section for this link? Bail.
         if ($section.length < 1) return;
