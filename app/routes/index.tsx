@@ -72,135 +72,113 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
   const { talks, posts } = useLoaderData<{ talks: Talk[]; posts: Post[] }>();
 
-  console.log(posts);
-
   return (
     <>
-      {/* Sidebar */}
-      <section id="sidebar">
+      {/*  Intro */}
+      <section id="intro" className="wrapper style1 fullscreen fade-up">
         <div className="inner">
-          <nav>
-            <ul>
-              <li>
-                <a href="#intro">Welcome</a>
-              </li>
-              <li>
-                <a href="#talks">My talks</a>
-              </li>
-              <li>
-                <a href="#blog">Blog</a>
-              </li>
-              <li>
-                <a href="#contact">Get in touch</a>
-              </li>
-            </ul>
-          </nav>
+          <h1>Hi! I'm Julien Deniau.</h1>
+          <p>I am a french web developer and sometimes, I talk about things.</p>
+          <ul className="actions">
+            <li>
+              <a href="#talks" className="button scrolly">
+                Learn more
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
-      {/* Wrapper */}
-      <div id="wrapper">
-        {/*  Intro */}
-        <section id="intro" className="wrapper style1 fullscreen fade-up">
-          <div className="inner">
-            <h1>Hi! I'm Julien Deniau.</h1>
-            <p>
-              I am a french web developer and sometimes, I talk about things.
-            </p>
-            <ul className="actions">
-              <li>
-                <a href="#talks" className="button scrolly">
-                  Learn more
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/*  talks */}
-        <section id="talks" className="wrapper style2 spotlights">
-          {talks.map((post: Talk) => (
-            <section>
-              {post.image && (
-                <a href={post.url ?? '#'} className="image">
-                  <img
-                    src={post.image}
-                    alt=""
-                    data-position="center center"
-                    data-size="contain"
-                    data-repeat="no-repeat"
-                  />
-                </a>
-              )}
-              <div className="content">
-                <div className="inner">
-                  <h2>{post.title}</h2>
-                  {post.description && <p>{post.description}</p>}
-                  <ul className="actions">
+      {/*  talks */}
+      <section id="talks" className="wrapper style2 spotlights">
+        {talks.map((post: Talk) => (
+          <section>
+            {post.image && (
+              <a href={post.url ?? '#'} className="image">
+                <img
+                  src={post.image}
+                  alt=""
+                  data-position="center center"
+                  data-size="contain"
+                  data-repeat="no-repeat"
+                />
+              </a>
+            )}
+            <div className="content">
+              <div className="inner">
+                <h2>{post.title}</h2>
+                {post.description && <p>{post.description}</p>}
+                <ul className="actions">
+                  <li>
+                    <a href={post.url} className="button">
+                      {post.urlText}
+                    </a>
+                  </li>
+                  {post.secondaryUrl && (
                     <li>
-                      <a href={post.url} className="button">
-                        {post.urlText}
+                      <a href={post.secondaryUrl} className="button">
+                        {post.secondaryUrlText}
                       </a>
                     </li>
-                    {post.secondaryUrl && (
-                      <li>
-                        <a href={post.secondaryUrl} className="button">
-                          {post.secondaryUrlText}
-                        </a>
-                      </li>
-                    )}
-                  </ul>
-                </div>
+                  )}
+                </ul>
               </div>
-            </section>
-          ))}
-        </section>
+            </div>
+          </section>
+        ))}
+      </section>
 
-        {/*  blog */}
-        <section id="blog" className="wrapper style3 fade-up">
-          <div className="inner">
-            <h2>My blog posts</h2>
-            {/* <p>
+      {/*  blog */}
+      <section id="blog" className="wrapper style3 fade-up">
+        <div className="inner">
+          <h2>My blog posts</h2>
+          {/* <p>
               Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
               turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
               lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
               imperdiet est velit quis lorem.
             </p> */}
-            <div className="features">
-              {posts.map((post) => (
-                <section>
-                  {post.icon && (
-                    // some example icons: code, lock, cog, desktop, link, gem, …
-                    <span className={`icon solid major fa-${post.icon}`}></span>
-                  )}
-                  <h3>{post.title}</h3>
-                  {post.emphasis && <p>{post.emphasis}</p>}
-                </section>
-              ))}
-            </div>
-            <ul className="actions">
-              <li>
-                <a href="/posts/" className="button">
-                  See all blog posts
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/*  contact */}
-        <section id="contact" className="wrapper style1 fade-up">
-          <div className="inner">
-            <h2>Get in touch</h2>
-            <p>
-              Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-              turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
-              lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
-              imperdiet est velit quis lorem.
-            </p>
-            <div className="split style1">
+          <div className="features">
+            {posts.map((post) => (
               <section>
-                {/* <form method="post" action="#">
+                {post.icon && (
+                  // some example icons: code, lock, cog, desktop, link, gem, …
+                  <span className={`icon solid major fa-${post.icon}`}></span>
+                )}
+                <h3>
+                  <Link to={`/posts/${post.slug}`}>{post.title}</Link>
+                </h3>
+                {post.emphasis && <p>{post.emphasis}</p>}
+
+                <Link to={`/posts/${post.slug}`} className="button">
+                  Read post
+                </Link>
+              </section>
+            ))}
+          </div>
+          <ul className="actions">
+            <li>
+              <a href="/posts/" className="button">
+                See all blog posts
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/*  contact */}
+      <section id="contact" className="wrapper style1 fade-up">
+        <div className="inner">
+          <h2>Get in touch</h2>
+          <p>
+            Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
+            turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
+            lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
+            imperdiet est velit quis lorem.
+          </p>
+          <div className="split style1">
+            <section>
+              {/* <form method="post" action="#">
                   <div className="fields">
                     <div className="field half">
                       <label htmlFor="name">Name</label>
@@ -223,10 +201,10 @@ export default function Index() {
                     </li>
                   </ul>
                 </form> */}
-              </section>
-              <section>
-                <ul className="contact">
-                  {/* <li>
+            </section>
+            <section>
+              <ul className="contact">
+                {/* <li>
                     <h3>Address</h3>
                     <span>
                       12345 Somewhere Road #654
@@ -244,63 +222,50 @@ export default function Index() {
                     <h3>Phone</h3>
                     <span>(000) 000-0000</span>
                   </li> */}
-                  <li>
-                    <h3>Social</h3>
-                    <ul className="icons">
-                      <li>
-                        <a
-                          href="https://twitter.com/j_deniau"
-                          className="icon brands fa-twitter"
-                        >
-                          <span className="label">Twitter</span>
-                        </a>
-                      </li>
-                      {/* <li>
+                <li>
+                  <h3>Social</h3>
+                  <ul className="icons">
+                    <li>
+                      <a
+                        href="https://twitter.com/j_deniau"
+                        className="icon brands fa-twitter"
+                      >
+                        <span className="label">Twitter</span>
+                      </a>
+                    </li>
+                    {/* <li>
                         <a href="#" className="icon brands fa-facebook-f">
                           <span className="label">Facebook</span>
                         </a>
                       </li> */}
-                      <li>
-                        <a
-                          href="https://github.com/jdeniau"
-                          className="icon brands fa-github"
-                        >
-                          <span className="label">GitHub</span>
-                        </a>
-                      </li>
-                      {/* <li>
+                    <li>
+                      <a
+                        href="https://github.com/jdeniau"
+                        className="icon brands fa-github"
+                      >
+                        <span className="label">GitHub</span>
+                      </a>
+                    </li>
+                    {/* <li>
                         <a href="#" className="icon brands fa-instagram">
                           <span className="label">Instagram</span>
                         </a>
                       </li> */}
-                      <li>
-                        <a
-                          href="https://www.linkedin.com/in/juliendeniau/"
-                          className="icon brands fa-linkedin-in"
-                        >
-                          <span className="label">LinkedIn</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </section>
-            </div>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/juliendeniau/"
+                        className="icon brands fa-linkedin-in"
+                      >
+                        <span className="label">LinkedIn</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
           </div>
-        </section>
-      </div>
-
-      {/*  Footer */}
-      <footer id="footer" className="wrapper style1-alt">
-        <div className="inner">
-          <ul className="menu">
-            <li>&copy; Untitled. All rights reserved.</li>
-            <li>
-              Design: <a href="http://html5up.net">HTML5 UP</a>
-            </li>
-          </ul>
         </div>
-      </footer>
+      </section>
     </>
   );
 }

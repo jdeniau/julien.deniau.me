@@ -1,10 +1,12 @@
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from 'remix';
 import type { MetaFunction } from 'remix';
 
@@ -22,6 +24,10 @@ export function links() {
 }
 
 export default function App() {
+  const location = useLocation();
+
+  const prefix = location.pathname === '/' ? '' : '/';
+
   return (
     <html lang="en">
       <head>
@@ -31,7 +37,45 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        {/* Sidebar */}
+        <section id="sidebar">
+          <div className="inner">
+            <nav>
+              <ul>
+                <li>
+                  <Link to={`${prefix}#intro`}>Welcome</a>
+                </li>
+                <li>
+                  <Link to={`${prefix}#talks`}>My talks</a>
+                </li>
+                <li>
+                  <Link to={`${prefix}#blog`}>Blog</a>
+                </li>
+                <li>
+                  <Link to={`${prefix}#contact`}>Get in touch</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        {/* Wrapper */}
+        <div id="wrapper">
+          <Outlet />
+        </div>
+
+        {/*  Footer */}
+        <footer id="footer" className="wrapper style1-alt">
+          <div className="inner">
+            <ul className="menu">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>
+                Design: <a href="http://html5up.net">HTML5 UP</a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+
         <ScrollRestoration />
         <Scripts />
 
