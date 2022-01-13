@@ -1,8 +1,11 @@
-import path from 'path';
-import fs from 'fs/promises';
 import parseFrontMatter from 'front-matter';
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
+import { Octokit } from '@octokit/rest';
+
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
 
 export type Post = {
   slug: string;
@@ -13,9 +16,9 @@ export type Post = {
 
 export type PostMarkdownAttributes = {
   title: string;
+  icon?: string;
+  emphasis?: string;
 };
-
-const postsPath = path.join(__dirname, '../../../../static', 'posts');
 
 function isValidPostAttributes(
   attributes: any
@@ -23,20 +26,53 @@ function isValidPostAttributes(
   return attributes?.title;
 }
 
-export async function getPosts() {
-  const dir = await fs.readdir(postsPath);
-  return Promise.all(
-    dir.map(async (filename) => {
-      const file = await fs.readFile(path.join(postsPath, filename));
-      const { attributes } = parseFrontMatter(file.toString());
+async function getPostContent(path: string): Promise<{
+  attributes: PostMarkdownAttributes;
+  body: string;
+}> {
+  const fileResponse = await octokit.rest.repos.getContent({
+    owner: 'jdeniau',
+    repo: 'julien.deniau.me',
+    path: path,
+    ref: 'main',
+    headers: {
+      accept: 'application/vnd.github.v3.raw',
+    },
+  });
 
-      invariant(
-        isValidPostAttributes(attributes),
-        `${filename} has bad meta data!`
-      );
+  invariant(
+    typeof fileResponse.data === 'string',
+    'fileResponse.data is not a string'
+  );
+
+  const { attributes, body } = parseFrontMatter(fileResponse.data);
+  invariant(
+    isValidPostAttributes(attributes),
+    `Post ${path} is missing attributes`
+  );
+
+  return { attributes, body };
+}
+
+export async function getPosts() {
+  const dirResponse = await octokit.rest.repos.getContent({
+    owner: 'jdeniau',
+    repo: 'julien.deniau.me',
+    path: 'posts',
+    ref: 'main',
+  });
+
+  invariant(
+    Array.isArray(dirResponse.data),
+    'dirResponse.data is not an array'
+  );
+
+  return Promise.all(
+    dirResponse.data.map(async (file) => {
+      const { attributes, body } = await getPostContent(file.path);
 
       return {
-        slug: filename.replace(/\.md$/, ''),
+        slug: file.name.replace(/\.md$/, ''),
         title: attributes.title,
         icon: attributes.icon,
         emphasis: attributes.emphasis,
@@ -46,13 +82,8 @@ export async function getPosts() {
 }
 
 export async function getPost(slug: string) {
-  const filepath = path.join(postsPath, slug + '.md');
-  const file = await fs.readFile(filepath);
-  const { attributes, body } = parseFrontMatter(file.toString());
-  invariant(
-    isValidPostAttributes(attributes),
-    `Post ${filepath} is missing attributes`
-  );
+  const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
+
   const html = marked(body);
 
   return {
@@ -60,6 +91,6 @@ export async function getPost(slug: string) {
     html,
     title: attributes.title,
     icon: attributes.icon,
-    emphasis: attributes.emp,
+    emphasis: attributes.emphasis,
   };
 }
