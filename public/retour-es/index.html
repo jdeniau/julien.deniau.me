@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Elastic Search</title>
+
+        <meta name="description" content="Comment en tant que développeur, on peut améliorer facilement l'expérience utilisateur de son produit. Quelques erreurs à éviter et comment en max quelques heures, rendre son produit plus attractif">
+
+        <meta name="author" content="Julien Deniau">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/mapado.css" id="theme">
+        <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/blendwebmix.css">
+        <link rel="stylesheet" href="bower_components/albox/albox.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/albox/albox.js"></script>
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section id="welcome">
+                    <h2>ElasticSearch,</h2>
+                    <h3>Woo, dit mais c'est pas le truc qui Buzz ?</h3>
+                </section>
+
+                <section>
+                    <section id="whoami">
+                        <h1>Julien Deniau</h1>
+
+                        <ul class="no-style">
+                            <li>
+                                <p>
+                                    <span class="fa fa-briefcase"></span>
+                                    Développeur web
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-building"></span>
+                                    <a href="http://www.mapado.com">mapado.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-at">@</span>
+                                    <a mailto="julien@mapado.com">julien@mapado.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-twitter"></span>
+                                    <a href="http://www.twitter.com/j_deniau">j_deniau</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-github"></span>
+                                    <a href="http://www.github.com/jdeniau">jdeniau</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!--
+                    <section id="newsletter-happy">
+                        <blockquote>
+                            &ldquo;Génial, ce site que je ne connais pas propose une newsletter, je vais m'inscrire !&rdquo;
+                        </blockquote>
+                        <p class="signature">Personne, jamais...</p>
+                    </section>
+
+                    <section id="newsletter-close">
+                        <blockquote>
+                            &ldquo;Il est où ce p*t**n de bouton de fermeture !&rdquo;
+                        </blockquote>
+                        <p class="signature"> Environ tous ceux qui n'ont pas déjà quitté le site </p>
+                    </section>
+                    -->
+                </section>
+
+                <section id="summary">
+                    <h2>Sommaire</h2>
+                    <ul>
+                        <li><p>Mapado en chiffres</p>
+                        <li><p>Les débuts</p>
+                        <li><p>Full text search</p>
+                        <li><p>Migration complête</p>
+                        <li><p>Le futur</p>
+                    </ul>
+                </section>
+
+                <section>
+                    <section id="mapado">
+                        <h1>Mapado</h1>
+                        <h2>Qui sommes-nous ?</h2>
+                    </section>
+
+                    <section id="the-team" data-background="assets/img/sunnyside.jpeg">
+                        <!--
+                        <ul>
+                            <li> 2 dirigeants
+                            <li> 3 marketing
+                            <li> 1 graphiste
+                            <li> 6 développeurs
+                        </ul>
+                        -->
+                    </section>
+
+                    <section id="things-to-do">
+                        <h1>Mapado</h1>
+                        <h2>Things to do, close to you</h2>
+                    </section>
+
+                    <section id="what-we-do">
+                        <h3> Recherche d'activités: </h3>
+                        <ul>
+                            <li><p>à une date plus ou moins précise (prochainement, ce week-end, demain, ce soir)</p>
+                            <li><p>géolocalisé</p>
+                        </ul>
+                    </section>
+
+                    <section id="stack">
+                        <h2>Côté technique</h2>
+                        <table>
+                            <tr>
+                                <td class="vmiddle">
+                                    <img src="assets/img/tools.jpg" />
+                                </td>
+
+                                <td class="txtleft">
+                                    <p>
+                                    <u>Code:</u><br />
+                                    <strong>Python</strong>: Datamining, réplication, scripts "offline", gestion de dates<br />
+                                    <strong>PHP</strong>: site mapado.com, serveur d'image
+                                    </p><br />
+
+                                    <p>
+                                    <u>Framework:</u><br />
+                                    Symfony, Silex
+                                    </p><br />
+
+                                    <p>
+                                    <u>Databases: </u><br />
+                                    MongoDB, MySQL, ElasticSearch
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+
+                    <section id="numbers">
+                        <h2>Côté chiffres</h2>
+                        <table>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li><p> Juillets 2013: Sortie du site public</p>
+                                        <li><p> 2: serveurs pour ElasticSearch</p>
+                                        <li><p> 10: serveurs au total</p>
+                                        <li><p> 100aines: sources différentes d'import de données</p>
+                                        <li><p> 750 000: documents dans MongoDB</p>
+                                        <li><p> 700 000: documents répliqués dans ElasticSearch</p>
+                                        <li><p> 21 000 000: requêtes sur ES</p>
+                                        <li><p> 400 000: requêtes / jour</p>
+                                        <li><p> 1: développeur sous Windows</p>
+                                        <li><p> 1: clavier dvorak</p>
+                                    </ul>
+                                </td>
+                                <td class="vmiddle" width="40%">
+                                    <img src="assets/img/mrspell.jpg" class="right" />
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="start" data-background="assets/img/soldiers.jpg">
+                        <h1  class="white top">Début 2013: L'heure des choix</h1>
+                    </section>
+
+                    <section id="mysql-mongo">
+                        <h2>LAMP vaincra (ou presque)</h2>
+                        <p> Base de donnée maitre: MongoDB </p>
+                        <p> Repliquée pour la recherche dans MySQL </p>
+                    </section>
+
+                    <section id="fiche-activite">
+                        <h2>Fiche activité: MongoDB</h2>
+                        <img src="assets/img/fiche-activite.png" class="stretch" />
+                    </section>
+
+                    <section id="listing">
+                        <h2>Résultat de recherche: MySQL</h2>
+                        <img src="assets/img/listing.png" class="stretch" />
+                    </section>
+
+                    <section id="mysql-schema">
+                        <h2>Schema MySQL</h2>
+                        <h3>Recherche par date + geopoint</h3>
+                        <img src="assets/img/mysql-bdd.png" class="stretch no-style" />
+                    </section>
+
+                    <section id="mysql-examples">
+                        <table>
+                            <tr>
+                                <th> Le 8 mars 2013 à 20h30 
+                                <td> 2013-03-08 20:30:00
+                                <td> 2013-03-08 20:30:00
+                            </tr>
+
+                            <tr class="fragment">
+                                <th> Le 8 mars 2013
+                                <td> 2013-03-08 00:00:00
+                                <td>2013-03-08 23:59:59 
+                            </tr>
+
+                            <tr class="fragment">
+                                <th rowspan="3"> Du 8 au 10 mars 2013 <br> de 10h à 12h
+                                <td> 2013-03-08 10:00:00
+                                <td> 2013-03-08 12:00:00
+                            </tr>
+                            <tr class="fragment">
+                                <td> 2013-03-09 10:00:00
+                                <td> 2013-03-09 12:00:00
+                            </tr>
+                            <tr class="fragment">
+                                <td> 2013-03-10 10:00:00
+                                <td> 2013-03-10 12:00:00
+                            </tr>
+
+                            <tr class="fragment">
+                                <th rowspan="4"> Tous les lundis
+                                <td> 2013-01-07 00:00:00
+                                <td> 2013-01-07 23:59:59
+                            </tr>
+                            <tr class="fragment">
+                                <td> 2013-01-14 00:00:00
+                                <td> 2013-01-14 23:59:59
+                            </tr>
+                            <tr class="fragment">
+                                <td> 2013-01-21 00:00:00
+                                <td> 2013-01-21 23:59:59
+                            </tr>
+                            <tr class="fragment">
+                                <td colspan="2"> ...
+                            </tr>
+                        </table>
+                    </section>
+
+                    <section id="works-fine" data-background="assets/img/rex.jpg">
+                        <h1 class="white">Fonctionne bien</h1>
+                        <h2 class="white">jusqu'à...</h2>
+                    </section>
+
+                    <section id="fulltext">
+                        <h1>Full text search</h1>
+                        <img src="assets/img/fulltext.png" class="stretch" />
+                        <h2>We need ElasticSearch !</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="fulltext-search" data-background="assets/img/grappin.jpg">
+                        <h1  class="white">Let's (Elastic)Search </h1>
+                    </section>
+
+                    <section id="replication">
+                        <h2>Réplication</h2>
+                        <p>MongoDB → MySQL</p>
+                        <p style="color: #707070">+ MongoDB → ElasticSearch (mais sans les dates)</p>
+                    </section>
+
+                    <section id="replication-bad-choice" data-background="assets/img/mr-potatohead-broken.jpg">
+                        <h1 class="white">Mauvais choix</h1>
+                    </section>
+
+                    <section id="replication-bad-choice-explain">
+                        <ul>
+                            <li>Deux bases de données à maintenir
+                            <li>Deux codes différents à faire évoluer
+                        </ul>
+                    </section>
+
+                    <section id="geospacial-problem" data-background="assets/img/window.png" class="white">
+                        <h2 class="white">
+                            Probleme de "fenêtre geospaciale" avec MySQL
+                        </h2>
+                        <h4 class="white top">
+                            Que faire à Bron ≈ Que faire à Lyon
+                        </h4>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="stop-mysql" data-background="assets/img/bear.jpg">
+                        <h1 class="white">Abandon de MySQL</h1>
+                    </section>
+
+                    <section id="function-score" data-background="assets/img/potatoe-head-love.png">
+                        <h1 class="white bottom">
+                            Function Score Query
+                         </h1>
+                    </section>
+
+                    <section id="function-score-schema">
+                        <img src="assets/img/function-score.png" class="stretch" />
+                    </section>
+
+                    <section id="function-score-exemple">
+                        <pre><code class="json">{ "query": {
+    "function_score: {
+        "score_mode": "avg",
+        "functions": [
+            {
+                "gauss": {
+                    "lat_lng": { "origin": { "lat": 45.76749, "lon": 4.83433 } }
+                }
+            },
+            {
+                "gauss": {
+                    "popularity": { "origin": 1, "scale": 0.1 }
+                }
+            }
+        ]
+    }
+} }</code></pre>
+                    </section>
+
+                    <section id="es-moves">
+                        <p>Réplication MongoDB → ElasticSearch:</p>
+                        <p>
+                            Utilisation des "Nested" pour gérer nos listes de dates
+                        </p>
+                        <pre><code>{
+    "title": "Meetup Elasticsearch Lyon #1",
+    "lat_lng": "45.7622013, 4.8621385",
+    "schedule": [
+        {
+            "start_datetime": 2014-12-04 19:00:00,
+            "end_datetime": 2014-12-04 19:00:00
+        }
+    ]
+}</code></pre>
+                    </section>
+                    <section id="nested-filter">
+                    <h1>Filtre par date</h1>
+                    <h2>Que faire prochainement ?</h2>
+                        <pre><code>{ "filter" : {
+    "nested" : {
+        "path" : "schedule",
+        "filter" : {
+            "range" : {
+                "schedule.start_datetime": {
+                    "gte": 2014-12-04 19:30:00
+                }
+            }
+        }
+    }
+} }</code></pre>
+                    </section>
+
+                    <section id="elastic-search-alone">
+                        <ul>
+                            <li>Une seule base de données
+                            <li>Une seule base de code
+                        </ul>
+                    </section>
+
+                    <section id="elastic-search-love" data-background="assets/img/ken-happy.jpg">
+                        <h1 class="white bottom" style="color:red; font-size: 5em">
+                            ♡
+                        </h1>
+                    </section>
+
+                    <section id="response-time" data-background="assets/img/zigzag-ko.jpg">
+                        <h1 class="white">
+                            Temps de réponse ?
+                        </h1>
+                        <h2 class="white">
+                            ≈ 120 ms
+                        </h2>
+                    </section>
+
+                    <section id="plan" data-background="assets/img/plan.jpg">
+                        <h1 class="white">
+                            Améliorer les performances
+                        </h1>
+                    </section>
+
+                    <section id="analyzer">
+                        <h2>Axes d'améliorations</h2>
+                        <ul>
+                            <li>Ne pas analyser tous les champs (status, foreign key, etc.)
+                            <li>Ne pas indexer tous les champs (url d'image, slug, etc.)
+                        </ul>
+                    </section>
+
+                    <section id="adapt-your-datas" data-background="assets/img/adapt.png">
+                        <h1 class="white top">
+                            Adapter les données au site
+                        </h1>
+                    </section>
+
+                    <section id="kiss">
+                        <h2>Formulaire simple → données simples</h2>
+                        <img src="assets/img/form.png" class="stretch" />
+                    </section>
+
+                    <section id="term-filter">
+                        <h1>Term filter</h1>
+                    </section>
+
+                    <section id="schedule-normalized">
+                        <table>
+                            <tr>
+                                <th> Le 8 mars 2013 à 20h30 
+                                <td> <code>
+                                        2013-03-08_night, 2013-03-08_fullday,<br>
+                                        2013_year, 2013_year_night
+                                    </code>
+                            </tr>
+
+                            <tr class="fragment">
+                                <th> Le 8 mars 2013
+                                <td> <code>
+                                        2013-03-08_day, 2013-03-08_night, 2013-03-08_fullday,<br>
+                                        2013_year, 2013_year_day, 2013_year_night
+                                    </code>
+                            </tr>
+
+                            <tr class="fragment">
+                                <th rowspan="4"> Tous les lundis
+                                    <td> <code>
+                                            2013-01-07_day, 2013-01-07_night, 2013-01-07_fullday, <br/>
+                                            2013-01-14_day, 2013-01-14_night, 2013-01-14_fullday, <br/>
+                                            2013-01-21_day, 2013-01-21_night, 2013-01-21_fullday, <br/>
+                                            2013_year, 2013_year_night, 2013_year_fullday, <br/>
+                                            etc.
+                                    </code>
+                            </tr>
+                        </table>
+                    </section>
+
+                    <section id="response-time-better" data-background="assets/img/zigzag-happy.jpg">
+                        <h1 class="white bottom">
+                            Temps de réponse ?
+                        </h1>
+                        <h2 class="white">
+                            ≈ 4 ms \o/
+                        </h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="infinity" data-background="assets/img/infinity.png">
+                        <h1 class="white bottom">Vers l'infini et au delà</h1>
+                    </section>
+
+                    <section id="recommandation" data-background="assets/img/reco.jpg">
+                        <h1 class="white">Recommandation utilisateur</h1>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Script Score
+                        </h2>
+
+                        <p>
+                            Ajout de la prise en compte des interactions utilisateurs (stockés dans ES via Logstash)
+                        </p>
+
+                        <pre><code class="json">{ "query": {
+    "function_score: {
+        "score_mode": "sum",
+        "functions": [
+            {
+                "gauss": {
+                    "lat_lng": { "origin": { "lat": 45.76749, "lon": 4.83433 } }
+                }
+            },
+            {
+                "script_score": {
+                    "script": "user-popularity",
+                    "params": { /* ... */ }
+                }
+            }
+        ]
+    }
+} }</code></pre>
+
+                        <p>
+                        </p>
+                    </section>
+
+                    <section id="response-time-middle" data-background="assets/img/woody-zigzag.png">
+                        <h1 class="white bottom">
+                            Temps de réponse ?
+                        </h1>
+                        <h2 class="white">
+                            ≈ 50 ms
+                        </h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="conclusion">
+                        <h2>Conclusion</h2>
+                        <ul>
+                        <li>
+                        <p>
+                            Pas de regrets sur la migration MySQL → ES
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            Probablement l'outil qu'il nous fallait
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            On pense que c'est l'outil qu'il va nous falloir
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            ES pas votre base principale : <br />Optimisez vos données pour votre utilisation
+                        </p>
+                        </li>
+                        </ul>
+                    </section>
+
+                    <section id="questions" data-background="assets/img/questions.png">
+                        <h1 class="white bottom">Merci, des questions ?</h1>
+                        <div class="txtright white">@j_deniau</div>
+                        <div class="txtright white">jdeniau.github.io/retour-es</div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="assets/js/blendwebmix.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                width: 1220,
+                controls:true,
+                progress: false,
+                history: true,
+                center: true,
+                mouseWheel: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'socket.io/socket.io.js', async: true },
+                    { src: 'plugin/notes-server/client.js', async: true }
+                ]
+            });
+
+        </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-9402091-10', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

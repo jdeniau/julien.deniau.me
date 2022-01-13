@@ -1,0 +1,6 @@
+.reveal .fa {
+    font-family: 'FontAwesome';
+}
+
+.custom-fragment { display: none; }
+.custom-fragment.current-custom-fragment { display: inherit; }

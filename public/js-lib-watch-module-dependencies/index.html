@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Les libs JS, watch-module, les dependances et le reste</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Les libs JS, watch-module, les dependances et le reste</h2>
+        </section>
+
+        <section>
+          <h3>Pourquoi cette présentation ?</h3>
+
+          <div class="r-stack">
+            <img
+              class="fragment"
+              src="/images/002913.png"
+              style="transform: rotate(0deg); translate: 0 0"
+            />
+            <img
+              class="fragment"
+              src="/images/002944.png"
+              style="transform: rotate(15deg); translate: 0 100px"
+            />
+            <img
+              class="fragment"
+              src="/images/003011.png"
+              style="transform: rotate(-10deg); translate: 0 150px"
+            />
+            <img
+              class="fragment"
+              src="/images/003100.png"
+              style="transform: rotate(-5deg); translate: 0 30px"
+            />
+            <img
+              class="fragment"
+              src="/images/003129.png"
+              style="transform: rotate(7deg); translate: 0 20px"
+            />
+            <img
+              class="fragment"
+              src="/images/003201.png"
+              style="transform: rotate(17deg); translate: 0 120px"
+            />
+            <img
+              class="fragment"
+              src="/images/003252.png"
+              style="transform: rotate(-11deg); translate: 0 75px"
+            />
+            <img
+              class="fragment"
+              src="/images/003313.png"
+              style="transform: rotate(-2deg); translate: 0 40px"
+            />
+            <img
+              class="fragment"
+              src="/images/003230.png"
+              style="transform: rotate(4deg); translate: 0 100px"
+            />
+          </div>
+
+          <aside class="notes">
+            Parceque parfois certaines personnes ont un problème avec
+            watch-module
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="r-fit-text">Comment ça fonctionne une lib JS ?</h2>
+          </section>
+
+          <section>
+            <h4>Une lib JS c'est ça :</h4>
+            <pre><code data-trim data-noescape data-line-numbers="10">/*!
+ * array-slice <https://github.com/jonschlinkert/array-slice>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+'use strict';
+
+module.exports = function slice(arr, start, end) {
+  var len = arr.length;
+  var range = [];
+
+  start = idx(len, start);
+  end = idx(len, end, len);
+
+  while (start < end) {
+    range.push(arr[start++]);
+  }
+  return range;
+};
+
+function idx(len, pos, end) {
+  if (pos == null) {
+    pos = end || 0;
+  } else if (pos < 0) {
+    pos = Math.max(len + pos, 0);
+  } else {
+    pos = Math.min(pos, len);
+  }
+
+  return pos;
+}
+</code>
+			</pre>
+          </section>
+          <section>
+            <h4>Mais parfois c'est plus complexe :</h4>
+
+            <pre><code data-trim data-noescape data-line-numbers="48-49,52-54,56">
+			/*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+		// register as 'classnames', consistent with npm package name
+		define('classnames', [], function () {
+			return classNames;
+		});
+	} else {
+		window.classNames = classNames;
+	}
+}());
+</code></pre>
+          </section>
+
+          <section>
+            <h4>Mais du JS moderne, c'est ça :</h4>
+
+            <pre><code data-trim data-noescape data-line-numbers="48-49,52-54,56">
+            function addTwo(num) {
+              return num + 2;
+            }
+            
+            export { addTwo };
+          </code></pre>
+          </section>
+
+          <section>
+            <dl>
+              <dt>Que veut-on ?</dt>
+              <dd>
+                Ecrire du JS / CSS morderne ! (JSX, await/async, imports
+                dynamiques, chainage optionnel, etc.) 🤩
+              </dd>
+              <dt class="fragment" data-fragment-index="1">
+                Qui dois l'éxécuter ?
+              </dt>
+              <dd class="fragment" data-fragment-index="1">
+                IE 11 et Safari 🤮
+              </dd>
+            </dl>
+          </section>
+
+          <section>
+            <h3>Une stack JS moderne</h3>
+            <img src="/images/frontend02.png" />
+            <p class="fragment">JavaScript is the new Java 😘</p>
+          </section>
+
+          <section>
+            <h5>On a (presque) toujours besoin d'un "bundler"</h5>
+            <div>
+              <ul>
+                <li>gulp ☠️</li>
+                <li>grunt ☠️</li>
+                <li>
+                  <div style="display: flex">
+                    <div>rollup</div>
+                    <img
+                      src="/images/Mapado-icon-white.png"
+                      style="margin: 0; height: 50px"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div style="display: flex">
+                    <div>webpack</div>
+                    <img
+                      src="/images/Mapado-icon-white.png"
+                      style="margin: 0; height: 50px"
+                    />
+                  </div>
+                </li>
+                <li>esbuild</li>
+                <li>vite</li>
+                <li>snowpack</li>
+                <li>parcel</li>
+              </ul>
+            </div>
+          </section>
+
+          <section><h2>Et à Mapado ?</h2></section>
+
+          <section>
+            <h4>Stack "standard" :</h4>
+
+            <ul>
+              <li>Sass</li>
+              <li>TypeScript</li>
+              <li>BabelJS</li>
+              <li>rollup</li>
+              <li>Prettier</li>
+              <li>eslint</li>
+            </ul>
+
+            <div>
+              <a
+                href="https://github.com/mapado/generator-mapado/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                générateur de libraire Mapado
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <h2>Commande toujours disponibles</h2>
+
+            <dl>
+              <dt>yarn start</dt>
+              <dd>lance de quoi développer (storybook, site, etc.)</dd>
+
+              <dt>yarn build</dt>
+              <dd>
+                compile les fichiers JS et CSS pour avoir un "livrable" (site en
+                prod, librairie versionnable)
+              </dd>
+
+              <dt>yarn test</dt>
+              <dd>lance les tests</dd>
+
+              <dt>yarn lint</dt>
+              <dd>"peluche" les fichiers</dd>
+            </dl>
+          </section>
+        </section>
+
+        <section>
+          <section><h2>Les dépendances</h2></section>
+
+          <section>Trois types</section>
+
+          <section>
+            <div>devDependencies</div>
+            <video data-autoplay loop src="/images/devDep.mp4"></video>
+            <blockquote>
+              bundler, typescript, storybook, prettier, eslint, etc.
+            </blockquote>
+          </section>
+          <section>
+            <div>dependencies</div>
+            <video
+              data-autoplay
+              loop
+              src="https://media.giphy.com/media/lqMLxVZUkXdesp5Nmq/giphy.mp4"
+            ></video>
+            <blockquote>Les amis que l'on amène avec soit…</blockquote>
+          </section>
+          <section>
+            <div>peerDependencies</div>
+
+            <video
+              data-autoplay
+              loop
+              src="https://media.giphy.com/media/xT1R9QncDtDylCzN2o/giphy.mp4"
+            ></video>
+            <blockquote>
+              …les amis que l'organisateur est obligé d'invité
+            </blockquote>
+          </section>
+          <section>
+            <dl>
+              <dt>dependencies</dt>
+              <dd>
+                + installation automatique<br />
+                - peut être en double (conflits, poids, instances différentes)
+              </dd>
+              <dt class="fragment" data-fragment-index="1">peerDependencies</dt>
+              <dd class="fragment" data-fragment-index="1">
+                + ne peut pas être en double<br />
+                - mais oblige de la rigueur
+              </dd>
+            </dl>
+
+            <aside class="notes">
+              Par exemple : nouvelle fonction dans makeup que vous utilisez dans
+              js-component (qui a makeup en peerDep) : vous DEVEZ mettre à jour
+              makeup partout ou vous utilisez js-component.<br />
+              Techniquement, on devrait même faire une majeur de js-component.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>watch-module</h2>
+          </section>
+
+          <section>
+            <h4>watch-module, ça fait quoi ?</h4>
+            <ol>
+              <li>lance <code>yarn build</code> du module observé</li>
+              <li>
+                copie le contenu du module observé dans
+                <code>node_modules</code> local
+              </li>
+              <li>écoute les changements</li>
+              <li>
+                <pre><code data-trim data-noescape class="language-php">goto 1;</code></pre>
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h4>Si j'ai un "bug" watch-module</h4>
+            <ul>
+              <li>lancer watch-module avec <code>-v</code></li>
+              <li>
+                <code>node_modules/ma_lib</code>doit contenir un fichier
+                "IS_UNDER_WATCH_MODULE"
+              </li>
+              <li>
+                essayer de lancer <code>yarn build</code> dans la lib
+                <br />(mais les logs devraient remonter)
+              </li>
+              <li>
+                inspecter le fichier généré
+                <br />
+                (soit dans <code>code/ma_lib/dist_ou_build</code>, soit dans
+                <code>node_modules/ma_lib</code>)
+              </li>
+              <li class="fragment">
+                supprimer son dossier <code>.next</code> (is the new
+                <code>sf cache:clear</code>)
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section><h4>Un point sur les librairies TS</h4></section>
+
+          <section>
+            De plus en plus de libs en TS.
+
+            <div class="r-stack">
+              <img src="/images/typescript-trend.png" />
+              <img
+                class="fragment"
+                src="/images/typescript-vs-flow-trend.png"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h3>Trois (deux ?) façons de typer une librairie</h3>
+            <ul>
+              <li class="fragment">
+                lib en TS + extraire un fichier de type (le
+                <code>.d.ts</code>).<br />
+                ex: makeup, ticketing-js-sdk, toutes les libs écrites en TS
+              </li>
+
+              <li class="fragment">
+                lib en JS + proposer un fichier de définition à côté.<br />
+                ex: immutable-js, js-component
+              </li>
+              <li class="fragment">
+                Utiliser "DefinitelyTyped".<br />
+                ex: react, node
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            Le fichier "buildé" est <strong>toujours</strong> en JS, <br />
+            et le fichier de type est <strong>toujours</strong> à côté
+          </section>
+
+          <section>
+            <div>En entrée</div>
+            <pre><code data-trim data-noescape class="language-tree">
+src/
+├── index.ts
+├── component/
+│   ├── Foo.ts
+│   └── Bar.ts
+└── utils/
+    ├── string.ts
+    └── array.ts
+</code></pre>
+            <div>En sortie</div>
+            <pre><code data-trim data-noescape class="language-tree">
+dist/
+├── index.d.ts
+├── index.js
+├── index.js.map
+└── style.css
+</code></pre>
+
+            <aside class="notes">
+              Du TypeScript, c'est TOUJOURS du JavaScript au final.
+            </aside>
+          </section>
+          <section>
+            Fichiers de types très intéressant, définissent tout ce qu'il faut
+            pour utiliser la lib.<br />
+            Ex: "Component" react, "validateurs" final-form, méthode
+            "getServerSideProps" de nextjs, etc.
+          </section>
+          <section>
+            <p>Utilisation d'une lib TS ?</p>
+
+            <p>Tout est inclu</p>
+            <video data-autoplay loop src="/images/goku.mp4"></video>
+          </section>
+        </section>
+
+        <section>
+          <video data-autoplay src="/images/questions.mp4"></video>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

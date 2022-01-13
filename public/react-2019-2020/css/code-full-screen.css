@@ -1,0 +1,11 @@
+.reveal pre code {
+  max-height: 600px;
+}
+
+.reveal img.emoji {
+    width: 1em!important;
+    margin: 0!important;
+    background: none!important;
+    border: none!important;
+    box-shadow: none!important;
+}

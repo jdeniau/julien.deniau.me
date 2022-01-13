@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Développeurs, améliorez votre UX simplement !</title>
+
+        <meta name="description" content="Comment en tant que développeur, on peut améliorer facilement l'expérience utilisateur de son produit. Quelques erreurs à éviter et comment en max quelques heures, rendre son produit plus attractif">
+
+        <meta name="author" content="Julien Deniau">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/mapado.css" id="theme">
+        <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/blendwebmix.css">
+        <link rel="stylesheet" href="bower_components/albox/albox.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/albox/albox.js"></script>
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section id="welcome-blend">
+                    <h2>Développeurs,</h2>
+                    <h3>Améliorez votre UX simplement !</h3>
+                    <img src="assets/img/logo-blend.jpg" class="stretch no-style" />
+                </section>
+
+                <section>
+                    <section id="whoami">
+                        <h1>Julien Deniau</h1>
+
+                        <ul class="no-style">
+                            <li>
+                                <p>
+                                    <span class="fa fa-briefcase"></span>
+                                    Développeur web
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-building"></span>
+                                    <a href="http://www.mapado.com">mapado.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-at">@</span>
+                                    <a mailto="julien@mapado.com">julien@mapado.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-twitter"></span>
+                                    <a href="http://www.twitter.com/j_deniau">j_deniau</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="fa fa-github"></span>
+                                    <a href="http://www.github.com/jdeniau">jdeniau</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!--
+                    <section id="newsletter-happy">
+                        <blockquote>
+                            &ldquo;Génial, ce site que je ne connais pas propose une newsletter, je vais m'inscrire !&rdquo;
+                        </blockquote>
+                        <p class="signature">Personne, jamais...</p>
+                    </section>
+
+                    <section id="newsletter-close">
+                        <blockquote>
+                            &ldquo;Il est où ce p*t**n de bouton de fermeture !&rdquo;
+                        </blockquote>
+                        <p class="signature"> Environ tous ceux qui n'ont pas déjà quitté le site </p>
+                    </section>
+                    -->
+                </section>
+
+                <section id="summary">
+                    <h2>Améliorez votre UX simplement</h2>
+                    <ul>
+                        <li><p>Qu'est-ce que l'UX ?</p>
+                        <li><p>Téléchargement d'applications mobiles</p>
+                        <li><p>Information sur les cookies</p>
+                        <li><p>Crop d'image</p>
+                        <li><p>Filtres de recherche</p>
+                        <li><p>Affichage de date</p>
+                        <li><p>Refonte de site</p>
+                    </ul>
+                </section>
+
+                <section>
+                    <section id="what-is-ux">
+                        <h1>UX ?</h1>
+                        <h2>UX = Expérience Utilisateur</h2>
+                    </section>
+
+                    <section id="explain-bad">
+                        <h1>Mauvaise UX</h1>
+                        <img src="assets/img/explain/bad-ux.jpg" class="stretch" />
+                        <p>
+                            Un peu dur d'utilisation à deux.
+                        </p>
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+
+                    <section id="explain-good">
+                        <h1>Bonne UX</h1>
+                        <img src="assets/img/explain/good-ux.jpg" class="stretch" />
+                        <p>
+                            Pas besoin d'explication précisant "tirer" ou "pousser"
+                        </p>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="explain-design-vs-ux">
+                        <h2>L'UX, c'est le design, non ?</h2>
+                        <img src="assets/img/explain/design-vs-ux.jpg" class="stretch" />
+                    </section>
+
+                    <section id="explain-why">
+                        <h1>Pourquoi ?</h1>
+                        <img src="assets/img/explain/gitlab.png" class="stretch" />
+                    </section>
+                </section>
+
+                <!-- Download mobile app -->
+                <section>
+                    <section id="mobile-app" data-state="presentation-title">
+			    <h1>Développeurs</h1>
+                        <h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+                        <h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+                        <h2 class="custom-fragment">Acceptez vos cookies</h2>
+                        <h2 class="custom-fragment">Croppez vos images</h2>
+                        <h2 class="custom-fragment">Filtrez des résultats vide</h2>
+                        <h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+                        <h2 class="custom-fragment">Hérissons > chats</h2>
+                        <h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+                        <h2 class="custom-fragment">Améliorez votre SEO</h2>
+                        <h2 class="custom-fragment">Refondez votre site</h2>
+                        <h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+                    </section>
+
+                    <section id="mobile-app-bad">
+                        <div class="stretch">
+                            <img src="assets/img/download-app/bad/le-parisien.png" />
+                            <img src="assets/img/download-app/bad/marmiton.png" />
+                        </div>
+                        <div class="fragment classpasclass pasclass"></div>
+
+                        <aside class="notes">
+                            2 min
+                        </aside>
+                    </section>
+
+                    <!--
+                    <section id="mobile-app-bad-quote">
+                        <blockquote>
+                            &ldquo;Grrrrrr....&rdquo;
+                        </blockquote>
+                        <p class="signature">Moi</p>
+                    </section>
+                    -->
+
+                    <section id="mobile-app-good">
+                        <div class="stretch">
+                            <div data-fade-to="assets/img/download-app/good/nouvel-obs-opacity.png">
+                                <img src="assets/img/download-app/good/nouvel-obs.png" />
+                            </div>
+                            <div data-fade-to="assets/img/download-app/good/slideshare-opacity.png">
+                                <img src="assets/img/download-app/good/slideshare.png" />
+                            </div>
+                        </div>
+
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="mobile-app-best">
+                        <h2>Marketing + UX, c'est possible ?</h2>
+                        <div class="stretch">
+                            <div data-fade-to="assets/img/download-app/good/frandroid-1-opacity.png">
+                                <img src="assets/img/download-app/good/frandroid-1.png" />
+                            </div>
+                            <div data-fade-to="assets/img/download-app/good/frandroid-2-opacity.png">
+                                <img src="assets/img/download-app/good/frandroid-2.png" />
+                            </div>
+                        </div>
+                        <div class="fragment classpasclass perfect"></div>
+                    </section>
+
+<!--
+                    <section id="mobile-app-good-quote">
+                        <blockquote>
+                            &ldquo;Pas maintenant, mais pourquoi pas.&rdquo;
+                        </blockquote>
+                        <p class="signature">Encore moi</p>
+                    </section>
+-->
+
+                    <section id="newsletter" data-state="newsletter">
+                        <h1>Exit intend popup</h1>
+                        <img src="assets/img/download-app/ouibounce.gif" class="stretch" />
+                        <div>
+                            <a href="http://carlsednaoui.github.io/ouibounce/">
+                                Ouibounce
+                            </a>
+                        </div>
+                    </section>
+
+                    <section id="mobile-app-conclusion">
+                        <h1>
+                            Ciblez vos annonces
+                        </h1>
+                        <h3>
+                            Meilleur taux de clic, meilleur taux de rebond
+                        </h3>
+                    </section>
+                </section>
+
+                <!-- Cookie informational message -->
+                <section>
+                    <section id="cookies" data-state="presentation-title">
+		    <h1>Développeurs</h1>
+			<h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+			<h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+			<h2 class="custom-fragment">Montrez-nous des boobs</h2>
+			<h2 class="custom-fragment">Filtrez des résultats vide</h2>
+			<h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+			<h2 class="custom-fragment">Hérissons > chats</h2>
+			<h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+			<h2 class="custom-fragment">Améliorez votre SEO</h2>
+			<h2 class="custom-fragment">Refondez votre site</h2>
+			<h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+			<h2 class="custom-fragment">Acceptez vos cookies</h2>
+                    </section>
+
+                    <section id="cookies-legal">
+                        <img src="assets/img/cookies/DontStealWookieCookies.jpg" class="stretch" />
+                        <blockquote>
+                            &ldquo;(...), les internautes doivent être informés et donner leur consentement préalablement à l'insertion de traceurs. Ils doivent disposer d'une possibilité de <strong>choisir de ne pas être tracés</strong> lorsqu'ils visitent un site ou utilisent une application. (...)&rdquo;
+                        </blockquote>
+                        <p class="signature">
+                            <a href="http://www.cnil.fr/vos-obligations/sites-web-cookies-et-autres-traceurs/que-dit-la-loi/#c5581">cnil.fr</a>
+                        </p>
+
+                        <aside class="notes">
+                            5-6 min
+                        </aside>
+                    </section>
+
+                    <section id="cookies-explicit">
+                        <h2>
+                            Consentement explicite
+                        </h2>
+                        Clic sur un lien ou sur un bouton
+                    </section>
+
+                    <section id="cookies-explicit-example">
+                        <img src="assets/img/cookies/explicit/sourceforge.png" class="stretch" />
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+
+                    <section id="cookies-explicit-wow">
+		        <h2>Sourceforge aujourd'hui</h2>
+                        <img src="assets/img/cookies/explicit/sourceforge-now.png" />
+                        <div class="fragment classpasclass vraimentpasclass"></div>
+                    </section>
+
+                    <section id="cookies-tacit">
+                        <h2>
+                            Consentement tacite
+                        </h2>
+                        Vous n'êtes pas d'accord ? C'est facile, c'est la petite croix en haut à droite
+                    </section>
+
+                    <section id="cookie-tacit-google">
+                        <div data-fade-to="assets/img/cookies/1-google-opacity.png" class="stretch">
+                            <img src="assets/img/cookies/1-google.png" />
+                        </div>
+                        <div class="fragment classpasclass perfect"></div>
+                    </section>
+
+                    <section id="cookie-tacit-clubic">
+                        <div data-fade-to="assets/img/cookies/2-clubic-opacity.png" class="stretch">
+                            <img src="assets/img/cookies/2-clubic.png" />
+                        </div>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="cookie-tacit-lemonde">
+                        <blockquote>Bonjour, j'aimerais le menu s'il vous plaît !</blockquote>
+                        <div data-fade-to="assets/img/cookies/4-lemonde-opacity.png" class="stretch">
+                            <img src="assets/img/cookies/4-lemonde.png" />
+                        </div>
+                        <div class="fragment classpasclass vraimentpasclass"></div>
+                    </section>
+
+                    <section id="cookie-tacit-lemonde-better">
+                        <img src="assets/img/cookies/lemonde-better.png" class="stretch" />
+                        <pre class="fragment"><code class="diff"> #alerte_tracking {
+     border-bottom-right-radius: 4px;
+     border-style: solid;
+     border-width: 0 1px 1px;
+-    left: 0;
+     padding: 5px;
+-    position: fixed;
+-    top: 0;
+-    width: 660px;
+-    z-index: 1;
+ }
+
+ .croix_grise:after, .croix_blanche:after {
++    position: fixed;
++    top: 5px;
++    right: 5px;
+ }</code></pre>
+                    </section>
+
+                    <section id="cookie-plugin">
+                        <h2>Il y a un plugin jQuery pour ça</h2>
+                        <img class="stretch" src="assets/img/cookies/jquery-cookiebar.png" />
+                        <pre><code class="javascript">$(function(){
+    $.cookieBar({ message: "J'aime les cookies", /* ... */ });
+});</code></pre>
+                        <span class="fa fa-link"></span>
+                        <a href="http://www.primebox.co.uk/projects/jquery-cookiebar/">
+                            jquery-cookiebar plugin
+                        </a>
+                    </section>
+
+                    <section id="cookie-conclusion">
+                        <h1>
+                            Faites discret
+                        </h1>
+                        <h2>
+                            Ça n'intéresse que la CNIL
+                        </h2>
+                    </section>
+                </section>
+
+                <!-- Crop image -->
+                <section>
+                    <section id="crop-index" data-state="presentation-title">
+                        <h1>Développeurs</h1>
+			<h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+			<h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+			<h2 class="custom-fragment">Filtrez des résultats vide</h2>
+			<h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+			<h2 class="custom-fragment">Hérissons > chats</h2>
+			<h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+			<h2 class="custom-fragment">Améliorez votre SEO</h2>
+			<h2 class="custom-fragment">Refondez votre site</h2>
+			<h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+			<h2 class="custom-fragment">Acceptez vos cookies</h2>
+                        <h2 class="custom-fragment">Croppez vos images</h2>
+                    </section>
+
+                    <section id="crop-programme-tv-hommes">
+                        <div class="stretch">
+                            <img src="assets/img/crop/programme-tv-hommes.jpg" />
+                            <img src="assets/img/crop/programme-tv-femmes.jpg" />
+                        </div>
+
+                        <div>
+                            <blockquote>
+                                &ldquo;Chéri, qu'est-ce qu'on regarde à la télé ?&rdquo;
+                            </blockquote>
+                            <p class="signature">Madame michu</p>
+                        <div>
+
+                        <div class="fragment classpasclass pasclass"></div>
+
+                        <aside class="notes">
+                            8 min
+                        </aside>
+                    </section>
+
+                    <section id="crop-devinette">
+                        <h1>Qui est-ce ?</h1>
+                        <img src="assets/img/crop/mimimathy-antoinette-crop.jpg" class="stretch" />
+                        <p class="signature">
+                            tf1.fr
+                        </p>
+                    </section>
+
+                    <section id="crop-result">
+                        <h1>Mimi Mathy</h1>
+                        <img src="assets/img/crop/mimimathy-antoinette.jpg" class="stretch" />
+                        <p class="signature">
+                            tf1.fr
+                        </p>
+
+                        <aside class="notes">
+                            Bon ben le crop est pas tellement mieux chez nous ni chez smartcrop...
+                            <img src="http://img.mapado.com/2014/8/2/53dd29f6ac665-josephine-ange-gardi-preview-10217370kecyp.jpg_thumbs/558-314.jpg" />
+                        </aside>
+                    </section>
+
+                    <section id="crop-result-second-crop">
+                        <h2>À chaque page son crop</h2>
+                        <img src="assets/img/crop/mimimathy-antoinette-crop2.jpg" class="stretch" />
+                        <p class="signature">
+                            tf1.fr
+                        </p>
+                    </section>
+
+                    <section id="crop-what-we-not-want">
+                        <h2>Que veut-on ?</h2>
+                        <div data-fade-to="assets/img/crop/woman-bad-crop.jpg" class="stretch" >
+                            <img src="assets/img/crop/woman.jpg" />
+                        </div>
+                        <p class="signature">
+                            © <a href="https://www.flickr.com/photos/anoldent/">anoldent @ Flickr</a>
+                        </a>
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+
+                    <section id="crop-what-we-want">
+                        <h2>Que veut-on ?</h2>
+                        <div data-fade-to="assets/img/crop/woman-crop.jpg" class="stretch" >
+                            <img src="assets/img/crop/woman.jpg" />
+                        </div>
+                        <p class="signature">
+                            © <a href="https://www.flickr.com/photos/anoldent/">anoldent @ Flickr</a>
+                        </a>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="stojg-crop">
+                        <h3>PHP</h3>
+
+                        <p><a href="https://github.com/stojg/crop">github.com/stojg/crop</a></p>
+
+                        <p>
+                            <img src="assets/img/crop/hedgehog-bucket-base.jpg" class="vmiddle stretch" height="300px" />
+                            ➙
+                            <img src="assets/img/crop/hedgehog-bucket-crop.jpg" class="vmiddle stretch" height="300px" />
+                            <div>ex: <a href="http://placehogs.com">placehogs.com</a></div>
+                        </p>
+
+                        <pre><code class="php large">
+  $crop = new \stojg\crop\CropEntropy('/home/image/plop.jpg');
+  
+  $imagick = $crop->resizeAndCrop($width, $height);
+  
+  $image->writeImage('/home/image/plop-cropped.jpg');
+
+</code></pre>
+                    </section>
+                    <section id="smartcrop-js">
+                        <h3>JS: smartcrop.js</h3>
+                        <img class="stretch no-style" src="assets/img/crop/smartcropjs.png">
+                        <p><a href="https://github.com/jwagner/smartcrop.js">https://github.com/jwagner/smartcrop.js</a></p>
+                        <pre><code class="javascript large">
+  SmartCrop.crop(image, {width: 100, height: 100},
+    function(result){console.log(result);}
+  );
+
+  // {topCrop: {x: 300, y: 200, height: 200, width: 200}} 
+
+</code></pre>
+                    </section>
+
+                    <section id="thumbor">
+                        <h3>Python: thumbor.</h3>
+                        <h4>Serveur d'image complet</h4>
+                        <a href="https://github.com/thumbor/thumbor"><img class="stretch" src="assets/img/crop/thumbor.png"></a>
+                        <p><a href="https://github.com/thumbor/thumbor">https://github.com/thumbor/thumbor</a></p>
+                        <pre><code>
+    http://thumbor-server/hmac/trim/AxB:CxD/fit-in/-Ex-F/HALIGN/VALIGN/smart[...]
+            /filters:FILTERNAME(ARGUMENT):FILTERNAME(ARGUMENT)/image-uri
+
+</code></pre>
+                    </section>
+
+                    <section id="crop-conclusion">
+                        <h1>
+                            Utilisez du code existant
+                        </h1>
+                        <h2>
+                            ou croppez vos images à la main
+                        </h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="filter" data-state="presentation-title">
+                            <h1>Développeurs</h1>
+			<h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+			<h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+			<h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+			<h2 class="custom-fragment">Hérissons > chats</h2>
+			<h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+			<h2 class="custom-fragment">Améliorez votre SEO</h2>
+			<h2 class="custom-fragment">Refondez votre site</h2>
+			<h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+			<h2 class="custom-fragment">Acceptez vos cookies</h2>
+                        <h2 class="custom-fragment">Croppez vos images</h2>
+			<h2 class="custom-fragment">Filtrez des résultats vide</h2>
+                    </section>
+
+                    <section id="no-filter">
+                        <img class="stretch" src="assets/img/filter/no-filter.png">
+                        <blockquote>
+                            &ldquo;Bonjour, je voudrais un Réflex Nikon avec une optique à moins de 700 €&rdquo;
+                        </blockquote>
+                        <p class="signature">
+                            Les gens qui achetent sur internet
+                        </p>
+
+                        <div class="fragment ignore-stretch classpasclass pasclass"></div>
+
+                        <aside class="notes">
+                            12 min
+                        </aside>
+                    </section>
+
+                    <section id="empty-filter">
+                        <img class="stretch" src="assets/img/filter/empty.png">
+                        <blockquote>
+                            &ldquo;Heu... j'aurais bien voulu une tablette Android 8" 64Go&rdquo;
+                        </blockquote>
+                        <p class="signature">
+                            Les gens qui cherchent à acheter sur internet
+                        </p>
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+
+                    <section id="good-filter">
+                        <h2>Recherche à facettes</h2>
+                        <div class="stretch">
+                            <img src="assets/img/filter/good-filter.png">
+                            <img class="fragment" src="assets/img/filter/good-filter-filtered.png">
+                        </div>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="elasticsearch-aggs">
+                        <h2>ElasticSearch</h2>
+                        <h5>Requête</h5>
+                        <pre><code class="json">{
+    "aggs": {
+        "animal": {
+            "terms": { "field": "animal" }
+        },
+        "couleur": {
+            "terms": { "field": "couleur" }
+        },
+        "taille": {
+            "terms": { "field": "taille" }
+        }
+    }
+}</code></pre>
+                        <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/1.x/search-aggregations.html">elasticsearch.org</a>
+                    </section>
+
+                    <section id="elasticsearch-response">
+                        <h2>ElasticSearch</h2>
+                        <h5>Réponse</h5>
+                        <pre><code class="json no-max-height">    "aggregations" : {
+        "animal" : {
+            "buckets" : [
+                { "key" : "chat", "doc_count" : 25 },
+                { "key" : "hérisson", "doc_count" : 24 }
+            ]
+        },
+        "couleur" : {
+            "buckets" : [
+                { "key" : "bleu", "doc_count" : 42 },
+                { "key" : "orange", "doc_count" : 23 },
+                { "key" : "vert", "doc_count" : 21 },
+            ]
+        },
+        "taille" : {
+            "buckets" : [
+                { "key" : "M", "doc_count" : 31 },
+                { "key" : "XL", "doc_count" : 24 },
+                { "key" : "S", "doc_count" : 17 },
+                { "key" : "XXL", "doc_count" : 8 },
+            ]
+        }
+    }</code></pre>
+                    </section>
+
+                    <section id="filter-conclusion">
+                        <h2>Ne proposez pas ce que vous n'avez pas</h2>
+
+                        <h3>
+                            Filtrez vos filtres (!) de recherche en AJAX !
+                        </h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="dates" data-state="presentation-title">
+                            <h1>Développeurs</h1>
+			<h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+			<h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+			<h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+			<h2 class="custom-fragment">Hérissons > chats</h2>
+			<h2 class="custom-fragment">Améliorez votre SEO</h2>
+			<h2 class="custom-fragment">Refondez votre site</h2>
+			<h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+			<h2 class="custom-fragment">Acceptez vos cookies</h2>
+                        <h2 class="custom-fragment">Croppez vos images</h2>
+			<h2 class="custom-fragment">Filtrez des résultats vide</h2>
+			<h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+                    </section>
+
+                    <section id="date-liberation">
+                        <h2>Actualité de la veille ?</h2>
+                        <div data-fade-to="assets/img/date/liberation-filter.png" class="stretch">
+                            <img src="assets/img/date/liberation.png" />
+                        </div>
+                        <blockquote>29 octobre 2014 à 13:11</blockquote>
+
+                        <div class="fragment classpasclass pasclass"></div>
+
+                        <aside class="notes">
+                            15 min
+                        </aside>
+                    </section>
+
+                    <section id="date-frandroid">
+                        <h2>Actualité de la veille !</h2>
+                        <div data-fade-to="assets/img/date/frandroid-filter.png" class="stretch">
+                            <img src="assets/img/date/frandroid.png" />
+                        </div>
+                        <blockquote>hier à 16:07</blockquote>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="date-mapado">
+                        <h2>En fonction de la recherche</h2>
+
+                        <div class="stretch">
+                            <img src="assets/img/date/mapado-blend-dates.png" />
+                            <img class="fragment" src="assets/img/date/mapado-blend-soon.png" />
+                            <img class="fragment" src="assets/img/date/mapado-blend-dimanche.png" />
+			</div>
+
+                        <div class="fragment classpasclass perfect"></div>
+                    </section>
+
+                    <section id="date-lib">
+                        <h2>Il y a une lib pour faire ça</h2>
+                        <h5>
+                            Python:
+                            <a href="http://babel.pocoo.org/">
+                                babel
+                            </a>
+                        </h5>
+                        <pre><code class="python">from datetime import timedelta
+from babel.dates import format_timedelta
+
+d = timedelta(days=2)
+format_timedelta(d)
+# Out: "2 jours"
+</code></pre>
+
+                        <h5>
+                            PHP:
+                            <a href="https://github.com/briannesbitt/Carbon">
+                              Carbon
+                            </a>
+                        </h5>
+                        <pre><code class="php">use Carbon\Carbon;
+$c = new Carbon('yesterday');
+echo $c->diffForHumans(Carbon::now());
+// Out: 1 day before
+</code></pre>
+
+                        <h5>
+                            Javascript/Node:
+                            <a href="http://momentjs.com/">
+                                Moment.js
+                            </a>
+                        </h5>
+                        <pre><code class="javascript">var moment = require('moment');
+moment("2012-06-20", "YYYY-MM-DD").fromNow();
+//Out: il y a 2 ans
+</code></pre>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section id="refonte" data-state="presentation-title">
+                            <h1>Développeurs</h1>
+			<h2 class="custom-fragment">Abonnez-vous a vos newsletters</h2>
+			<h2 class="custom-fragment">Téléchargez vos applications mobiles</h2>
+			<h2 class="custom-fragment">Videz vos paniers d'achat</h2>
+			<h2 class="custom-fragment">Hérissons > chats</h2>
+			<h2 class="custom-fragment">Améliorez votre SEO</h2>
+			<h2 class="custom-fragment">Améliorez votre UX simplement !</h2>
+			<h2 class="custom-fragment">Acceptez vos cookies</h2>
+                        <h2 class="custom-fragment">Croppez vos images</h2>
+			<h2 class="custom-fragment">Filtrez des résultats vide</h2>
+			<h2 class="custom-fragment">Trouvez les bonnes dates</h2>
+			<h2 class="custom-fragment">Refondez votre site</h2>
+                        </h1>
+                    </section>
+
+                    <section id="refonte-quote">
+                        <blockquote>
+                            &ldquo;On vient de changer de logiciel il n'y a pas longtemps,<br /> ça ne marche pas&rdquo;
+                        </blockquote>
+                        <div class="signature">
+                            <p>Mon banquier et mon assureur</p>
+                            <p class="small fragment">A chaque fois que je vais les voir</p>
+                        </div>
+
+                        <aside class="notes">
+                            18 min
+                        </aside>
+                    </section>
+
+                    <section id="refonte-teleportation">
+                        <h2>Téléportation</h2>
+                        <img src="assets/img/refonte/hockey.gif" class="stretch" />
+                    </section>
+
+                    <section id="refonte-clubic">
+                        <h2>Refonte de clubic.com en 2010</h2>
+                        <div class="stretch">
+                            <img src="assets/img/refonte/clubic-before.png" class="w45 vmiddle" />
+                            →
+                            <img src="assets/img/refonte/clubic-after.png" class="w45 vmiddle" />
+                        </div>
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+
+                    <section id="refonte-forum">
+                        <h2>Les moins contents râlent</h2>
+
+                        <div class="small">
+                            <blockquote>
+                                &ldquo;
+                                Tu as sacrifié l'ergonomie au profit du design. J'aurais préféré [...] l'inverse.<br>
+                                [...]Si quelqu'un connait un [autre site], j'apprécierais grandement qu'il me le fasse savoir.[...]
+                                &rdquo;
+                            </blockquote>
+                            <p class="signature">
+                                armycreator.net
+                            </p>
+
+                            <blockquote>
+                                &ldquo;
+                                [...] La nouvelle version du site et digne d'une page Skyblog d'un gosse de 15ans! [...]
+                                &rdquo;
+                            </blockquote>
+                            <p class="signature">
+                                jeuxvideo.fr
+                            </p>
+
+                            <blockquote>
+                                &ldquo;
+                                C'est juste moche, [...] banal et stérile[...]<br/>
+                                Adios originalité, bonjour rentabilité stérile [...]
+                                &rdquo;
+                            </blockquote>
+                            <p class="signature">
+                                jeuxvideo.com
+                            </p>
+
+                            <blockquote>
+                                &ldquo;
+                                Nouveau logo d'Airbnb : entre moqueries et accusations de plagiat[...]
+                                &rdquo;
+                            </blockquote>
+                            <p class="signature">
+                                airbnb.com
+                            </p>
+                        </div>
+                    </section>
+
+                    <!--
+                    <section id="refonte-airbnb">
+                        <h2>Airbnb</h2>
+                        <table class="stretch">
+                            <tr>
+                                <td class="txtcenter vmiddle">
+                            <img src="assets/img/refonte/airbnb-boobs-small.jpg" class="stretch" />
+                                <td class="txtcenter vmiddle">
+                            <img src="assets/img/refonte/bearbnb.png" class="stretch" />
+                            </tr>
+                        </table>
+                        <div class="fragment classpasclass pasclass"></div>
+                    </section>
+                    -->
+
+                    <section id="refonte-lbc">
+                        <h2>Refonte de leboncoin.fr en ????</h2>
+                        <div class="stretch">
+                            <img src="assets/img/refonte/lbc-before.png" class="w45 vmiddle" />
+                            →
+                            <img src="assets/img/refonte/lbc-after.png" class="w45 vmiddle" />
+                        </div>
+                        <div class="fragment classpasclass class"></div>
+                    </section>
+
+                    <section id="refonte-conclusion">
+                        <h2>
+                            Évitez les refontes globales
+                        </h2>
+                        <h3>
+                            Soyez agiles : Soyez en constante mini-refonte
+                        </h3>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section id="tip">
+                        <h3>
+                            &ldquo; Ne restez pas simple <strike>spectateur</strike> développeur &rdquo;
+                        </h3>
+                        <ul>
+                            <li> Utilisez votre produit
+                            <li> Corrigez ce qui vous dérange
+                        </ul>
+                    </section>
+
+                    <section id="questions">
+			<img src="assets/img/questions.png" class="stretch no-style" />
+                        <p class="signature">
+                            Julien Deniau 
+                        </p>
+                        <p class="signature">
+                            <span class="fa fa-twitter"></span> j_deniau
+                        </p>
+
+                        <div style="margin-top: 4em">
+                            Mapado recrute: <a mailto="julien@mapado.com">julien@mapado.com</a>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="assets/js/blendwebmix.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                width: 1220,
+                controls: true,
+                progress: false,
+                history: true,
+                center: true,
+                mouseWheel: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'socket.io/socket.io.js', async: true },
+                    { src: 'plugin/notes-server/client.js', async: true }
+                ]
+            });
+
+        </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-9402091-10', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

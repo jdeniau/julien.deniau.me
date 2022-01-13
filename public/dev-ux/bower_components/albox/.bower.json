@@ -1,0 +1,22 @@
+{
+  "name": "albox",
+  "version": "2.0.0",
+  "main": [
+    "./albox.js",
+    "./albox.css"
+  ],
+  "dependencies": {
+    "jquery": "~1.7.2"
+  },
+  "homepage": "https://github.com/acoquoin/Albox",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.0",
+    "commit": "068ef15384080e0929efa58c5233fd4d7883657f"
+  },
+  "_source": "git://github.com/acoquoin/Albox.git",
+  "_target": "~2.0.0",
+  "_originalSource": "albox",
+  "_direct": true
+}

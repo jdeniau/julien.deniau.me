@@ -1,0 +1,296 @@
+/**
+ * Mapado theme for reveal.js.
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@font-face {
+  font-family: 'Roboto slab';
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.eot");
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-light-webfont.svg#roboto_slablight") format("svg");
+  font-weight: lighter;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto slab';
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.eot");
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-regular-webfont.svg#roboto_slabregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto slab';
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.eot");
+  src: url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/roboto-slab/robotoslab-bold-webfont.svg#roboto_slabbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.eot");
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-light-webfont.svg#proxima_novalight") format("svg");
+  font-weight: lighter;
+  font-style: normal; }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.eot");
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-regular-webfont.svg#proxima_nova_rgregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.eot");
+  src: url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima_nova_rgbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Lato';
+  src: url("/dev-ux/assets/fonts/lato/lato-regular-webfont.eot");
+  src: url("/dev-ux/assets/fonts/lato/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/lato/lato-regular-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/lato/lato-regular-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/lato/lato-regular-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/lato/lato-regular-webfont.svg#proxima_nova_rgregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Lato';
+  src: url("/dev-ux/assets/fonts/lato/lato-italic-webfont.eot");
+  src: url("/dev-ux/assets/fonts/lato/lato-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/lato/lato-italic-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/lato/lato-italic-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/lato/lato-italic-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/lato/lato-italic-webfont.svg#proxima_nova_rgregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Lato';
+  src: url("/dev-ux/assets/fonts/lato/lato-bold-webfont.eot");
+  src: url("/dev-ux/assets/fonts/lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/dev-ux/assets/fonts/lato/lato-bold-webfont.woff2") format("woff2"), url("/dev-ux/assets/fonts/lato/lato-bold-webfont.woff") format("woff"), url("/dev-ux/assets/fonts/lato/lato-bold-webfont.ttf") format("truetype"), url("/dev-ux/assets/fonts/lato/lato-bold-webfont.svg#proxima_nova_rgregular") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+.reveal a:not(.image) {
+  line-height: 1.3em; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.txtright {
+  text-align: right; }
+
+.txtleft {
+  text-align: left; }
+
+.classpasclass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%; }
+  .classpasclass.coupled:first-child {
+    background-position: calc(50% - 250px) center; }
+  .classpasclass.coupled:last-child {
+    background-position: calc(50% + 250px) center; }
+  .classpasclass.perfect {
+    background-image: url(/dev-ux/assets/img/pad/perfect.png), radial-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 90%); }
+  .classpasclass.class {
+    background-image: url(/dev-ux/assets/img/pad/boss.png), radial-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 90%); }
+  .classpasclass.pasclass {
+    background-image: url(/dev-ux/assets/img/pad/nope.png), radial-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 90%); }
+  .classpasclass.vraimentpasclass {
+    background-image: url(/dev-ux/assets/img/pad/what.png), radial-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 90%); }
+
+.reveal table th, .reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #96c25f;
+  background-color: #96c25f; }
+
+.reveal {
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #424242; }
+
+::selection {
+  color: white;
+  background: #134674;
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #424242;
+  font-family: "Proxima Nova", sans-serif;
+  line-height: 0.9em;
+  letter-spacing: -0.08em;
+  text-transform: none;
+  text-shadow: none; }
+
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #79519f;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:not(.image):hover {
+  color: #ac90c6;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #52376c; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #424242;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #79519f;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #79519f; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #79519f; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #79519f; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #79519f; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #ac90c6; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #ac90c6; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #ac90c6; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #ac90c6; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #79519f;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: #79519f; }
+
+.reveal .vmiddle {
+  vertical-align: middle; }
+.reveal .w45 {
+  width: 45%; }
+.reveal ul {
+  list-style-type: square; }
+.reveal ul.no-style {
+  list-style-type: none;
+  margin-left: 0; }
+.reveal section img {
+  border: 0; }
+  .reveal section img.no-style {
+    background: none;
+    box-shadow: none; }
+.reveal blockquote {
+  width: 85%; }
+.reveal .controls div {
+  opacity: .3; }
+  .reveal .controls div.enabled {
+    opacity: .5; }
+.reveal .large {
+  font-size: 1.3em !important; }
+.reveal .small {
+  font-size: 0.8em !important; }
+.reveal .gray {
+  color: #444; }
+.reveal blockquote {
+  font-size: 1.2em;
+  margin-bottom: .6em; }
+.reveal pre code.no-max-height {
+  max-height: 100%; }
+.reveal .signature {
+  color: #555;
+  font-style: italic;
+  text-align: right;
+  padding-right: 5px; }
+.reveal .txtcenter {
+  text-align: center; }
+.reveal [data-fade-to] {
+  position: relative;
+  display: inline-block;
+  height: 100%; }
+  .reveal [data-fade-to] img {
+    display: block; }
+  .reveal [data-fade-to] img.fade {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto; }
+  .reveal [data-fade-to] img.fade-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+.reveal strike {
+  text-decoration: none;
+  background-image: linear-gradient(transparent 56%, black 56%, black 64%, transparent 64%); }
+.reveal .white {
+  color: #fff; }
+.reveal h1.white, .reveal h2.white, .reveal h3.white, .reveal h4.white {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8); }
+.reveal .top {
+  padding-bottom: 2em; }
+.reveal .bottom {
+  padding-top: 2em; }
