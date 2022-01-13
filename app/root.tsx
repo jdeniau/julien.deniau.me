@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -10,8 +9,17 @@ import {
 import type { MetaFunction } from 'remix';
 
 export const meta: MetaFunction = () => {
-  return { title: 'New Remix App' };
+  return { title: 'Julien Deniau' };
 };
+
+export function links() {
+  return [
+    {
+      rel: 'stylesheet',
+      href: '/theme/assets/css/main.css',
+    },
+  ];
+}
 
 export default function App() {
   return (
@@ -26,9 +34,16 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
 
-        <Link to="/posts">Posts</Link>
+        <script src="/theme/assets/js/jquery.min.js"></script>
+        <script src="/theme/assets/js/jquery.scrollex.min.js"></script>
+        <script src="/theme/assets/js/jquery.scrolly.min.js"></script>
+        <script src="/theme/assets/js/browser.min.js"></script>
+        <script src="/theme/assets/js/breakpoints.min.js"></script>
+        <script src="/theme/assets/js/util.js"></script>
+        <script src="/theme/assets/js/main.js"></script>
+
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
   );

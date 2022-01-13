@@ -7,6 +7,8 @@ import { marked } from 'marked';
 export type Post = {
   slug: string;
   title: string;
+  emphasis?: string;
+  icon?: string;
 };
 
 export type PostMarkdownAttributes = {
@@ -36,6 +38,8 @@ export async function getPosts() {
       return {
         slug: filename.replace(/\.md$/, ''),
         title: attributes.title,
+        icon: attributes.icon,
+        emphasis: attributes.emphasis,
       };
     })
   );
@@ -55,5 +59,7 @@ export async function getPost(slug: string) {
     slug,
     html,
     title: attributes.title,
+    icon: attributes.icon,
+    emphasis: attributes.emp,
   };
 }
