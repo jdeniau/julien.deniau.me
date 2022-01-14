@@ -9,6 +9,7 @@ import {
   useLocation,
 } from 'remix';
 import type { MetaFunction } from 'remix';
+import { useState } from 'react';
 
 export const meta: MetaFunction = () => {
   return { title: 'Julien Deniau' };
@@ -20,11 +21,21 @@ export function links() {
       rel: 'stylesheet',
       href: '/theme/assets/css/main.css',
     },
+
+    {
+      rel: 'stylesheet',
+      href: 'theme/assets/css/fontawesome-all.min.css',
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400',
+    },
   ];
 }
 
 export default function App() {
   const location = useLocation();
+  const [headerVisible, setHeaderVisible] = useState(false);
 
   const prefix = location.pathname === '/' ? '' : '/';
 
@@ -36,45 +47,99 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        {/* Sidebar */}
-        <section id="sidebar">
-          <div className="inner">
-            <nav>
-              <ul>
-                <li>
-                  <Link to={`${prefix}#intro`}>Welcome</Link>
-                </li>
-                <li>
-                  <Link to={`${prefix}#talks`}>My talks</Link>
-                </li>
-                <li>
-                  <Link to={`${prefix}#blog`}>Blog</Link>
-                </li>
-                <li>
-                  <Link to={`${prefix}#contact`}>Get in touch</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+      <body className={`is-preload ${headerVisible ? 'header-visible' : ''}`}>
+        <div id="titleBar">
+          <a
+            href="#header"
+            className="toggle"
+            onClick={(e) => {
+              e.preventDefault();
+              setHeaderVisible((prev) => !prev);
+            }}
+          />
+          <span className="title">
+            <Link to="/">Julien Deniau</Link>
+          </span>
+        </div>
+
+        <section id="header">
+          <header>
+            <span className="image avatar">
+              <img src="/images/avatar.jpg" alt="" />
+            </span>
+            <h1 id="logo">
+              <Link to="/">Julien Deniau</Link>
+            </h1>
+            <p>
+              I am a french web developer <br />
+              and sometimes, I talk about things.
+            </p>
+          </header>
+          <nav id="nav">
+            <ul>
+              <li>
+                <Link to={`${prefix}#intro`} className="active">
+                  Welcome
+                </Link>
+              </li>
+              <li>
+                <Link to={`${prefix}#talks`}>My talks</Link>
+              </li>
+              <li>
+                <Link to={`${prefix}#blog`}>Blog</Link>
+              </li>
+              <li>
+                <Link to={`${prefix}#contact`}>Get in touch</Link>
+              </li>
+            </ul>
+          </nav>
+          <footer>
+            <ul className="icons">
+              <li>
+                <a
+                  href="https://twitter.com/j_deniau"
+                  className="icon brands fa-twitter"
+                >
+                  <span className="label">Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/jdeniau"
+                  className="icon brands fa-github"
+                >
+                  <span className="label">Github</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/juliendeniau/"
+                  className="icon brands fa-linkedin"
+                >
+                  <span className="label">Linkedin</span>
+                </a>
+              </li>
+            </ul>
+          </footer>
         </section>
 
         {/* Wrapper */}
         <div id="wrapper">
-          <Outlet />
+          <div id="main">
+            <Outlet />
+          </div>
         </div>
 
         {/*  Footer */}
-        <footer id="footer" className="wrapper style1-alt">
-          <div className="inner">
-            <ul className="menu">
-              <li>&copy; Untitled. All rights reserved.</li>
+        <section id="footer">
+          <div className="container">
+            <ul className="copyright">
               <li>
                 Design: <a href="http://html5up.net">HTML5 UP</a>
               </li>
             </ul>
           </div>
-        </footer>
+        </section>
 
         <ScrollRestoration />
         <Scripts />

@@ -1,5 +1,7 @@
 .post {
+  padding: 50px;
   max-width: 800px;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 1280px) {
