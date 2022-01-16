@@ -5,13 +5,6 @@
 */
 
 (function ($) {
-  var $window = $(window),
-    $body = $('body'),
-    $header = $('#header'),
-    $titleBar = null,
-    $nav = $('#nav'),
-    $wrapper = $('#wrapper');
-
   // Breakpoints.
   breakpoints({
     xlarge: ['1281px', '1680px'],
@@ -22,114 +15,108 @@
   });
 
   // Play initial animations on page load.
-  $window.on('load', function () {
-    window.setTimeout(function () {
-      $body.removeClass('is-preload');
-    }, 100);
-  });
+  // $window.on('load', function () {
+  //   window.setTimeout(function () {
+  //     $body.removeClass('is-preload');
+  //   }, 100);
+  // });
+
+  document.body.classList.remove('is-preload');
 
   // Tweaks/fixes.
 
   // Polyfill: Object fit.
-  if (!browser.canUse('object-fit')) {
-    $('.image[data-position]').each(function () {
-      var $this = $(this),
-        $img = $this.children('img');
+  // if (!browser.canUse('object-fit')) {
+  //   $('.image[data-position]').each(function () {
+  //     var $this = $(this),
+  //       $img = $this.children('img');
 
-      // Apply img as background.
-      $this
-        .css('background-image', 'url("' + $img.attr('src') + '")')
-        .css('background-position', $this.data('position'))
-        .css('background-size', 'cover')
-        .css('background-repeat', 'no-repeat');
+  //     // Apply img as background.
+  //     $this
+  //       .css('background-image', 'url("' + $img.attr('src') + '")')
+  //       .css('background-position', $this.data('position'))
+  //       .css('background-size', 'cover')
+  //       .css('background-repeat', 'no-repeat');
 
-      // Hide img.
-      $img.css('opacity', '0');
-    });
-  }
+  //     // Hide img.
+  //     $img.css('opacity', '0');
+  //   });
+  // }
 
   // Header Panel.
 
   // Nav.
-  var $nav_a = $nav.find('a');
+  const sections = document.querySelectorAll('section[id]');
 
-  $nav_a
-    .addClass('scrolly')
-    .on('click', function () {
-      var $this = $(this);
+  let navLocked = false;
 
-      // External link? Bail.
-      if ($this.attr('href').charAt(0) != '#') return;
+  const options = {
+    // threshold: 0.5,
+    rootMargin: '0px 0px -200px 0px',
+  };
 
-      // Deactivate all links.
-      $nav_a.removeClass('active');
-
-      // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-      $this.addClass('active').addClass('active-locked');
-    })
-    .each(function () {
-      var $this = $(this),
-        id = $this.attr('href'),
-        $section = $(id);
-
-      // No section for this link? Bail.
-      if ($section.length < 1) return;
-
-      // Scrollex.
-      $section.scrollex({
-        mode: 'middle',
-        top: '5vh',
-        bottom: '5vh',
-        initialize: function () {
-          // Deactivate section.
-          $section.addClass('inactive');
-        },
-        enter: function () {
-          // Activate section.
-          $section.removeClass('inactive');
-
-          // No locked links? Deactivate all links and activate this section's one.
-          if ($nav_a.filter('.active-locked').length == 0) {
-            $nav_a.removeClass('active');
-            $this.addClass('active');
-          }
-
-          // Otherwise, if this section's link is the one that's locked, unlock it.
-          else if ($this.hasClass('active-locked'))
-            $this.removeClass('active-locked');
-        },
-      });
+  function deactivateAllLinks() {
+    document.querySelectorAll(`#nav a`).forEach((link) => {
+      link.classList.remove('active');
     });
+  }
 
-  // Title Bar.
-  $titleBar = $(
-    '<div id="titleBar">' +
-      '<a href="#header" class="toggle"></a>' +
-      '<span class="title">' +
-      $('#logo').html() +
-      '</span>' +
-      '</div>'
-  ).appendTo($body);
+  observer = new IntersectionObserver((entries) => {
+    if (navLocked) {
+      return;
+    }
 
-  // Panel.
-  $header.panel({
-    delay: 500,
-    hideOnClick: true,
-    hideOnSwipe: true,
-    resetScroll: true,
-    resetForms: true,
-    side: 'right',
-    target: $body,
-    visibleClass: 'header-visible',
+    entries.forEach((entry) => {
+      const id = entry.target.attributes.id.value;
+      const link = document.querySelector(`#nav a[href$="#${id}"]`);
+      if (!link) {
+        return;
+      }
+
+      if (entry.isIntersecting) {
+        // activate link when in viewport
+        deactivateAllLinks();
+        link.classList.add('active');
+      } else {
+        // change link when going out of viewport
+        link.classList.remove('active');
+        if (entry.boundingClientRect.y > 0) {
+          // scrolling up
+          link.parentElement.previousSibling
+            ?.querySelector('a')
+            .classList.add('active');
+        } else if (entry.boundingClientRect.y < 0) {
+          link.parentElement.nextSibling
+            ?.querySelector('a')
+            .classList.add('active');
+        }
+      }
+    });
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 
-  // Scrolly.
-  $('.scrolly').scrolly({
-    speed: 1000,
-    offset: function () {
-      if (breakpoints.active('<=medium')) return $titleBar.height();
+  document.querySelectorAll('#nav a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      const matches = id.match(/(.*)#(.*)$/);
+      if (matches && (id[0] === '#' || location.pathname === matches[1])) {
+        e.preventDefault();
 
-      return 0;
-    },
+        deactivateAllLinks();
+        link.classList.add('active');
+        navLocked = true;
+
+        const section = document.getElementById(matches[2]);
+        section.scrollIntoView({
+          behavior: 'smooth',
+          // block: 'start',
+        });
+      } else {
+        navLocked = false;
+      }
+    });
   });
-})(jQuery);
+})();

@@ -250,6 +250,11 @@ h6 a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+
 h2 {
   font-size: 2em;
   line-height: 1.5em;
@@ -2142,8 +2147,10 @@ input[type='radio'] + label:before {
 .image {
   border-radius: 5px;
   border: 0;
-  display: inline-block;
-  position: relative;
+}
+
+.image.main img {
+  max-width: 100%;
 }
 
 .image[data-position] img {
@@ -2151,12 +2158,6 @@ input[type='radio'] + label:before {
   -webkit-object-fit: cover;
   -ms-object-fit: cover;
   object-fit: cover;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .image[data-position='top left'] img {
@@ -2290,9 +2291,9 @@ input[type='radio'] + label:before {
 }
 
 .image.main {
-  display: block;
+  /* display: block;
   height: 20em;
-  border-radius: 0;
+  border-radius: 0; */
 }
 
 .image.main img {
@@ -2746,6 +2747,7 @@ input[type='button']:disabled,
   border-top: solid 3px #f4f4f4;
   margin-bottom: 2.25em;
   padding-top: 2.25em;
+  display: flex;
 }
 
 .features article:first-child {
@@ -2754,10 +2756,8 @@ input[type='button']:disabled,
 }
 
 .features article .image {
-  display: inline-block;
-  padding-right: 2.5em;
-  vertical-align: middle;
-  width: 48%;
+  margin-right: 2.5em;
+  flex: 1;
 }
 
 .features article .image img {
@@ -2766,9 +2766,7 @@ input[type='button']:disabled,
 }
 
 .features article .inner {
-  display: inline-block;
-  vertical-align: middle;
-  width: 50%;
+  flex: 2;
 }
 
 .features article .inner > :last-child {
@@ -3068,7 +3066,7 @@ input[type='button']:disabled,
   }
 
   .image.main {
-    height: 20em;
+    /* height: 20em; */
   }
 
   /* Header */
@@ -3236,6 +3234,10 @@ input[type='button']:disabled,
     display: none;
   }
 
+  h1 {
+    font-size: 2.25em;
+  }
+
   h2 {
     font-size: 1.75em;
   }
@@ -3259,7 +3261,7 @@ input[type='button']:disabled,
   }
 
   .image.main {
-    height: 12em;
+    /* height: 12em; */
   }
 
   /* Section/Article */
@@ -3277,17 +3279,15 @@ input[type='button']:disabled,
   }
 
   /* Features */
+  .features article {
+    flex-direction: column;
+  }
 
   .features article .image {
-    display: block;
     margin: 0 0 2.25em 0;
-    padding-right: 0;
-    width: 100%;
   }
 
   .features article .inner {
-    display: block;
-    width: 100%;
   }
 
   /* Header */

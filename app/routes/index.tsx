@@ -74,9 +74,9 @@ export default function Index() {
 
   return (
     <>
-      <section id="one">
-        <div className="image main" data-position="center">
-          <img src="/images/banner.jpg" alt="" />
+      <section id="intro">
+        <div className="image main">
+          <img src="/images/banner.jpg" alt="banner" />
         </div>
         <div className="container">
           <header className="major">
@@ -112,13 +112,16 @@ export default function Index() {
           <div className="features">
             {talks.map((talk: Talk, index) => (
               <article key={talk.url}>
-                <a href={talk.url ?? '#'} className="image">
+                <a
+                  href={talk.url ?? '#'}
+                  className="image"
+                  data-position="center center"
+                >
                   <img
                     src={
                       talk.image ?? `/theme/images/pic0${(index % 3) + 1}.jpg`
                     }
                     alt=""
-                    // data-position="center center"
                     // data-size="contain"
                     // data-repeat="no-repeat"
                   />
@@ -126,7 +129,7 @@ export default function Index() {
 
                 <div className="inner">
                   <h4>{talk.title}</h4>
-                  <p>{talk.description && <p>{talk.description}</p>}</p>
+                  {talk.description && <p>{talk.description}</p>}
                   <ul className="actions">
                     <li>
                       <a href={talk.url} className="button">

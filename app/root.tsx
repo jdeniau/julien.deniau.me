@@ -9,7 +9,7 @@ import {
   useLocation,
 } from 'remix';
 import type { MetaFunction } from 'remix';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const meta: MetaFunction = () => {
   return { title: 'Julien Deniau' };
@@ -33,9 +33,20 @@ export function links() {
   ];
 }
 
+function usePreload() {
+  const [preload, setPreload] = useState('is-preload');
+
+  useEffect(() => {
+    setPreload('');
+  }, []);
+
+  return preload;
+}
+
 export default function App() {
   const location = useLocation();
   const [headerVisible, setHeaderVisible] = useState(false);
+  const isPreload = usePreload();
 
   const prefix = location.pathname === '/' ? '' : '/';
 
@@ -47,7 +58,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className={`is-preload ${headerVisible ? 'header-visible' : ''}`}>
+      <body className={`${isPreload} ${headerVisible ? 'header-visible' : ''}`}>
         <div id="titleBar">
           <a
             href="#header"
@@ -144,12 +155,12 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
 
-        <script src="/theme/assets/js/jquery.min.js"></script>
+        {/* <script src="/theme/assets/js/jquery.min.js"></script>
         <script src="/theme/assets/js/jquery.scrollex.min.js"></script>
-        <script src="/theme/assets/js/jquery.scrolly.min.js"></script>
+        <script src="/theme/assets/js/jquery.scrolly.min.js"></script> */}
         <script src="/theme/assets/js/browser.min.js"></script>
         <script src="/theme/assets/js/breakpoints.min.js"></script>
-        <script src="/theme/assets/js/util.js"></script>
+        {/* <script src="/theme/assets/js/util.js"></script> */}
         <script src="/theme/assets/js/main.js"></script>
 
         {process.env.NODE_ENV === 'development' && <LiveReload />}
