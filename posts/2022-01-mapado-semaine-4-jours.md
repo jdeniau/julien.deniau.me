@@ -14,14 +14,14 @@ Petit récap : comment nous en sommes arrivés là…
 
 Nous sommes l'un des acteurs français de la billetterie depuis 2012. Notre équipe est un mélange de passionnés de culture et d'une équipe de passionnés de technique.
 
-## Premiers essais, balbutiement du télétravail
+## Premiers essais, balbutiements du télétravail
 
 Flashback en 2013, notre petite équipe (constituée alors de trois développeurs et d’une designeuse) travaillait sur [un agrégateur d'évènements local](https://lentreprise.lexpress.fr/diaporama/diapo-photo/creation-entreprise/start-in-lyon-14-start-up-qui-ont-de-l-avenir_1531785.html).
 En 2013, le télétravail, même partiel, n'était vraiment pas monnaie courante, mais à Mapado, nous nous efforçons de trouver un juste équilibre entre vie perso et vie pro, pour un mode de vie plus sain. Dans ce sens, on a acté à l'époque que tout le monde pouvait faire un jour de télétravail par semaine, quelle que soit la raison.
 
 > Oui mais les employés en télétravail, ils ne travaillent pas...
 
-Et bien en fait non ! C'est même globalement plutôt l'inverse. Les gens sont plus concentrés, moins dérangés et donc plus efficace. De par la philosophie des fondateurs – qui est ancrée de ce fait dans l'ADN de Mapado - c'est une preuve (parmi d'autres) de la confiance donnée aux salariés.
+Et bien en fait non ! C'est même globalement plutôt l'inverse. Les gens sont plus concentrés, moins dérangés et donc plus efficaces. De par la philosophie des fondateurs – qui est ancrée de ce fait dans l'ADN de Mapado - c'est une preuve (parmi d'autres) de la confiance donnée aux salariés.
 
 ## COVID, confinement...
 
@@ -46,4 +46,4 @@ Concrètement, au lieu de travailler sept heures par jour sur cinq jours, nous a
 
 Enfin, pour aller avec l'ambition du changement d'échelle et pour mettre un gros coup d'accélérateur, nous allons recruter au moins quatre développeurs et une personne dans les équipes de relation client.
 
-Si vous voulez nous rejoindre (nos bureaux sont à Lyon), vous pouvez aller voir [notre page recrutement](https://pro.mapado.com/join-the-team/) (les offres actualisés vont paraitre dans les prochains jours) ou bien me contacter directement sur twitter : [@j_deniau](https://twitter.com/j_deniau) ou par mail : julien@mapado.com
+Si vous voulez nous rejoindre (nos bureaux sont à Lyon), vous pouvez aller voir [notre page recrutement](https://pro.mapado.com/join-the-team/) (les offres actualisés vont paraître dans les prochains jours) ou bien me contacter directement sur twitter : [@j_deniau](https://twitter.com/j_deniau) ou par mail : julien@mapado.com
