@@ -17,6 +17,7 @@ export type PostMarkdownAttributes = {
 
 export type Post = PostMarkdownAttributes & {
   slug: string;
+  html: string;
 };
 
 function isValidPostAttributes(
@@ -80,16 +81,14 @@ export async function getPosts() {
   );
 }
 
-export async function getPost(slug: string) {
+export async function getPost(slug: string): Promise<Post> {
   const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
 
   const html = marked(body);
 
   return {
+    ...attributes,
     slug,
     html,
-    title: attributes.title,
-    icon: attributes.icon,
-    emphasis: attributes.emphasis,
   };
 }
