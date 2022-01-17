@@ -17,7 +17,7 @@ Nous sommes l'un des acteurs français de la billetterie depuis 2012. Notre équ
 ## Premiers essais, balbutiement du télétravail
 
 Flashback en 2013, notre petite équipe (constituée alors de trois développeurs et d’une designeuse) travaillait sur [un agrégateur d'évènements local](https://lentreprise.lexpress.fr/diaporama/diapo-photo/creation-entreprise/start-in-lyon-14-start-up-qui-ont-de-l-avenir_1531785.html).
-En 2013, le télétravail, même partiel, n'était vraiment pas monnaie courante, mais à Mapado, nous nous efforçons de trouver un juste équilibre entre vie perso et vie, pour un mode de vie plus sain. Dans ce sens, on a acté à l'époque que tout le monde pouvait faire un jour de télétravail par semaine, quelle que soit la raison.
+En 2013, le télétravail, même partiel, n'était vraiment pas monnaie courante, mais à Mapado, nous nous efforçons de trouver un juste équilibre entre vie perso et vie pro, pour un mode de vie plus sain. Dans ce sens, on a acté à l'époque que tout le monde pouvait faire un jour de télétravail par semaine, quelle que soit la raison.
 
 > Oui mais les employés en télétravail, ils ne travaillent pas...
 
