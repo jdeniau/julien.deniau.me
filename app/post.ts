@@ -7,17 +7,16 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
-export type Post = {
-  slug: string;
-  title: string;
-  emphasis?: string;
-  icon?: string;
-};
-
 export type PostMarkdownAttributes = {
   title: string;
   icon?: string;
   emphasis?: string;
+  image?: string;
+  imageCredit?: string;
+};
+
+export type Post = PostMarkdownAttributes & {
+  slug: string;
 };
 
 function isValidPostAttributes(

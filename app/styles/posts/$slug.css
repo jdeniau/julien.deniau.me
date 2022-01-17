@@ -3,3 +3,25 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
+.post__image {
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.post__image-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.3em 1em;
+  border-top-left-radius: 3px;
+}
+
+.post__image-credit > p {
+  margin: 0;
+}

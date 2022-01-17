@@ -2,6 +2,8 @@
 title: Mapado 2022.... vers l'infini et la semaine de quatre jours
 emphasis: Ça y est, Mapado franchi le pas […], nous passons à la semaine de quatre jours.
 icon: users
+image: /images/2022-01-mapado-semaine-4-jours.jpg
+imageCredit: © [Alexandru Zdrobău](https://unsplash.com/@alexandruz)
 ---
 
 Ça y est, Mapado franchi le pas. Après [que LDLC (entre autre) ait essuyé les platres](https://www.linkedin.com/pulse/de-lautre-cot%25C3%25A9-du-miroir-laurent-de-la-clergerie/), nous passons à la semaine de quatre jours.

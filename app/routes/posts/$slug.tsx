@@ -17,10 +17,28 @@ export default function PostSlug() {
   const post = useLoaderData();
 
   return (
-    <div className="post">
-      <h1>{post.title}</h1>
+    <>
+      {post.image && (
+        <div
+          className="post__image"
+          style={{
+            backgroundImage: 'url(/images/2022-01-mapado-semaine-4-jours.jpg)',
+          }}
+        >
+          {post.imageCredit && (
+            <span
+              className="post__image-credit"
+              dangerouslySetInnerHTML={{ __html: post.imageCredit }}
+            />
+          )}
+        </div>
+      )}
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+      <div className="post">
+        <h1>{post.title}</h1>
+
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
+    </>
   );
 }
