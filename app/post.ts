@@ -86,8 +86,11 @@ export async function getPost(slug: string): Promise<Post> {
 
   const html = marked(body);
 
+  const { imageCredit, ...attributesRest } = attributes;
+
   return {
-    ...attributes,
+    ...attributesRest,
+    imageCredit: imageCredit ? marked(imageCredit) : undefined,
     slug,
     html,
   };
