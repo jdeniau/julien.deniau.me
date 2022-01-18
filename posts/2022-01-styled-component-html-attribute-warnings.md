@@ -63,3 +63,5 @@ The only thing that you need is to change the prop `primary` to `$primary` (with
 - <Card isSubscription />
 + <Card $isSubscription />
  ```
+ 
+ I opened [a pull request](https://github.com/styled-components/styled-components-website/pull/832) to upgrade the FAQ on the subject.
