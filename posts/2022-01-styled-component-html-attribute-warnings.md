@@ -6,11 +6,9 @@ icon: code
 
 If you are using styled-component, you might have warning in the console:
 
-```
-Warning: Received `true` for a non-boolean attribute `primary`.
-
-If you want to write it to the DOM, pass a string instead: primary="true" or primary={value.toString()}.
-```
+> Warning: Received `true` for a non-boolean attribute `primary`.
+> 
+> If you want to write it to the DOM, pass a string instead: primary="true" or primary={value.toString()}.
 
 See the following example:
 
