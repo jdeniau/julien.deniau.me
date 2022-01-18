@@ -1,7 +1,7 @@
 ---
 title: Styled-component and HTML attribute warning
 emphasis: Simple fix to React HTML warning with styled-component
-icon:code
+icon: code
 ---
 
 If you are using styled-component, you might have warning in the console:
