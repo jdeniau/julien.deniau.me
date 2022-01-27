@@ -1,4 +1,5 @@
 ---
+date: 2022-01-17
 title: Mapado 2022.... vers l'infini et la semaine de quatre jours
 emphasis: Ça y est, Mapado franchi le pas […], nous passons à la semaine de quatre jours.
 icon: users

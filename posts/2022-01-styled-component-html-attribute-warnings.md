@@ -1,4 +1,5 @@
 ---
+date: 2022-01-18
 title: Styled-component and HTML attribute warning
 emphasis: Simple fix to React HTML warning with styled-component
 icon: code
@@ -7,7 +8,7 @@ icon: code
 If you are using styled-component, you might have warning in the console:
 
 > Warning: Received `true` for a non-boolean attribute `primary`.
-> 
+>
 > If you want to write it to the DOM, pass a string instead: primary="true" or primary={value.toString()}.
 
 See the following example:
@@ -26,7 +27,6 @@ It does work but adds a real complexity in your code.
 Since styled-component 5.1, you can in fact use the [transient props](https://styled-components.com/docs/api#transient-props) to fix this issue.
 
 The only thing that you need is to change the prop `primary` to `$primary` (with a leading `$`), then the prop will not be passed down to the child component:
-
 
 <iframe src="https://codesandbox.io/embed/styled-component-transient-props-example-fixed-lhk7m?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -57,9 +57,13 @@ The only thing that you need is to change the prop `primary` to `$primary` (with
 - ${(props) => (props.isSubscription ? $alertYellow : $defaultWhite)};
 + ${(props) => (props.$isSubscription ? $alertYellow : $defaultWhite)};
 
-  // …
+// …
+
 - <Card isSubscription />
-+ <Card $isSubscription />
- ```
- 
- I opened [a pull request](https://github.com/styled-components/styled-components-website/pull/832) to upgrade the FAQ on the subject.
+
+* <Card $isSubscription />
+
+```
+
+I opened [a pull request](https://github.com/styled-components/styled-components-website/pull/832) to upgrade the FAQ on the subject.
+```
