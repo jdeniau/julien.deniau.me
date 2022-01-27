@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
+.post__date {
+  font-size: 0.8em;
+  color: #999;
+}
+
 .post__image {
   height: 300px;
   overflow: hidden;
