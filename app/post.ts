@@ -4,7 +4,7 @@ import { marked } from 'marked';
 import { Octokit } from '@octokit/rest';
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: typeof process !== 'undefined' ? process.env.GITHUB_TOKEN : '', // weirdly needed by the RSS page. Probably an issue with remix
 });
 
 export type Post = {
