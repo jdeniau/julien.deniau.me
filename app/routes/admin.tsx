@@ -1,6 +1,6 @@
 import { Outlet, Link, useLoaderData } from 'remix';
 import { getPosts } from '~/post';
-import type { Post } from '~/post';
+import type { PostWithHTML } from '~/post';
 import adminStyles from '~/styles/admin.css';
 
 export const loader = () => {
@@ -12,7 +12,7 @@ export const links = () => {
 };
 
 export default function Admin() {
-  const posts = useLoaderData<Post[]>();
+  const posts = useLoaderData<PostWithHTML[]>();
   return (
     <div className="admin">
       <nav>

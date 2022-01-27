@@ -1,7 +1,7 @@
 import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import invariant from 'tiny-invariant';
-import { getPost, Post } from '~/post';
+import { getPost, PostWithHTML } from '~/post';
 import styles from '~/styles/posts/$slug.css';
 import hljs from 'highlight.js';
 import { useEffect } from 'react';
@@ -25,7 +25,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function PostSlug() {
-  const post = useLoaderData<Post>();
+  const post = useLoaderData<PostWithHTML>();
 
   useEffect(() => {
     hljs.highlightAll();

@@ -57,6 +57,13 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS Julien Deniau"
+          href="/posts.rss"
+        />
       </head>
       <body className={`${isPreload} ${headerVisible ? 'header-visible' : ''}`}>
         <div id="titleBar">

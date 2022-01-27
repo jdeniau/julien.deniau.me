@@ -7,27 +7,43 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
-export type PostMarkdownAttributes = {
+export type Post = {
   title: string;
+  slug: string;
+  date: Date;
   icon?: string;
   emphasis?: string;
   image?: string;
   imageCredit?: string;
 };
 
-export type Post = PostMarkdownAttributes & {
-  slug: string;
+export type PostWithHTML = Post & {
   html: string;
 };
 
-function isValidPostAttributes(
-  attributes: any
-): attributes is PostMarkdownAttributes {
-  return attributes?.title;
+function isValidPostAttributes(attributes: any): attributes is Post {
+  if (!attributes?.title) {
+    return false;
+  }
+
+  if (!attributes?.date) {
+    return false;
+  }
+
+  if (!(attributes.date instanceof Date)) {
+    if (!attributes.date.match(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/)) {
+      // wrong date pattern
+      return false;
+    } else {
+      attributes.date = new Date(attributes.date);
+    }
+  }
+
+  return true;
 }
 
 async function getPostContent(path: string): Promise<{
-  attributes: PostMarkdownAttributes;
+  attributes: Post;
   body: string;
 }> {
   const fileResponse = await octokit.rest.repos.getContent({
@@ -68,30 +84,34 @@ export async function getPosts() {
   );
 
   return Promise.all(
-    dirResponse.data.map(async (file) => {
-      const { attributes, body } = await getPostContent(file.path);
+    dirResponse.data.map(async (file): Promise<Post> => {
+      const { attributes } = await getPostContent(file.path);
 
       return {
+        ...convertAttributes(attributes),
         slug: file.name.replace(/\.md$/, ''),
-        title: attributes.title,
-        icon: attributes.icon,
-        emphasis: attributes.emphasis,
       };
     })
   );
 }
 
-export async function getPost(slug: string): Promise<Post> {
+export async function getPost(slug: string): Promise<PostWithHTML> {
   const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
 
   const html = marked(body);
 
+  return {
+    ...convertAttributes(attributes),
+    slug,
+    html,
+  };
+}
+
+const convertAttributes = (attributes: any): Omit<Post, 'slug'> => {
   const { imageCredit, ...attributesRest } = attributes;
 
   return {
     ...attributesRest,
     imageCredit: imageCredit ? marked(imageCredit) : undefined,
-    slug,
-    html,
   };
-}
+};
