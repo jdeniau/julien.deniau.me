@@ -1,5 +1,6 @@
-import { json, LoaderFunction } from 'remix';
-import { getPosts, Post } from '~/post';
+import { LoaderFunction } from 'remix';
+import { getPosts } from '~/post';
+import type { Post } from '~/post';
 
 function createRssItem(post: Post): string {
   const link = `https://julien.deniau.me/posts/${post.slug}`;

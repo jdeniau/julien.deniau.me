@@ -1,7 +1,8 @@
 import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import invariant from 'tiny-invariant';
-import { getPost, PostWithHTML } from '~/post';
+import { getPost } from '~/post';
+import type { PostWithHTML } from '~/post';
 import styles from '~/styles/posts/$slug.css';
 import hljs from 'highlight.js';
 import { useEffect } from 'react';
