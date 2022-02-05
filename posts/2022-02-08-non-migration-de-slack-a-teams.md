@@ -21,6 +21,39 @@ Du coup dans l'objectif de mutialiser les outils et de réduire les coûts, on a
 
 Voici le résultat de l'expérimentation...
 
-## des connexions compliquées
+## Un début difficile
 
-##
+"L'expérience" Teams commence à la connexion. Vraiment pas simple de se connecter 
+
+(Windows 11, mails d'invitation non reçu, plantages, pro vs perso) 
+
+### Premiers contact
+
+Lenteur, UX étrange, design dépassé 
+
+
+### Un petit tour sur Twitter
+
+Après quelques jours, j'ai donc lancé un appel à l'aide sur Twitter pour essayer de voir les bons côtés de Teams. 
+https://twitter.com/j_deniau/status/1485532656402059264
+
+
+Mais globalement, ma time-line est plutôt pro-Slack ! 
+
+## on approfondie
+
+(Github qui pop, intégration onglet trello ou même les devs n'arrivent pas à comprendre comment se connecter, bugs sur les images, lenteur vidéo, thread qui se mélangent, notif gras qui ne disparaît pas, "afficher plus")
+Cerise sur le gâteau : pas d'emoji customs, reactions limités a 6, emoji au clavier quue d'un côté 
+
+Le pire c'est qu'on commencent à voir qu'on râte des messages
+
+## Des côtés positifs
+
+(vidéo au top, intégrations onglets intéressantes, réactions dans le flux d'activité)
+
+## Le verdict
+
+1 seule personne est pleinement satisfaite, sinon tout le monde est negatif
+
+> Teams, c'est le meilleur outil pour que les gens ne teletravaillent pas.
+
