@@ -2,6 +2,7 @@
 date​: ​2022-02-08
 ​title​: ​Pourquoi nous n'avons pas migré de Slack vers Teams
 ​emphasis​: Après deux semaines de test, voilà le retour d'expérience de notre migration de Slack vers Microsoft Teams
+icon: users
 image​: ​
 imageCredit​: ​
  ​---
