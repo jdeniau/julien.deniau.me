@@ -7,6 +7,9 @@ const octokit = new Octokit({
   auth: typeof process !== 'undefined' ? process.env.GITHUB_TOKEN : '', // weirdly needed by the RSS page. Probably an issue with remix
 });
 
+const BRANCHNAME =
+  process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main';
+
 export type Post = {
   title: string;
   slug: string;
@@ -50,7 +53,7 @@ async function getPostContent(path: string): Promise<{
     owner: 'jdeniau',
     repo: 'julien.deniau.me',
     path: path,
-    ref: 'main',
+    ref: BRANCHNAME,
     headers: {
       accept: 'application/vnd.github.v3.raw',
     },
@@ -75,7 +78,7 @@ export async function getPosts() {
     owner: 'jdeniau',
     repo: 'julien.deniau.me',
     path: 'posts',
-    ref: 'main',
+    ref: BRANCHNAME,
   });
 
   invariant(
