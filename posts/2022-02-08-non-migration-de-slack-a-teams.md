@@ -60,7 +60,7 @@ Mais le pire du pire : c'est lent, mais LENT mais d'une lenteur ! Chaque clic me
 
 Après quelques jours, j'ai donc lancé un appel à l'aide sur Twitter pour essayer de voir les bons côtés de Teams.
 
-https://twitter.com/j_deniau/status/1485532656402059264
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="fr" dir="ltr">Salut Twitter ! On est en train de voir si on migre de <a href="https://twitter.com/SlackHQ?ref_src=twsrc%5Etfw">@SlackHQ</a> à <a href="https://twitter.com/MicrosoftTeams?ref_src=twsrc%5Etfw">@MicrosoftTeams</a> chez Mapado.<br><br>Est-ce que vous avez un retour pertinent sur Teams ?<br>Pour l&#39;instant le petit test qu&#39;on a fait : Teams c&#39;est 🤮en terme d&#39;expérience utilisateur, mais j&#39;aimerai dépasser mon a priori.</p>&mdash; Julien Deniau (@j_deniau) <a href="https://twitter.com/j_deniau/status/1485532656402059264?ref_src=twsrc%5Etfw">January 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Mais globalement, ma time-line est plutôt pro-Slack !
 
