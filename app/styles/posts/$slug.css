@@ -36,3 +36,7 @@
 .post__image-credit > p {
   margin: 0;
 }
+
+.post img {
+  max-width: 100%;
+}
