@@ -2,10 +2,16 @@ import parseFrontMatter from 'front-matter';
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
 import { Octokit } from '@octokit/rest';
+import { embedMarkdownWithTweeterHtml } from './twitter';
 
 const octokit = new Octokit({
   auth: typeof process !== 'undefined' ? process.env.GITHUB_TOKEN : '', // weirdly needed by the RSS page. Probably an issue with remix
 });
+
+const BRANCHNAME =
+  typeof process !== 'undefined'
+    ? process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main'
+    : 'main';
 
 export type Post = {
   title: string;
@@ -50,7 +56,7 @@ async function getPostContent(path: string): Promise<{
     owner: 'jdeniau',
     repo: 'julien.deniau.me',
     path: path,
-    ref: 'main',
+    ref: BRANCHNAME,
     headers: {
       accept: 'application/vnd.github.v3.raw',
     },
@@ -75,7 +81,7 @@ export async function getPosts() {
     owner: 'jdeniau',
     repo: 'julien.deniau.me',
     path: 'posts',
-    ref: 'main',
+    ref: BRANCHNAME,
   });
 
   invariant(
@@ -98,7 +104,7 @@ export async function getPosts() {
 export async function getPost(slug: string): Promise<PostWithHTML> {
   const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
 
-  const html = marked(body);
+  const html = marked(await embedMarkdownWithTweeterHtml(body));
 
   return {
     ...convertAttributes(attributes),
