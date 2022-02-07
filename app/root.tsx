@@ -51,7 +51,13 @@ export default function App() {
   const prefix = location.pathname === '/' ? '' : '/';
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      // @ts-expect-error -- ignore xmlns errors
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:article="http://ogp.me/ns/article#"
+      xmlns:profile="http://ogp.me/ns/profile#"
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
