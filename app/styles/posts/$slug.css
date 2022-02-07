@@ -29,6 +29,7 @@
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
+  color: #acacac;
   padding: 0.3em 1em;
   border-top-left-radius: 3px;
 }

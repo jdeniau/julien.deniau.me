@@ -4,7 +4,6 @@ title: Pourquoi nous n'avons pas migré de Slack vers Teams
 emphasis: Après deux semaines de test, voilà le retour d'expérience de notre migration de Slack vers Microsoft Teams
 icon: users
 image: /images/slack-to-teams/slack-to-teams.png
-imageCredit: Julien Deniau
 ---
 
 On a un soucis avec Slack : les appels vidéos ne sont globalement pas terrible.
