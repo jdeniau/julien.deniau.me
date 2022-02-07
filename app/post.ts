@@ -8,7 +8,9 @@ const octokit = new Octokit({
 });
 
 const BRANCHNAME =
-  process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main';
+  typeof process !== 'undefined'
+    ? process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main'
+    : 'main';
 
 export type Post = {
   title: string;
