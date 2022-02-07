@@ -79,9 +79,9 @@ Encore des bugs de contenu qui ne s'affiche pas :
 
 Lorsque l'on a une notification github, on clique pour voir le texte, mais celui-ci se fait cacher par une "popup" d'actions
 
-<video>
-  <src type="video/mp4" src="/images/slack-to-teams/notifs-github.mp4" />
-  <src type="video/webm" src="/images/slack-to-teams/notifs-github.webm" />
+<video controls width="100%" preload="metadata">
+  <source type="video/mp4" src="/images/slack-to-teams/notifs-github.mp4">
+  <source type="video/webm" src="/images/slack-to-teams/notifs-github.webm">
 </video>
 
 Teams permet d'afficher des onglets avec des outils, on peut donc par exemple intégrer trello par exemple. C'est sympa… pour celui qui l'active. Pour les autres, c'est une galère sans nom pour comprendre ce qu'il faut faire pour avoir l'onglet : il faut en fait aller dans à un autre endroit pour se connecter à trello, en ensuite cela fonctionne.
