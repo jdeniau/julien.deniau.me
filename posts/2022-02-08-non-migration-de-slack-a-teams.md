@@ -33,19 +33,19 @@ Donc après avoir téléchargé, voila l'épreuve laborieuse de la connexion : a
 
 Ensuite, une fois le logiciel lancé, arrivent les premiers bugs
 
-![bug-1](/slack-to-teams/bug-1.png)
+![bug-1](/images/slack-to-teams/bug-1.png)
 
 Les emojis de réaction ne s'affichent simplement pas
 
-![no-emoji](/slack-to-teams/no-emoji.png)
+![no-emoji](/images/slack-to-teams/no-emoji.png)
 
 Ou encore quand on essaie de faire un sondage : j'obtiens une page blanche
 
-![form-empty](/slack-to-teams/form-empty.png)
+![form-empty](/images/slack-to-teams/form-empty.png)
 
 En essayer de créer un canal, : deux erreurs serveur, la troisième fois ça passe
 
-![nouveau-channel.png](/slack-to-teams/nouveau-channel.png)
+![nouveau-channel.png](/images/slack-to-teams/nouveau-channel.png)
 
 ### Premiers contact
 
@@ -75,13 +75,13 @@ Avec Teams, c'est globalement de pire en pire avec le temps.
 
 Encore des bugs de contenu qui ne s'affiche pas :
 
-![bug-2.png](/slack-to-teams/bug-2.png)
+![bug-2.png](/images/slack-to-teams/bug-2.png)
 
 ### Integrations d'applis
 
 Lorsque l'on a une notification github, on clique pour voir le texte, mais celui-ci se fait cacher par une "popup" d'actions
 
-![notifs-github.mp4](/slack-to-teams/notifs-github.mp4)
+![notifs-github.mp4](/images/slack-to-teams/notifs-github.mp4)
 
 Teams permet d'afficher des onglets avec des outils, on peut donc par exemple intégrer. C'est sympa… pour celui qui l'active. Pour les autres, c'est une galère sans nom pour comprendre ce qu'il faut faire pour avoir l'onglet : il faut en fait aller dans à un autre endroit pour se connecter à trello, en ensuite cela fonctionne.
 
@@ -92,11 +92,11 @@ Cela se rapproche un peu d'un mur Facebook ou ce genre de chose. En soit cela fo
 
 En plus de ça, une fois que l'on quitte l'écran, le thread se ferme, et donc pour revoir les messages, il faut ré-ouvrir le thread en cliquant sur "XX réponses", puis si il y a trop de réponse, re-cliquer sur "Voir les réponses précédentes"
 
-![clic-clic-clic.png](/slack-to-teams/clic-clic-clic.png)
+![clic-clic-clic.png](/images/slack-to-teams/clic-clic-clic.png)
 
 Idem quand un message est trop long, il faut encore cliquer sur "Afficher plus" pour voir le contenu complêt du message
 
-![clic-more.png](/slack-to-teams/clic-more.png)
+![clic-more.png](/images/slack-to-teams/clic-more.png)
 
 Là ou l'on dirait que Teams est un logiciel fait de brics et de brocs, c'est quand ont essaie de taper un emoji au clavier : quand on tape dans un channel, on peut ouvrir une parenthèse et commencer à taper un emoji. Sauf que cela ne fonctionne pas dans un "chat" : deux endroits pour taper du texte = deux expériences de saise différentes !
 
@@ -106,11 +106,11 @@ Un truc assez incroyable aussi pour une application de messagerie : le fait de t
 
 Déjà, dès que l'on tape un message trop long, le "viewport" sort de l'écran par le bas (il devrait y avoir les bouton de formattage du texte en dessous de la boite de saisie).
 
-![no-scroll.png](/slack-to-teams/no-scroll.png)
+![no-scroll.png](/images/slack-to-teams/no-scroll.png)
 
 Ou encore parfois en cliquant sur une notif ou bien dans un chat, le scroll se "bloque" au milieu et on se retrouve avec des messages déjà vu.
 
-![no-scroll-2.png](/slack-to-teams/no-scroll-2.png)
+![no-scroll-2.png](/images/slack-to-teams/no-scroll-2.png)
 
 Enfin, lorsque l'on est dans un channel, et que l'on reçoit un message dans ce channel, le nom du channel passe en gras pour noter que l'on a un nouveau message non lu… sauf que l'on est dans le channel et que l'on lit le message. On peut même y répondre, et le marqueur gras reste.
 On est donc obligé de sortir et revenir pour faire disparaitre le marqueur.
@@ -125,11 +125,11 @@ On se retrouve au final avec des messages que l'on ne lit pas, soit parce que de
 
 Un petit point assez sympa de Slack, c'est que l'on peut voir très facilement qui de son équipe est présent
 
-![presence-slack.png](/slack-to-teams/presence-slack.png)
+![presence-slack.png](/images/slack-to-teams/presence-slack.png)
 
 Alors que sur Teams toutes les conversations sont mélangées, impossible de trier son équipe
 
-![presence-teams.png](/slack-to-teams/presence-teams.png)
+![presence-teams.png](/images/slack-to-teams/presence-teams.png)
 
 On peut trouver l'information dans le channel de son équipe, mais là encore, cela demande plusieurs clics pour une info importante au quotidien.
 
@@ -158,20 +158,20 @@ Le côté webinaire intégré semble intéressant (c'était l'une des contrainte
 
 Le fait d'avoir deux niveaux de canaux : le premier niveau par équipe, le deuxième pour le sujet est vraiment bien, là ou sur Slack tout est en vrac.
 
-![canaux.png](/slack-to-teams/canaux.png)
+![canaux.png](/images/slack-to-teams/canaux.png)
 
 ## Le verdict
 
 Après deux semaines de test, le verdict est sans appel :
 
-![verdict.png](/slack-to-teams/verdict.png)
+![verdict.png](/images/slack-to-teams/verdict.png)
 
 Sur dix votants, une seule personne est pleinement satisfaite, sinon tout le monde est pour le retour à Slack.
 
 Du coup on est retourné sur Slack. On a quand même gardé notre compte Teams car au final un profil Zoom coute aussi cher que 15 utilisateurs Teams (pour la formation et les wébinaires).
 On a aussi activé l'intégration des vidéos Teams dans Slack pour bénéficier du vrai point fort de Teams : la visio.
 
-![teams-in-slack.png](/slack-to-teams/teams-in-slack.png)
+![teams-in-slack.png](/images/slack-to-teams/teams-in-slack.png)
 
 Pour résumer en une seule phrase, je ne peux que citer que [Chris](https://twitter.com/chrismeiller) :
 
