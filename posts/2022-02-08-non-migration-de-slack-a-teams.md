@@ -23,34 +23,156 @@ Voici le résultat de l'expérimentation...
 
 ## Un début difficile
 
-"L'expérience" Teams commence à la connexion. Vraiment pas simple de se connecter
+"L'expérience" Teams commence à la connexion. Vraiment pas simple de se connecter :
 
-(Windows 11, mails d'invitation non reçu, plantages, pro vs perso)
+En premier lieu, visiblement tout le monde n'a pas reçu les mails d'invitation générés par les administrateurs… Mettons ça sur le compte des mails plutôt que sur Teams en lui-même.
+
+Continuons par là ou Teams devrait être au top : l'intégration sous Windows. Avec Windows 11, Teams est intégré en natif dans Windows : Super ! Sauf qu'il y a deux version de Teams : une "perso" (celle de windows 11) et une "pro". Il faut donc téléchargé un logiciel supplémentaire qui semble être déjà installé sur son poste… allez faire comprendre ça aux non-techniques 😵‍💫 !
+
+Donc après avoir téléchargé, voila l'épreuve laborieuse de la connexion : avec un compte microsoft personnel (hotmail, xbox, etc.) Teams essaie sans cesse de se connecter avec son compte perso, du coup il faut se déconnecter partout pour pouvoir utiliser son compte Teams. Ensuite il faut bien ne pas se tromper sur le fait que c'est un compte pro, sinon on se retrouve seul dans un logiciel de messagerie perso.
+
+Ensuite, une fois le logiciel lancé, arrivent les premiers bugs
+
+![bug-1](/slack-to-teams/bug-1.png)
+
+Les emojis de réaction ne s'affichent simplement pas
+
+![no-emoji](/slack-to-teams/no-emoji.png)
+
+Ou encore quand on essaie de faire un sondage : j'obtiens une page blanche
+
+![form-empty](/slack-to-teams/form-empty.png)
+
+En essayer de créer un canal, : deux erreurs serveur, la troisième fois ça passe
+
+![nouveau-channel.png](/slack-to-teams/nouveau-channel.png)
 
 ### Premiers contact
 
 Lenteur, UX étrange, design dépassé
 
+Passons ces premiers bugs étranges, on commence a se familiariser vers l'interface.
+
+Globalement, le design est dépassé, on a l'impression de faire un pas en arrière.
+
+En plus de ça l'UX est "étrange"
+
+Mais le pire du pire : c'est lent, mais LENT mais d'une lenteur ! Chaque clic met plusieurs centaines de milisecondes a réagir et a aller là où l'on veut. C'est suffisament lent pour que l'on ait l'impression que l'application ait planté (surtout au vu des plantage précédents).
+
 ### Un petit tour sur Twitter
 
 Après quelques jours, j'ai donc lancé un appel à l'aide sur Twitter pour essayer de voir les bons côtés de Teams.
+
 https://twitter.com/j_deniau/status/1485532656402059264
 
 Mais globalement, ma time-line est plutôt pro-Slack !
 
-## on approfondie
+## On approfondit
 
-(Github qui pop, intégration onglet trello ou même les devs n'arrivent pas à comprendre comment se connecter, bugs sur les images, lenteur vidéo, thread qui se mélangent, notif gras qui ne disparaît pas, "afficher plus")
-Cerise sur le gâteau : pas d'emoji customs, reactions limités a 6, emoji au clavier quue d'un côté
+En général, quand on change d'outil, c'est assez dûr au début, mais ça s'améliore avec la suite : on commence a prendre en main le logiciel et ça va mieux.
 
-Le pire c'est qu'on commencent à voir qu'on râte des messages
+Avec Teams, c'est globalement de pire en pire avec le temps.
+
+Encore des bugs de contenu qui ne s'affiche pas :
+
+![bug-2.png](/slack-to-teams/bug-2.png)
+
+### Integrations d'applis
+
+Lorsque l'on a une notification github, on clique pour voir le texte, mais celui-ci se fait cacher par une "popup" d'actions
+
+![notifs-github.mp4](/slack-to-teams/notifs-github.mp4)
+
+Teams permet d'afficher des onglets avec des outils, on peut donc par exemple intégrer. C'est sympa… pour celui qui l'active. Pour les autres, c'est une galère sans nom pour comprendre ce qu'il faut faire pour avoir l'onglet : il faut en fait aller dans à un autre endroit pour se connecter à trello, en ensuite cela fonctionne.
+
+### Des clics…
+
+Dans Teams, les conversations d'équipes sont toutes des threads. Du coup dès que l'on doit mettre un message, on crée un nouveau thread, et les autres peuvent répondre à ce thread.
+Cela se rapproche un peu d'un mur Facebook ou ce genre de chose. En soit cela fonctionne, mais on perd un peu le côté "discussion" où l'on peut envoyer des messages "rapide" à sa team, on est sans cesse obligé de clique pour créer un thread ou bien répondre à un thread.
+
+En plus de ça, une fois que l'on quitte l'écran, le thread se ferme, et donc pour revoir les messages, il faut ré-ouvrir le thread en cliquant sur "XX réponses", puis si il y a trop de réponse, re-cliquer sur "Voir les réponses précédentes"
+
+![clic-clic-clic.png](/slack-to-teams/clic-clic-clic.png)
+
+Idem quand un message est trop long, il faut encore cliquer sur "Afficher plus" pour voir le contenu complêt du message
+
+![clic-more.png](/slack-to-teams/clic-more.png)
+
+Là ou l'on dirait que Teams est un logiciel fait de brics et de brocs, c'est quand ont essaie de taper un emoji au clavier : quand on tape dans un channel, on peut ouvrir une parenthèse et commencer à taper un emoji. Sauf que cela ne fonctionne pas dans un "chat" : deux endroits pour taper du texte = deux expériences de saise différentes !
+
+### … et du scroll
+
+Un truc assez incroyable aussi pour une application de messagerie : le fait de taper des messages n'est pas optimal.
+
+Déjà, dès que l'on tape un message trop long, le "viewport" sort de l'écran par le bas (il devrait y avoir les bouton de formattage du texte en dessous de la boite de saisie).
+
+![no-scroll.png](/slack-to-teams/no-scroll.png)
+
+Ou encore parfois en cliquant sur une notif ou bien dans un chat, le scroll se "bloque" au milieu et on se retrouve avec des messages déjà vu.
+
+![no-scroll-2.png](/slack-to-teams/no-scroll-2.png)
+
+Enfin, lorsque l'on est dans un channel, et que l'on reçoit un message dans ce channel, le nom du channel passe en gras pour noter que l'on a un nouveau message non lu… sauf que l'on est dans le channel et que l'on lit le message. On peut même y répondre, et le marqueur gras reste.
+On est donc obligé de sortir et revenir pour faire disparaitre le marqueur.
+
+### Les threads
+
+L'onglet Conversations (les channels de groupe) sont assez perturbant aussi sur le fait qu'un vieux thread auquel on répond va passer tout en bas de l'écran, même si l'on n'est pas du tout concerné par ce thread.
+
+On se retrouve au final avec des messages que l'on ne lit pas, soit parce que des vieux thread apparaissent en dessous, soit parce que ce sont des réponses à des threads qui se trouvent fermés et que l'on a pas envi de cliquer pour ouvrir et chercher parmis 50 messages où est-ce que l'on s'en était arrêté.
+
+### Qui est là ?
+
+Un petit point assez sympa de Slack, c'est que l'on peut voir très facilement qui de son équipe est présent
+
+![presence-slack.png](/slack-to-teams/presence-slack.png)
+
+Alors que sur Teams toutes les conversations sont mélangées, impossible de trier son équipe
+
+![presence-teams.png](/slack-to-teams/presence-teams.png)
+
+On peut trouver l'information dans le channel de son équipe, mais là encore, cela demande plusieurs clics pour une info importante au quotidien.
+
+Dans la même logique, ce n'est pas simple de savoir si une personne est disponible pour un appel ou non.
 
 ## Des côtés positifs
 
-(vidéo au top, intégrations onglets intéressantes, réactions dans le flux d'activité)
+Il y a (quand même) des côtés hyper positifs à Teams :
+
+Les appels en visio sont vraiment bien fait :
+
+- vue "grille" des utilisateurs pour voir les réactions des gens,
+- prise de main à distance,
+- possibilité de flouter son fond d'écran,
+- possibilité d'enregistrer les vidéos,
+- les notes de réunions (quand cela ne plante pas, CQFD.),
+- la conversation de la réunion qui se trouve dans la visio et dans le channel.
+
+là ou Slack est vraiment très en retard sur le sujet.
+
+L'intégrations d'onglets est intéressante, dans notre cas pouvoir inclure un tableau trello ou bien les maquettes figma directement dans le channel dédié à un "focus produit".
+
+Le fait d'avoir les réactions en émoji dans le flux "activité", là ou avec Slack on ne sait pas vraiment qui réagit à ses messages.
+
+Le côté webinaire intégré semble intéressant (c'était l'une des contraintes qui nous a fait nous poser la question du changement), mais on ne l'a pas encore testé.
+
+Le fait d'avoir deux niveaux de canaux : le premier niveau par équipe, le deuxième pour le sujet est vraiment bien, là ou sur Slack tout est en vrac.
+
+![canaux.png](/slack-to-teams/canaux.png)
 
 ## Le verdict
 
-1 seule personne est pleinement satisfaite, sinon tout le monde est negatif
+Après deux semaines de test, le verdict est sans appel :
+
+![verdict.png](/slack-to-teams/verdict.png)
+
+Sur dix votants, une seule personne est pleinement satisfaite, sinon tout le monde est pour le retour à Slack.
+
+Du coup on est retourné sur Slack. On a quand même gardé notre compte Teams car au final un profil Zoom coute aussi cher que 15 utilisateurs Teams (pour la formation et les wébinaires).
+On a aussi activé l'intégration des vidéos Teams dans Slack pour bénéficier du vrai point fort de Teams : la visio.
+
+![teams-in-slack.png](/slack-to-teams/teams-in-slack.png)
+
+Pour résumer en une seule phrase, je ne peux que citer que [Chris](https://twitter.com/chrismeiller) :
 
 > Teams, c'est le meilleur outil pour que les gens ne teletravaillent pas.
