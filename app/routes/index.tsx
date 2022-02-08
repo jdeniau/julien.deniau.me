@@ -1,4 +1,5 @@
 import { Link, LoaderFunction, useLoaderData } from 'remix';
+import { formatDate } from '~/date';
 import { getPosts, Post } from '~/post';
 
 type Talk = {
@@ -172,6 +173,7 @@ export default function Index() {
                 <h3>
                   <Link to={`/posts/${post.slug}`}>{post.title}</Link>
                 </h3>
+                <em>{formatDate(post.date)}</em>
                 {post.emphasis && <p>{post.emphasis}</p>}
 
                 <Link to={`/posts/${post.slug}`} className="button primary">

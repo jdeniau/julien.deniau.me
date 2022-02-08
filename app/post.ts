@@ -90,14 +90,16 @@ export async function getPosts() {
   );
 
   return Promise.all(
-    dirResponse.data.map(async (file): Promise<Post> => {
-      const { attributes } = await getPostContent(file.path);
+    dirResponse.data
+      .map(async (file): Promise<Post> => {
+        const { attributes } = await getPostContent(file.path);
 
-      return {
-        ...convertAttributes(attributes),
-        slug: file.name.replace(/\.md$/, ''),
-      };
-    })
+        return {
+          ...convertAttributes(attributes),
+          slug: file.name.replace(/\.md$/, ''),
+        };
+      })
+      .reverse()
   );
 }
 

@@ -1,6 +1,5 @@
 import { MetaFunction, useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
-import { Location } from 'history';
 import invariant from 'tiny-invariant';
 import { getPost } from '~/post';
 import type { PostWithHTML } from '~/post';
@@ -10,6 +9,7 @@ import { useEffect, useState } from 'react';
 // import highligtStyle from 'highlight.js/styles/base16/dracula.css';
 import highligtStyle from '~/styles/highlight-dracula.css';
 import { uri } from '~/url';
+import { formatDate } from '~/date';
 
 export function links() {
   return [
@@ -24,8 +24,6 @@ export function links() {
 export const meta: MetaFunction = ({ data }: { data: PostWithHTML }) => {
   const { title, date, image, slug, emphasis } = data;
 
-  const dateObject = date instanceof Date ? date : new Date(date);
-
   return {
     title: title,
     description: emphasis ?? '',
@@ -35,7 +33,7 @@ export const meta: MetaFunction = ({ data }: { data: PostWithHTML }) => {
     'og:description': emphasis ?? '',
     'og:url': uri(`/posts/${slug}`),
     'og:type': 'article',
-    'article:published_time': dateObject?.toLocaleDateString(),
+    'article:published_time': formatDate(date),
     'article:author,': 'Julien Deniau',
     // 'og:article:section': 'Technology',
     'twitter:card': 'summary',
@@ -54,9 +52,9 @@ export const loader: LoaderFunction = async ({
 export default function PostSlug() {
   const post = useLoaderData<PostWithHTML>();
 
-  const [localeDate, setLocaleDate] = useState<Date>();
+  const [localeDate, setLocaleDate] = useState<string | Date>();
   useEffect(() => {
-    setLocaleDate(post.date instanceof Date ? post.date : new Date(post.date));
+    setLocaleDate(post.date);
   }, [post.date]);
 
   useEffect(() => {
@@ -83,7 +81,9 @@ export default function PostSlug() {
 
       <div className="post">
         <h1>{post.title}</h1>
-        <div className="post__date">{localeDate?.toLocaleDateString()}</div>
+        {localeDate && (
+          <div className="post__date">{formatDate(localeDate)}</div>
+        )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
