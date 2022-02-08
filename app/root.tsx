@@ -24,7 +24,7 @@ export function links() {
 
     {
       rel: 'stylesheet',
-      href: 'theme/assets/css/fontawesome-all.min.css',
+      href: '/theme/assets/css/fontawesome-all.min.css',
     },
     {
       rel: 'stylesheet',

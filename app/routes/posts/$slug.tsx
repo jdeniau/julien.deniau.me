@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import highligtStyle from '~/styles/highlight-dracula.css';
 import { uri } from '~/url';
 import { formatDate } from '~/date';
+import { useHasShare } from '../../hooks/useHasShare';
 
 export function links() {
   return [
@@ -53,6 +54,7 @@ export default function PostSlug() {
   const post = useLoaderData<PostWithHTML>();
 
   const [localeDate, setLocaleDate] = useState<string | Date>();
+  const hasShare = useHasShare();
   useEffect(() => {
     setLocaleDate(post.date);
   }, [post.date]);
@@ -80,7 +82,29 @@ export default function PostSlug() {
       )}
 
       <div className="post">
-        <h1>{post.title}</h1>
+        <h1 className="post__title">
+          {post.title}
+
+          {hasShare && (
+            <a
+              href="#share"
+              className="post__share icon solid fa-share-alt"
+              title="Share"
+              onClick={(e) => {
+                e.preventDefault();
+
+                if (navigator.share) {
+                  navigator.share({
+                    title: post.title,
+                    text: post.emphasis,
+                    url: uri(`/posts/${post.slug}`),
+                  });
+                }
+              }}
+            ></a>
+          )}
+        </h1>
+
         {localeDate && (
           <div className="post__date">{formatDate(localeDate)}</div>
         )}

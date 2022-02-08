@@ -1,5 +1,5 @@
 .post {
-  padding: 50px;
+  padding: 20px 50px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -8,6 +8,23 @@
   .post {
     padding: 20px;
   }
+}
+
+.post__title {
+  position: relative;
+  padding-right: 50px;
+}
+
+a.post__share {
+  position: absolute;
+  top: 0px;
+  right: 00px;
+  color: #4acaa8;
+  font-size: 36px;
+}
+
+a.post__share:hover {
+  color: #2e8e6d !important;
 }
 
 .post__date {
