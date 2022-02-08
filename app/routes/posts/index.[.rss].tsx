@@ -4,7 +4,7 @@ import type { Post } from '~/post';
 import { uri } from '~/url';
 
 function createRssItem(post: Post): string {
-  const link = uri(post.slug);
+  const link = uri(`/posts/${post.slug}`);
 
   return `<item>
   <title>${post.title}</title>

@@ -33,7 +33,7 @@ export const meta: MetaFunction = ({ data }: { data: PostWithHTML }) => {
     // 'og:locale': 'fr_FR',
     'og:title': title,
     'og:description': emphasis ?? '',
-    'og:url': uri(slug),
+    'og:url': uri(`/posts/${slug}`),
     'og:type': 'article',
     'article:published_time': dateObject?.toLocaleDateString(),
     'article:author,': 'Julien Deniau',
