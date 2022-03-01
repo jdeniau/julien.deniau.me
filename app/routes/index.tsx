@@ -101,6 +101,43 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="blog">
+        <div className="container">
+          <h3>Blog</h3>
+          {/* <p>
+      Integer eu ante ornare amet commetus vestibulum blandit integer in
+      curae ac faucibus integer non. Adipiscing cubilia elementum integer
+      lorem ipsum dolor sit amet.
+    </p> */}
+          <hr />
+          <ul className="feature-icons">
+            {posts.map((post) => (
+              // some example icons: code, lock, cog, desktop, link, gem, bolt, coffee, book, cubes, users …
+              <li
+                key={post.slug}
+                className={
+                  post.icon ? `icon solid major fa-${post.icon}` : undefined
+                }
+              >
+                <h3>
+                  <Link to={`/posts/${post.slug}`}>{post.title}</Link>
+                </h3>
+                <em>{formatDate(post.date)}</em>
+                {post.emphasis && <p>{post.emphasis}</p>}
+
+                <Link to={`/posts/${post.slug}`} className="button primary">
+                  Read post
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Link to="/posts/" className="button alt">
+            See all blog posts
+          </Link>
+        </div>
+      </section>
+
       <section id="talks">
         <div className="container">
           <h3>A few talks</h3>
@@ -149,43 +186,6 @@ export default function Index() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="blog">
-        <div className="container">
-          <h3>Blog</h3>
-          {/* <p>
-            Integer eu ante ornare amet commetus vestibulum blandit integer in
-            curae ac faucibus integer non. Adipiscing cubilia elementum integer
-            lorem ipsum dolor sit amet.
-          </p> */}
-          <hr />
-          <ul className="feature-icons">
-            {posts.map((post) => (
-              // some example icons: code, lock, cog, desktop, link, gem, bolt, coffee, book, cubes, users …
-              <li
-                key={post.slug}
-                className={
-                  post.icon ? `icon solid major fa-${post.icon}` : undefined
-                }
-              >
-                <h3>
-                  <Link to={`/posts/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <em>{formatDate(post.date)}</em>
-                {post.emphasis && <p>{post.emphasis}</p>}
-
-                <Link to={`/posts/${post.slug}`} className="button primary">
-                  Read post
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <Link to="/posts/" className="button alt">
-            See all blog posts
-          </Link>
         </div>
       </section>
 

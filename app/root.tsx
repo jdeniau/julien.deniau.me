@@ -107,13 +107,10 @@ export default function App() {
                 </Link>
               </li>
               <li>
-                <Link to={`${prefix}#talks`}>My talks</Link>
-              </li>
-              <li>
                 <Link to={`${prefix}#blog`}>Blog</Link>
               </li>
               <li>
-                <Link to={`${prefix}#contact`}>Get in touch</Link>
+                <Link to={`${prefix}#talks`}>My talks</Link>
               </li>
             </ul>
           </nav>

@@ -94,9 +94,16 @@
     });
   }, options);
 
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+  function observeSections() {
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // observe only on first scroll, then the observer is active
+    document.removeEventListener('scroll', observeSections);
+  }
+
+  document.addEventListener('scroll', observeSections);
 
   document.querySelectorAll('#nav a').forEach((link) => {
     link.addEventListener('click', (e) => {
