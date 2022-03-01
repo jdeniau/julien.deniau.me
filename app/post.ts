@@ -2,7 +2,7 @@ import parseFrontMatter from 'front-matter';
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
 import { Octokit } from '@octokit/rest';
-import { embedMarkdownWithTweeterHtml } from './twitter';
+import { embedMarkdown } from './embed';
 
 const octokit = new Octokit({
   auth: typeof process !== 'undefined' ? process.env.GITHUB_TOKEN : '', // weirdly needed by the RSS page. Probably an issue with remix
@@ -106,7 +106,7 @@ export async function getPosts() {
 export async function getPost(slug: string): Promise<PostWithHTML> {
   const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
 
-  const html = marked(await embedMarkdownWithTweeterHtml(body));
+  const html = marked(await embedMarkdown(body));
 
   return {
     ...convertAttributes(attributes),
