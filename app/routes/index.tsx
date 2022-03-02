@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import { Link, LoaderFunction, useLoaderData } from 'remix';
 import { formatDate } from '~/date';
 import { getPosts, Post } from '~/post';
@@ -133,9 +134,7 @@ export default function Index() {
               // some example icons: code, lock, cog, desktop, link, gem, bolt, coffee, book, cubes, users …
               <li
                 key={post.slug}
-                className={
-                  post.icon ? `icon solid major fa-${post.icon}` : undefined
-                }
+                className={cn(post.icon && `icon solid major fa-${post.icon}`)}
                 lang={post.lang}
               >
                 <PostFlag lang={post.lang} />

@@ -10,6 +10,14 @@ import {
 } from 'remix';
 import type { MetaFunction } from 'remix';
 import { useEffect, useState } from 'react';
+import cn from 'classnames';
+
+type NavItems = Array<[string, string]>;
+const NAV_ITEMS: NavItems = [
+  ['intro', 'Welcome'],
+  ['blog', 'Blog'],
+  ['talks', 'My talks'],
+];
 
 export const meta: MetaFunction = () => {
   return { title: 'Julien Deniau' };
@@ -43,6 +51,32 @@ function usePreload() {
   return preload;
 }
 
+type NavProps = {
+  items: NavItems;
+  prefix: '' | '/';
+  onClick: () => void;
+};
+
+function Nav({ items, prefix, onClick }: NavProps): JSX.Element {
+  return (
+    <nav id="nav">
+      <ul>
+        {items.map(([href, label], index) => (
+          <li key={href}>
+            <Link
+              to={`${prefix}#${href}`}
+              onClick={onClick}
+              className={cn(index === 0 && 'active')}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 export default function App() {
   const location = useLocation();
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -71,7 +105,7 @@ export default function App() {
           href="/posts.rss"
         />
       </head>
-      <body className={`${isPreload} ${headerVisible ? 'header-visible' : ''}`}>
+      <body className={cn(isPreload, headerVisible && 'header-visible')}>
         <div id="titleBar">
           <a
             href="#header"
@@ -99,21 +133,14 @@ export default function App() {
               and sometimes, I talk about things.
             </p>
           </header>
-          <nav id="nav">
-            <ul>
-              <li>
-                <Link to={`${prefix}#intro`} className="active">
-                  Welcome
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}#blog`}>Blog</Link>
-              </li>
-              <li>
-                <Link to={`${prefix}#talks`}>My talks</Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav
+            prefix={prefix}
+            items={NAV_ITEMS}
+            onClick={() => {
+              setHeaderVisible(false);
+            }}
+          />
+
           <footer>
             <ul className="icons">
               <li>

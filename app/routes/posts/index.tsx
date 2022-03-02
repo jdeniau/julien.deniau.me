@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from 'remix';
 import { getPosts } from '~/post';
 import type { Post } from '~/post';
+import cn from 'classnames';
 
 export const loader = () => {
   return getPosts();
@@ -27,9 +28,7 @@ export default function Posts() {
               // some example icons: code, lock, cog, desktop, link, gem, bolt, coffee, book, cubes, users …
               <li
                 key={post.slug}
-                className={
-                  post.icon ? `icon solid major fa-${post.icon}` : undefined
-                }
+                className={cn(post.icon && `icon solid major fa-${post.icon}`)}
               >
                 <h3>
                   <Link to={`/posts/${post.slug}`}>{post.title}</Link>
