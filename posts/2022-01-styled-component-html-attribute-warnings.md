@@ -3,6 +3,7 @@ date: 2022-01-18
 title: Styled-component and HTML attribute warning
 emphasis: Simple fix to React HTML warning with styled-component
 icon: code
+lang: en
 ---
 
 If you are using styled-component, you might have warning in the console:

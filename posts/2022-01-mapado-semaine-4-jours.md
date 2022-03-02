@@ -5,6 +5,7 @@ emphasis: Ça y est, Mapado franchi le pas […], nous passons à la semaine de 
 icon: users
 image: /images/2022-01-mapado-semaine-4-jours.jpg
 imageCredit: © [Alexandru Zdrobău](https://unsplash.com/@alexandruz)
+lang: fr
 ---
 
 Ça y est, Mapado franchit le pas. Après [que LDLC (entre autres) ait essuyé les plâtres](https://www.linkedin.com/pulse/de-lautre-cot%25C3%25A9-du-miroir-laurent-de-la-clergerie/), nous passons à la semaine de quatre jours.
