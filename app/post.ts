@@ -21,6 +21,7 @@ export type Post = {
   emphasis?: string;
   image?: string;
   imageCredit?: string;
+  lang?: string;
 };
 
 export type PostWithHTML = Post & {

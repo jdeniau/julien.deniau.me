@@ -66,7 +66,7 @@ export default function PostSlug() {
   return (
     <>
       {post.image && (
-        <div
+        <aside
           className="post__image"
           style={{
             backgroundImage: `url(${post.image})`,
@@ -78,10 +78,10 @@ export default function PostSlug() {
               dangerouslySetInnerHTML={{ __html: post.imageCredit }}
             />
           )}
-        </div>
+        </aside>
       )}
 
-      <div className="post">
+      <article className="post" lang={post.lang}>
         <h1 className="post__title">
           {post.title}
 
@@ -110,7 +110,7 @@ export default function PostSlug() {
         )}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </article>
     </>
   );
 }

@@ -70,6 +70,24 @@ export const loader: LoaderFunction = async () => {
   };
 };
 
+function PostFlag({ lang }: { lang: string | undefined }): JSX.Element | null {
+  let emoji: JSX.Element;
+  switch (lang) {
+    case 'fr':
+      emoji = <>🇫🇷</>;
+      break;
+
+    case 'en':
+      emoji = <>🇬🇧</>;
+      break;
+
+    default:
+      return null;
+  }
+
+  return <span className="post-list__flag">{emoji}</span>;
+}
+
 export default function Index() {
   const { talks, posts } = useLoaderData<{ talks: Talk[]; posts: Post[] }>();
 
@@ -118,13 +136,14 @@ export default function Index() {
                 className={
                   post.icon ? `icon solid major fa-${post.icon}` : undefined
                 }
+                lang={post.lang}
               >
+                <PostFlag lang={post.lang} />
                 <h3>
                   <Link to={`/posts/${post.slug}`}>{post.title}</Link>
                 </h3>
                 <em>{formatDate(post.date)}</em>
                 {post.emphasis && <p>{post.emphasis}</p>}
-
                 <Link to={`/posts/${post.slug}`} className="button primary">
                   Read post
                 </Link>

@@ -3432,3 +3432,15 @@ input[type='button']:disabled,
     padding: 0;
   }
 }
+
+.post-list__flag {
+  position: absolute;
+  top: calc(2em + 15px);
+  left: 0;
+  width: 2.5em;
+  text-align: center;
+  display: flex;
+  height: 2.5em;
+  justify-content: center;
+  align-items: center;
+}
