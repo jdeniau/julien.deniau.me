@@ -1,8 +1,8 @@
 const YOUTUBE_PATTERN =
-  /(.{2})(?:https?:\/\/)?(?:www\.|m\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[^&\s\?]+(?!\S))\/)|(?:\S*v=|v\/)))([^&\s\?]+)/i;
+  /(.{2})?(?:https?:\/\/)?(?:www\.|m\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[^&\s\?]+(?!\S))\/)|(?:\S*v=|v\/)))([^&\s\?]+)/;
 
 function isYoutubeLink(link: string): boolean {
-  const match = link.match(YOUTUBE_PATTERN);
+  const match = link.match(new RegExp(YOUTUBE_PATTERN, 'i'));
 
   return !!(match && match[1] !== '](' && match[2]);
 }
@@ -11,12 +11,12 @@ function getYoutubeId(link: string): string | null {
   if (!isYoutubeLink(link)) {
     return null;
   }
-  const matches = link.match(YOUTUBE_PATTERN);
+  const matches = link.match(new RegExp(YOUTUBE_PATTERN, 'i'));
 
   return matches && matches[2];
 }
 
-export function getYoutubeEmbedCode(
+function getYoutubeEmbedCode(
   id: string,
   width: number = 1440,
   height: number = 762
@@ -34,7 +34,7 @@ export function getYoutubeEmbedCode(
 }
 
 export function embedMarkdownWithYoutubeHtml(text: string) {
-  const matches = text.match(YOUTUBE_PATTERN);
+  const matches = text.match(new RegExp(YOUTUBE_PATTERN, 'gim'));
 
   if (matches) {
     for (const match of matches) {

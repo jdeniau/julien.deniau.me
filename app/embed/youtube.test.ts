@@ -1,4 +1,4 @@
-import { testables } from './youtube';
+import { testables, embedMarkdownWithYoutubeHtml } from './youtube';
 
 const { isYoutubeLink, getYoutubeId } = testables;
 
@@ -29,5 +29,22 @@ describe('get youtube id', () => {
     expect(
       getYoutubeId('[bref.](https://www.youtube.com/watch?v=JmghDKkeiik)')
     ).toBeNull();
+  });
+});
+
+describe('embedMarkdownWithYoutubeHtml', () => {
+  test('embedMarkdownWithYoutubeHtml', () => {
+    expect(embedMarkdownWithYoutubeHtml(`https://youtu.be/Phty0m6vvHA`)).toBe(
+      `
+  <div class=\"youtube__embed-container\">
+  <iframe 
+  class=\"youtube__embed-video\"
+  width=\"1440\" 
+  height=\"762\" 
+  src=\"https://www.youtube-nocookie.com/embed/Phty0m6vvHA\" 
+  frameborder=\"0\" 
+  allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+  </div>`
+    );
   });
 });
