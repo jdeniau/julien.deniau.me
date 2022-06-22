@@ -1,7 +1,7 @@
 ---
 date: 2022-06-22
-title: Payer sa dette technique
-emphasis: Que faut-il payer ? Et quand ?
+title: Quand et comment payer sa dette technique ?
+emphasis: Ce n'est jamais facile de savoir à quel moment il faut payer sa dette technique, ni comment s'y prendre
 icon: code
 image: /images/dette-technique/dette-technique-title.png
 lang: fr
