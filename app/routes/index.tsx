@@ -40,7 +40,7 @@ export const loader: LoaderFunction = async () => {
       {
         title: "Explorez votre code avec de l'analyse statique",
         description: 'Explore your code with static analysis',
-        url: '/phpstan',
+        url: '/phpstan/',
         urlText: 'Français',
         image: '/images/phpstan.png',
         secondaryUrl: '/phpstan/?lang=en',
