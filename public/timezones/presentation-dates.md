@@ -43,11 +43,11 @@ Sauf que "midi" à Paris, ce n'est pas la même chose que "midi" à Tahiti, ni �
 
 Jusqu'a à la fin du 19ème siècle, chaque ville avait son heure locale (vu qu'un définissait l'heure grace au soleil, c'est le cadran solaire qui définissait l'heure de chaque ville, normal). Avec l'essort des transports, en particulier du train, avoir une heure par ville, ce n'est **vraiment** pas pratique : aux Etats-Unis, chaque compagnie féroviaire utilisait son propre système de mesure du temps, basé sur son siège social ou un terminus important. La gare centrale de Pittsburg, partagée par plusieurs compagnie, utilisait six heure différentes !
 
-En 1858, le mathématicien Quirico Filopanti posa les bases d'un système universel. Puis en 1876, en se basant sur les travaux de Filopanti, le géographe Sandford Fleming proposa le système actuel, basé sur le méridien de Greenwich. Le système est adopté en 1884 lors de la conférence internationale du Méridien.
+En 1858, le mathématicien Quirico Filopanti posa les bases d'un système universel. Puis en 1876, en se basant sur les travaux de Filopanti, le géographe Sandford Fleming proposa le système actuel, basé sur le méridien de Greenwich, dans la banlieue de Londres. Le système est adopté en 1884 lors de la conférence internationale du Méridien.
 
 ### Les fuseaux horaires par pays
 
-Il y a 24h dans une journée, on a donc découpé la terre en 24 portions égales pour créer des fuseaux horaires : malin l'humain ! (meme avec le black "malin")
+Il y a 24h dans une journée, on a donc découpé la terre en 24 portions égales pour créer des fuseaux horaires : l'heure "UTC" du méridien de Greenwich, jusqu'à UTC-11 à l'ouest, et UTC+12 à l'est. Malin l'humain ! (meme avec le black "malin")
 
 (affichage carte avec "tranches")
 
@@ -71,9 +71,11 @@ En parlant de rebelles : chaque pays choisi à quel fuseau horaire il se "raccro
 
 - Iran : UTC+3:30,
 - Afghanistan : UTC+4:30,
-- Inde et Sri Lanka : UTC+5:30
 - Australie centrale : UTC+10:30
+- Inde et Sri Lanka : UTC+5:30
 - Népal : UTC+5:45 ! 😵‍💫
+
+Un autre genre de rebelle vis-à-vis du système actuel :
 
 Pour faciliter la communication avec l'ensemble de ses iles, qui se trouvent des deux côté de la ligne du changement de date, l'état du Kiribati applique les fuseaux horaires UTC+12, mais aussi UTC+13 et UTC+14 (zoom carte ?)
 
@@ -85,23 +87,23 @@ Au total, de 24 on est passé à 37 fuseaux horaires !
 
 Revenons en 1884 un moment. Etaient proposés comme méridien de référence le méridient de Greenwich, dans la banlieue de Londres, ou le méridien de Paris.
 En 1884, quand on est la Grande Bretagne, on gère un empire qui représente _en gros_ un quart des habitants de la planète. On a aussi un copain qui s'appelle les Etats-Unis, qui pèse un peu dans "le Game" à l'international. Les deux réunis représentent les deux tiers de la flotte mondiale. Pas trop compliqué d'imposer son méridien.
-En contre-partie, la Grande Bretagne accepte de passer au système métrique. Et les Etats-Unis ? (meme "mothing to do here")
+En contre-partie, pour faire plaisir, la Grande Bretagne accepte de passer au système métrique. Et les Etats-Unis ? (meme "mothing to do here")
 
 Les français ? Et bien ils ont le seum ! (photo de Laura "trop dég")
 
-Les français mettrons prêt de 30 ans à accepter le méridien de Greenwitch, et c'est le 9 mars 1911 que le texte de loi est accepté. L'heure légale étant donc : « l'heure du temps moyen de l'observatoire de Paris retardée de 9 minutes 21 secondes » (faut pas déconner et laisser gagner les anglais !).
+La France mettrons prêt de 30 ans à accepter le méridien de Greenwich, et c'est le 9 mars 1911 que le texte de loi est enfin accepté. L'heure légale étant donc : « l'heure du temps moyen de l'observatoire de Paris retardée de 9 minutes 21 secondes » (faut pas déconner et laisser gagner les anglais !).
 
-OK, mais… on est plus sur GMT aujourd'hui, si ?
+OK, mais… on est plus sur UTC aujourd'hui, si ?
 
-Avançons un peu dans le temps : nous sommes en juin 1940. L'armée allemande occupe la France, et impose l'heure Allemande en France. Heure qui, bien que remise en question, ne sera pas abandonné.
+Avançons un peu dans le temps : nous sommes en juin 1940. L'armée allemande occupe la France, et impose l'heure Allemande en France. Heure qui, bien que remise en question, ne sera pas abandonné. (carte)
 
-Par sympathie pour Hitler, l'Espagne de Franco passe aussi à l'heure allemande en 1942.
+Par sympathie pour Hitler, l'Espagne de Franco passe aussi à l'heure allemande en 1942. (carte)
 
 ### Samoa
 
-En 2011, les Samoa ont purement et simpplement supprimé le 30 décembre ! L'Australie et la Nouvelle-Zélande étant ses partenaires commerciaux principaux, ils ont décidé de passer de UTC-11 à UTC+13.
+En 2011, les Samoa ont purement et simpplement supprimé le 30 décembre ! L'Australie et la Nouvelle-Zélande étant ses partenaires commerciaux principaux, ils ont décidé de passer de UTC-11 à UTC+13, et pour ce faire ils ont du supprimer un jour.
 
-Ils avaient fait le changement inverse le 4 juillet 1892, les Etats-Unis étant leur partenaire commercial de l'époque ! Le 4 juillet 1892 a donc duré… deux jours !
+Ils avaient fait le changement inverse le 4 juillet 1892, les Etats-Unis étant leur partenaire commercial de l'époque ! Le 4 juillet (fête nationale des Etats Unis) a donc duré… deux jours !
 
 ### Conclusion politique
 
@@ -109,7 +111,7 @@ Ils avaient fait le changement inverse le 4 juillet 1892, les Etats-Unis étant 
 
 ## DST
 
-A oui, j'avais oublié le DST. Encore un bazar lié à l'économie. Le DST c'est l'heure d'été (Daylight Saving Time). Pour éviter le « gaspillage de la lumière », au XXème siècle, on décide de se décaller d'une heure entre mars et octobre.
+A oui, j'avais oublié le DST. Encore un bazar lié à l'économie. Le DST c'est l'heure d'été (Daylight Saving Time). Pour éviter le « gaspillage de la lumière », au XXème siècle, on décide de se décaller les horloges d'une heure entre mars et octobre.
 Dans les faits, en 2009, l'économie réalisée est estimée à 0,015 % de la consommation énergétique : on a baissé la consommation d'éclairage, et on consomme bien plus au global.
 
 Avec l'heure d'été, on passe de 37 à 43 fuseaux horaires.
@@ -199,7 +201,7 @@ Ca a l'air plutôt très bien géré, des classes pour gérer les DateTime, les 
 
 #### Python
 
-C'est fonctionnel, mais pas top, surtout la gestion des timezone qui fonctionne pas ou mal sous Windows.
+C'est fonctionnel, mais pas top, surtout la gestion des timezones qui fonctionne pas ou mal sous Windows.
 
 - [SPL zoneinfo](https://docs.python.org/3/library/zoneinfo.html#data-sources)
 - [dateutil tzwin](https://dateutil.readthedocs.io/en/stable/tzwin.html)
@@ -240,7 +242,7 @@ Remplacé par luxon, day.js, etc. et surtout par [Temporal](https://tc39.es/prop
 
 #### Comment les DB gèrent les TimeZones ?
 
-> le standard SQL possède un mélange étrange de types de date/heure et de possibilités
+> le standard SQL possède un **mélange étrange** de types de date/heure et de possibilités.
 
 _[la documentation de Postgresql](https://docs.postgresql.fr/10/datatype-datetime.html#DATATYPE-TIMEZONES)_
 
@@ -297,7 +299,7 @@ Pro heure UTC :
 - Plus généralement, met la représentation des dates sur la "vrai" ligne temporelle.
 - Evite les problèmes avec l'heure d'été : le 30 octobre 2022 en France, les horloges passeront deux fois entre 2 h et 3 h. Impossible donc de savoir si c'est 2 h UTC+1 ou bien 2h UTC+2. Cela dit cela complexifie aussi pas mal la gestion.
 
-Le dernier point fait que c'est considéré comme une bonne pratique de toujours stocker la valeur UTC d'une date.
+Le dernier point fait qu'il est considéré comme une bonne pratique de toujours stocker la valeur UTC d'une date.
 
 ### Et dans une API ?
 
@@ -324,7 +326,7 @@ En informatique, les dates sont représentées par des "timestamp" : le nombre d
 
 Hors le 19 janvier 2038 à 3 h 14 min 7 s, on va dépasser la taille maximale de stockage d'un nombre entier sur les systèmes 32 bits. On va "boucler", et revenir… le 13 décemble 1901 (un timestamp de `−2 147 483 648`).
 
-En PHP 8.0, la gestion des heures d'été était impactée par ce bug (corrigé en 8.1). A Mapado on n'avait pas vérifié la donnée de notre stack de tests, et nos évènements de tests en 2100 avait une mauvaise représentation. Le passage a php 8.1 a fait planté la stack de tests !
+En PHP 8.0, la gestion des heures d'été était impactée par ce bug (corrigé en 8.1). A Mapado on n'avait pas vérifié la donnée réelle de notre stack de tests, et nos évènements de tests en 2100 avait une mauvaise représentation. Le passage a php 8.1 a fait planté la stack de tests !
 
 ## La vie, l'univers et le reste
 
@@ -332,7 +334,7 @@ OK donc on a vu que c'était bien le bazar.
 
 Et encore, je ne vous ai pas parlé des secondes intercallaires, ces secondes qui sont ajoutée pour ajuster le temps UTC aux variations de vitesses de rotation de la terre.
 
-Mais finalement les humains se sont quand même coordoné sur la planête pour avoir un temps universel… universel ? terrestre plutôt !
+Mais finalement les humains se sont quand même coordonnés sur la planête pour avoir un temps universel… universel ? terrestre plutôt !
 
 Que va-t-il se passer quand on aura colonisé la Lune ou Mars ? Va-t-on garder "UTC" comme référence ? Peu probable, tout comme on a abandonné les heure locale, il y aura probablement un temps "solaire". Et plus tard ? Un temps de la Galaxie ?
 
