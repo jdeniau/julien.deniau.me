@@ -4,11 +4,9 @@ let renderer;
 
 const DISPLAY_STARS = true;
 const BUMP_SCALE = 0.2;
-const EARTH_MAP = "./texture/earth_nasa.jpg";
+const EARTH_MAP = "texture/earth_nasa.jpg";
 
-function main() {
-  const canvas = document.querySelector("#c");
-
+function startMovingEarth(canvas) {
   canvas.parentElement.style.background = `url(${EARTH_MAP}) center center no-repeat`;
   canvas.parentElement.style.backgroundSize = "cover";
 
@@ -129,7 +127,7 @@ function main() {
 
   // when I press space, then the animation is stopped.
   document.addEventListener("keydown", (event) => {
-    if (event.code === "Space") {
+    if (event.code === "KeyP") {
       toggleRotation();
     }
   });
@@ -204,10 +202,12 @@ function main() {
 
   // when I press on "z", let's zoom the earth and display the background image in full screen
   document.addEventListener("keydown", (event) => {
-    if (event.code === "KeyZ") {
+    if (event.code === "Space" || event.code === "KeyZ") {
       flatten();
     }
   });
-}
 
-window.onload = main;
+  setTimeout(() => {
+    flatten();
+  }, 3500);
+}
