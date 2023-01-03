@@ -23,6 +23,19 @@
       #title {
         text-transform: uppercase;
       }
+
+      .date {
+        color: #f9aa3d;
+      }
+      .time {
+        color: #9580ff;
+      }
+      .offset {
+        color: #ff80bf;
+      }
+      .timezone {
+        color: #22d5ab;
+      }
     </style>
   </head>
   <body>
@@ -75,18 +88,58 @@
           </section>
 
           <section>
+            <h3>Le temps</h3>
+
+            <div class="r-stack">
+              <img
+                src="images/time.png"
+                class="fragment fade-out"
+                data-fragment-index="0"
+              />
+
+              <img
+                src="images/what-is-time.png"
+                class="fragment fade-in"
+                style="max-height: 660px"
+                data-fragment-index="0"
+              />
+            </div>
+
+            <aside class="notes">
+              Pour simplifier un peu : le temps est un flux continu, que tout le
+              monde traverse en même "temps".<br />
+              <ul>
+                <li>
+                  Le passé est l'accumulation des expériences antérieures, sur
+                  lesquelles on ne peut pas intervenir, quoi qu'on fasse.
+                </li>
+                <li>
+                  Le futur désigne "ce qui ne s'est pas encore produit". Ce que
+                  l'on peut, dans certaines mesures, modifier.
+                </li>
+                <li>
+                  Le présent désigne la jonction entre l'avenir et le passé.
+                </li>
+              </ul>
+
+              <p>
+                Ma définition est un peu simpliste, mais on va la garder quand
+                même. Si vous voulez lire l'article de Wikipedia sur le temps,
+                il pose plus de questions qu'il n'apporte de réponse 😅.
+              </p>
+            </aside>
+          </section>
+
+          <section>
             <h3>Plusieurs façon de représenter un même "point temporel"</h3>
 
             <ul>
+              <li>05 janvier 2022 à 13h30 (Paris, calendrier Grégorien)</li>
+              <li>05 janvier 2022 à 12h30 (Londres, calendrier Grégorien)</li>
               <li>
-                03 janvier 2022 à 13h30 (heure de Paris, calendrier Grégorien)
+                06 janvier 2022 à 00h30 (Nouvelle-Zélande, calendrier Grégorien)
               </li>
-              <li>
-                03 janvier 2022 à 12h30 (heure de Londres, calendrier Grégorien)
-              </li>
-              <li>
-                12 tévet 5783 à 14h30 (heure je Jérusalem, calendrier Hébraïque)
-              </li>
+              <li>12 tévet 5783 à 13h30 (Paris, calendrier Hébraïque)</li>
             </ul>
           </section>
 
@@ -147,8 +200,8 @@
             </ul>
 
             <aside class="notes">
-              Sauf que "midi" à Paris, ce n'est pas en même temps que "midi" à
-              Tahiti, ni même à Lyon d'ailleurs !
+              Sauf que quand il est midi Paris, il n'est pas (du tout) midi à
+              Tahiti, ni même à Lyon d'ailleurs ! (en temps solaire)
             </aside>
           </section>
 
@@ -251,8 +304,9 @@
             <img src="images/World_Time_Zones_Map.png" />
 
             <aside class="notes">
-              Enfin 24 portions égales… c'est quand même plus pratique d'avoir
-              le même fuseau horaire quand on est dans le même pays.<br />
+              Enfin je disais 24 portions égales… mais c'est quand même plus
+              pratique, quand un fuseau horaire traverse un pays, d'avoir le
+              même fuseau horaire quand on est dans tout le pays.<br />
               Aucune tranche n'est donc vraiment égale, ni "droite".
             </aside>
           </section>
@@ -273,11 +327,25 @@
           </section>
 
           <section>
-            <img src="images/france-timezones.png" />
+            <div class="r-stack" style="position: relative">
+              <img src="images/france-timezones.png" />
+              <img
+                class="fragment"
+                src="images/et_tout_le_monde_s_en_fout.jpg"
+                width="70px"
+                style="
+                  position: absolute;
+                  right: 100px;
+                  bottom: 30px;
+                  transform: rotate(20deg);
+                "
+              />
+            </div>
 
             <aside class="notes">
               France : 12 fuseaux horaires avec les départements et
-              collectivités d'outre-mer
+              collectivités d'outre-mer. Nous sommes d'ailleurs le pays qui a le
+              plus de fuseau horaires ! (et tout le monde s'en fout)
             </aside>
           </section>
 
@@ -293,15 +361,17 @@
               Bon il y a quand même des pays ou c'est simple. La Chine : un seul
               fuseaux horaires.<br />
 
-              Sauf que du coup c'est le bordel :
+              Sauf que, ben du coup… c'est l'bordel :
               <ul>
                 <li>
-                  A l'ouest de la Chine on se couche à minuit quand à l'est on
-                  se couche à 20h si l'on respecte le temps solaire.
+                  A l'est de la Chine, si l'on respecte le temps solaire, on
+                  peut se coucher à 20 h, quand à l'ouest on se couchera à
+                  minuit.
                 </li>
                 <li>
-                  Les Ouigour (à l'ouest) utilisent chez eux leur propre heure,
-                  non officielle, par dissidence avec le régime en place.
+                  Les Ouïghours, dans la province du Xinjiang (à l'ouest)
+                  utilisent chez eux leur propre heure, non officielle, par
+                  dissidence avec le régime en place.
                 </li>
               </ul>
             </aside>
@@ -364,6 +434,7 @@
               l'état du Kiribati applique les fuseaux horaires UTC+12, mais
               aussi UTC+13 et UTC+14<br />
               Il s'agit donc là des gens les plus en avance sur notre temps 😆
+              (c'est en tout cas les premiers à fêter le nouvel an)
             </aside>
           </section>
 
@@ -374,7 +445,8 @@
             </h3>
 
             <aside class="notes">
-              On est déjà bien loin des 24 fuseaux horaires initiaux.<br />
+              On est déjà bien loin de l'idée initiale des 24 fuseaux
+              horaires.<br />
               Mais pourquoi c'est le bazar comme ça ?
             </aside>
           </section>
@@ -424,8 +496,8 @@
                 Game" à l'international. Les deux réunis représentent les deux
                 tiers de la flotte mondiale. Pas trop compliqué d'imposer son
                 méridien. En contre-partie, pour faire plaisir, la Grande
-                Bretagne accepte de passer au système métrique. Et les
-                Etats-Unis ? (meme "mothing to do here")
+                Bretagne accepte de passer au système métrique. <br />
+                Pour les Etats-Unis ? on reviendra…
               </p>
 
               <p>Les français ? Et bien ils sont trop dèg' !</p>
@@ -435,8 +507,9 @@
                 Greenwich, comme valeur pour la France, et c'est le 9 mars 1911
                 que le texte de loi est enfin accepté. L'heure légale devient
                 donc : « l'heure du temps moyen de l'observatoire de Paris
-                retardée de 9 minutes 21 secondes » (faut pas déconner et
-                laisser gagner les anglais !).
+                retardée de 9 minutes 21 secondes » (qui est l'heure de
+                Greenwich, mais faut pas déconner et laisser gagner les anglais
+                !).
               </p>
 
               <p>
@@ -447,15 +520,27 @@
 
           <section>
             <h3>UTC ou UTC+1 ?</h3>
-            <img src="images/europe-timezones.png" />
+            <div class="r-stack">
+              <img src="images/europe-timezones-1939.png" />
+              <img class="fragment" src="images/europe-timezones-1941.png" />
+              <img class="fragment" src="images/europe-timezones-1943.png" />
+            </div>
 
             <aside class="notes">
-              Avançons un peu dans le temps : nous sommes en juin 1940. <br />
-              L'armée allemande occupe la France, et impose l'heure Allemande en
-              France. Heure qui, bien que remise en question, ne sera pas
-              abandonné.<br />
-              Par sympathie pour Hitler, l'Espagne de Franco passe aussi à
-              l'heure allemande en 1942.
+              <p>
+                Avançons un peu dans le temps : nous sommes en juin 1940. <br />
+                L'armée allemande occupe la France, et impose l'heure Allemande
+                en France. Heure qui, bien que remise en question, ne sera pas
+                abandonné.
+              </p>
+              <p>
+                Par sympathie pour Hitler, l'Espagne de Franco passe aussi à
+                l'heure allemande en 1942.
+              </p>
+              <p>
+                On est donc en France bien trop à l'Ouest de notre fuseau
+                horaire !
+              </p>
             </aside>
           </section>
 
@@ -464,13 +549,25 @@
             <img src="images/samoa.png" />
 
             <aside class="notes">
-              En 2011, les Samoa ont purement et simpplement supprimé le 30
-              décembre ! L'Australie et la Nouvelle-Zélande étant ses
-              partenaires commerciaux principaux, ils ont décidé de passer de
-              UTC-11 à UTC+13, et pour ce faire ils ont du supprimer un jour.<br />
-              Ils avaient fait le changement inverse le 4 juillet 1892, les
-              Etats-Unis étant leur partenaire commercial de l'époque ! Le 4
-              juillet (fête nationale des Etats Unis) a donc duré… deux jours !
+              <p>Parton de l'autre côté du monde, dans le Pacifique :</p>
+              <p>
+                En 2011, les Samoa ont purement et simpplement supprimé le 30
+                décembre ! L'Australie et la Nouvelle-Zélande étant ses
+                partenaires commerciaux principaux, ils ont décidé de passer de
+                UTC-11 à UTC+13, et pour ce faire ils ont du supprimer un
+                jour.<br />
+                Et oui, difficile de faire du commerce quand on a un jour de
+                décallage : le lundi et vendredi deviennent presque
+                inutilisables. <br />
+                (imaginez si ils ont leur jour "OFF" tous les deux jours comme
+                nous !)
+              </p>
+              <p>
+                Ce qui est marrant, c'est qu'ils avaient fait le changement
+                inverse le 4 juillet 1892, les Etats-Unis étant leur partenaire
+                commercial de l'époque ! Le 4 juillet (jour de fête nationale
+                des Etats Unis) avait duré… deux jours !
+              </p>
             </aside>
           </section>
 
@@ -496,13 +593,14 @@
 
             <aside class="notes">
               <p>
-                A oui, j'avais oublié le DST. Encore un bazar lié à l'économie.
-                Le DST c'est l'heure d'été (Daylight Saving Time). Pour éviter
-                le « gaspillage de la lumière », au XXème siècle, on décide de
-                décaler les horloges d'une heure entre mars et octobre. Dans les
-                faits, en 2009, l'économie réalisée est estimée à 0,015 % de la
-                consommation énergétique : on a baissé la consommation
-                d'éclairage, et on consomme bien plus au global.
+                A oui, j'ai failli oublié le DST. Encore un bazar lié à
+                l'économie. Le DST c'est l'heure d'été (Daylight Saving Time).
+                Pour éviter le « gaspillage de la lumière », au XXème siècle, on
+                décide de décaler les horloges d'une heure entre mars et
+                octobre.<br />
+                Dans les faits, en 2009, l'économie réalisée est estimée à 0,015
+                % de la consommation énergétique : on a baissé la consommation
+                d'éclairage, et surtout on consomme bien plus au global.
               </p>
               <p>Avec l'heure d'été, on passe de 37 à 43 fuseaux horaires.</p>
               <p>
@@ -518,7 +616,7 @@
             <ul>
               <li>1916 : heure d'été instaurée</li>
               <li>1945 : puis abandonnée</li>
-              <li>1976 : rétablie</li>
+              <li>1976 : rétablie "temporairement"</li>
               <li>1996 : harmonisée avec l'UE</li>
               <li class="fragment">DOM / COM : pas d'heure d'été</li>
               <li class="fragment">
@@ -531,8 +629,15 @@
               <p>
                 La France met en place l'heure d'été en 1916, puis l'abandonne
                 en 1945. On le remet en place en 1976 "temporairement" après la
-                crise pétrolière. En 1996, pour s'harmoniser avec l'union
-                Européenne, on a changé le jour du passage à l'heure d'hiver.
+                crise pétrolière.
+              </p>
+              <blockquote>
+                Il faut faire attention, parce que le temporaire, des fois, ça
+                dure longtemps.
+              </blockquote>
+              <p>
+                En 1996, pour s'harmoniser avec l'union Européenne, on a changé
+                le jour du passage à l'heure d'hiver.
               </p>
               <p>
                 Enfin je dis en France, mais dans les départements et
@@ -544,7 +649,7 @@
           </section>
 
           <section>
-            <h2>Europe</h2>
+            <h2>Union Européenne</h2>
 
             <h4 class="r-stack">Vers la fin du changement d'heure ?</h4>
 
@@ -561,8 +666,8 @@
                 🤦
               </p>
               <p>
-                Le COVID ayant un peu prit le dessus, en 2022, aucune décision
-                n'a été prise.
+                Bon depuis 2019, le COVID a un peu prit le dessus, et donc en
+                2022, aucun pays n'a prit de décision en ce sens.
               </p>
             </aside>
           </section>
@@ -647,16 +752,28 @@
           </section>
 
           <section>
-            <code>2022-11-19T22:27:00-07:00</code>
+            <code
+              ><span class="date">2022-11-19</span>T<span class="time"
+                >22:27:00</span
+              ><span class="offset">-07:00</span></code
+            >
 
             <aside class="notes">
-              OK. Le décallage UTC c'est cool. Enfin disons que c'est déjà ça.
-              Mais pourtant on l'a vu : entre l'heure d'été et les changements à
-              travers le temps, on ne peut pas travailler avec des dates de
-              façon précise si l'on n'a pas le fuseau horaire exact : si vous
-              êtes à UTC-7 en été, quel heure sera-t-til dans 6 mois ?
-              Impossible à savoir sans savoir si vous parlez de l'heure de
-              Phoenix ou bien l'heure de Los Angeles.
+              <p>
+                La façon de représenter une date en informatique c'est donc ça :
+                AAAA-MM-DD T HH:MM:SS ±HH:MM
+              </p>
+              <p>
+                OK. Le décallage UTC c'est cool. Enfin disons que c'est déjà ça.
+              </p>
+              <p>
+                Pourtant on l'a vu : entre l'heure d'été et les changements à
+                travers le temps, on ne peut pas travailler avec des dates de
+                façon précise si l'on n'a pas le fuseau horaire exact : si vous
+                êtes à UTC-7 en été, quel heure sera-t-til dans 6 mois ?
+                Impossible à savoir sans savoir si vous parlez de l'heure de
+                Phoenix ou bien l'heure de Los Angeles.
+              </p>
             </aside>
           </section>
 
@@ -664,7 +781,10 @@
             <h2>Le standard des fuseaux horaires ?</h2>
 
             <code class="fragment"
-              >2022-11-19T22:27:00+01:00[Europe/Paris]</code
+              ><span class="date">2022-11-19</span>T<span class="time"
+                >22:27:00</span
+              ><span class="offset">-07:00</span
+              ><span class="timezone">[Europe/Paris]</span></code
             >
 
             <aside class="notes">
@@ -678,9 +798,19 @@
               </p>
 
               <p>
+                On est toujours obligé de garder le décallage UTC, car si nous
+                sommes le 30 octobre 2022 à 2 h 30 du matin heure de Paris
+                (c'est le jour du passage à l'heure d'hiver) : Est-ce que c'est
+                la première fois qu'il est 2h30 ou bien la deuxième fois de la
+                journée ? <br />
+                autrement dit, est-ce qu'on est à 02:30+01:00 ou bien à
+                02:30+02:00 ?
+              </p>
+
+              <p>
                 Le format est en parti dicté par l'implémentation JavaZDT qui
-                est très utilisée. Mais cela ne fonctionne pas en PHP par
-                example !
+                est très utilisée. Mais cela ne fonctionne pas dans tous les
+                languages, comme en PHP par example !
               </p>
 
               <p>
@@ -688,7 +818,7 @@
                 horaires". C'est souvent la liste du IANA (Internet Assigned
                 Numbers Authority), qui gère les DNS et les adresses IP, entre
                 autre, et qui maintient une liste à jour des fuseaux horaires,
-                qui est utilisée.
+                qui est utilisée (mais pas toujours).
               </p>
             </aside>
           </section>
@@ -707,21 +837,32 @@
             <div>
               <a
                 href="https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/DateTime.html"
-                >Documentation `DateTime` Ruby</a
+                >Documentation Ruby `DateTime`</a
               >
             </div>
           </section>
         </section>
 
         <section>
-          <section>
+          <section style="position: relative">
             <h2>La vie, l'univers et le reste</h2>
 
+            <img
+              class="fragment"
+              src="images/morel-small.jpg"
+              style="
+                position: absolute;
+                top: 100px;
+                right: 0px;
+                transform: rotate(-30deg);
+              "
+            />
+
             <aside class="notes">
-              <p>OK donc on a vu que c'était bien le bazar.</p>
+              <p>Voila, on a vu que c'était bien le bazar.</p>
               <p>
-                Et encore, je ne vous ai pas parlé des secondes intercallaires,
-                ces secondes qui sont ajoutée pour ajuster le temps UTC aux
+                Et encore, je vous épargne les secondes intercallaires, ces
+                secondes qui sont ajoutée pour ajuster le temps UTC aux
                 variations de vitesses de rotation de la terre.
               </p>
               <p>
@@ -736,10 +877,11 @@
                 "solaire". Et plus tard ? Un temps de la Galaxie ?
               </p>
               <p>
-                On considère que l'on est sur une "ligne temporelle", mais on
-                est a peu prêt sûrs que le temps est "étiré" à l'approche d'un
-                trou noir. Là encore, comment gérer la conversion ? Est-ce les
-                même valeurs qui s'écoulent juste moins vite ?
+                On a aussi simplifié au début de la présentation en disant que
+                le temps est sur une ligne, mais on sait que l'espace-temps est
+                "étiré" à l'approche d'objets super-massifs comme les trou noir.
+                Là encore, comment gérer la conversion ? Est-ce les même valeurs
+                qui s'écoulent juste moins vite ?
               </p>
             </aside>
           </section>
