@@ -37,7 +37,7 @@ Et sa représentation "plane"
 
 (transition vers une carte du monde)
 
-Depuis des miléraires (TOCHECK), on considére que "midi", c'est quand le soleil est à l'équinoxe (le plus haut dans le ciel). Ca correspond plus ou moins à la moitié d'une journée (mid-day), et son petit copain minuit (mi-nuit) permet d'avoir le milieu de la nuit.
+Depuis des miléraires (premier cadran solaire : environ -1500 ans av JC), on considére que "midi", c'est quand le soleil est à l'équinoxe (le plus haut dans le ciel). Ca correspond plus ou moins à la moitié d'une journée (mid-day), et son petit copain minuit (mi-nuit) permet d'avoir le milieu de la nuit.
 
 Sauf que "midi" à Paris, ce n'est pas la même chose que "midi" à Tahiti, ni à Lyon d'ailleurs !
 
@@ -55,7 +55,7 @@ Enfin égales… c'est quand même plus pratique d'avoir le même fuseau horaire
 
 (affichage avec vrai fuseaux horaires)
 
-Enfin dans un même pays… si il n'est pas trop grand. USA 4 fuseaux horaires, Russie : 11 fuseaux horaires, France : 14 fuseaux horaires (déjà 3 pour la Polynésie Française) !
+Enfin dans un même pays… si il n'est pas trop grand. USA 4 fuseaux horaires, Russie : 11 fuseaux horaires, France : 12 fuseaux horaires (déjà 3 pour la Polynésie Française) !
 (affichage des cartes une par une ou aggrandissement, ou coloration)
 
 Bon il y a quand même des pays ou c'est simple. La Chine : un seul fuseaux horaires.
@@ -77,7 +77,7 @@ En parlant de rebelles : chaque pays choisi à quel fuseau horaire il se "raccro
 
 Un autre genre de rebelle vis-à-vis du système actuel :
 
-Pour faciliter la communication avec l'ensemble de ses iles, qui se trouvent des deux côté de la ligne du changement de date, l'état du Kiribati applique les fuseaux horaires UTC+12, mais aussi UTC+13 et UTC+14 (zoom carte ?)
+Afin que l'ensemble de ses iles reste du même côté que la ligne de changement de date, et donc sur le même jour calendaire, qui se trouvent des deux côté de la ligne du changement de date, l'état du Kiribati applique les fuseaux horaires UTC+12, mais aussi UTC+13 et UTC+14 (zoom carte ?)
 
 Au total, de 24 on est passé à 37 fuseaux horaires !
 
