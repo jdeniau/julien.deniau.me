@@ -20,7 +20,16 @@ export const loader: LoaderFunction = async () => {
     posts,
     talks: [
       {
-        title: 'Les libs js, watch-module, les dependances et le reste',
+        title:
+          "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
+        image: '/timezones/images/World_Time_Zones_Map.png',
+        url: 'https://youtu.be/W77y8oFCx2g',
+        urlText: 'Vidéo',
+        secondaryUrl: '/timezones/',
+        secondaryUrlText: 'Slides',
+      },
+      {
+        title: 'Les libs js, watch-module, les dépendances et le reste',
         // description: 'A personal website',
         url: '/js-lib-watch-module-dependencies/',
         urlText: 'Slides',
