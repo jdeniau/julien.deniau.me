@@ -24,6 +24,27 @@
         text-transform: uppercase;
       }
 
+      .world-slice {
+        background: repeating-linear-gradient(
+            90deg,
+            #ffffff,
+            #ffffff 1px,
+            #ffffff00 1px,
+            #ffffff00 calc(100% / 24)
+          ),
+          url(tests/earth_noClouds.0330.jpg);
+        background-size: contain;
+        background-position: center -100vh, center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 480px;
+      }
+
+      .present .world-slice {
+        transition: background-position 2s ease-in-out;
+        background-position: center center, center center;
+      }
+
       .date {
         color: #f9aa3d;
       }
@@ -277,23 +298,7 @@
         </section>
         <section>
           <section>
-            <div
-              style="
-                background: repeating-linear-gradient(
-                    90deg,
-                    #ffffff,
-                    #ffffff 1px,
-                    #ffffff00 1px,
-                    #ffffff00 calc(100% / 24)
-                  ),
-                  url(tests/earth_noClouds.0330.jpg);
-                background-size: contain;
-                background-position: center center;
-                background-repeat: no-repeat;
-                width: 100%;
-                height: 480px;
-              "
-            ></div>
+            <div class="world-slice"></div>
 
             <aside class="notes">
               Il y a 24h dans une journée, on a donc découpé la terre en 24
