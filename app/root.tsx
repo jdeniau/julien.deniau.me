@@ -145,6 +145,15 @@ export default function App() {
             <ul className="icons">
               <li>
                 <a
+                  rel="me"
+                  href="https://piaille.fr/@jdeniau"
+                  className="icon brands fa-mastodon"
+                >
+                  <span className="label">Mastodon</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://twitter.com/j_deniau"
                   className="icon brands fa-twitter"
                 >
