@@ -111,7 +111,7 @@ Ils avaient fait le changement inverse le 4 juillet 1892, les Etats-Unis étant 
 
 ## DST
 
-A oui, j'avais oublié le DST. Encore un bazar lié à l'économie. Le DST c'est l'heure d'été (Daylight Saving Time). Pour éviter le « gaspillage de la lumière », au XXème siècle, on décide de se décaller les horloges d'une heure entre mars et octobre.
+A oui, j'avais oublié le DST. Encore un bazar lié à l'économie. Le DST c'est l'heure d'été (Daylight Saving Time). Pour éviter le « gaspillage de la lumière », au XXème siècle, on décide de décaller les horloges d'une heure entre mars et octobre.
 Dans les faits, en 2009, l'économie réalisée est estimée à 0,015 % de la consommation énergétique : on a baissé la consommation d'éclairage, et on consomme bien plus au global.
 
 Avec l'heure d'été, on passe de 37 à 43 fuseaux horaires.
@@ -153,7 +153,7 @@ En été certains états, mais pas tous, passent à l'heure d'été. On se retro
 - au nord est : UTC+10:00,
 - au sud est : UTC+11
 
-On peut donc « revenir dans le temps » simplement en voyageant du sud au nord !
+On peut donc « revenir dans le temps » simplement en voyageant du sud au nord… mais seulement en été !
 
 ## Côté informatique, ça donne quoi tout ça ?
 
