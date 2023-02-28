@@ -1,5 +1,6 @@
 import cn from 'classnames';
-import { Link, LoaderFunction, useLoaderData } from 'remix';
+import { Link, useLoaderData } from '@remix-run/react';
+import type { LoaderFunction } from '@remix-run/node';
 import { formatDate } from '~/date';
 import { getPosts, Post } from '~/post';
 

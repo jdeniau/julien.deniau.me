@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from 'remix';
+import { Link, useLoaderData } from '@remix-run/react';
 import { getPosts } from '~/post';
 import type { Post } from '~/post';
 import cn from 'classnames';
