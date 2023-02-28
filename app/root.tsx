@@ -7,8 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
-} from 'remix';
-import type { MetaFunction } from 'remix';
+} from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/node';
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
