@@ -45,7 +45,8 @@ D'ailleurs même nos serveurs Mapado ne disent pas là même chose ?
  la dev doit être configuré en UTC, alors que la CI est surement en Europe/Paris !
 
 ## TLDR;
-Utilisez tout le temps `moment.tz` dès que vous avez la TZ
-Utilisez `moment.parseZone` pour garder le décalage UTC fourni par l'API si vous ne l'avez pas
-Utilisez `moment.utc` pour forcer de l'UTC (vous ne voulez surement pas faire ça)
-N'utilisez pas `moment()` car c'est de la merde (cet avis est assez opiniâtre 😄 )
+
+- Utilisez tout le temps `moment.tz` dès que vous avez la TZ
+- Utilisez `moment.parseZone` pour garder le décalage UTC fourni par l'API si vous ne l'avez pas
+- Utilisez `moment.utc` pour forcer de l'UTC (vous ne voulez surement pas faire ça)
+- N'utilisez pas `moment()` car c'est de la merde (cet avis est assez opiniâtre 😄 )
