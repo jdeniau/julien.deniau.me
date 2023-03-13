@@ -43,6 +43,11 @@ D'ailleurs même nos serveurs Mapado ne disent pas là même chose ?
 ```
 
  la dev doit être configuré en UTC, alors que la CI est surement en Europe/Paris !
+ 
+
+### Exception
+
+Il y a une petite exception à cette règle : lorsque vous voulez connaitre l'heure locale de l'utilisateur, c'est bien évidement le "mode local" que vous voulez (mais `moment.parseZone().format('HH')` fonctionne aussi).
 
 ## TLDR;
 
