@@ -25,7 +25,8 @@ Car on est en "local mode", autrement dit, moment converti la valeur que vous lu
 
 ```js
 // Voyons voir quelle heure il est à New-York…
-moment('2023-03-06T16:00:00-06:00').format()
+moment('2023-03-06T16:00:00-06:00').format();
+
 > '2023-03-06T23:00:00+01:00'
 ```
 
@@ -35,16 +36,27 @@ D'ailleurs même nos serveurs Mapado ne disent pas là même chose ?
 
 ```js
 // serveur de dev
-> moment('2023-03-06T16:00:00-06:00').format()
-'2023-03-06T22:00:00+00:00'
+moment('2023-03-06T16:00:00-06:00').format();
 
-// serveur de CI  
-> moment('2023-03-06T16:00:00-06:00').format()
-'2023-03-06T23:00:00+01:00'
+> '2023-03-06T22:00:00+00:00'
+
+// serveur de CI
+moment('2023-03-06T16:00:00-06:00').format();
+
+> '2023-03-06T23:00:00+01:00'
 ```
 
- la dev doit être configuré en UTC, alors que la CI est surement en Europe/Paris !
- 
+La dev doit être configuré en UTC, alors que la CI est surement en Europe/Paris !
+
+## Mais pourquoi ça fonctionne comme ça exactement ?
+
+Moment se base sur l'objet Date JS. On peut voir quand on inspecte un objet momentjs que l'objet date est bien stocké dedans, avec d'autres infos qui viennent du constructeur (notamment l'offset de base).
+
+![moment object exploded](/images/posts/moment-data.png)
+
+Cela dit, dès qu'on utilise `parseZone`, on voit qu'une nouvelle clé `offset` fait son entrée, qui va permettre de gérer le décalage UTC dans l'affichage.
+
+![moment object exploded with parseZone](/images/posts/moment-data-with-parsezone.png)
 
 ### Exception
 
