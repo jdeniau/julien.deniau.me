@@ -8,7 +8,7 @@ lang: fr
 
 ## Enseignement du jour :
 
-Quand vous utiliser momentjs, ne faite jamais jAmAiS JAMAIS moment('une date')
+Quand vous utiliser momentjs, ne faite jamais jAmAiS JAMAIS `moment('une date')`
 
 ## Pourquoi ?
 
