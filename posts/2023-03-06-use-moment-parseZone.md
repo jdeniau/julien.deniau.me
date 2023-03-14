@@ -15,10 +15,11 @@ Quand vous utiliser momentjs, ne faite jamais jAmAiS JAMAIS `moment('une date')`
 RTFM
 
 > **Please read:**
-> `moment(...)` is local mode. Ambiguous input (without offset) is assumed to be local time. Unambiguous input (with offset) is adjusted to local time.
-> `moment.utc(...)` is utc mode. Ambiguous input is assumed to be UTC. Unambiguous input is adjusted to UTC.
-> `moment.parseZone()` keep the input zone passed in. Ambiguous input is assumed to be UTC.
-> `moment.tz(...)` with the moment-timezone plugin can parse input in a specific time zone.
+>
+> - `moment(...)` is local mode. Ambiguous input (without offset) is assumed to be local time. Unambiguous input (with offset) is adjusted to local time.
+> - `moment.utc(...)` is utc mode. Ambiguous input is assumed to be UTC. Unambiguous input is adjusted to UTC.
+> - `moment.parseZone()` keep the input zone passed in. Ambiguous input is assumed to be UTC.
+> - `moment.tz(...)` with the moment-timezone plugin can parse input in a specific time zone.
 
 Car on est en "local mode", autrement dit, moment converti la valeur que vous lui passez en "heure locale". C'est quoi l'heure locale ? C'est un truc auquel on ne peut avoir aucune confiance ! Pourquoi ? Parce que c'est une donnée qui est renseignée par l'utilisateur !
 
