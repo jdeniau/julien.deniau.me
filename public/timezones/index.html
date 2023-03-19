@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="dist/theme/serif.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <!-- <link rel="stylesheet" href="plugin/highlight/unikitty-light.css" /> -->
+    <link rel="stylesheet" href="plugin/highlight/github.css" />
 
     <style>
       #title {
@@ -56,6 +57,10 @@
       }
       .timezone {
         color: #22d5ab;
+      }
+
+      .small {
+        font-size: 0.5em;
       }
     </style>
   </head>
@@ -501,6 +506,10 @@
         <section>
           <section>
             <h2>Tout est politique (ou économique) !</h2>
+
+            <aside class="notes">
+              <em> info temps : 9 min 00</em>
+            </aside>
           </section>
 
           <section>
@@ -679,6 +688,10 @@
 
             <aside class="notes">
               <p>
+                <em>Info temps : 13 min</em>
+              </p>
+
+              <p>
                 J'ai failli oublié le DST. Encore un bazar lié à l'économie. Le
                 DST c'est l'heure d'été (Daylight Saving Time). Pour éviter le «
                 gaspillage de la lumière », au XXème siècle, on décide de
@@ -808,6 +821,83 @@
               </p>
             </aside>
           </section>
+
+          <section>
+            <div>Eté</div>
+            <hr />
+            <div style="transform: rotate(180deg)">Hiver</div>
+
+            <aside class="notes">
+              Evidemment, j'ai oublié de préciser, mais l'heure d'été, dans
+              l'hemisphère sud, c'est en hiver pour nous !
+            </aside>
+          </section>
+
+          <section>
+            <h3>Changements politiques en 2022</h3>
+            <ul class="small">
+              <li><b>2022-11-27</b> DST cancelation in Greenland</li>
+              <li><b>2022-10-28</b> Changes in Mexico time zones</li>
+              <li><b>2022-10-27</b> Fiji stays on standard time</li>
+              <li>
+                <b>2022-10-05</b> Permanent daylight saving time in Jordan
+              </li>
+              <li><b>2022-10-05</b> Permanent daylight saving time in Syria</li>
+              <li>
+                <b>2022-09-06</b> Palestine summer time will end one day later
+                than expected
+              </li>
+              <li><b>2022-08-10</b> Chile postpones DST one week</li>
+              <li><b>2022-05-12</b> Iran cancels daylight saving time</li>
+              <li>
+                <b>2022-03-14</b> Palestine summer time will start one day later
+                than expected
+              </li>
+            </ul>
+
+            <blockquote>
+              <a href="https://time.is/time_zone_news">
+                https://time.is/time_zone_news
+              </a>
+            </blockquote>
+
+            <aside class="notes">
+              Pour le coup, à Mapado, on avait en prod la libicu un peu
+              ancienne, on a failli perdre un client au Maroc car parfois les
+              heures s'affichaient avec 1H de décallage. (la Maroc à décider de
+              rester sur l'heure d'été en 2018)
+            </aside>
+          </section>
+
+          <section>
+            <h2>Est-ce qu'on gagne ou on perd une heure ?</h2>
+
+            <video src="images/k/inquietez-pour-rien.mp4" autoplay loop></video>
+
+            <aside class="notes">
+              <h3>!!! Aucun des deux !!!</h3>
+
+              <p>
+                Et bien ni l'un ni l'autre puisque le flux temporel ne change
+                pas, la seule chose qui change et notre décalage vis-à-vis de
+                UTC.
+              </p>
+              <p>
+                Pour savoir ce qu'il faut faire avec son horloge on peut
+                calculer avec le temps UTC. En mars on passe à l'heure d'été et
+                donc de UTC+1 à UTC+2. <br />
+                Quand il est 2h UTC+1 il est donc une heure UTC, donc 3h UTC+2.
+                On passe donc son horloge de 2h à 3h. <br />
+                Au mois d'octobre on fait le changement inverse on passe de
+                UTC+2 à UTC+1. <br />
+                Quand il est 2h UTC+2 il est donc minuit UTC et 1h UTC+1. On
+                passe donc son horloge de 3h à 2h. <br />
+                Reste juste à savoir si l'heure d'été est UTC+1 ou UTC+2. Si
+                vous voulez un mémo technique c'est que le premier mois de
+                l'année et tous les mois qui ont un comme dizaine UTC+1.
+              </p>
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -815,8 +905,14 @@
             <h2>Côté informatique</h2>
 
             <aside class="notes">
-              Et oui, en informatique, comment on fait pour gérer tout ce bazar
-              exactement ?
+              <p>
+                <em>Info temps : 19 min 30</em>
+              </p>
+
+              <p>
+                Et oui, en informatique, comment on fait pour gérer tout ce
+                bazar exactement ?
+              </p>
             </aside>
           </section>
 
@@ -909,8 +1005,174 @@
               </p>
             </aside>
           </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Les languages</h2>
+
+            <h3>Comment gérer ce bazar ?</h3>
+
+            <aside class="notes">
+              Je ne maitrise pas DU TOUT tous les languages, il est bien
+              possible que je me sois trompé sur certains ! Auquel cas, je m'en
+              excuse !
+            </aside>
+          </section>
 
           <section>
+            <h2>Valeur par défaut ?</h2>
+
+            <pre><code class="lang-javascript">new Date('2023-04-13T14:00:00').toString()
+// "Thu Apr 13 2023 14:00:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
+
+            <div class="fragment">
+              Sur un serveur :
+              <pre><code class="lang-javascript">new Date('2023-04-13T14:00:00').toString()
+// 'Thu Apr 13 2023 14:00:00 GMT+0000 (temps universel coordonné)'
+</code></pre>
+            </div>
+
+            <aside class="notes">
+              <p>
+                Et oui, si vous ne renseignez pas de fuseau horaire, le language
+                (enfin surtout le système) fait "ce qu'il peut" et utilise par
+                défaut un fuseau horaire "local", dans mon cas mon système
+                d'exploitation est configuré sur Europe/Paris, c'est cette
+                valeur qui est utilisée.
+              </p>
+              <p>
+                Cela dit, si j'éxecute le même code sur un serveur, le fuseau
+                horaire par défaut est UTC, et non Europe/Paris.
+              </p>
+              <p>
+                L'exemple ici est en JS, mais les languages ont (tous ?) le même
+                fonctionnement quand ils doivent parser une chaine de
+                caractères.
+              </p>
+              <p>
+                Ce n'est probablement pas ce que vous voulez, car dans ce cas
+                les deux points temporels ont 2H d'écart !
+              </p>
+
+              <p>
+                Notez que l'on ne spécifie pas non plus de calendrier, et que la
+                valeur par défaut est le calendrier grégorien.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Soyez explicites !</h2>
+
+            <aside class="notes">
+              Finalement la meilleure façon de ne pas se tromper, c'est d'être
+              explicite !
+            </aside>
+          </section>
+
+          <section>
+            <h2>Java</h2>
+
+            <p>Semble très bien géré*</p>
+            <blockquote>
+              OffsetDateTime, ZonedDateTime and Instant all store an instant on
+              the time-line […]
+              <br />
+              <a
+                class="small"
+                href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html"
+                >Documentation package Java `time`</a
+              >
+            </blockquote>
+
+            <p>Le format JavaZDT vient de Java !</p>
+
+            <em class="small">* mais je ne maîtrise pas le language</em>
+
+            <aside class="notes">
+              Java semble très bien géré, avec des classes qui permettent de
+              gérer les dates et les heures, et les fuseaux horaires.<br />
+              La classe Instant, la plus simple, qui gère le "timepoint",
+              OffsetDateTime ajoute le décalage horaire, et ZonedDateTime qui
+              ajoute la gestion complête des fuseaux horaires.<br />
+
+              Il y a des classes pour gérer les calendriers, les dates "locales
+              (pour gérer les anniversaires par ex.), les transitions d'heure
+              d'été, etc.
+              <p>
+                La "verbosité" de Java fait qu'il est probablement difficile de
+                se tromper puisque l'on se pose les bonnes questions avant
+                d'avoir les problèmes !
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>PHP</h2>
+
+            <pre><code ><script type="text/template"><?php
+              new DateTime('next monday 10:00 Europe/Paris');</script>
+          </code></pre>
+
+            <ul>
+              <li>Librairie standard top !</li>
+              <li>Ne gère pas le format JavaZDT</li>
+            </ul>
+
+            <blockquote>
+              <a href="https://www.php.net/datetime">php.net/datetime</a>
+            </blockquote>
+
+            <aside class="notes">
+              Librairie standard au top notamment pour la création d'instance
+              avec une chaine de caractère et la gestion des constructeurs /
+              modificateurs en anglais.
+
+              <br />
+
+              Par contre, pas de gestion du format JavaZDT (et oui, ce n'est pas
+              standard, PHP a sa propre implémentation avec un espace au lieu
+              des crochets)
+            </aside>
+          </section>
+
+          <section>
+            <h2>Python</h2>
+
+            <ul>
+              <li>Fonctionnel, mais pas top*</li>
+              <li>Fuseaux horaires qui fonctionne pas ou mal sous Windows</li>
+              <li>
+                Améliorations en Python 3.2 (classe timezone) et 3.9 (class
+                "ZoneInfo" pour travailler avec la base de fuseaux horaires
+                IANA)
+              </li>
+            </ul>
+            <blockquote>
+              <a
+                href="https://docs.python.org/3/library/zoneinfo.html#data-sources"
+                >documentation SPL zoneinfo</a
+              >
+            </blockquote>
+
+            <em class="small">* mais je ne maîtrise pas le language</em>
+
+            <aside class="notes">
+              <p>
+                Utilise les timezones du système d'exploitation (mais pas sous
+                windows), ou un package externe.
+              </p>
+              <p>
+                C'est peut-être le cas pour les autres languages, mais c'est
+                masqué par le langage ¯\_(ツ)_/¯
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Ruby</h2>
+
             <blockquote>
               <p>
                 `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
@@ -927,7 +1189,356 @@
                 >Documentation Ruby `DateTime`</a
               >
             </div>
+
+            <aside class="notes">
+              Et oui, si on doit un contexte historique, alors on va
+              probablement devoir travailler avec une heure solaire locale !
+            </aside>
           </section>
+
+          <section>
+            <h2>JavaScript</h2>
+
+            <p>
+              Pire librairie possible : API pas pratique, sujette à l'erreur,
+              inconsistante, pas vraiment de gestion des fuseaux horaires
+            </p>
+
+            <pre><code language="javascript">d = new Date()
+>> Date Mon Nov 21 2022 23:14:30 GMT+0100 (heure normale d’Europe centrale)
+
+d.getDay() // en fait : day of week
+>> 1
+d.getDate() // day ?
+>> 21
+d.getMonth() // 0-indexé
+>> 10</code></pre>
+
+            <aside class="notes">
+              Pour gérer des conversions de date dans différentes timezone, il
+              faut formatter la date en chaine de charactère !
+            </aside>
+          </section>
+
+          <section>
+            <h2>JavaScript</h2>
+
+            <ul>
+              <li>
+                <a href="https://momentjs.com/">MomentJS</a>, super puissant:
+                API top et super simple a utiliser.<br />
+              </li>
+              <li>
+                <code>moment-timezone</code> fait 1 Mo de donnée (111Ko gzippé +
+                72ko pour moment)
+              </li>
+              <li>
+                Remplacé par
+                <a href="https://moment.github.io/luxon/#/">luxon</a>,
+                <a href="https://day.js.org/">day.js</a>, et surtout par
+                <a href="https://tc39.es/proposal-temporal/docs/index.html"
+                  >Temporal</a
+                >
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <p>react + react-dom 44ko gzippé</p>
+              <p>@angular/core 74ko gzippé</p>
+
+              <p>
+                Temporal est une proposition de standard pour JavaScript, qui va
+                être intégré dans le language : actuellement stage 3. Temporal
+                se base sur le format JavaZDT pour l'affichage des fuseaux
+                horaires.
+              </p>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>SQL : c'est compliqué</h2>
+
+            <video
+              class="fragment"
+              autoplay
+              loop
+              src="images/k/jaurais-dit-merdique.mp4"
+            ></video>
+
+            <aside class="notes">
+              <em>Info temps : 31 min</em>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Comment les DB gèrent les TimeZones ?</h3>
+
+            <blockquote>
+              le standard SQL possède un <b>mélange étrange</b> de types de
+              date/heure et de possibilités.
+            </blockquote>
+
+            <a
+              href="https://docs.postgresql.fr/10/datatype-datetime.html#DATATYPE-TIMEZONES"
+            >
+              <em>documentation de Postgresql</em></a
+            >
+
+            <aside class="notes">
+              Je ne connais pas spécifiquement postgres, mais ils ont la
+              documentation la plus explicite sur la gestion des dates (et
+              traduite en français !)
+            </aside>
+          </section>
+
+          <section>
+            SQL : un fuseau horaire défini sur le serveur. <br />
+            Gestion possible de la TimeZone par session.
+
+            <p style="text-align: left">Testons :</p>
+
+            <pre><code language="sql">SELECT '2023-01-01 00:00+10'::timestamptz;
+        timestamptz
+  ------------------------
+    2022-12-31 15:00:00+01
+  (1 row)
+</code></pre>
+
+            <blockquote class="fragment">
+              Toutes les dates et heures liées à un fuseau horaire sont stockées
+              en interne en UTC.
+            </blockquote>
+
+            <aside class="notes">
+              En SQL, il y a un fuseau horaire défini sur le serveur (comme en
+              PHP par exemple). On peut aussi modifier sa TimeZone pour la durée
+              de sa session. Un petit test rapide, de ce que ça donne.
+              <br />
+              Je ne m'attendais pas vraiment à avoir ce "UTC+1" ici…<br />
+              <br />Toutes les dates et heures liées à un fuseau horaire sont
+              stockées en interne en UTC. Elles sont converties en heure locale
+              dans le fuseau indiqué par le paramètre de configuration TimeZone
+              avant d'être affichées sur le client.
+
+              <br />
+              <blockquote>
+                il est également préférable de ne pas utiliser le type time with
+                time zone (compatibilité standard SQL)
+              </blockquote>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Oui… mais en fait non !</h3>
+
+            <ul>
+              <li>lignes avec des fuseaux horaires différents ?</li>
+              <li>Décalage UTC != fuseau horaire</li>
+            </ul>
+
+            <video
+              src="images/k/complique-mais-complique.mp4"
+              autoplay
+              loop
+              class="fragment"
+            ></video>
+
+            <aside class="notes">
+              <p>
+                C'est bien d'avoir un retour qui contient la date convertie dans
+                la timezone du client SQL, mais ça ne fonctionne pas si ce qui
+                vous intéresse dans la donnée est l'affichage local !
+              </p>
+              <p>
+                De la même manière, on a vu que le décalage UTC n'est pas
+                suffisant dès que l'on veut modifier une date. (à quelle heure
+                je dois lancer la facturation mensuelle de mon client ? par
+                exemple)
+              </p>
+              <p>Et oui, c'est compliqué, bienvenue dans la vrai vie 😅</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Conversion de fuseaux horaires</h3>
+
+            <ul>
+              <li>
+                MySQL / MariaDB :
+                <code language="sql">CONVERT_TZ(datetime, from_tz, to_tz)</code>
+              </li>
+              <li>
+                SQLServer / Postgresql :
+                <code language="sql">datetime AT TIME ZONE to_TZ</code>
+              </li>
+            </ul>
+
+            <aside class="notes">
+              On peut cela dit convertir les dates entre les fuseaux horaires
+              dans tous les SGBD.<br />
+              Les SGBD ont tous une gestion des fuseaux horaires, généralement
+              basé sur IANA db (sauf SQL server car sous Windows, même problème
+              qu'en Python).
+
+              <p></p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Du coup, on stocke comment ?</h2>
+
+            <pre><code>| value               | timezone     |
+| ------------------- | ------------ |
+| 2022-11-25T12:00:00 | Europe/Paris |</code></pre>
+
+            <ul class="fragment">
+              <li class="fragment strike">l'heure locale de la donnée ?</li>
+              <li>
+                l'heure UTC de la donnée (et il est donc 13h heure de Paris) ?
+              </li>
+            </ul>
+
+            <aside class="notes">
+              Le mieux est probablement de stocker la valeur "datetime" dans une
+              colonne et le fuseau horaire dans une autre
+
+              <h5>Pro heure locale</h5>
+              <ul>
+                <li>
+                  Si la loi change, la donnée reste valide (enfin sauf pour les
+                  échanges internationaux)
+                </li>
+                <li>Facilité de debug (valeur est humainement lisible)</li>
+              </ul>
+
+              <h5>Pro heure UTC</h5>
+              <ul>
+                <li>
+                  Permet de comparer des dates sur des fuseaux horaires
+                  différents (pour trier par ex.)
+                </li>
+                <li>
+                  Plus généralement, met la représentation des dates sur la
+                  "vrai" ligne temporelle
+                </li>
+                <li>
+                  Evite les problèmes avec l'heure d'été : le 30 octobre 2022 en
+                  France, les horloges passeront deux fois entre 2 h et 3 h.
+                  Impossible donc de savoir si c'est 2 h UTC+1 ou bien 2h UTC+2.
+                </li>
+              </ul>
+
+              <p>
+                Le dernier point fait qu'il est considéré comme une bonne
+                pratique de toujours stocker la valeur UTC d'une date.
+              </p>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Et dans une API</h2>
+
+            <aside class="notes">
+              <em>Info temps : 37 min</em>
+            </aside>
+          </section>
+
+          <section>
+            <p>
+              Même combat que pour SQL, mais avec un peu plus de flexibilité
+            </p>
+
+            <ul>
+              <li>RFC3339 : OK pour de l'affichage</li>
+              <li class="fragment strike">Format JavaZDT ?</li>
+              <li class="fragment">
+                Deux clés : une pour la date, une pour le fuseau horaire
+                <pre><code langage="json">{
+  "date": "2022-11-25T12:00:00+01:00",
+  "timezone": "Europe/Paris"
+}</code></pre>
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <p>
+                C'est un peu le même combat que pour SQL, mais avec plus de
+                flexibilité. On peut à minima travailler avec la RFC3339 et
+                avoir un format `2022-11-25T12:00:00+01:00`.
+              </p>
+              <p>
+                Cela dit, vu que l'on n'a pas le fuseau horaire, il est toujours
+                impossible de "bouger" dans le temps sans se tromper sur l'heure
+                d'été.
+              </p>
+              <p>
+                Utiliser le format JavaZDT ? Pourquoi pas… sauf qu'aujourd'hui
+                les librairies ne reconnaissent pas toute cette information.
+              </p>
+
+              <p>
+                Si vous voulez éviter toute erreur, ou si vous voulez travailler
+                sur de la donnée, alors le mieux est surement d'avoir deux clés.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Le bug de 2038</h3>
+
+            <img
+              src="images/y2k_and_2038.png"
+              alt="Dessin de XKCD expliquant qu'on avait passé le point entre les correctifs du bugs de l'an 2000 et la préparation du bug de 2038"
+              title="Le bug de 2038"
+            />
+            <p>&copy; <a href="https://xkcd.com/2697/">xkcd</a></p>
+
+            <aside class="notes">
+              <p>
+                En informatique, les dates sont représentées par des "timestamp"
+                : le nombre de secondes écoulées depuis le 1er janvier 1970.
+                Hors le 19 janvier 2038 à 3 h 14 min 7 s, on va dépasser la
+                taille maximale de stockage d'un nombre entier sur les systèmes
+                32 bits. On va "boucler", et revenir… le 13 décemble 1901 (un
+                timestamp de `−2 147 483 648`).
+              </p>
+
+              <p>
+                Vous allez me dire : "oui mais ça fait longtemps qu'on a des
+                processeurs en 64 bits !"
+              </p>
+
+              <p>
+                Pour autant, en PHP 8.0, la gestion des heures d'été était
+                impactée par ce bug (corrigé en 8.1, sorti le 25 Nov 2021). A
+                Mapado on n'avait pas vérifié la donnée réelle de notre stack de
+                tests, et nos évènements de tests en 2100 avait une mauvaise
+                représentation. Le passage a php 8.1 a fait planté la stack de
+                tests !
+              </p>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Ça arrive à tout le monde</h2>
+          <div>
+            <img src="images/github-tz-issue.png" />
+          </div>
+          <div>
+            <em>Github</em>
+          </div>
+          <p>
+            ©
+            <a
+              href="https://twitter.com/phry/status/1589188976375926784/photo/1"
+              >Lenz Weber-Tronic (twitter)</a
+            >
+          </p>
         </section>
 
         <section>
@@ -945,8 +1556,8 @@
             <aside class="notes">
               <p>Voila, on a vu que c'était bien le bazar.</p>
               <p>
-                Et encore, je vous épargne les secondes intercalaires, ces
-                secondes qui sont ajoutée pour ajuster le temps UTC aux
+                Et encore, je ne vous ai pas parlé des secondes intercalaires,
+                ces secondes qui sont ajoutée pour ajuster le temps UTC aux
                 variations de vitesses de rotation de la terre.
               </p>
               <p>
@@ -1000,7 +1611,8 @@
                   Alors que le changement d'heure n'est pas appliqué sur la
                   majeure partie du continent, la station de recherche Palmer,
                   détenue et financée par les États-Unis, mais exploitée sur le
-                  territoire chilien, suit l'heure du Chili.
+                  territoire chilien, suit l'heure du Chili (dont l'heure
+                  d'été).
                 </li>
                 <li>
                   La station Troll, située dans une zone revendiquée par la
@@ -1024,6 +1636,8 @@
           <section>
             <h2>La (vrai) fin</h2>
             <img src="images/timezone-issue.png" style="max-height: 600px" />
+
+            <p>Des questions ?</p>
 
             <aside class="notes">
               Voila, j'espère que vous avez appris des choses sur les fuseaux
@@ -1142,7 +1756,7 @@
       Reveal.initialize({
         hash: true,
 
-        showNotes: true,
+        showNotes: false,
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
