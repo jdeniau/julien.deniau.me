@@ -31,19 +31,41 @@
             #ffffff,
             #ffffff 1px,
             #ffffff00 1px,
-            #ffffff00 calc(100% / 24)
+            #ffffff00 calc((100% / 24))
           ),
           url(tests/earth_noClouds.0330.jpg);
         background-size: contain;
-        background-position: center -100vh, center center;
+        background-position: 12px -200vh, center center;
         background-repeat: no-repeat;
         width: 100%;
         height: 480px;
       }
 
       .present .world-slice {
-        transition: background-position 2s ease-in-out;
-        background-position: center center, center center;
+        transition: background-position 4s ease-in-out;
+        background-position: 12px center, center center;
+      }
+
+      .rotate180 {
+        transform: rotate(0deg);
+        transition: transform 1s ease-in-out;
+        transition-delay: 2s;
+      }
+
+      .present > .rotate180,
+      .past > .rotate180 {
+        transform: rotate(180deg);
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .social .icon {
+        margin: 0 10px 0 0;
+        width: 1em;
       }
 
       .date {
@@ -92,19 +114,19 @@
           <section>
             Un moyen de se repérer dans le temps
             <ul>
-              <li class="fragment" data-fragment-index="1">une année</li>
-              <li class="fragment" data-fragment-index="1">un mois</li>
-              <li class="fragment" data-fragment-index="1">un jour</li>
-              <li class="fragment" data-fragment-index="1">une heure</li>
-              <li class="fragment" data-fragment-index="1">une minute</li>
-              <li class="fragment" data-fragment-index="1">
+              <li>une année</li>
+              <li>un mois</li>
+              <li>un jour</li>
+              <li>une heure</li>
+              <li>une minute</li>
+              <li>
                 une seconde (et un milliseconde si on veut être (très) précis)
               </li>
 
-              <li class="fragment" data-fragment-index="2">
+              <li class="fragment" data-fragment-index="1">
                 un fuseau horaire !
               </li>
-              <li class="fragment" data-fragment-index="3">un calendrier !!</li>
+              <li class="fragment" data-fragment-index="2">un calendrier !!</li>
             </ul>
 
             <aside class="notes">
@@ -165,12 +187,12 @@
             <ul>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  05 janvier 2022 à 13h30 à Paris
+                  13 avril 2023 à 14h30 à Paris
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  05 janvier 2022 à 20h30 à Singapour
+                  13 avril 2023 à 20h30 à Singapour
                   <img
                     src="images/17h-singapour.png"
                     height="80px"
@@ -180,12 +202,12 @@
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  06 janvier 2022 à 00h30 en Nouvelle-Zélande
+                  14 avril 2023 à 00h30 en Nouvelle-Zélande
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  12 tévet 5783 à 13h30 (Paris, calendrier Hébraïque)
+                  22 Nissan 5783 à 14h30 (Paris, calendrier Hébraïque)
                 </div>
               </li>
             </ul>
@@ -195,20 +217,20 @@
             On peut ignorer certaines données en fonction du contexte.
 
             <aside class="notes">
-              - Venez mangez dimanche 8 janvier 2023 à 12 heure 00, heure de
+              - Venez mangez dimanche 16 avril 2023 à 12 heure 00, heure de
               Paris dans le calendrier Grégorien… Enfin venez manger ce dimanche
               midi quoi !
             </aside>
           </section>
 
-          <section>
+          <section data-transition="slide-in fade-out">
             <h1 class="r-fit-text">THE END</h1>
             <h2>merci</h2>
 
             <aside class="notes">Voila, c'est tout, merci d'être venu !</aside>
           </section>
 
-          <section>
+          <section data-transition="fade-in slide-out">
             <video
               src="images/k/cest-un-peu-plus-complique-quca-hein.mp4"
               autoplay
@@ -246,13 +268,14 @@
           <section>
             <blockquote>Il est midi !</blockquote>
             <ul>
-              <li>Paris : 😋🍕🍷</li>
+              <li>Lyon : 😋🍕🍷</li>
               <li>Tahiti : 😴🛏️</li>
+              <li class="fragment">Paris : 🍻🥨</li>
             </ul>
 
             <aside class="notes">
-              Sauf que quand il est midi Paris, il n'est pas (du tout) midi à
-              Tahiti, ni même à Lyon d'ailleurs ! (en temps solaire)
+              Sauf que quand il est midi Lyon, il n'est pas (du tout) midi à
+              Tahiti, ni même à Paris d'ailleurs ! (en temps solaire)
             </aside>
           </section>
 
@@ -271,7 +294,7 @@
 
             <aside class="notes">
               Jusqu'a à la fin du 19ème siècle, chaque ville avait son heure
-              locale (vu qu'un définissait l'heure grace au soleil, c'est le
+              locale (vu qu'on définissait l'heure grace au soleil, c'est le
               cadran solaire, puis les cloches des églises, qui définissait
               l'heure de chaque ville et rythmaient la vie des habitants).<br />
               Avec l’essor des transports, en particulier du train, avoir une
@@ -329,7 +352,7 @@
           <section>
             <img
               style="max-height: 630px"
-              src="images/International_Date_Line.png"
+              src="images/international-date-line.jpg"
             />
 
             <aside class="notes">
@@ -409,8 +432,8 @@
             </div>
 
             <aside class="notes">
-              Bon il y a quand même des pays ou c'est simple. La Chine : un seul
-              fuseaux horaires.<br />
+              Bon il y a quand même des grands pays ou c'est simple. La Chine :
+              un seul fuseaux horaires.<br />
 
               Sauf que, ben du coup… c'est l'bordel :
               <ul>
@@ -516,7 +539,16 @@
             <h3>Cocorico !</h3>
 
             <div class="r-stack" style="position: relative">
-              <img src="images/uk-fr.jpg" class="fragment fade-in-then-out" />
+              <img
+                src="images/wintertijd-zomertijd.gif"
+                class="fragment fade-out"
+                data-fragment-index="0"
+              />
+              <img
+                src="images/uk-fr.jpg"
+                class="fragment fade-in"
+                data-fragment-index="0"
+              />
               <img
                 src="images/FourMetricInstruments.JPG"
                 class="fragment fade-in-then-out"
@@ -652,7 +684,7 @@
           </section>
 
           <section>
-            <h3>C'est l'bordel</h3>
+            <h3>C'est le bordel…</h3>
 
             <div class="r-stack">
               <img
@@ -823,9 +855,11 @@
           </section>
 
           <section>
-            <div>Eté</div>
-            <hr />
-            <div style="transform: rotate(180deg)">Hiver</div>
+            <div class="rotate180">
+              <div>Eté</div>
+              <hr />
+              <div style="transform: rotate(180deg)">Hiver</div>
+            </div>
 
             <aside class="notes">
               Evidemment, j'ai oublié de préciser, mais l'heure d'été, dans
@@ -862,13 +896,25 @@
             </blockquote>
 
             <aside class="notes">
-              Pour le coup, à Mapado, on avait en prod la libicu un peu
-              ancienne, on a failli perdre un client au Maroc car parfois les
-              heures s'affichaient avec 1H de décallage. (la Maroc à décider de
-              rester sur l'heure d'été en 2018)
+              <p>
+                Et c'est entre 5 et 10 changements géopolitiques par an dans le
+                monde !
+              </p>
+
+              <p>
+                Pour le coup, à Mapado, on avait en prod la libicu un peu
+                ancienne, on a failli perdre un client au Maroc car parfois les
+                heures s'affichaient avec 1H de décallage. (la Maroc à décider
+                de rester sur l'heure d'été en 2018)
+              </p>
+              <p>
+                Enfin sauf pendant le ramadan…parfois les décisions sont aussi
+                religieuses !
+              </p>
             </aside>
           </section>
 
+          <!--
           <section>
             <h2>Est-ce qu'on gagne ou on perd une heure ?</h2>
 
@@ -898,11 +944,11 @@
               </p>
             </aside>
           </section>
-        </section>
+        --></section>
 
         <section>
           <section>
-            <h2>Côté informatique</h2>
+            <h2>En informatique</h2>
 
             <aside class="notes">
               <p>
@@ -936,8 +982,8 @@
 
           <section>
             <code
-              ><span class="date">2022-08-19</span>T<span class="time"
-                >20:00:00</span
+              ><span class="date">2023-04-13</span>T<span class="time"
+                >05:50:00</span
               ><span class="offset">-07:00</span></code
             >
 
@@ -953,7 +999,7 @@
                 Pourtant on l'a vu : entre l'heure d'été et les changements à
                 travers le temps, on ne peut pas travailler avec des dates de
                 façon précise si l'on n'a pas le fuseau horaire exact : si vous
-                êtes à UTC-7 en été, quel heure sera-t-til dans 6 mois ?
+                êtes à UTC-7 en été, quel heure sera-t-il dans 6 mois ?
                 Impossible à savoir sans savoir si vous parlez de l'heure de
                 Phoenix ou bien l'heure de Los Angeles.
               </p>
@@ -963,20 +1009,42 @@
           <section>
             <h2>Le standard des fuseaux horaires ?</h2>
 
-            <code class="fragment"
-              ><span class="date">2022-11-19</span>T<span class="time"
-                >22:27:00</span
-              ><span class="offset">-07:00</span
-              ><span class="timezone">[Europe/Paris]</span></code
-            >
+            <div class="r-stack fragment" data-fragment-index="0">
+              <div class="fragment fade-out" data-fragment-index="1">
+                <p>Il n'y en a pas !</p>
+                <video src="images/k/pas-possible.mp4" autoplay loop></video>
+              </div>
+
+              <div
+                class="fragment"
+                data-fragment-index="1"
+                style="margin-top: 30px"
+              >
+                <p>
+                  <a
+                    href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
+                    >Proposition d'étendre la RFC3339 :</a
+                  >
+                </p>
+                <code
+                  ><span class="date">2023-04-13</span>T<span class="time"
+                    >05:50:00</span
+                  ><span class="offset">-07:00</span
+                  ><span class="timezone">[Europe/Paris]</span></code
+                >
+              </div>
+            </div>
 
             <aside class="notes">
               <p>Mais du coup c'est quoi le standard des fuseaux horaires ?</p>
 
               <p>
                 Et bien il n'y en a pas ! Enfin pas encore tout du moins. Il y a
-                une proposition pour étendre la RFC3339 afin de pouvoir ajouter
-                le fuseau horaire dans le format:
+                <a
+                  href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
+                  >une proposition pour étendre la RFC3339</a
+                >
+                afin de pouvoir ajouter le fuseau horaire dans le format:
                 2022-11-19T22:27:00+01:00[Europe/Paris].
               </p>
 
@@ -1023,13 +1091,13 @@
           <section>
             <h2>Valeur par défaut ?</h2>
 
-            <pre><code class="lang-javascript">new Date('2023-04-13T14:00:00').toString()
-// "Thu Apr 13 2023 14:00:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
+            <pre><code class="lang-javascript">new Date('2023-04-13T14:50:00').toString()
+// "Thu Apr 13 2023 14:50:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
 
             <div class="fragment">
               Sur un serveur :
-              <pre><code class="lang-javascript">new Date('2023-04-13T14:00:00').toString()
-// 'Thu Apr 13 2023 14:00:00 GMT+0000 (temps universel coordonné)'
+              <pre><code class="lang-javascript">new Date('2023-04-13T14:50:00').toString()
+// 'Thu Apr 13 2023 14:50:00 GMT+0000 (temps universel coordonné)'
 </code></pre>
             </div>
 
@@ -1097,13 +1165,13 @@
               OffsetDateTime ajoute le décalage horaire, et ZonedDateTime qui
               ajoute la gestion complête des fuseaux horaires.<br />
 
-              Il y a des classes pour gérer les calendriers, les dates "locales
+              Il y a des classes pour gérer les calendriers, les dates "locales"
               (pour gérer les anniversaires par ex.), les transitions d'heure
               d'été, etc.
               <p>
-                La "verbosité" de Java fait qu'il est probablement difficile de
-                se tromper puisque l'on se pose les bonnes questions avant
-                d'avoir les problèmes !
+                J'ai l'impression que la "verbosité" de Java fait qu'il est
+                probablement difficile de se tromper puisque l'on se pose les
+                bonnes questions avant d'avoir les problèmes !
               </p>
             </aside>
           </section>
@@ -1243,6 +1311,11 @@ d.getMonth() // 0-indexé
             </ul>
 
             <aside class="notes">
+              <p>
+                Quand la librairie standard ne fonctionne pas, les librairies
+                externes montent en puissance
+              </p>
+
               <p>react + react-dom 44ko gzippé</p>
               <p>@angular/core 74ko gzippé</p>
 
@@ -1391,12 +1464,12 @@ d.getMonth() // 0-indexé
 
             <pre><code>| value               | timezone     |
 | ------------------- | ------------ |
-| 2022-11-25T12:00:00 | Europe/Paris |</code></pre>
+| 2023-04-14T12:50:00 | Europe/Paris |</code></pre>
 
             <ul class="fragment">
               <li class="fragment strike">l'heure locale de la donnée ?</li>
               <li>
-                l'heure UTC de la donnée (et il est donc 13h heure de Paris) ?
+                l'heure UTC de la donnée (et il est donc 14h50 heure de Paris) ?
               </li>
             </ul>
 
@@ -1440,7 +1513,7 @@ d.getMonth() // 0-indexé
 
         <section>
           <section>
-            <h2>Et dans une API</h2>
+            <h2>Dans une API</h2>
 
             <aside class="notes">
               <em>Info temps : 37 min</em>
@@ -1484,6 +1557,8 @@ d.getMonth() // 0-indexé
                 Si vous voulez éviter toute erreur, ou si vous voulez travailler
                 sur de la donnée, alors le mieux est surement d'avoir deux clés.
               </p>
+
+              <p>================= PAUSE BOISSON =================</p>
             </aside>
           </section>
 
@@ -1501,10 +1576,10 @@ d.getMonth() // 0-indexé
               <p>
                 En informatique, les dates sont représentées par des "timestamp"
                 : le nombre de secondes écoulées depuis le 1er janvier 1970.
-                Hors le 19 janvier 2038 à 3 h 14 min 7 s, on va dépasser la
+                Hors le 19 janvier 2038 à 3 h 14 min 7 s, on va dépasser la
                 taille maximale de stockage d'un nombre entier sur les systèmes
                 32 bits. On va "boucler", et revenir… le 13 décemble 1901 (un
-                timestamp de `−2 147 483 648`).
+                timestamp de `-2 147 483 648`).
               </p>
 
               <p>
@@ -1539,12 +1614,26 @@ d.getMonth() // 0-indexé
               >Lenz Weber-Tronic (twitter)</a
             >
           </p>
+
+          <aside class="notes">
+            Ca arrive à tout le monde, y compris Github qui a eu ce genre de bug
+            e novembre 2022. Certains utilisateurs ont remontés que leurs
+            commentaires apparaissaient dans le futur !
+          </aside>
         </section>
 
         <section>
-          <section style="position: relative">
+          <section data-transition="slide-in fade-out">
             <h2>La vie, l'univers et le reste</h2>
+            <!-- 
+            <video
+              class="fragment"
+              src="images/k/jai-pas-tout-pige.mp4"
+              autoplay
+              loop
+            /> -->
 
+            <!-- version "rien compris
             <video
               class="fragment"
               src="images/k/jai-rien-compris.mp4"
@@ -1552,6 +1641,7 @@ d.getMonth() // 0-indexé
               autoplay
               loop
             />
+            -->
 
             <aside class="notes">
               <p>Voila, on a vu que c'était bien le bazar.</p>
@@ -1579,6 +1669,12 @@ d.getMonth() // 0-indexé
                 qui s'écoulent juste moins vite ?
               </p>
             </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>La vie, l'univers et le reste</h2>
+
+            <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop />
           </section>
 
           <section>
@@ -1634,15 +1730,62 @@ d.getMonth() // 0-indexé
 
         <section>
           <section>
-            <h2>La (vrai) fin</h2>
-            <img src="images/timezone-issue.png" style="max-height: 600px" />
-
-            <p>Des questions ?</p>
+            <h3>La (vrai) fin</h3>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin-top: 1em;
+              "
+            >
+              <img
+                src="images/timezone-issue.png"
+                style="max-width: 40%; margin-top: 0"
+              />
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                "
+              >
+                <div style="text-decoration: underline">Julien Deniau</div>
+                <div class="social">
+                  <span
+                    class="icon"
+                    style="margin-left: -10px; margin-right: 20px"
+                    >🌎</span
+                  >
+                  julien.deniau.me
+                </div>
+                <div class="social">
+                  <img class="icon" src="images/social-github.svg" />
+                  jdeniau
+                </div>
+                <div class="social">
+                  <img class="icon" src="images/social-mastodon.svg" />
+                  piaille.fr/@jdeniau
+                </div>
+                <div class="social">
+                  <img class="icon" src="images/social-twitter.png" />
+                  j_deniau
+                </div>
+              </div>
+            </div>
 
             <aside class="notes">
-              Voila, j'espère que vous avez appris des choses sur les fuseaux
-              horaires (autre que le fait que c'est un peu plus compliqué que ça
-              !)
+              <p>
+                Voila, j'espère que vous avez appris des choses sur les fuseaux
+                horaires (autre que le fait que c'est un peu plus compliqué que
+                ça !)
+              </p>
+              <p>
+                Je m'apelle Julien Deniau, vous pouvez dors et déjà retrouver
+                les slides de la conférence sur mon blog. Vous pouvez me
+                retrouver sur les différentes plateforme si vous voulez
+                échanger.
+              </p>
             </aside>
           </section>
 
