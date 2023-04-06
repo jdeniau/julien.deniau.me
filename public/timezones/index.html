@@ -178,6 +178,7 @@
                 </a>
                 , il pose plus de questions qu'il n'apporte de réponse 😅.
               </p>
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -305,6 +306,8 @@
               La gare centrale de Pittsburg, partagée par plusieurs compagnie,
               utilisait six heure différentes ! <br />
               Aux États-Unis, il y a eu jusqu'à 300 heures locales.
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
           <section>
@@ -370,6 +373,8 @@
               parfaitement tenu à jour, sauf qu'il est jeudi pour les terriens.
               Il y a eu tellement de débats qu'une délégation spéciale est même
               envoyée à Rome pour expliquer au pape pourquoi cet écart.
+
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -382,6 +387,8 @@
               pratique, quand un fuseau horaire traverse un pays, d'avoir le
               même fuseau horaire quand on est dans tout le pays.<br />
               Aucune tranche n'est donc vraiment égale, ni "droite".
+
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -405,13 +412,14 @@
               <img src="images/france-timezones.png" />
               <img
                 class="fragment"
-                src="images/et_tout_le_monde_s_en_fout.jpg"
+                src="images/et_tout_le_monde_s_en_fout_3.jpg"
                 width="70px"
                 style="
                   position: absolute;
                   right: 100px;
                   bottom: 30px;
                   transform: rotate(20deg);
+                  width: 130px;
                 "
               />
             </div>
@@ -454,6 +462,10 @@
         <section>
           <section>
             <h2>Les fuseaux horaires étranges</h2>
+
+            <aside class="notes">
+              <p>=== PAUSE ===</p>
+            </aside>
           </section>
 
           <section>
@@ -532,6 +544,8 @@
 
             <aside class="notes">
               <em> info temps : 9 min 00</em>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -655,6 +669,8 @@
                 On est donc en France bien trop à l'Ouest de notre fuseau
                 horaire !
               </p>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -680,6 +696,8 @@
                 commercial de l'époque ! Le 4 juillet (jour de fête nationale
                 des États-Unis) avait duré… deux jours !
               </p>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -799,6 +817,8 @@
                 Bon depuis 2019, le COVID a un peu prit le dessus, et donc en
                 2022, aucun pays n'a prit de décision en ce sens.
               </p>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -851,6 +871,8 @@
                 On peut donc « revenir dans le temps » simplement en voyageant
                 du sud au nord !
               </p>
+
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -888,6 +910,8 @@
                 than expected
               </li>
             </ul>
+
+            <p><em>(Et il y en a autant chaque année !)</em></p>
 
             <blockquote>
               <a href="https://time.is/time_zone_news">
@@ -959,6 +983,8 @@
                 Et oui, en informatique, comment on fait pour gérer tout ce
                 bazar exactement ?
               </p>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1003,6 +1029,8 @@
                 Impossible à savoir sans savoir si vous parlez de l'heure de
                 Phoenix ou bien l'heure de Los Angeles.
               </p>
+
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -1071,6 +1099,8 @@
                 autre, et qui maintient une liste à jour des fuseaux horaires,
                 qui est utilisée (mais pas toujours).
               </p>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
         </section>
@@ -1080,12 +1110,6 @@
             <h2>Les languages</h2>
 
             <h3>Comment gérer ce bazar ?</h3>
-
-            <aside class="notes">
-              Je ne maitrise pas DU TOUT tous les languages, il est bien
-              possible que je me sois trompé sur certains ! Auquel cas, je m'en
-              excuse !
-            </aside>
           </section>
 
           <section>
@@ -1261,6 +1285,8 @@
             <aside class="notes">
               Et oui, si on doit un contexte historique, alors on va
               probablement devoir travailler avec une heure solaire locale !
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1400,6 +1426,8 @@ d.getMonth() // 0-indexé
                 il est également préférable de ne pas utiliser le type time with
                 time zone (compatibilité standard SQL)
               </blockquote>
+
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1464,7 +1492,7 @@ d.getMonth() // 0-indexé
 
             <pre><code>| value               | timezone     |
 | ------------------- | ------------ |
-| 2023-04-14T12:50:00 | Europe/Paris |</code></pre>
+| 2023-04-13T12:50:00 | Europe/Paris |</code></pre>
 
             <ul class="fragment">
               <li class="fragment strike">l'heure locale de la donnée ?</li>
@@ -1474,15 +1502,14 @@ d.getMonth() // 0-indexé
             </ul>
 
             <aside class="notes">
+              <p>=== PAUSE ===</p>
+
               Le mieux est probablement de stocker la valeur "datetime" dans une
               colonne et le fuseau horaire dans une autre
 
               <h5>Pro heure locale</h5>
               <ul>
-                <li>
-                  Si la loi change, la donnée reste valide (enfin sauf pour les
-                  échanges internationaux)
-                </li>
+                <li>Si la loi change, la donnée reste valide</li>
                 <li>Facilité de debug (valeur est humainement lisible)</li>
               </ul>
 
@@ -1499,7 +1526,8 @@ d.getMonth() // 0-indexé
                 <li>
                   Evite les problèmes avec l'heure d'été : le 30 octobre 2022 en
                   France, les horloges passeront deux fois entre 2 h et 3 h.
-                  Impossible donc de savoir si c'est 2 h UTC+1 ou bien 2h UTC+2.
+                  Impossible donc de savoir si c'est 2 h UTC+2 (heure d'été) ou
+                  bien 2h UTC+1 (heure d'hiver).
                 </li>
               </ul>
 
@@ -1558,7 +1586,7 @@ d.getMonth() // 0-indexé
                 sur de la donnée, alors le mieux est surement d'avoir deux clés.
               </p>
 
-              <p>================= PAUSE BOISSON =================</p>
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1619,6 +1647,8 @@ d.getMonth() // 0-indexé
             Ca arrive à tout le monde, y compris Github qui a eu ce genre de bug
             e novembre 2022. Certains utilisateurs ont remontés que leurs
             commentaires apparaissaient dans le futur !
+
+            <p>=== PAUSE ===</p>
           </aside>
         </section>
 
@@ -1675,6 +1705,10 @@ d.getMonth() // 0-indexé
             <h2>La vie, l'univers et le reste</h2>
 
             <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop />
+
+            <aside class="notes">
+              <p>=== PAUSE ===</p>
+            </aside>
           </section>
 
           <section>
@@ -1730,7 +1764,7 @@ d.getMonth() // 0-indexé
 
         <section>
           <section>
-            <h3>La (vrai) fin</h3>
+            <h3>La (vraie) fin</h3>
             <div
               style="
                 display: flex;
@@ -1782,9 +1816,14 @@ d.getMonth() // 0-indexé
               </p>
               <p>
                 Je m'apelle Julien Deniau, vous pouvez dors et déjà retrouver
-                les slides de la conférence sur mon blog. Vous pouvez me
-                retrouver sur les différentes plateforme si vous voulez
-                échanger.
+                les slides de la conférence, ainsi que les sources, sur mon
+                blog.<br />
+                Vous pouvez aussi me retrouver sur les différentes plateforme si
+                vous voulez échanger.
+              </p>
+              <p>
+                Merci à vous. Si il reste du temps, je suis dispo pour répondre
+                à vos questions.
               </p>
             </aside>
           </section>
