@@ -1283,6 +1283,20 @@
             </div>
 
             <aside class="notes">
+              <p>
+                Ruby à deux classes pour gérer les dates et les heures : Time et
+                DateTime. Time gère les secondes intercalaires et les fuseaux
+                horaires, mais pas les calendriers. DateTime gère les
+                calendriers, mais pas les fuseaux horaires.<br />
+                (vous voulez probablement utiliser `Time`, mais `DateTime` est
+                utile dans un contexte historique)
+              </p>
+
+              <p>
+                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
+                décembre 2020.
+              </p>
+
               Et oui, si on doit un contexte historique, alors on va
               probablement devoir travailler avec une heure solaire locale !
 
