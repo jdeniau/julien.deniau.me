@@ -20,15 +20,15 @@ export const loader: LoaderFunction = async () => {
   return {
     posts,
     talks: [
-      // {
-      //   title:
-      //     "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
-      //   image: '/timezones/images/World_Time_Zones_Map.png',
-      //   url: 'https://youtu.be/W77y8oFCx2g',
-      //   urlText: 'Vidéo',
-      //   secondaryUrl: '/timezones/',
-      //   secondaryUrlText: 'Slides',
-      // },
+      {
+        title:
+          "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
+        image: '/timezones/images/World_Time_Zones_Map.png',
+        // url: 'https://youtu.be/W77y8oFCx2g',
+        // urlText: 'Vidéo',
+        secondaryUrl: '/timezones/',
+        secondaryUrlText: 'Slides',
+      },
       {
         title: 'Les libs js, watch-module, les dépendances et le reste',
         // description: 'A personal website',
