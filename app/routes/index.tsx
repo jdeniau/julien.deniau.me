@@ -26,8 +26,10 @@ export const loader: LoaderFunction = async () => {
         image: '/timezones/images/World_Time_Zones_Map.png',
         // url: 'https://youtu.be/W77y8oFCx2g',
         // urlText: 'Vidéo',
-        secondaryUrl: '/timezones/',
-        secondaryUrlText: 'Slides',
+        // secondaryUrl: '/timezones/',
+        // secondaryUrlText: 'Slides',
+        url: '/timezones/',
+        urlText: 'Slides',
       },
       {
         title: 'Les libs js, watch-module, les dépendances et le reste',
