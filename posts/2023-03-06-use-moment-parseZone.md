@@ -1,7 +1,7 @@
 ---
 date: 2023-03-06
 title: N'utilisez jamais le constructeur de momentjs directement !
-emphasis: Il est bien trop sensible à l'erreurs
+emphasis: Il est bien trop sensible aux l'erreurs
 icon: code
 lang: fr
 ---
