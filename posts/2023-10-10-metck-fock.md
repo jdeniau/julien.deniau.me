@@ -1,6 +1,6 @@
 ---
 date: 2023-10-10
-title: Oh wait ! I just develop another fetching mock library !
+title: Oh wait ! I just develop another fetch mocking library !
 emphasis: A simple fetch mocking library that loves native `fetch` method
 icon: code
 lang: en
