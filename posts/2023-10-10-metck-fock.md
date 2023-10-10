@@ -11,11 +11,11 @@ lang: en
 I created a fetch mocking library named [`metch-fock`](https://github.com/mapado/metch-fock) that does work great with native `fetch` call on NodeJS 18+.
 
 
-## What happens yesterday ?
+## What happened yesterday ?
 
 I did migrate some code from one internal package to another, but I struggled with [Jest](https://jestjs.io/), our testing framework.
 
-After spending half the day beeing unable to migrate those test, despite the fact that we have jest in both packages, and nearly the same configuration, I decided to test [Vitest](https://vitest.dev/), another testing framework that is compatible with Jest, but with native TypeScript support.
+After spending half the day being unable to migrate those test, despite the fact that we have jest in both packages, and nearly the same configuration, I decided to test [Vitest](https://vitest.dev/), another testing framework that is compatible with Jest, but with native TypeScript support.
 
 ### Migrating to Vitest
 
@@ -50,7 +50,7 @@ I spent some time, but did not manage to make it work. In order to make my migra
 
 ### The quick fix
 
-First replace nock `disableNetConnect` by "something" that will forbid all call to any ressource.
+First replace nock `disableNetConnect` by "something" that will forbid all call to any resource.
 ```diff
   beforeEach(() => {
 -   nock.disableNetConnect();
@@ -158,7 +158,7 @@ fetchMock(
 );
 ```
 
-I also like the nock syntaxic sugar, so I integrated similar functions:
+I also like the nock syntactic sugar, so I integrated similar functions:
 
 ```ts
 fetchMock.put.startsWith(
