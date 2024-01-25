@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import highligtStyle from '~/styles/highlight-dracula.css';
 import { uri } from '~/url';
 import { formatDate } from '~/date';
-import { useHasShare } from '../../hooks/useHasShare';
+import { useHasShare } from '~/hooks/useHasShare';
 
 export function links() {
   return [
@@ -25,21 +25,21 @@ export function links() {
 export const meta: MetaFunction = ({ data }: { data: PostWithHTML }) => {
   const { title, date, image, slug, emphasis } = data;
 
-  return {
-    title: title,
-    description: emphasis ?? '',
-    'og:image': image ? uri(image) : '',
-    // 'og:locale': 'fr_FR',
-    'og:title': title,
-    'og:description': emphasis ?? '',
-    'og:url': uri(`/posts/${slug}`),
-    'og:type': 'article',
-    'article:published_time': formatDate(date),
-    'article:author,': 'Julien Deniau',
-    // 'og:article:section': 'Technology',
-    'twitter:card': 'summary',
-    'twitter:creator': '@j_deniau',
-  };
+  return [
+    { title },
+    { name: 'description', content: emphasis ?? '' },
+    { property: 'og:image', content: image ? uri(image) : '' },
+    // { property: 'og:locale', content: 'fr_FR',},
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: emphasis ?? '' },
+    { property: 'og:url', content: uri(`/posts/${slug}`) },
+    { property: 'og:type', content: 'article' },
+    { property: 'article:published_time', content: formatDate(date) },
+    { property: 'article:author,', content: 'Julien Deniau' },
+    // { property: 'og:article:section', content: 'Technology',},
+    { property: 'twitter:card', content: 'summary' },
+    { property: 'twitter:creator', content: '@j_deniau' },
+  ];
 };
 
 export const loader: LoaderFunction = async ({
