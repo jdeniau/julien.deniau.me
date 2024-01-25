@@ -20,7 +20,7 @@ const NAV_ITEMS: NavItems = [
 ];
 
 export const meta: MetaFunction = () => {
-  return { title: 'Julien Deniau' };
+  return [{ title: 'Julien Deniau' }];
 };
 
 export function links() {
