@@ -97,15 +97,22 @@ class ReviewdogFormatterExtension implements Extension
      */
     public function load(ContainerBuilder $container, array $config): void
     {
+        // register the "Output printer" class
+        $outputPrinterDefinition = $container->register(ReviewdogOutputPrinter::class);
+
+        // add some arguments. In that case, it will use behat's current working directory to write the output file, if not override 
+        $outputPrinterDefinition->addArgument('%paths.base%');
+
         // register the "ReviewdogFormatter" class in behat's kernel
-        $definition = $container->register(ReviewdogFormatter::class);
+        $formatterDefinition = $container->register(ReviewdogFormatter::class);
         
         // add some arguments that will be called in the constructor. 
-        // That's not required but in my cas I inject behats base path, to remove it from the absolute file path later.
-        $definition->addArgument('%paths.base%');
+        // That's not required but in my cas I inject behats base path, to remove it from the absolute file path later, and the printer.
+        $formatterDefinition->addArgument('%paths.base%');
+        $formatterDefinition->addArgument($outputPrinterDefinition);
 
         // tag the formatter as an "output.formatter", this way behat will add it to it's formatter list.
-        $definition->addTag(OutputExtension::FORMATTER_TAG, ['priority' => 100]);
+        $formatterDefinition->addTag(OutputExtension::FORMATTER_TAG, ['priority' => 100]);
     }
 
     public function configure(ArrayNodeDefinition $builder): void { }
@@ -134,12 +141,10 @@ use Behat\Testwork\Output\Printer\OutputPrinter;
 
 class ReviewdogFormatter implements Formatter
 {
-    private readonly ReviewdogOutputPrinter $outputPrinter;
-
-    public function __construct(private readonly string $pathsBase)
-    {
-        // create the output printer that the formatter will call
-        $this->outputPrinter = new ReviewdogOutputPrinter();
+    public function __construct(
+        private readonly string $pathsBase,
+        private readonly ReviewdogOutputPrinter $outputPrinter
+    ) {
     }
 
     /**
