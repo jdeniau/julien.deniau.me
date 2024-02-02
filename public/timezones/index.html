@@ -188,12 +188,12 @@
             <ul>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  29 novembre 2023 à 14h30 à Paris
+                  13 février 2024 à 14h30 à Paris
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  29 novembre 2023 à 20h30 à Singapour
+                  13 février 2024 à 20h30 à Singapour
                   <img
                     src="images/17h-singapour.png"
                     height="80px"
@@ -203,12 +203,12 @@
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  30 novembre 2023 à 00h30 en Nouvelle-Zélande
+                  14 février 2024 à 00h30 en Nouvelle-Zélande
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  16 Kislev 5783 à 14h30 (Paris, calendrier Hébraïque)
+                  4 adar 5784 à 14h30 (Paris, calendrier Hébraïque)
                 </div>
               </li>
             </ul>
@@ -218,7 +218,7 @@
             On peut ignorer certaines données en fonction du contexte.
 
             <aside class="notes">
-              - Venez mangez dimanche 2 décembre 2023 à 12 heure 00, heure de
+              - Venez mangez dimanche 18 février 2024 à 12 heure 00, heure de
               Paris dans le calendrier Grégorien… Enfin venez manger ce dimanche
               midi quoi !
             </aside>
@@ -1009,8 +1009,8 @@
 
           <section>
             <code
-              ><span class="date">2023-11-29</span>T<span class="time"
-                >11:00:00</span
+              ><span class="date">2024-02-13</span>T<span class="time"
+                >10:30:00</span
               ><span class="offset">-07:00</span></code
             >
 
@@ -1056,8 +1056,8 @@
                   >
                 </p>
                 <code
-                  ><span class="date">2023-11-29</span>T<span class="time"
-                    >19:00:00</span
+                  ><span class="date">2024-02-13</span>T<span class="time"
+                    >18:30:00</span
                   ><span class="offset">+01:00</span
                   ><span class="timezone">[Europe/Paris]</span></code
                 >
@@ -1127,13 +1127,13 @@
           <section>
             <h2>Valeur par défaut ?</h2>
 
-            <pre><code class="lang-javascript">new Date('2023-11-29T19:00:00').toString()
-// "Wed Nov 29 2023 19:00:00 GMT+0100 (heure normale d’Europe centrale)"</code></pre>
+            <pre><code class="lang-javascript">new Date('2024-02-13T18:30:00').toString()
+// "Tue Feb 13 2024 18:30:00 GMT+0100 (heure normale d’Europe centrale)"</code></pre>
 
             <div class="fragment">
               Sur un serveur :
-              <pre><code class="lang-javascript">new Date('2023-11-29T19:00:00').toString()
-// 'Wed Nov 29 2023 19:00:00 GMT+0000 (temps universel coordonné)'
+              <pre><code class="lang-javascript">new Date('2024-02-13T18:30:00').toString()
+// Tue Feb 13 2024 18:30:00 GMT+0000 (temps universel coordonné)'
 </code></pre>
             </div>
 
@@ -1517,12 +1517,12 @@ d.getMonth() // 0-indexé
 
             <pre><code>| value               | timezone     |
 | ------------------- | ------------ |
-| 2023-11-29T18:00:00 | Europe/Paris |</code></pre>
+| 2024-02-13T17:30:00 | Europe/Paris |</code></pre>
 
             <ul class="fragment">
               <li class="fragment strike">l'heure locale de la donnée ?</li>
               <li>
-                l'heure UTC de la donnée (et il est donc 19h00 heure de Paris) ?
+                l'heure UTC de la donnée (et il est donc 18h30 heure de Paris) ?
               </li>
             </ul>
 
@@ -1584,7 +1584,7 @@ d.getMonth() // 0-indexé
               <li class="fragment">
                 Deux clés : une pour la date, une pour le fuseau horaire
                 <pre><code langage="json">{
-  "date": "2023-11-29T19:00:00+01:00",
+  "date": "2024-02-13T18:30:00+01:00",
   "timezone": "Europe/Paris"
 }</code></pre>
               </li>
@@ -1594,7 +1594,7 @@ d.getMonth() // 0-indexé
               <p>
                 C'est un peu le même combat que pour SQL, mais avec plus de
                 flexibilité. On peut à minima travailler avec la RFC3339 et
-                avoir un format `2023-11-29T19:00:00+01:00`.
+                avoir un format `2024-02-13T18:30:00+01:00`.
               </p>
               <p>
                 Cela dit, vu que l'on n'a pas le fuseau horaire, il est toujours
