@@ -526,13 +526,13 @@ layout: section
 ---
 # Comment fait-on ? 🤔
 
-## Je n'ai pas d'idée…
+## J'aimerai me lancer, mais je n'ai pas d'idée…
 
 ---
 layout: quote
 ---
 
-## Développez pour vous !
+# Développez pour vous !
 
 Vous êtes les premiers utilisateurs de votre package
 
@@ -592,17 +592,11 @@ layout: default
 # Mais pourquoi je me ferais 💩 à faire ça ?
 
 - Tester des trucs différents (lib de test, bundler, framework)
-- Périmetrer votre projet et garder le simple
-- Rendre votre projet qualitatif
 
 <!--
 Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
 
 Et si c'est cool, on l'utilisera à Mapado !
-
-A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? 
-
-tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité
 
 -->
 
@@ -611,6 +605,46 @@ layout: quote
 ---
 
 ## C'est votre side-project pour vous amuser, en assumant que vous ne gagnerez pas d'argent dessus.
+
+
+---
+layout: section
+---
+
+# Les clés du succès
+
+---
+layout: default
+---
+
+# Les clés du succès
+
+Pas de recette magique, sans ces ingrédients, peu de chance de succès : 
+
+- Périmetrer votre projet et garder le simple
+- Définir votre vision <sup>1</sup>
+- Rendre votre projet qualitatif: 
+  - les tests
+  - la documentation <sup>2</sup>
+- Communiquer <sup>3</sup>
+
+<div class="mt10 color-neutral">
+Refs:
+
+1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
+2. Marmelab: [La documentation, clé du succès open source](https://marmelab.com/blog/2024/01/10/open-source-documentation.html)
+3. [Le Twitterix de Dan Avbramov](https://twitter.com/dan_abramov2)
+</div>
+
+TODO : peut-etre couper en plusieurs pages
+
+<!--
+A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? 
+
+tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité.
+
+La communication. Je pense qu'un des meilleurs recrutement de l'équipe de React a été le recrutement de Dan Abramov, qui a passé un temps de dingue à communiquer sur React et son écosystème.
+-->
 
 ---
 layout: section
@@ -654,6 +688,125 @@ layout: default
 layout: quote
 ---
 
-C'est très cool pour vous !
+## C'est très cool pour vous !
 
 (mais ce n'est pas un but en soit)
+
+---
+layout: quote
+---
+
+# Attention : garder une vie perso !
+
+<!--
+(Ca ne vient pas de moi, je n'en suis pas du tout là) 
+On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants 
+-->
+
+---
+layout: section
+---
+
+# L'open-source,  <br />  ce n'est pas que céer un projet
+
+---
+layout: section
+---
+
+## Contribuez à des projets existants
+
+---
+layout: default
+---
+
+# Contribuez à des projets existants
+
+- Rapportez les bugs que vous rencontrez,
+- Mieux : corrigez les bugs que vous rencontrez (et soumettez des PRs !),
+- Proposez des évolutions que vous aimeriez,
+- "donner plutôt que recevoir",
+- Intégrer la "core team" (les mainteneurs).
+
+<v-click>
+
+Cela veut dire quoi ? Que vous allez investir encore plus de temps sans avoir de retour. 
+
+</v-click>
+
+TODO : peut-être coupen en plusieurs pages
+
+<!--
+- En accord avec la vision du mainteneur de la vision
+- Aidez les mainteneurs sur les issues ou les PRs
+- Après beaucoup d'effort, vous passerez peut-être dans la "core team".
+-->
+
+
+---
+layout: fact 
+---
+
+## Un projet sans son créateur, c'est mort ?
+
+<div class="grid grid-cols-2 gap-4 mt10">
+<div>
+
+Atoum
+
+FOSOAuthServerBundle
+
+</div>
+<div>
+
+Redux 
+
+react-query
+
+storybook
+
+</div>
+</div>
+
+
+---
+layout: section
+---
+
+## Participer à des meet-up et conférences
+
+---
+layout: image
+image: /retours-confs.jpg
+backgroundSize: contain
+---
+
+<h1 class="color-black">Et c'est très vite très gratifiant</h1>
+
+<!--
+Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et qui font du bien au moral)
+-->
+
+
+---
+layout: section
+---
+
+## Publier des articles de blog
+
+---
+layout: quote
+---
+
+> On a tous quelque chose à partager.
+> 
+> _Kenny Dits, M6Web ([refonte front end de 6play](https://www.youtube.com/watch?v=6KUXRuNzBwM))_
+
+<img src="/kenny.png" style="max-height: 50vh; margin: 10px auto" />
+
+<!--
+En 2014, Kenny Dits de M6 hérite de la refonte de 6play, jusqu'alors faite en Flash.
+
+C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angular à react qu'ils s'est dit "ok c'est ça qu'il nous faut".
+
+Il termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
+-->
