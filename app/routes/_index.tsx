@@ -23,13 +23,11 @@ export const loader: LoaderFunction = async () => {
       {
         title:
           "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
-        image: '/timezones/images/World_Time_Zones_Map.png',
-        // url: 'https://youtu.be/W77y8oFCx2g',
-        // urlText: 'Vidéo',
-        // secondaryUrl: '/timezones/',
-        // secondaryUrlText: 'Slides',
-        url: '/timezones/',
-        urlText: 'Slides',
+        image: '/timezones/images/World_Time_Zones_Map.png',        
+        url: 'https://mixitconf.org/2023/tout-ce-que-vous-n-avez-jamais-voulu-savoir-sur-les-fuseaux-horaires',
+        urlText: 'Vidéo',
+        secondaryUrl: '/timezones/',
+        secondaryUrlText: 'Slides',
       },
       {
         title: 'Les libs js, watch-module, les dépendances et le reste',
