@@ -139,8 +139,8 @@ layout: section
 
 - Créer un produit open-source et le vendre (license, conseils, version "pro")
   - elastic search
-  - react-admin
   - mongodb
+  - react-admin
 - les dons et subventions
   - babeljs
   - vuejs
@@ -377,8 +377,12 @@ image: /all-4.png
 </div>
 
 </v-after>
+
 </div>
 
+<!--
+Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
+-->
 
 
 ---
@@ -409,6 +413,30 @@ layout: center
 - fonctionnement interne,
 - développement de fonctionnalités.
 
+
+---
+layout: section
+---
+
+# Tester des trucs 🧑‍🔬
+
+
+---
+layout: center
+---
+
+# Tester des trucs 🧑‍🔬
+
+Amusez-vous avec des trucs différents (lib de test, bundler, framework)
+
+<!--
+Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
+
+Et si c'est cool, on l'utilisera à Mapado !
+
+-->
+
+
 ---
 layout: section
 ---
@@ -432,7 +460,7 @@ class: flex flex-items-end flex-justify-end
 Vous connaissez peut-être cette image de xkcd ?
 
 On utilise tous les jours beaucoup de packages open-source, 
-et contribuer est une forme de "remboursement de cette dette (au même titre que financer directement les créateurs par ex.)
+et contribuer est une forme de "remboursement de cette dette" (au même titre que financer directement les créateurs par ex.)
 
 -->
 
@@ -583,38 +611,19 @@ A Mapado:
 layout: quote
 ---
 
-# Mais pourquoi je me ferais 💩 à faire ça ?
-
----
-layout: default
----
-
-# Mais pourquoi je me ferais 💩 à faire ça ?
-
-- Tester des trucs différents (lib de test, bundler, framework)
-
-<!--
-Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
-
-Et si c'est cool, on l'utilisera à Mapado !
-
--->
-
----
-layout: quote
----
-
-## C'est votre side-project pour vous amuser, en assumant que vous ne gagnerez pas d'argent dessus.
+## C'est un side-project pour vous amuser, en assumant que vous ne gagnerez pas d'argent dessus.
 
 
 ---
 layout: section
 ---
 
-# Les clés du succès
+# Les clés du succès 📈
 
 ---
 layout: default
+
+clicks: 3
 ---
 
 # Les clés du succès
@@ -622,28 +631,58 @@ layout: default
 Pas de recette magique, sans ces ingrédients, peu de chance de succès : 
 
 - Périmetrer votre projet et garder le simple
+
+<v-click at="0">
+
 - Définir votre vision <sup>1</sup>
+
+</v-click>
+
+<v-click at="1">
+
 - Rendre votre projet qualitatif: 
   - les tests
   - la documentation <sup>2</sup>
+
+</v-click>
+
+<v-click at="2">
+
 - Communiquer <sup>3</sup>
+
+</v-click>
+
+<v-click at="0">
 
 <div class="mt10 color-neutral">
 Refs:
 
 1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
+
+
+<v-click at="1">
+
+
 2. Marmelab: [La documentation, clé du succès open source](https://marmelab.com/blog/2024/01/10/open-source-documentation.html)
-3. [Le Twitterix de Dan Avbramov](https://twitter.com/dan_abramov2)
+
+</v-click>
+
+<v-click at="2">
+
+3. [Le Twitterix de Dan Abramov](https://twitter.com/dan_abramov2)
+
+</v-click>
+
 </div>
 
-TODO : peut-etre couper en plusieurs pages
+</v-click>
 
 <!--
-A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? 
+1. A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? Où est-ce que je vais ?
 
-tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité.
+2. tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité.
 
-La communication. Je pense qu'un des meilleurs recrutement de l'équipe de React a été le recrutement de Dan Abramov, qui a passé un temps de dingue à communiquer sur React et son écosystème.
+3. La communication. Je pense qu'un des meilleurs recrutement de l'équipe de React a été le recrutement de Dan Abramov, qui a passé un temps de dingue à communiquer sur React et son écosystème.
 -->
 
 ---
@@ -675,7 +714,7 @@ layout: default
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin: 15 000 téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin: 19 000 téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
@@ -721,11 +760,11 @@ layout: default
 
 # Contribuez à des projets existants
 
-- Rapportez les bugs que vous rencontrez,
-- Mieux : corrigez les bugs que vous rencontrez (et soumettez des PRs !),
-- Proposez des évolutions que vous aimeriez,
-- "donner plutôt que recevoir",
-- Intégrer la "core team" (les mainteneurs).
+1. Rapportez les bugs que vous rencontrez,
+2. Mieux : corrigez les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
+3. Proposez des évolutions que vous aimeriez,
+4. "donner plutôt que recevoir",
+5. Intégrer la "core team" (les mainteneurs).
 
 <v-click>
 
@@ -733,12 +772,23 @@ Cela veut dire quoi ? Que vous allez investir encore plus de temps sans avoir de
 
 </v-click>
 
-TODO : peut-être coupen en plusieurs pages
+<div class="color-gray">
+
+Refs: 
+
+1. [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
+2. [Github PR: fix: prev might be undefined](https://github.com/antfu/markdown-it-mdc/pull/7)
+
+</div>
 
 <!--
-- En accord avec la vision du mainteneur de la vision
-- Aidez les mainteneurs sur les issues ou les PRs
-- Après beaucoup d'effort, vous passerez peut-être dans la "core team".
+- 2. il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
+    
+     pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
+
+- 3. En accord avec la vision du mainteneur de la vision
+- 4. Aidez les mainteneurs sur les issues ou les PRs
+- 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
 -->
 
 
@@ -751,12 +801,16 @@ layout: fact
 <div class="grid grid-cols-2 gap-4 mt10">
 <div>
 
+<h3>😵</h3>
+
 Atoum
 
 FOSOAuthServerBundle
 
 </div>
 <div>
+
+<h3>🚀</h3>
 
 Redux 
 
@@ -772,7 +826,17 @@ storybook
 layout: section
 ---
 
-## Participer à des meet-up et conférences
+## Participer à des meet-up et conférences 🎙️
+
+Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
+
+<br />
+
+<div class="color-gray text-right" style="font-size: .7em">
+
+&nbsp;1. Mathieu Mure: [Le leader imposteur](https://tech.bedrockstreaming.com/le-leader-imposteur)
+
+</div>
 
 ---
 layout: image
@@ -780,7 +844,10 @@ image: /retours-confs.jpg
 backgroundSize: contain
 ---
 
-<h1 class="color-black">Et c'est très vite très gratifiant</h1>
+<h1 
+  class="color-black" 
+  style="background: rgba(255, 255, 255, 0.8); display: inline-block; border-radius: 8px; padding: .1em .3em;"
+>Et c'est très vite très gratifiant</h1>
 
 <!--
 Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et qui font du bien au moral)
@@ -791,7 +858,7 @@ Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et
 layout: section
 ---
 
-## Publier des articles de blog
+# Publier des articles de blog 📝
 
 ---
 layout: quote
@@ -810,3 +877,15 @@ C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angu
 
 Il termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
 -->
+
+---
+layout: quote
+---
+
+<blockquote style="padding: 25px 30px">
+
+# L'open-source
+
+## C'est gratuit, et c'est **pas** toi le produit ! 
+
+</blockquote>
