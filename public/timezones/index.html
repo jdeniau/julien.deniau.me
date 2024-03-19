@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
-    <link rel="stylesheet" href="dist/theme/serif.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" />
+    <link rel="stylesheet" href="dist/theme/devoxx-night.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <!-- <link rel="stylesheet" href="plugin/highlight/unikitty-light.css" /> -->
-    <link rel="stylesheet" href="plugin/highlight/github.css" />
+    <link rel="stylesheet" href="plugin/highlight/dracula.css" />
 
     <style>
       #title {
@@ -69,16 +70,16 @@
       }
 
       .date {
-        color: #f9aa3d;
+        color: #F88224;
       }
       .time {
-        color: #9580ff;
+        color: #8877d4;
       }
       .offset {
-        color: #ff80bf;
+        color: #df57bc;
       }
       .timezone {
-        color: #22d5ab;
+        color: #0DE07D;
       }
 
       .small {
@@ -112,7 +113,7 @@
             <h2>Qu'est-ce qu'une date exactement ?</h2>
           </section>
           <section>
-            Un moyen de se repérer dans le temps
+            <h3>Un moyen de se repérer dans le temps</h3>
             <ul>
               <li>une année</li>
               <li>un mois</li>
@@ -136,7 +137,7 @@
           </section>
 
           <section>
-            <h3>Le temps</h3>
+            <h2>Le temps</h2>
 
             <div class="r-stack">
               <img
@@ -226,7 +227,7 @@
 
           <section data-transition="slide-in fade-out">
             <h1 class="r-fit-text">THE END</h1>
-            <h2>merci</h2>
+            <h2 class="text-font">merci</h2>
 
             <aside class="notes">Voila, c'est tout, merci d'être venu !</aside>
           </section>
@@ -247,9 +248,10 @@
 
         <section>
           <section>
-            <h2 class="r-fit-text">
-              Pourquoi les fuseaux horaires <br />c'est compliqué ?
-            </h2>
+            <h1>
+              Pourquoi 
+            </h1>
+            <h2 class="text-font">les fuseaux horaires <br />c'est compliqué ?</h2>
           </section>
 
           <section
@@ -269,9 +271,9 @@
           <section>
             <blockquote>Il est midi !</blockquote>
             <ul>
-              <li>Lyon : 😋🍕🍷</li>
+              <li>Paris : 🍕🍷</li>
               <li>Tahiti : 😴🛏️</li>
-              <li class="fragment">Paris : 🍻🥨</li>
+              <li class="fragment">Lyon : ☕️</li>
             </ul>
 
             <aside class="notes">
@@ -282,7 +284,7 @@
 
           <section
             data-background="images/nyc-central-station-clock.jpg"
-            data-background-opacity="0.3"
+            data-background-opacity="0.2"
           >
             <h2>L'heure locale</h2>
 
@@ -527,8 +529,8 @@
           <section>
             <h3>
               24 fuseaux horaires ?<br />
-              Non : 37
             </h3>
+            <h3 class="text-font">Non : 37</h3>
 
             <aside class="notes">
               On est déjà bien loin de l'idée initiale des 24 fuseaux
@@ -540,7 +542,8 @@
 
         <section>
           <section>
-            <h2>Tout est politique (ou économique) !</h2>
+            <h2>Tout est politique</h2>
+            <h3 class="text-font">(ou économique) !</h3>
 
             <aside class="notes">
               <em> info temps : 9 min 00</em>
@@ -733,8 +736,8 @@
             <h1>DST</h1>
 
             <div class="fragment">
-              <h2>Daylight Saving Time</h2>
-              <h3>(l'heure d'été)</h3>
+              <h2 class="text-font">Daylight Saving Time</h2>
+              <h3 class="text-font">(l'heure d'été)</h3>
             </div>
 
             <aside class="notes">
@@ -800,7 +803,7 @@
           <section>
             <h2>Union Européenne</h2>
 
-            <h4 class="r-stack">Vers la fin du changement d'heure ?</h4>
+            <h3 class="r-stack text-font">Vers la fin du changement d'heure ?</h3>
 
             <aside class="notes">
               <p>
@@ -826,7 +829,7 @@
           <section>
             <h2>États-Unis</h2>
 
-            <h4>Partout pareil… dans 48 des 50 états</h4>
+            <h3 class="text-font">Partout pareil… dans 48 des 50 états</h3>
 
             <aside class="notes">
               Aux États-Unis, chaque état est libre d'appliquer l'heure d'été,
@@ -912,13 +915,11 @@
               </li>
             </ul>
 
-            <p><em>(Et il y en a autant chaque année !)</em></p>
+            <p><em>(Entre 5 et 10 changements chaque année !)</em></p>
 
-            <blockquote>
-              <a href="https://time.is/time_zone_news">
-                https://time.is/time_zone_news
+              <a href="https://time.is/time_zone_news" class="small">
+                🔗 https://time.is/time_zone_news
               </a>
-            </blockquote>
 
             <aside class="notes">
               <p>
@@ -991,9 +992,11 @@
 
           <section>
             <h2>
-              La norme :<br />
-              ISO 8601 / RFC 3339
+              La norme :
             </h2>
+              <h2 class="text-font">
+            ISO 8601 / RFC 3339
+          </h2>
 
             <video src="images/k/cest-carre.mp4" autoplay loop></video>
 
@@ -1051,9 +1054,10 @@
               >
                 <p>
                   <a
-                    href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
-                    >Proposition d'étendre la RFC3339 :</a
+                    href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-11.html"
                   >
+                    Proposition d'étendre la RFC3339 :
+                  </a>
                 </p>
                 <code
                   ><span class="date">2024-02-13</span>T<span class="time"
@@ -1061,17 +1065,6 @@
                   ><span class="offset">+01:00</span
                   ><span class="timezone">[Europe/Paris]</span></code
                 >
-                <div style="margin-top: 1em">
-                  <em>
-                    Le document
-                    <a
-                      href="https://github.com/tc39/proposal-temporal/issues/1450#issuecomment-1775193551"
-                      target="_blank"
-                      rel="noopener noreferer"
-                      >a été approuvé le 23 octobre 2023</a
-                    >
-                  </em>
-                </div>
               </div>
             </div>
 
@@ -1081,11 +1074,14 @@
               <p>
                 Et bien il n'y en a pas ! Enfin pas encore tout du moins. Il y a
                 <a
-                  href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
+                  href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-11.html"
                   >une proposition pour étendre la RFC3339</a
                 >
                 afin de pouvoir ajouter le fuseau horaire dans le format:
                 2022-11-19T22:27:00+01:00[Europe/Paris].
+                <br />
+                Il y a eu des avancées fin 2023 sur le document, mais il n'est pas 
+                encore finalisé.
               </p>
 
               <p>
@@ -1121,7 +1117,7 @@
           <section>
             <h2>Les languages</h2>
 
-            <h3>Comment gérer ce bazar ?</h3>
+            <h2 class="text-font">Comment gérer ce bazar ?</h2>
           </section>
 
           <section>
@@ -1216,7 +1212,7 @@
             <h2>PHP</h2>
 
             <pre><code ><script type="text/template"><?php
-              new DateTime('next monday 10:00 Europe/Paris');</script>
+        new DateTime('next monday 10:00 Europe/Paris');</script>
           </code></pre>
 
             <ul>
@@ -1344,7 +1340,7 @@ d.getMonth() // 0-indexé
 
             <ul>
               <li>
-                <a href="https://momentjs.com/">MomentJS</a>, super puissant:
+                <a href="https://momentjs.com/" class="highlight">MomentJS</a>, super puissant:
                 API top et super simple a utiliser.<br />
               </li>
               <li>
@@ -1353,9 +1349,9 @@ d.getMonth() // 0-indexé
               </li>
               <li>
                 Remplacé par
-                <a href="https://moment.github.io/luxon/#/">luxon</a>,
-                <a href="https://day.js.org/">day.js</a>, et surtout par
-                <a href="https://tc39.es/proposal-temporal/docs/index.html"
+                <a class="highlight" href="https://moment.github.io/luxon/#/">luxon</a>,
+                <a class="highlight" href="https://day.js.org/">day.js</a>, et surtout par
+                <a class="highlight" href="https://tc39.es/proposal-temporal/docs/index.html"
                   >Temporal</a
                 >
               </li>
@@ -1400,7 +1396,7 @@ d.getMonth() // 0-indexé
             <h3>Comment les DB gèrent les TimeZones ?</h3>
 
             <blockquote>
-              le standard SQL possède un <b>mélange étrange</b> de types de
+              le standard SQL possède un <b class="highlight">mélange étrange</b> de types de
               date/heure et de possibilités.
             </blockquote>
 
@@ -1574,6 +1570,7 @@ d.getMonth() // 0-indexé
           </section>
 
           <section>
+            <h2>Dans une API</h2>
             <p>
               Même combat que pour SQL, mais avec un peu plus de flexibilité
             </p>
@@ -1616,7 +1613,7 @@ d.getMonth() // 0-indexé
           </section>
 
           <section>
-            <h3>Le bug de 2038</h3>
+            <h2>Le bug de 2038</h2>
 
             <img
               src="images/y2k_and_2038.png"
@@ -1819,7 +1816,7 @@ d.getMonth() // 0-indexé
                   julien.deniau.me
                 </div>
                 <div class="social">
-                  <img class="icon" src="images/social-github.svg" />
+                  <img class="icon" src="images/social-github-white.svg" />
                   jdeniau
                 </div>
                 <div class="social">
