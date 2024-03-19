@@ -45,3 +45,18 @@
   .progress {
     color: var(--r-heading-color)!important;
   }
+  
+  .devoxx-logo { 
+    position:fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: var(--r-background-color);
+    padding: 10px 40px;
+    color: var(--r-main-color);
+    font-family: var(--r-heading-font);
+  }
+
+  .devoxx-logo .highlight {
+    color: var(--r-heading-color)!important;
+  }
