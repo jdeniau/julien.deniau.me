@@ -390,24 +390,29 @@ Ne comptez pas trop dessus 😊
 -->
 
 
-
 ---
 layout: section
 ---
 
-# La connaissance ? 🧠
-
+# Rendre son CV attirant ? 💌
 
 ---
-layout: center
+layout: image
+image: /julien-vs-lienju.png
+backgroundSize: 80%
 ---
-# Un grand OUI !
 
-- remontée d'erreurs,
-- échanges avec les gens,
-- fonctionnement interne,
-- développement de fonctionnalités.
+<!--
+Vous recruteriez plus "julien" à gauche ou bien "lienju" à droite ?
 
+En tant que recruteur, on a plus de billes avec un compte github qui a des "trucs" dedans.
+
+Attention, cela ne veut pas dire qu'un github vide est un mauvais développeur, mais qu'on a moins d'info pour comparer.
+
+C'est une autre façon de vous connaitre (en plus de votre CV et des entretiens), ça permet d'annexer votre CV.
+
+Potentiellement, si vous contribuez sur un package que l'entreprise utilise, c'est un "match" direct.
+-->
 
 ---
 layout: section
@@ -430,6 +435,24 @@ Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
 Et si c'est cool, on l'utilisera à Mapado !
 
 -->
+
+---
+layout: section
+---
+
+# La connaissance ? 🧠
+
+
+---
+layout: center
+---
+# Un grand OUI !
+
+- remontée d'erreurs,
+- échanges avec les gens,
+- fonctionnement interne,
+- développement de fonctionnalités.
+
 
 
 ---
@@ -459,30 +482,6 @@ et contribuer est une forme de "remboursement de cette dette" (au même titre qu
 
 -->
 
-
----
-layout: section
----
-
-# Rendre son CV attirant ? 💌
-
----
-layout: image
-image: /julien-vs-lienju.png
-backgroundSize: 80%
----
-
-<!--
-Vous recruteriez plus "julien" à gauche ou bien "lienju" à droite ?
-
-En tant que recruteur, on a plus de billes avec un compte github qui a des "trucs" dedans.
-
-Attention, cela ne veut pas dire qu'un github vide est un mauvais développeur, mais qu'on a moins d'info pour comparer.
-
-C'est une autre façon de vous connaitre (en plus de votre CV et des entretiens), ça permet d'annexer votre CV.
-
-Potentiellement, si vous contribuez sur un package que l'entreprise utilise, c'est un "match" direct.
--->
 
 ---
 layout: section
@@ -793,6 +792,12 @@ Cela veut dire quoi ? Que vous allez investir encore plus de temps sans avoir de
 
 </v-click>
 
+<v-click>
+
+Exemple avec immutable.js : 18 000 000 téléchargements / semaine.
+
+</v-click>
+
 <div class="color-gray">
 
 Refs: 
@@ -810,6 +815,10 @@ Refs:
 - 3. En accord avec la vision du mainteneur de la vision
 - 4. Aidez les mainteneurs sur les issues ou les PRs
 - 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
+
+Vous travaillerez sur des projets surement beaucoup impactants que vos projets perso.
+
+Pour rappel, le top projet Mapado c'est haversine à 300 000 / semaine puis le plugin prettier à 18 000 / semaine
 -->
 
 
