@@ -15,20 +15,15 @@ defaults:
 transition: slide-left
 title: 'Open-source: Pourquoi ? Comment ?'
 mdc: true
-background: none
+background: /home-bg.png
+backgroundSize: cover
 layout: cover
 ---
 
-# Open-source : 
+<h1 style="color: #ffc12c; text-transform:uppercase">Open-source</h1>
 
 ## Pourquoi ? Comment ?
 
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
-
-saut de ligne ?
--->
 
 ---
 layout: section
@@ -568,6 +563,7 @@ Vous êtes les premiers utilisateurs de votre package
 Et surement les seuls…
 </div>
 
+
 ---
 layout: default
 ---
@@ -611,8 +607,17 @@ A Mapado:
 layout: quote
 ---
 
-## C'est un side-project pour vous amuser, en assumant que vous ne gagnerez pas d'argent dessus.
 
+
+<blockquote  style="padding: 25px 30px">
+  <h2>C'est un side-project pour vous "amuser", en assumant que vous ne gagnerez pas d'argent dessus.</h2>
+</blockquote>
+
+<div class="text-right">
+  
+_L'open-source, par JD_
+
+</div>
 
 ---
 layout: section
@@ -714,7 +719,7 @@ layout: default
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin: 19 000 téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin: 16 000 téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
@@ -777,7 +782,7 @@ Cela veut dire quoi ? Que vous allez investir encore plus de temps sans avoir de
 Refs: 
 
 1. [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
-2. [Github PR: fix: prev might be undefined](https://github.com/antfu/markdown-it-mdc/pull/7)
+2. [PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
 
 </div>
 
@@ -889,3 +894,9 @@ layout: quote
 ## C'est gratuit, et c'est **pas** toi le produit ! 
 
 </blockquote>
+
+<div class="text-right">
+
+_Julien D._
+
+</div>
