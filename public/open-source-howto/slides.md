@@ -545,6 +545,22 @@ Ca prend un peu de temps perso !
 -->
 
 ---
+layout: image
+image: /alone-desert.jpg
+backgroundSize: contain
+backgroundColor: black
+---
+
+<!--
+Vous allez vous sentir seul : 
+
+Il est peu probable que votre projet intéresse beaucoup de monde, et vous allez vous sentir seul à le maintenir.
+
+Quand bien même votre projet est utile, il est peu probable que vous ayez de l'aide. Au mieux vous aurez des bug reportés ou des demandes d'évolutions, mais peu de PRs.
+
+-->
+
+---
 layout: section
 ---
 # Comment fait-on ? 🤔
