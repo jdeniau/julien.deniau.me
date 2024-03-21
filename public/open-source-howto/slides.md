@@ -141,6 +141,31 @@ layout: section
   - vuejs
   - socket.io
 
+<v-click>
+
+<ul style="list-style: none">
+  <li>
+    <ul>
+      <li>
+        PostCSS : 12 000 $ / an récurrent (+ 26 000 $ de don non récurrent)
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div style="width: 60%; margin: 0 0 auto; margin-top: 30px; float: right; text-align: right"> 
+  <blockquote>
+  Almost nobody makes a living writing free software. As a percentage of all software engineers, it’s so few we can basically round down to zero.
+  </blockquote>
+
+  <a href="https://jacobian.org/2024/feb/16/paying-maintainers-is-good/" style="font-size: 0.5em">
+  Paying people to work on open source is good actually - 
+  Jacob Kaplan-Moss
+  </a>
+</div>
+
+</v-click>
+
   
 <!--
 C'est bien si vous voulez fondez une société, ou si votre produit marche vraiment bien.
@@ -177,6 +202,10 @@ layout: fact
 
 ## Qui connais … ?
 
+<!--
+Petit quizz : levez la main si vous connaissez…
+-->
+
 ---
 layout: quizz
 image:  https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Daniel_Stenberg_%28cropped%29.jpg/520px-Daniel_Stenberg_%28cropped%29.jpg
@@ -188,6 +217,9 @@ who: Daniel Stenberg
 
 <logos-curl style="font-size: 5em;" />
 
+ <div class="color-neutral">
+        (tout le monde utilise curl, même sans le savoir)
+      </div>
 
 </v-click>
 
@@ -508,7 +540,7 @@ clicks: 1
 class="position-absolute top-5 right-5"
 v-if="$slidev.nav.clicks === 1"
 v-motion
- src="fainting-michelle-hsieh.mp4" autoplay loop></video>
+ src="/fainting-michelle-hsieh.mp4" autoplay loop></video>
 
 
 <!--
@@ -555,7 +587,7 @@ Vous allez vous sentir seul :
 
 Il est peu probable que votre projet intéresse beaucoup de monde, et vous allez vous sentir seul à le maintenir.
 
-Quand bien même votre projet est utile, il est peu probable que vous ayez de l'aide. Au mieux vous aurez des bug reportés ou des demandes d'évolutions, mais peu de PRs.
+Quand bien même votre projet est utile, il est peu probable que vous ayez de l'aide malgré tout le temps que vous allez investir. Au mieux vous aurez des bug reportés ou des demandes d'évolutions, mais peu de PRs.
 
 -->
 
