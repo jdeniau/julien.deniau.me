@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base /open-source-howto/dist/",
     "dev": "slidev --remote",
     "export": "slidev export"
   },
