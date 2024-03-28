@@ -193,12 +193,12 @@
             <ul>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  13 février 2024 à 14h30 à Paris
+                  17 avril 2024 à 14h30 à Paris
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  13 février 2024 à 20h30 à Singapour
+                  17 avril 2024 à 20h30 à Singapour
                   <img
                     src="images/17h-singapour.png"
                     height="80px"
@@ -208,12 +208,12 @@
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  14 février 2024 à 00h30 en Nouvelle-Zélande
+                  18 avril 2024 à 00h30 en Nouvelle-Zélande
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  4 adar 5784 à 14h30 (Paris, calendrier Hébraïque)
+                  9 nissan 5784 à 14h30 (Paris, calendrier Hébraïque)
                 </div>
               </li>
             </ul>
@@ -223,7 +223,7 @@
             On peut ignorer certaines données en fonction du contexte.
 
             <aside class="notes">
-              - Venez mangez dimanche 18 février 2024 à 12 heure 00, heure de
+              - Venez mangez dimanche 20 avril 2024 à 12 heure 00, heure de
               Paris dans le calendrier Grégorien… Enfin venez manger ce dimanche
               midi quoi !
             </aside>
@@ -281,8 +281,8 @@
             </ul>
 
             <aside class="notes">
-              Sauf que quand il est midi Lyon, il n'est pas (du tout) midi à
-              Tahiti, ni même à Paris d'ailleurs ! (en temps solaire)
+              Sauf que quand il est midi Paris, il n'est pas (du tout) midi à
+              Tahiti, ni même à Lyon d'ailleurs ! (en temps solaire)
             </aside>
           </section>
 
@@ -822,8 +822,12 @@
                 🤦
               </p>
               <p>
-                Bon depuis 2019, le COVID a un peu prit le dessus, et donc en
-                2022, aucun pays n'a prit de décision en ce sens.
+                Bon depuis 2019, il y a eu le COVID, la guerre en Ukraine et dans la bande de Gaza,
+                la crise énergétique et une inflation record, les catastrophes climatiques, 
+                les agriculteurs en colère et puis Mbappé qui part du PSG.
+                Donc finalement, en 2024, aucun pays n'a prit de décision en ce sens.<br />
+                (alors que si on y réfléchit bien, c'est la discussion qui devrait 
+                passer assez facilement politiquement !)
               </p>
 
               <p>=== PAUSE ===</p>
@@ -1016,8 +1020,8 @@
 
           <section>
             <code
-              ><span class="date">2024-02-13</span>T<span class="time"
-                >10:30:00</span
+              ><span class="date">2024-04-17</span>T<span class="time"
+                >07:35:00</span
               ><span class="offset">-07:00</span></code
             >
 
@@ -1064,9 +1068,9 @@
                   </a>
                 </p>
                 <code
-                  ><span class="date">2024-02-13</span>T<span class="time"
-                    >18:30:00</span
-                  ><span class="offset">+01:00</span
+                  ><span class="date">2024-04-17</span>T<span class="time"
+                    >14:35:00</span
+                  ><span class="offset">+02:00</span
                   ><span class="timezone">[Europe/Paris]</span></code
                 >
               </div>
@@ -1082,7 +1086,7 @@
                   >une proposition pour étendre la RFC3339</a
                 >
                 afin de pouvoir ajouter le fuseau horaire dans le format:
-                2022-11-19T22:27:00+01:00[Europe/Paris].
+                YYYY-MM-DDTHH:ii:ss+01:00[Europe/Paris].
                 <br />
                 Il y a eu des avancées fin 2023 sur le document, mais il n'est pas 
                 encore finalisé.
@@ -1127,13 +1131,13 @@
           <section>
             <h2>Valeur par défaut ?</h2>
 
-            <pre><code class="lang-javascript">new Date('2024-02-13T18:30:00').toString()
-// "Tue Feb 13 2024 18:30:00 GMT+0100 (heure normale d’Europe centrale)"</code></pre>
+            <pre><code class="lang-javascript">new Date('2024-04-17T14:35:00').toString()
+"Wed Apr 17 2024 14:35:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
 
             <div class="fragment">
               Sur un serveur :
-              <pre><code class="lang-javascript">new Date('2024-02-13T18:30:00').toString()
-// Tue Feb 13 2024 18:30:00 GMT+0000 (temps universel coordonné)'
+              <pre><code class="lang-javascript">new Date('2024-04-17T14:35:00').toString()
+"'Wed Apr 17 2024 14:35:00 GMT+0000 (temps universel coordonné)"
 </code></pre>
             </div>
 
@@ -1156,7 +1160,7 @@
               </p>
               <p>
                 Ce n'est probablement pas ce que vous voulez, car dans ce cas
-                les deux points temporels ont 1H d'écart !
+                les deux points temporels ont 2H d'écart !
               </p>
 
               <p>
@@ -1247,11 +1251,8 @@
             <ul>
               <li>Fonctionnel, mais pas top*</li>
               <li>Fuseaux horaires qui fonctionne pas ou mal sous Windows</li>
-              <li>
-                Améliorations en Python 3.2 (classe timezone) et 3.9 (class
-                "ZoneInfo" pour travailler avec la base de fuseaux horaires
-                IANA)
-              </li>
+              <li>Python 3.2 : classe timezone</li>
+              <li>Python 3.9 : classe "ZoneInfo" (pour utiliser la base du  IANA)</li>
             </ul>
             <blockquote>
               <a
@@ -1277,7 +1278,7 @@
           <section>
             <h2>Ruby : Time ou DateTime ?</h2>
 
-            <blockquote>
+            <blockquote style="width: 80%">
               <p>
                 `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
                 suivi d'aucune règle de changement d'heure d'été.
@@ -1324,14 +1325,14 @@
             </p>
 
             <pre><code language="javascript">d = new Date()
->> Date Mon Nov 21 2022 23:14:30 GMT+0100 (heure normale d’Europe centrale)
+>> Date Wed Apr 17 2024 14:35:00 GMT+0200 (heure d’été d’Europe centrale)
 
 d.getDay() // en fait : day of week
->> 1
+>> 3
 d.getDate() // day ?
->> 21
+>> 17
 d.getMonth() // 0-indexé
->> 10</code></pre>
+>> 3</code></pre>
 
             <aside class="notes">
               Pour gérer des conversions de date dans différentes timezone, il
@@ -1423,10 +1424,10 @@ d.getMonth() // 0-indexé
 
             <p style="text-align: left">Testons :</p>
 
-            <pre><code language="sql">SELECT '2023-01-01 00:00+10'::timestamptz;
+            <pre><code language="sql">SELECT '2024-01-01 00:00+10'::timestamptz;
         timestamptz
   ------------------------
-    2022-12-31 15:00:00+01
+    2023-12-31 15:00:00+01
   (1 row)
 </code></pre>
 
@@ -1517,12 +1518,12 @@ d.getMonth() // 0-indexé
 
             <pre><code>| value               | timezone     |
 | ------------------- | ------------ |
-| 2024-02-13T17:30:00 | Europe/Paris |</code></pre>
+| 2024-04-17T12:35:00 | Europe/Paris |</code></pre>
 
             <ul class="fragment">
               <li class="fragment strike">l'heure locale de la donnée ?</li>
               <li>
-                l'heure UTC de la donnée (et il est donc 18h30 heure de Paris) ?
+                l'heure UTC de la donnée (et il est donc 14h35 heure de Paris) ?
               </li>
             </ul>
 
@@ -1585,7 +1586,7 @@ d.getMonth() // 0-indexé
               <li class="fragment">
                 Deux clés : une pour la date, une pour le fuseau horaire
                 <pre><code langage="json">{
-  "date": "2024-02-13T18:30:00+01:00",
+  "date": "2024-04-17T14:35:00+02:00",
   "timezone": "Europe/Paris"
 }</code></pre>
               </li>
@@ -1595,7 +1596,7 @@ d.getMonth() // 0-indexé
               <p>
                 C'est un peu le même combat que pour SQL, mais avec plus de
                 flexibilité. On peut à minima travailler avec la RFC3339 et
-                avoir un format `2024-02-13T18:30:00+01:00`.
+                avoir un format `2024-04-17T14:35:00+02:00`.
               </p>
               <p>
                 Cela dit, vu que l'on n'a pas le fuseau horaire, il est toujours
@@ -1654,7 +1655,7 @@ d.getMonth() // 0-indexé
         </section>
 
         <section>
-          <h2>Ça arrive à tout le monde</h2>
+          <h3>Ça arrive à tout le monde</h3>
           <div>
             <img src="images/github-tz-issue.png" />
           </div>
@@ -1680,7 +1681,7 @@ d.getMonth() // 0-indexé
 
         <section>
           <section data-transition="slide-in fade-out">
-            <h2>La vie, l'univers et le reste</h2>
+            <h1>La vie, l'univers et le reste</h1>
             <!-- 
             <video
               class="fragment"
@@ -1733,14 +1734,19 @@ d.getMonth() // 0-indexé
             <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop />
 
             <aside class="notes">
+              Je vous balance tout ça là, mais j'ai pas forcément tout bien pigé non plus hein !
               <p>=== PAUSE ===</p>
             </aside>
           </section>
 
           <section>
+            <h2>Un p'ti dernier pour la route ?</h2>
+          </section>
+          
+          <section data-transition="fade-in slide-out">
             <h4>Un p'ti dernier pour la route ?</h4>
 
-            <div class="fragment r-stack">
+            <div >
               <img
                 src="images/antarctique-fuseaux.webp"
                 style="max-height: 630px"
