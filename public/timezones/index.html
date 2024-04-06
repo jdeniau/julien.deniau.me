@@ -1616,7 +1616,9 @@ d.getMonth() // 0-indexé
               <p>=== PAUSE ===</p>
             </aside>
           </section>
+        </section>
 
+        <section>
           <section>
             <h2>Le bug de 2038</h2>
 
@@ -1652,31 +1654,50 @@ d.getMonth() // 0-indexé
               </p>
             </aside>
           </section>
-        </section>
 
-        <section>
-          <h3>Ça arrive à tout le monde</h3>
-          <div>
-            <img src="images/github-tz-issue.png" />
-          </div>
-          <div>
-            <em>Github</em>
-          </div>
-          <p>
-            ©
-            <a
-              href="https://twitter.com/phry/status/1589188976375926784/photo/1"
-              >Lenz Weber-Tronic (twitter)</a
-            >
-          </p>
+          <section>
+            <h3>Ça arrive à tout le monde</h3>
+            <div>
+              <img src="images/github-tz-issue.png" />
+            </div>
+            <div>
+              <em>Github</em>
+            </div>
+            <p class="small">
+              ©
+              <a
+                href="https://twitter.com/phry/status/1589188976375926784/photo/1"
+                >Lenz Weber-Tronic (twitter)</a
+              >
+            </p>
 
-          <aside class="notes">
-            Ca arrive à tout le monde, y compris Github qui a eu ce genre de bug
-            en novembre 2022. Certains utilisateurs ont remontés que leurs
-            commentaires apparaissaient dans le futur !
+            <aside class="notes">
+              Ca arrive à tout le monde, y compris Github qui a eu ce genre de bug
+              en novembre 2022. Certains utilisateurs ont remontés que leurs
+              commentaires apparaissaient dans le futur !
 
-            <p>=== PAUSE ===</p>
-          </aside>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Ça arrive à tout le monde</h3>
+            <div>
+              <img src="images/one-plus.jpg" style="width: 60%" />
+            </div>
+            <div>
+              <em>Téléphone One Plus</em>
+            </div>
+            <p class="small">
+              © S. Grégeois
+            </p>
+
+            <aside class="notes">
+              Un téléhpone One Plus plusieurs jours après le changement d'heure :
+              Paris n'est pas passé à l'heure d'été, par contre Ruoms, en Adrèche, si !
+
+              <p>=== PAUSE ===</p>
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -1719,7 +1740,13 @@ d.getMonth() // 0-indexé
                 "solaire". Et plus tard ? Un temps de la Galaxie ?
               </p>
               <p>
-                On a aussi simplifié au début de la présentation en disant que
+                D'ailleurs la maison blanche à demandé à la NASA de plancher sur 
+                un "Lunar Coordinated Time", dans l'objectif d'avoir des missions
+                longues durées sur la lune car le temps s'écoule "légèrement"
+                plus lentement sur la lune que sur la terre.
+              </p>
+              <p>
+                En fait on a simplifié au début de la présentation en disant que
                 le temps est sur une ligne, mais on sait que l'espace-temps est
                 "étiré" à l'approche d'objets super-massifs comme les trou noir.
                 Là encore, comment gérer la conversion ? Est-ce les même valeurs
@@ -1731,7 +1758,19 @@ d.getMonth() // 0-indexé
           <section data-transition="fade-in slide-out">
             <h2>La vie, l'univers et le reste</h2>
 
-            <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop />
+            <div class="r-stack" style="position: relative">
+              <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop></video>
+
+              <img
+                src="images/dontpanic.png"
+                style="
+                  position: absolute;
+                  right: 40px;
+                  top: -80px;
+                  width: 200px;
+                "
+              />
+            </div>
 
             <aside class="notes">
               Je vous balance tout ça là, mais j'ai pas forcément tout bien pigé non plus hein !
