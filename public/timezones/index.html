@@ -294,10 +294,16 @@
 
             <video
               class="fragment"
-              src="images/k/incroyable-difficulte.mp4"
+              src="images/train-bttf.mp4"
               autoplay
               loop
             ></video>
+            <!-- <video
+              class="fragment"
+              src="images/train-chase.mp4"
+              autoplay
+              loop
+            ></video> -->
 
             <aside class="notes">
               Jusqu'a à la fin du 19ème siècle, chaque ville avait son heure
@@ -580,7 +586,7 @@
                 class="fragment fade-in-then-out"
               />
               <img src="images/uk-fr.jpg" class="fragment" />
-              <video
+              <!-- <video
                 class="fragment fade-in-then-out"
                 src="images/k/trop-saoule.mp4"
                 style="
@@ -591,7 +597,7 @@
                 "
                 autoplay
                 loop
-              ></video>
+              ></video> -->
               <img
                 src="images/french-troll.png"
                 width="75px"
@@ -712,6 +718,11 @@
           <section>
             <h3>C'est le bordel…</h3>
 
+            <img
+              src="images/auberge-espagnole-bordel.png"
+            />
+
+            <!-- 
             <div class="r-stack">
               <img
                 src="images/auberge-espagnole-bordel.png"
@@ -726,6 +737,7 @@
                 loop
               ></video>
             </div>
+             -->
 
             <aside class="notes">
               <strong>D'accord</strong>, donc tout est politique ou économique
@@ -822,12 +834,9 @@
                 🤦
               </p>
               <p>
-                Bon depuis 2019, il y a eu le COVID, la guerre en Ukraine et dans la bande de Gaza,
-                la crise énergétique et une inflation record, les catastrophes climatiques, 
-                les agriculteurs en colère et puis Mbappé qui part du PSG.
+                Bon depuis 2019, il y a eu le COVID, la guerre aux portes de l'Europe,
+                une inflation record, les catastrophes climatiques, et puis Mbappé qui part du PSG.
                 Donc finalement, en 2024, aucun pays n'a prit de décision en ce sens.<br />
-                (alors que si on y réfléchit bien, c'est la discussion qui devrait 
-                passer assez facilement politiquement !)
               </p>
 
               <p>=== PAUSE ===</p>
@@ -902,7 +911,7 @@
           </section>
 
           <section>
-            <h3>Changements politiques en 2022</h3>
+            <h3>Des changements politiques tous les ans !</h3>
             <ul class="small">
               <li><b>2022-11-27</b> DST cancelation in Greenland</li>
               <li><b>2022-10-28</b> Changes in Mexico time zones</li>
@@ -1002,11 +1011,14 @@
             <h2>
               La norme :
             </h2>
-              <h2 class="text-font">
-            ISO 8601 / RFC 3339
-          </h2>
+            <h2 class="text-font">
+              ISO 8601 / RFC 3339
+            </h2>
+            <p>
+              « Représentation de la date et l'heure »
+            </p>
 
-            <video src="images/k/cest-carre.mp4" autoplay loop></video>
+            <!-- <video src="images/k/cest-carre.mp4" autoplay loop></video> -->
 
             <aside class="notes">
               En informatique, on aime bien les normes. C'est un peu comme les
@@ -1052,7 +1064,7 @@
             <div class="r-stack fragment" data-fragment-index="0">
               <div class="fragment fade-out" data-fragment-index="1">
                 <p>Il n'y en a pas !</p>
-                <video src="images/k/pas-possible.mp4" autoplay loop></video>
+                <video src="images/doctor-who-clara.mp4" autoplay loop></video>
               </div>
 
               <div
@@ -1068,8 +1080,8 @@
                   </a>
                 </p>
                 <code
-                  ><span class="date">2024-04-17</span>T<span class="time"
-                    >14:35:00</span
+                  ><span class="date">2023-10-29</span>T<span class="time"
+                    >02:30:00</span
                   ><span class="offset">+02:00</span
                   ><span class="timezone">[Europe/Paris]</span></code
                 >
@@ -1172,12 +1184,97 @@
 
           <section>
             <h2>Soyez explicites !</h2>
+            <h3 class="text-font">Donnez toujours le fuseau horaire</h3>
 
             <aside class="notes">
               Finalement la meilleure façon de ne pas se tromper, c'est d'être
               explicite !
             </aside>
           </section>
+          <section>
+            <h2>Ruby : Time ou DateTime ?</h2>
+
+            <blockquote style="width: 80%">
+              <p>
+                `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
+                suivi d'aucune règle de changement d'heure d'été.
+                <br />
+                […]<br />
+                Si vous voulez aussi gérer les fuseaux horaires, alors bon
+                courage […]
+              </p>
+            </blockquote>
+            <div class="small">
+              <a href="https://ruby-doc.org/3.2.2/exts/date/DateTime.html"
+                >Documentation Ruby `DateTime`</a
+              >
+            </div>
+
+            <aside class="notes">
+              <p>
+                Ruby à deux classes pour gérer les dates et les heures : Time et
+                DateTime. Time gère les secondes intercalaires et les fuseaux
+                horaires, mais pas les calendriers. DateTime gère les
+                calendriers, mais pas les fuseaux horaires.<br />
+                (vous voulez probablement utiliser `Time`, mais `DateTime` est
+                utile dans un contexte historique)
+              </p>
+
+              <p>
+                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
+                décembre 2020.
+              </p>
+
+              Et oui, si on doit un contexte historique, alors on va
+              probablement devoir travailler avec une heure solaire locale !
+
+              <p>=== PAUSE ===</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>23 avril</h2>
+            <h4 class="text-font">Journée mondiale du livre et du droit d'auteur</h4>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+              "
+            >
+              <figure>
+                <div style="width: 300px; height: 384px; background-image: url(images/cervantes.jpg); background-size: contain;"></div>
+                <figcaption>
+                  Cervantes
+                  <div class="small">☠️ 23 avril 1616</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <div style="width: 300px; height: 384px; background-image: url(images/shakespeare.jpg); background-size: contain;"></div>
+                <figcaption>
+                  Shakespeare
+                  <div class="small fragment strike" data-fragment-index="1">☠️ 23 avril 1616</div>
+                  <div class="small fragment fade-in" data-fragment-index="1">☠️ 3 mai 1616</div>
+                </figcaption>
+              </figure>
+            </div>
+            
+            <aside class="notes">
+              <p>
+                Le 23 avril a été déclarée journée mondiale du livre pour 
+                commémorer la mort de Cervantes et Shakespeare.
+                <br />
+                Seulement, Shakespeare est mort le le 23 avril… dans le calendrier Julien,
+                ce qui équivaut au 3 mai dans le calendrier Grégorien.
+              </p>
+
+              <p>=== PAUSE ===</p>
+            </aside>
+          </section>
+
+
 
           <section>
             <h2>Java</h2>
@@ -1228,7 +1325,7 @@
               <li>Ne gère pas le format JavaZDT</li>
             </ul>
 
-            <blockquote>
+            <blockquote class="small">
               <a href="https://www.php.net/datetime">php.net/datetime</a>
             </blockquote>
 
@@ -1275,46 +1372,7 @@
             </aside>
           </section>
 
-          <section>
-            <h2>Ruby : Time ou DateTime ?</h2>
-
-            <blockquote style="width: 80%">
-              <p>
-                `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
-                suivi d'aucune règle de changement d'heure d'été.
-                <br />
-                […]<br />
-                Si vous voulez aussi gérer les fuseaux horaires, alors bon
-                courage […]
-              </p>
-            </blockquote>
-            <div>
-              <a href="https://ruby-doc.org/3.2.2/exts/date/DateTime.html"
-                >Documentation Ruby `DateTime`</a
-              >
-            </div>
-
-            <aside class="notes">
-              <p>
-                Ruby à deux classes pour gérer les dates et les heures : Time et
-                DateTime. Time gère les secondes intercalaires et les fuseaux
-                horaires, mais pas les calendriers. DateTime gère les
-                calendriers, mais pas les fuseaux horaires.<br />
-                (vous voulez probablement utiliser `Time`, mais `DateTime` est
-                utile dans un contexte historique)
-              </p>
-
-              <p>
-                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
-                décembre 2020.
-              </p>
-
-              Et oui, si on doit un contexte historique, alors on va
-              probablement devoir travailler avec une heure solaire locale !
-
-              <p>=== PAUSE ===</p>
-            </aside>
-          </section>
+          
 
           <section>
             <h2>JavaScript</h2>
@@ -1345,7 +1403,7 @@ d.getMonth() // 0-indexé
 
             <ul>
               <li>
-                <a href="https://momentjs.com/" class="highlight">MomentJS</a>, super puissant:
+                <a href="https://momentjs.com/" class="highlight">MomentJS</a>, super puissant :
                 API top et super simple a utiliser.<br />
               </li>
               <li>
@@ -1447,12 +1505,6 @@ d.getMonth() // 0-indexé
               dans le fuseau indiqué par le paramètre de configuration TimeZone
               avant d'être affichées sur le client.
 
-              <br />
-              <blockquote>
-                il est également préférable de ne pas utiliser le type time with
-                time zone (compatibilité standard SQL)
-              </blockquote>
-
               <p>=== PAUSE ===</p>
             </aside>
           </section>
@@ -1461,16 +1513,16 @@ d.getMonth() // 0-indexé
             <h3>Oui… mais en fait non !</h3>
 
             <ul>
-              <li>lignes avec des fuseaux horaires différents ?</li>
+              <li>2 lignes avec des fuseaux horaires différents ?</li>
               <li>Décalage UTC != fuseau horaire</li>
             </ul>
 
-            <video
+            <!-- <video
               src="images/k/complique-mais-complique.mp4"
               autoplay
               loop
               class="fragment"
-            ></video>
+            ></video> -->
 
             <aside class="notes">
               <p>
@@ -1582,8 +1634,8 @@ d.getMonth() // 0-indexé
 
             <ul>
               <li>RFC3339 : OK pour de l'affichage</li>
-              <li class="fragment strike">Format JavaZDT ?</li>
-              <li class="fragment">
+              <li class="fragment strike" data-fragment-index="0">Format JavaZDT ?</li>
+              <li class="fragment" data-fragment-index="0">
                 Deux clés : une pour la date, une pour le fuseau horaire
                 <pre><code langage="json">{
   "date": "2024-04-17T14:35:00+02:00",
@@ -1627,7 +1679,7 @@ d.getMonth() // 0-indexé
               alt="Dessin de XKCD expliquant qu'on avait passé le point entre les correctifs du bugs de l'an 2000 et la préparation du bug de 2038"
               title="Le bug de 2038"
             />
-            <p>&copy; <a href="https://xkcd.com/2697/">xkcd</a></p>
+            <p class="small">&copy; <a href="https://xkcd.com/2697/">xkcd</a></p>
 
             <aside class="notes">
               <p>
@@ -1759,7 +1811,9 @@ d.getMonth() // 0-indexé
             <h2>La vie, l'univers et le reste</h2>
 
             <div class="r-stack" style="position: relative">
-              <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop></video>
+              <!-- <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop></video> -->
+
+              <video src="images/interstellar-cost.mp4" autoplay loop></video>
 
               <img
                 src="images/dontpanic.png"
