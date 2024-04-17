@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
-    <link rel="stylesheet" href="dist/theme/serif.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" />
+    <link rel="stylesheet" href="dist/theme/devoxx-night.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <!-- <link rel="stylesheet" href="plugin/highlight/unikitty-light.css" /> -->
-    <link rel="stylesheet" href="plugin/highlight/github.css" />
+    <link rel="stylesheet" href="plugin/highlight/dracula.css" />
 
     <style>
       #title {
@@ -35,7 +36,9 @@
           ),
           url(tests/earth_noClouds.0330.jpg);
         background-size: contain;
-        background-position: 12px -200vh, center center;
+        background-position:
+          12px -200vh,
+          center center;
         background-repeat: no-repeat;
         width: 100%;
         height: 480px;
@@ -43,7 +46,9 @@
 
       .present .world-slice {
         transition: background-position 4s ease-in-out;
-        background-position: 12px center, center center;
+        background-position:
+          12px center,
+          center center;
       }
 
       .rotate180 {
@@ -69,16 +74,16 @@
       }
 
       .date {
-        color: #f9aa3d;
+        color: #f88224;
       }
       .time {
-        color: #9580ff;
+        color: #8877d4;
       }
       .offset {
-        color: #ff80bf;
+        color: #df57bc;
       }
       .timezone {
-        color: #22d5ab;
+        color: #0de07d;
       }
 
       .small {
@@ -87,6 +92,10 @@
     </style>
   </head>
   <body>
+    <div class="devoxx-logo">
+      DEVOX<span class="highlight">X</span> FRANCE 2024
+    </div>
+
     <div class="reveal">
       <div class="slides">
         <section>
@@ -112,16 +121,14 @@
             <h2>Qu'est-ce qu'une date exactement ?</h2>
           </section>
           <section>
-            Un moyen de se repérer dans le temps
+            <h3>Un moyen de se repérer dans le temps</h3>
             <ul>
               <li>une année</li>
               <li>un mois</li>
               <li>un jour</li>
               <li>une heure</li>
               <li>une minute</li>
-              <li>
-                une seconde (et un milliseconde si on veut être (très) précis)
-              </li>
+              <li>une seconde</li>
 
               <li class="fragment" data-fragment-index="1">
                 un fuseau horaire !
@@ -136,7 +143,7 @@
           </section>
 
           <section>
-            <h3>Le temps</h3>
+            <h2>Le temps</h2>
 
             <div class="r-stack">
               <img
@@ -178,7 +185,7 @@
                 </a>
                 , il pose plus de questions qu'il n'apporte de réponse 😅.
               </p>
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -188,12 +195,12 @@
             <ul>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  13 avril 2023 à 14h30 à Paris
+                  17 avril 2024 à 14h30 à Paris
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  13 avril 2023 à 20h30 à Singapour
+                  17 avril 2024 à 20h30 à Singapour
                   <img
                     src="images/17h-singapour.png"
                     height="80px"
@@ -203,12 +210,12 @@
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  14 avril 2023 à 00h30 en Nouvelle-Zélande
+                  18 avril 2024 à 00h30 en Nouvelle-Zélande
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  22 Nissan 5783 à 14h30 (Paris, calendrier Hébraïque)
+                  9 nissan 5784 à 14h30 (Paris, calendrier Hébraïque)
                 </div>
               </li>
             </ul>
@@ -218,7 +225,7 @@
             On peut ignorer certaines données en fonction du contexte.
 
             <aside class="notes">
-              - Venez mangez dimanche 16 avril 2023 à 12 heure 00, heure de
+              - Venez mangez dimanche 20 avril 2024 à 12 heure 00, heure de
               Paris dans le calendrier Grégorien… Enfin venez manger ce dimanche
               midi quoi !
             </aside>
@@ -226,7 +233,7 @@
 
           <section data-transition="slide-in fade-out">
             <h1 class="r-fit-text">THE END</h1>
-            <h2>merci</h2>
+            <h2 class="text-font">merci</h2>
 
             <aside class="notes">Voila, c'est tout, merci d'être venu !</aside>
           </section>
@@ -247,8 +254,9 @@
 
         <section>
           <section>
-            <h2 class="r-fit-text">
-              Pourquoi les fuseaux horaires <br />c'est compliqué ?
+            <h1>Pourquoi</h1>
+            <h2 class="text-font">
+              les fuseaux horaires <br />c'est compliqué ?
             </h2>
           </section>
 
@@ -261,37 +269,43 @@
               représentation "plane"<br />
               Depuis des millénaires (premier cadran solaire : environ -1500 ans
               av JC), on considère que "midi", c'est quand le soleil est au
-              zénith (le plus haut dans le ciel). Ca correspond plus ou
-              moins à la moitié d'une journée (mid-day), et son petit copain
-              minuit (mi-nuit) permet d'avoir le milieu de la nuit.
+              zénith (le plus haut dans le ciel). Ca correspond plus ou moins à
+              la moitié d'une journée (mid-day), et son petit copain minuit
+              (mi-nuit) permet d'avoir le milieu de la nuit.
             </aside>
           </section>
           <section>
             <blockquote>Il est midi !</blockquote>
             <ul>
-              <li>Lyon : 😋🍕🍷</li>
+              <li>Paris : 🍕🍷</li>
               <li>Tahiti : 😴🛏️</li>
-              <li class="fragment">Paris : 🍻🥨</li>
+              <li class="fragment">Lyon : ☕️</li>
             </ul>
 
             <aside class="notes">
-              Sauf que quand il est midi Lyon, il n'est pas (du tout) midi à
-              Tahiti, ni même à Paris d'ailleurs ! (en temps solaire)
+              Sauf que quand il est midi Paris, il n'est pas (du tout) midi à
+              Tahiti, ni même à Lyon d'ailleurs ! (en temps solaire)
             </aside>
           </section>
 
           <section
             data-background="images/nyc-central-station-clock.jpg"
-            data-background-opacity="0.3"
+            data-background-opacity="0.2"
           >
             <h2>L'heure locale</h2>
 
             <video
               class="fragment"
-              src="images/k/incroyable-difficulte.mp4"
+              src="images/train-bttf.mp4"
               autoplay
               loop
             ></video>
+            <!-- <video
+              class="fragment"
+              src="images/train-chase.mp4"
+              autoplay
+              loop
+            ></video> -->
 
             <aside class="notes">
               Jusqu'a à la fin du 19ème siècle, chaque ville avait son heure
@@ -307,7 +321,7 @@
               utilisait six heure différentes ! <br />
               Aux États-Unis, il y a eu jusqu'à 300 heures locales.
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
           <section>
@@ -374,7 +388,7 @@
               Il y a eu tellement de débats qu'une délégation spéciale est même
               envoyée à Rome pour expliquer au pape pourquoi cet écart.
 
-              <!-- TORESET <p>=== EFFET ===</p> -->
+              <!-- <p>=== EFFET ===</p> -->
             </aside>
           </section>
 
@@ -388,7 +402,7 @@
               même fuseau horaire quand on est dans tout le pays.<br />
               Aucune tranche n'est donc vraiment égale, ni "droite".
 
-              <!-- TORESET <p>=== EFFET ===</p> -->
+              <!-- <p>=== EFFET ===</p> -->
             </aside>
           </section>
 
@@ -464,7 +478,7 @@
             <h2>Les fuseaux horaires étranges</h2>
 
             <aside class="notes">
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -525,10 +539,8 @@
           </section>
 
           <section>
-            <h3>
-              24 fuseaux horaires ?<br />
-              Non : 37
-            </h3>
+            <h3>24 fuseaux horaires ?<br /></h3>
+            <h3 class="text-font">Non : 37</h3>
 
             <aside class="notes">
               On est déjà bien loin de l'idée initiale des 24 fuseaux
@@ -540,12 +552,13 @@
 
         <section>
           <section>
-            <h2>Tout est politique (ou économique) !</h2>
+            <h2>Tout est politique</h2>
+            <h3 class="text-font">(ou économique) !</h3>
 
             <aside class="notes">
-              <!-- TORESET <em> info temps : 9 min 00</em> -->
+              <em> info temps : 9 min 00</em>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -573,7 +586,7 @@
                 class="fragment fade-in-then-out"
               />
               <img src="images/uk-fr.jpg" class="fragment" />
-              <video
+              <!-- <video
                 class="fragment fade-in-then-out"
                 src="images/k/trop-saoule.mp4"
                 style="
@@ -584,7 +597,7 @@
                 "
                 autoplay
                 loop
-              ></video>
+              ></video> -->
               <img
                 src="images/french-troll.png"
                 width="75px"
@@ -604,7 +617,8 @@
                 Game" à l'international. Les deux réunis représentent les deux
                 tiers de la flotte mondiale. Pas trop compliqué d'imposer son
                 méridien. En contre-partie, pour faire plaisir, la Grande
-                Bretagne accepte de passer au système métrique. <br />
+                Bretagne accepte de passer, en partie, au système métrique.
+                <br />
                 Pour les États-Unis ? on reviendra…
               </p>
 
@@ -670,7 +684,7 @@
                 horaire !
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -697,13 +711,16 @@
                 des États-Unis) avait duré… deux jours !
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
           <section>
             <h3>C'est le bordel…</h3>
 
+            <img src="images/auberge-espagnole-bordel.png" />
+
+            <!-- 
             <div class="r-stack">
               <img
                 src="images/auberge-espagnole-bordel.png"
@@ -718,6 +735,7 @@
                 loop
               ></video>
             </div>
+             -->
 
             <aside class="notes">
               <strong>D'accord</strong>, donc tout est politique ou économique
@@ -732,13 +750,13 @@
             <h1>DST</h1>
 
             <div class="fragment">
-              <h2>Daylight Saving Time</h2>
-              <h3>(l'heure d'été)</h3>
+              <h2 class="text-font">Daylight Saving Time</h2>
+              <h3 class="text-font">(l'heure d'été)</h3>
             </div>
 
             <aside class="notes">
               <p>
-                <!-- TORESET <em>Info temps : 13 min</em> -->
+                <em>Info temps : 13 min</em>
               </p>
 
               <p>
@@ -799,7 +817,9 @@
           <section>
             <h2>Union Européenne</h2>
 
-            <h4 class="r-stack">Vers la fin du changement d'heure ?</h4>
+            <h3 class="r-stack text-font">
+              Vers la fin du changement d'heure ?
+            </h3>
 
             <aside class="notes">
               <p>
@@ -814,18 +834,20 @@
                 🤦
               </p>
               <p>
-                Bon depuis 2019, le COVID a un peu prit le dessus, et donc en
-                2022, aucun pays n'a prit de décision en ce sens.
+                Bon depuis 2019, il y a eu le COVID, la guerre aux portes de
+                l'Europe, une inflation record, les catastrophes climatiques, et
+                puis Mbappé qui part du PSG. Donc finalement, en 2024, aucun
+                pays n'a prit de décision en ce sens.<br />
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
           <section>
             <h2>États-Unis</h2>
 
-            <h4>Partout pareil… dans 48 des 50 états</h4>
+            <h3 class="text-font">Partout pareil… dans 48 des 50 états</h3>
 
             <aside class="notes">
               Aux États-Unis, chaque état est libre d'appliquer l'heure d'été,
@@ -872,7 +894,7 @@
                 du sud au nord !
               </p>
 
-              <!-- TORESET <p>=== EFFET ===</p> -->
+              <!-- <p>=== EFFET ===</p> -->
             </aside>
           </section>
 
@@ -890,7 +912,7 @@
           </section>
 
           <section>
-            <h3>Changements politiques en 2022</h3>
+            <h3>Des changements politiques tous les ans !</h3>
             <ul class="small">
               <li><b>2022-11-27</b> DST cancelation in Greenland</li>
               <li><b>2022-10-28</b> Changes in Mexico time zones</li>
@@ -911,13 +933,11 @@
               </li>
             </ul>
 
-            <p><em>(Et il y en a autant chaque année !)</em></p>
+            <p><em>(Entre 5 et 10 changements chaque année !)</em></p>
 
-            <blockquote>
-              <a href="https://time.is/time_zone_news">
-                https://time.is/time_zone_news
-              </a>
-            </blockquote>
+            <a href="https://time.is/time_zone_news" class="small">
+              🔗 https://time.is/time_zone_news
+            </a>
 
             <aside class="notes">
               <p>
@@ -928,7 +948,7 @@
               <p>
                 Pour le coup, à Mapado, on avait en prod la libicu un peu
                 ancienne, on a failli perdre un client au Maroc car parfois les
-                heures s'affichaient avec 1H de décallage. (la Maroc à décider
+                heures s'affichaient avec 1H de décallage. (le Maroc à décider
                 de rester sur l'heure d'été en 2018)
               </p>
               <p>
@@ -976,7 +996,7 @@
 
             <aside class="notes">
               <p>
-                <!-- TORESET <em>Info temps : 19 min 30</em> -->
+                <em>Info temps : 19 min 30</em>
               </p>
 
               <p>
@@ -984,17 +1004,16 @@
                 bazar exactement ?
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
           <section>
-            <h2>
-              La norme :<br />
-              ISO 8601 / RFC 3339
-            </h2>
+            <h2>La norme :</h2>
+            <h2 class="text-font">ISO 8601 / RFC 3339</h2>
+            <p>« Représentation de la date et l'heure »</p>
 
-            <video src="images/k/cest-carre.mp4" autoplay loop></video>
+            <!-- <video src="images/k/cest-carre.mp4" autoplay loop></video> -->
 
             <aside class="notes">
               En informatique, on aime bien les normes. C'est un peu comme les
@@ -1008,8 +1027,8 @@
 
           <section>
             <code
-              ><span class="date">2023-04-13</span>T<span class="time"
-                >05:50:00</span
+              ><span class="date">2024-04-17</span>T<span class="time"
+                >07:35:00</span
               ><span class="offset">-07:00</span></code
             >
 
@@ -1030,7 +1049,7 @@
                 Phoenix ou bien l'heure de Los Angeles.
               </p>
 
-              <!-- TORESET <p>=== EFFET ===</p> -->
+              <!-- <p>=== EFFET ===</p> -->
             </aside>
           </section>
 
@@ -1040,7 +1059,7 @@
             <div class="r-stack fragment" data-fragment-index="0">
               <div class="fragment fade-out" data-fragment-index="1">
                 <p>Il n'y en a pas !</p>
-                <video src="images/k/pas-possible.mp4" autoplay loop></video>
+                <video src="images/doctor-who-clara.mp4" autoplay loop></video>
               </div>
 
               <div
@@ -1050,14 +1069,15 @@
               >
                 <p>
                   <a
-                    href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
-                    >Proposition d'étendre la RFC3339 :</a
+                    href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-11.html"
                   >
+                    Proposition d'étendre la RFC3339 :
+                  </a>
                 </p>
                 <code
-                  ><span class="date">2023-04-13</span>T<span class="time"
-                    >05:50:00</span
-                  ><span class="offset">-07:00</span
+                  ><span class="date">2023-10-29</span>T<span class="time"
+                    >02:30:00</span
+                  ><span class="offset">+02:00</span
                   ><span class="timezone">[Europe/Paris]</span></code
                 >
               </div>
@@ -1069,16 +1089,19 @@
               <p>
                 Et bien il n'y en a pas ! Enfin pas encore tout du moins. Il y a
                 <a
-                  href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-07.html"
+                  href="https://www.ietf.org/id/draft-ietf-sedate-datetime-extended-11.html"
                   >une proposition pour étendre la RFC3339</a
                 >
                 afin de pouvoir ajouter le fuseau horaire dans le format:
-                2022-11-19T22:27:00+01:00[Europe/Paris].
+                YYYY-MM-DDTHH:ii:ss+01:00[Europe/Paris].
+                <br />
+                Il y a eu des avancées fin 2023 sur le document, mais il n'est
+                pas encore finalisé.
               </p>
 
               <p>
                 On est toujours obligé de garder le décalage UTC, car si nous
-                sommes le 30 octobre 2022 à 2 h 30 du matin heure de Paris
+                sommes le 29 octobre 2023 à 2 h 30 du matin heure de Paris
                 (c'est le jour du passage à l'heure d'hiver) : Est-ce que c'est
                 la première fois qu'il est 2h30 ou bien la deuxième fois de la
                 journée ? <br />
@@ -1100,7 +1123,7 @@
                 qui est utilisée (mais pas toujours).
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
         </section>
@@ -1109,19 +1132,19 @@
           <section>
             <h2>Les languages</h2>
 
-            <h3>Comment gérer ce bazar ?</h3>
+            <h2 class="text-font">Comment gérer ce bazar ?</h2>
           </section>
 
           <section>
             <h2>Valeur par défaut ?</h2>
 
-            <pre><code class="lang-javascript">new Date('2023-04-13T14:50:00').toString()
-// "Thu Apr 13 2023 14:50:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
+            <pre><code class="lang-javascript">new Date('2024-04-17T14:35:00').toString()
+"Wed Apr 17 2024 14:35:00 GMT+0200 (heure d’été d’Europe centrale)"</code></pre>
 
             <div class="fragment">
               Sur un serveur :
-              <pre><code class="lang-javascript">new Date('2023-04-13T14:50:00').toString()
-// 'Thu Apr 13 2023 14:50:00 GMT+0000 (temps universel coordonné)'
+              <pre><code class="lang-javascript">new Date('2024-04-17T14:35:00').toString()
+"'Wed Apr 17 2024 14:35:00 GMT+0000 (temps universel coordonné)"
 </code></pre>
             </div>
 
@@ -1131,7 +1154,7 @@
                 (enfin surtout le système) fait "ce qu'il peut" et utilise par
                 défaut un fuseau horaire "local", dans mon cas mon système
                 d'exploitation est configuré sur Europe/Paris, c'est cette
-                valeur qui est utilisée.
+                valeur qui est utilisée
               </p>
               <p>
                 Cela dit, si j'éxecute le même code sur un serveur, le fuseau
@@ -1156,10 +1179,114 @@
 
           <section>
             <h2>Soyez explicites !</h2>
+            <h3 class="text-font">Donnez toujours le fuseau horaire</h3>
 
             <aside class="notes">
               Finalement la meilleure façon de ne pas se tromper, c'est d'être
               explicite !
+            </aside>
+          </section>
+          <section>
+            <h2>Ruby : Time ou DateTime ?</h2>
+
+            <blockquote style="width: 80%">
+              <p>
+                `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
+                suivi d'aucune règle de changement d'heure d'été.
+                <br />
+                […]<br />
+                Si vous voulez aussi gérer les fuseaux horaires, alors bon
+                courage […]
+              </p>
+            </blockquote>
+            <div class="small">
+              <a href="https://ruby-doc.org/3.2.2/exts/date/DateTime.html"
+                >Documentation Ruby `DateTime`</a
+              >
+            </div>
+
+            <aside class="notes">
+              <p>
+                Ruby à deux classes pour gérer les dates et les heures : Time et
+                DateTime. Time gère les secondes intercalaires et les fuseaux
+                horaires, mais pas les calendriers. DateTime gère les
+                calendriers, mais pas les fuseaux horaires.<br />
+                (vous voulez probablement utiliser `Time`, mais `DateTime` est
+                utile dans un contexte historique)
+              </p>
+
+              <p>
+                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
+                décembre 2020.
+              </p>
+
+              Et oui, si on doit un contexte historique, alors on va
+              probablement devoir travailler avec une heure solaire locale !
+
+              <!-- <p>=== PAUSE ===</p> -->
+            </aside>
+          </section>
+
+          <section>
+            <h2>23 avril</h2>
+            <h4 class="text-font">
+              Journée mondiale du livre et du droit d'auteur
+            </h4>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+              "
+            >
+              <figure>
+                <div
+                  style="
+                    width: 300px;
+                    height: 384px;
+                    background-image: url(images/cervantes.jpg);
+                    background-size: contain;
+                  "
+                ></div>
+                <figcaption>
+                  Cervantes
+                  <div class="small">☠️ 23 avril 1616</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <div
+                  style="
+                    width: 300px;
+                    height: 384px;
+                    background-image: url(images/shakespeare.jpg);
+                    background-size: contain;
+                  "
+                ></div>
+                <figcaption>
+                  Shakespeare
+                  <div class="small fragment strike" data-fragment-index="1">
+                    ☠️ 23 avril 1616
+                  </div>
+                  <div class="small fragment fade-in" data-fragment-index="1">
+                    ☠️ 3 mai 1616
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+
+            <aside class="notes">
+              <p>
+                Le 23 avril a été déclarée journée mondiale du livre pour
+                commémorer la mort de Cervantes et Shakespeare.
+                <br />
+                Seulement, Shakespeare est mort le le 23 avril… dans le
+                calendrier Julien, ce qui équivaut au 3 mai dans le calendrier
+                Grégorien.
+              </p>
+
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -1204,7 +1331,7 @@
             <h2>PHP</h2>
 
             <pre><code ><script type="text/template"><?php
-              new DateTime('next monday 10:00 Europe/Paris');</script>
+        new DateTime('next monday 10:00 Europe/Paris');</script>
           </code></pre>
 
             <ul>
@@ -1212,7 +1339,7 @@
               <li>Ne gère pas le format JavaZDT</li>
             </ul>
 
-            <blockquote>
+            <blockquote class="small">
               <a href="https://www.php.net/datetime">php.net/datetime</a>
             </blockquote>
 
@@ -1235,10 +1362,9 @@
             <ul>
               <li>Fonctionnel, mais pas top*</li>
               <li>Fuseaux horaires qui fonctionne pas ou mal sous Windows</li>
+              <li>Python 3.2 : classe timezone</li>
               <li>
-                Améliorations en Python 3.2 (classe timezone) et 3.9 (class
-                "ZoneInfo" pour travailler avec la base de fuseaux horaires
-                IANA)
+                Python 3.9 : classe "ZoneInfo" (pour utiliser la base du IANA)
               </li>
             </ul>
             <blockquote>
@@ -1263,47 +1389,6 @@
           </section>
 
           <section>
-            <h2>Ruby : Time ou DateTime ?</h2>
-
-            <blockquote>
-              <p>
-                `DateTime` ne gère ni les secondes intercalaire, ni n'assure le
-                suivi d'aucune règle de changement d'heure d'été.
-                <br />
-                […]<br />
-                Si vous voulez aussi gérer les fuseaux horaires, alors bon
-                courage […]
-              </p>
-            </blockquote>
-            <div>
-              <a href="https://ruby-doc.org/3.2.2/exts/date/DateTime.html"
-                >Documentation Ruby `DateTime`</a
-              >
-            </div>
-
-            <aside class="notes">
-              <p>
-                Ruby à deux classes pour gérer les dates et les heures : Time et
-                DateTime. Time gère les secondes intercalaires et les fuseaux
-                horaires, mais pas les calendriers. DateTime gère les
-                calendriers, mais pas les fuseaux horaires.<br />
-                (vous voulez probablement utiliser `Time`, mais `DateTime` est
-                utile dans un contexte historique)
-              </p>
-
-              <p>
-                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
-                décembre 2020.
-              </p>
-
-              Et oui, si on doit un contexte historique, alors on va
-              probablement devoir travailler avec une heure solaire locale !
-
-              <!-- TORESET <p>=== PAUSE ===</p> -->
-            </aside>
-          </section>
-
-          <section>
             <h2>JavaScript</h2>
 
             <p>
@@ -1312,14 +1397,14 @@
             </p>
 
             <pre><code language="javascript">d = new Date()
->> Date Mon Nov 21 2022 23:14:30 GMT+0100 (heure normale d’Europe centrale)
+>> Date Wed Apr 17 2024 14:35:00 GMT+0200 (heure d’été d’Europe centrale)
 
 d.getDay() // en fait : day of week
->> 1
+>> 3
 d.getDate() // day ?
->> 21
+>> 17
 d.getMonth() // 0-indexé
->> 10</code></pre>
+>> 3</code></pre>
 
             <aside class="notes">
               Pour gérer des conversions de date dans différentes timezone, il
@@ -1332,8 +1417,8 @@ d.getMonth() // 0-indexé
 
             <ul>
               <li>
-                <a href="https://momentjs.com/">MomentJS</a>, super puissant:
-                API top et super simple a utiliser.<br />
+                <a href="https://momentjs.com/" class="highlight">MomentJS</a>,
+                super puissant : API top et super simple a utiliser.<br />
               </li>
               <li>
                 <code>moment-timezone</code> fait 1 Mo de donnée (111Ko gzippé +
@@ -1341,9 +1426,13 @@ d.getMonth() // 0-indexé
               </li>
               <li>
                 Remplacé par
-                <a href="https://moment.github.io/luxon/#/">luxon</a>,
-                <a href="https://day.js.org/">day.js</a>, et surtout par
-                <a href="https://tc39.es/proposal-temporal/docs/index.html"
+                <a class="highlight" href="https://moment.github.io/luxon/#/"
+                  >luxon</a
+                >, <a class="highlight" href="https://day.js.org/">day.js</a>,
+                et surtout par
+                <a
+                  class="highlight"
+                  href="https://tc39.es/proposal-temporal/docs/index.html"
                   >Temporal</a
                 >
               </li>
@@ -1372,15 +1461,24 @@ d.getMonth() // 0-indexé
           <section>
             <h2>SQL : c'est compliqué</h2>
 
-            <video
+            <!-- <video
               class="fragment"
               autoplay
               loop
               src="images/k/jaurais-dit-merdique.mp4"
+            ></video> -->
+
+            <video
+              autoplay
+              loop
+              src="images/bad-news-text.mp4"
+              width="70%"
             ></video>
 
+            <!-- <img src="images/bad-news.png" /> -->
+
             <aside class="notes">
-              <!-- TORESET <em>Info temps : 31 min</em> -->
+              <em>Info temps : 31 min</em>
             </aside>
           </section>
 
@@ -1388,8 +1486,9 @@ d.getMonth() // 0-indexé
             <h3>Comment les DB gèrent les TimeZones ?</h3>
 
             <blockquote>
-              le standard SQL possède un <b>mélange étrange</b> de types de
-              date/heure et de possibilités.
+              le standard SQL possède un
+              <b class="highlight">mélange étrange</b> de types de date/heure et
+              de possibilités.
             </blockquote>
 
             <a
@@ -1411,10 +1510,10 @@ d.getMonth() // 0-indexé
 
             <p style="text-align: left">Testons :</p>
 
-            <pre><code language="sql">SELECT '2023-01-01 00:00+10'::timestamptz;
+            <pre><code language="sql">SELECT '2024-01-01 00:00+10'::timestamptz;
         timestamptz
   ------------------------
-    2022-12-31 15:00:00+01
+    2023-12-31 15:00:00+01
   (1 row)
 </code></pre>
 
@@ -1434,13 +1533,7 @@ d.getMonth() // 0-indexé
               dans le fuseau indiqué par le paramètre de configuration TimeZone
               avant d'être affichées sur le client.
 
-              <br />
-              <blockquote>
-                il est également préférable de ne pas utiliser le type time with
-                time zone (compatibilité standard SQL)
-              </blockquote>
-
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
@@ -1448,16 +1541,16 @@ d.getMonth() // 0-indexé
             <h3>Oui… mais en fait non !</h3>
 
             <ul>
-              <li>lignes avec des fuseaux horaires différents ?</li>
+              <li>2 lignes avec des fuseaux horaires différents ?</li>
               <li>Décalage UTC != fuseau horaire</li>
             </ul>
 
-            <video
+            <!-- <video
               src="images/k/complique-mais-complique.mp4"
               autoplay
               loop
               class="fragment"
-            ></video>
+            ></video> -->
 
             <aside class="notes">
               <p>
@@ -1505,17 +1598,17 @@ d.getMonth() // 0-indexé
 
             <pre><code>| value               | timezone     |
 | ------------------- | ------------ |
-| 2023-04-13T12:50:00 | Europe/Paris |</code></pre>
+| 2024-04-17T12:35:00 | Europe/Paris |</code></pre>
 
             <ul class="fragment">
               <li class="fragment strike">l'heure locale de la donnée ?</li>
               <li>
-                l'heure UTC de la donnée (et il est donc 14h50 heure de Paris) ?
+                l'heure UTC de la donnée (et il est donc 14h35 heure de Paris) ?
               </li>
             </ul>
 
             <aside class="notes">
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
 
               Le mieux est probablement de stocker la valeur "datetime" dans une
               colonne et le fuseau horaire dans une autre
@@ -1537,7 +1630,7 @@ d.getMonth() // 0-indexé
                   "vrai" ligne temporelle
                 </li>
                 <li>
-                  Evite les problèmes avec l'heure d'été : le 30 octobre 2022 en
+                  Evite les problèmes avec l'heure d'été : le 29 octobre 2023 en
                   France, les horloges passeront deux fois entre 2 h et 3 h.
                   Impossible donc de savoir si c'est 2 h UTC+2 (heure d'été) ou
                   bien 2h UTC+1 (heure d'hiver).
@@ -1557,22 +1650,25 @@ d.getMonth() // 0-indexé
             <h2>Dans une API</h2>
 
             <aside class="notes">
-              <!-- TORESET <em>Info temps : 37 min</em> -->
+              <em>Info temps : 37 min</em>
             </aside>
           </section>
 
           <section>
+            <h2>Dans une API</h2>
             <p>
               Même combat que pour SQL, mais avec un peu plus de flexibilité
             </p>
 
             <ul>
               <li>RFC3339 : OK pour de l'affichage</li>
-              <li class="fragment strike">Format JavaZDT ?</li>
-              <li class="fragment">
+              <li class="fragment strike" data-fragment-index="0">
+                Format JavaZDT ?
+              </li>
+              <li class="fragment" data-fragment-index="0">
                 Deux clés : une pour la date, une pour le fuseau horaire
                 <pre><code langage="json">{
-  "date": "2022-11-25T12:00:00+01:00",
+  "date": "2024-04-17T14:35:00+02:00",
   "timezone": "Europe/Paris"
 }</code></pre>
               </li>
@@ -1582,7 +1678,7 @@ d.getMonth() // 0-indexé
               <p>
                 C'est un peu le même combat que pour SQL, mais avec plus de
                 flexibilité. On peut à minima travailler avec la RFC3339 et
-                avoir un format `2022-11-25T12:00:00+01:00`.
+                avoir un format `2024-04-17T14:35:00+02:00`.
               </p>
               <p>
                 Cela dit, vu que l'on n'a pas le fuseau horaire, il est toujours
@@ -1599,19 +1695,23 @@ d.getMonth() // 0-indexé
                 sur de la donnée, alors le mieux est surement d'avoir deux clés.
               </p>
 
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
+        </section>
 
+        <section>
           <section>
-            <h3>Le bug de 2038</h3>
+            <h2>Le bug de 2038</h2>
 
             <img
               src="images/y2k_and_2038.png"
               alt="Dessin de XKCD expliquant qu'on avait passé le point entre les correctifs du bugs de l'an 2000 et la préparation du bug de 2038"
               title="Le bug de 2038"
             />
-            <p>&copy; <a href="https://xkcd.com/2697/">xkcd</a></p>
+            <p class="small">
+              &copy; <a href="https://xkcd.com/2697/">xkcd</a>
+            </p>
 
             <aside class="notes">
               <p>
@@ -1638,36 +1738,53 @@ d.getMonth() // 0-indexé
               </p>
             </aside>
           </section>
-        </section>
 
-        <section>
-          <h2>Ça arrive à tout le monde</h2>
-          <div>
-            <img src="images/github-tz-issue.png" />
-          </div>
-          <div>
-            <em>Github</em>
-          </div>
-          <p>
-            ©
-            <a
-              href="https://twitter.com/phry/status/1589188976375926784/photo/1"
-              >Lenz Weber-Tronic (twitter)</a
-            >
-          </p>
+          <section>
+            <h3>Ça arrive à tout le monde</h3>
+            <div>
+              <img src="images/github-tz-issue.png" />
+            </div>
+            <div>
+              <em>Github</em>
+            </div>
+            <p class="small">
+              ©
+              <a
+                href="https://twitter.com/phry/status/1589188976375926784/photo/1"
+                >Lenz Weber-Tronic (twitter)</a
+              >
+            </p>
 
-          <aside class="notes">
-            Ca arrive à tout le monde, y compris Github qui a eu ce genre de bug
-            e novembre 2022. Certains utilisateurs ont remontés que leurs
-            commentaires apparaissaient dans le futur !
+            <aside class="notes">
+              Ca arrive à tout le monde, y compris Github qui a eu ce genre de
+              bug en novembre 2022. Certains utilisateurs ont remontés que leurs
+              commentaires apparaissaient dans le futur !
+            </aside>
+          </section>
 
-            <!-- TORESET <p>=== PAUSE ===</p> -->
-          </aside>
+          <section>
+            <h3>Ça arrive à tout le monde</h3>
+            <div>
+              <img src="images/one-plus.jpg" style="width: 60%" />
+            </div>
+            <div>
+              <em>Téléphone One Plus</em>
+            </div>
+            <p class="small">© S. Grégeois</p>
+
+            <aside class="notes">
+              Un téléphone One Plus plusieurs jours après le changement d'heure
+              : Paris n'est pas passé à l'heure d'été, par contre Ruoms, en
+              Adrèche, si !
+
+              <!-- <p>=== PAUSE ===</p> -->
+            </aside>
+          </section>
         </section>
 
         <section>
           <section data-transition="slide-in fade-out">
-            <h2>La vie, l'univers et le reste</h2>
+            <h1>La vie, l'univers et le reste</h1>
             <!-- 
             <video
               class="fragment"
@@ -1705,7 +1822,13 @@ d.getMonth() // 0-indexé
                 "solaire". Et plus tard ? Un temps de la Galaxie ?
               </p>
               <p>
-                On a aussi simplifié au début de la présentation en disant que
+                D'ailleurs la maison blanche à demandé à la NASA de plancher sur
+                un "Lunar Coordinated Time", dans l'objectif d'avoir des
+                missions longues durées sur la lune car le temps s'écoule
+                "légèrement" plus lentement sur la lune que sur la terre.
+              </p>
+              <p>
+                En fait on a simplifié au début de la présentation en disant que
                 le temps est sur une ligne, mais on sait que l'espace-temps est
                 "étiré" à l'approche d'objets super-massifs comme les trou noir.
                 Là encore, comment gérer la conversion ? Est-ce les même valeurs
@@ -1717,17 +1840,37 @@ d.getMonth() // 0-indexé
           <section data-transition="fade-in slide-out">
             <h2>La vie, l'univers et le reste</h2>
 
-            <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop />
+            <div class="r-stack" style="position: relative">
+              <!-- <video src="images/k/jai-pas-tout-pige.mp4" autoplay loop></video> -->
+
+              <video src="images/interstellar-cost.mp4" autoplay loop></video>
+
+              <img
+                src="images/dontpanic.png"
+                style="
+                  position: absolute;
+                  right: 40px;
+                  top: -80px;
+                  width: 200px;
+                "
+              />
+            </div>
 
             <aside class="notes">
-              <!-- TORESET <p>=== PAUSE ===</p> -->
+              Je vous balance tout ça là, mais j'ai pas forcément tout bien pigé
+              non plus hein !
+              <!-- <p>=== PAUSE ===</p> -->
             </aside>
           </section>
 
           <section>
+            <h2>Un p'ti dernier pour la route ?</h2>
+          </section>
+
+          <section data-transition="fade-in slide-out">
             <h4>Un p'ti dernier pour la route ?</h4>
 
-            <div class="fragment r-stack">
+            <div>
               <img
                 src="images/antarctique-fuseaux.webp"
                 style="max-height: 630px"
@@ -1751,26 +1894,12 @@ d.getMonth() // 0-indexé
               </p>
               <ul>
                 <li>
-                  Alors que le changement d'heure n'est pas appliqué sur la
-                  majeure partie du continent, la station de recherche Palmer,
-                  détenue et financée par les États-Unis, mais exploitée sur le
-                  territoire chilien, suit l'heure du Chili (dont l'heure
-                  d'été).
-                </li>
-                <li>
                   La station Troll, située dans une zone revendiquée par la
                   Norvège, suit le temps universel (UTC) d'octobre à mars, puis
                   passe en UTC+2 (WTF) de mars à octobre. (Elle porte très bien
                   son nom.)
                 </li>
               </ul>
-              <p>
-                En complément, des chercheurs travaillant dans la station d'un
-                autre pays que le leur optent parfois pour suivre le fuseau
-                horaire de leur pays d'origine, du moment qu'ils n'ont pas à
-                travailler avec d'autres équipes, cela facilitant les
-                communications avec leur maison mère.
-              </p>
             </aside>
           </section>
         </section>
@@ -1797,7 +1926,7 @@ d.getMonth() // 0-indexé
                   align-items: flex-start;
                 "
               >
-                <div style="text-decoration: underline">Julien Deniau</div>
+                <div class="highlight">Julien Deniau</div>
                 <div class="social">
                   <span
                     class="icon"
@@ -1807,18 +1936,33 @@ d.getMonth() // 0-indexé
                   julien.deniau.me
                 </div>
                 <div class="social">
-                  <img class="icon" src="images/social-github.svg" />
+                  <img class="icon" src="images/social-github-white.svg" />
                   jdeniau
+                </div>
+                <div class="social">
+                  <img class="icon" src="images/social-x.png" />
+                  j_deniau
                 </div>
                 <div class="social">
                   <img class="icon" src="images/social-mastodon.svg" />
                   piaille.fr/@jdeniau
                 </div>
-                <div class="social">
-                  <img class="icon" src="images/social-twitter.png" />
-                  j_deniau
-                </div>
               </div>
+            </div>
+
+            <!-- <div style="font-size: 0.7em">
+              🕝 RDV à 17 h pour échanger sur
+              <a href="https://immutable-js.com/" class="highlight"
+                >immutable.js</a
+              >
+              (Neuilly 152)
+            </div> -->
+
+            <div style="font-style: 0.7em">
+              🐘 Dev PHP sur Lyon ?
+              <a href="http://mapado.xyz/php" class="highlight"
+                >mapado.xyz/php</a
+              >
             </div>
 
             <aside class="notes">
@@ -1837,6 +1981,10 @@ d.getMonth() // 0-indexé
               <p>
                 Merci à vous. Si il reste du temps, je suis dispo pour répondre
                 à vos questions.
+              </p>
+              <p>
+                Je serais aussi à 17 en salle Neuilly 152 pour échanger sur
+                immutable-js
               </p>
             </aside>
           </section>
@@ -1943,6 +2091,10 @@ d.getMonth() // 0-indexé
                   "L'auberge espagnole" et "Les poupées russes" par Cédric
                   Klapisch
                 </li>
+                <li>Doctor Who</li>
+                <li>Interstellar</li>
+                <li>H2G2 : Le guide du voyageur galactique</li>
+                <li>Retour vers le futur III</li>
               </ul>
             </aside>
           </section>
@@ -1964,8 +2116,11 @@ d.getMonth() // 0-indexé
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
-
+        controls: true,
         showNotes: true, // TORESET
+        // hide progress
+        progress: false,
+        autoPlayMedia: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
