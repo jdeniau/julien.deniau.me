@@ -49,3 +49,7 @@ Concrètement, au lieu de travailler sept heures par jour sur cinq jours, nous a
 Enfin, pour aller avec l'ambition du changement d'échelle et pour mettre un gros coup d'accélérateur, nous allons recruter au moins quatre développeurs et une personne dans les équipes de relation client.
 
 Si vous voulez nous rejoindre (nos bureaux sont à Lyon), vous pouvez aller voir [notre page recrutement](https://pro.mapado.com/join-the-team/) (les offres actualisés vont paraître dans les prochains jours) ou bien me contacter directement sur twitter : [@j_deniau](https://twitter.com/j_deniau) ou par mail : julien@mapado.com
+
+### Quels retours ?
+
+J'ai écrit [un nouvel article](https://julien.deniau.me/posts/2023-01-18-mapado-semaine-4-jours-un-an-apres) un an après celui-ci pour éclairer ce qui s'est passé en sur cette première année.
