@@ -1,159 +1,428 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Voyager autrement</title>
+    <title>Voyager autrement</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/beige.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/beige.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
-		<style>
-			.map-pointer-container {
-				position: relative;
-			}
+    <style>
+      .map-pointer-container {
+        position: relative;
+      }
 
-			.map-pointer {
-				position: absolute;
-			}
+      .map-pointer {
+        position: absolute;
+      }
 
-			.map-pointer--turquie {
-				top: 20%;
-				left: 54.5%;
-			}
-			.map-pointer--tunisie {
-				top: 22.1%;
-				left: 49.8%;
-			}
-			.map-pointer--angleterre {
-				top: 13.7%;
-				left: 46.9%;
-			}
-			.map-pointer--irlande {
-				top: 13.3%;
-				left: 45.2%;
-			}
-			.map-pointer--islande {
-				top: 7.8%;
-				left: 41.8%;
-			}
-			.map-pointer--espagne {
-				top: 19.8%;
-				left: 46.8%;
-			}
-			.map-pointer--vienne {
-				top: 16.3%;
-				left: 51.3%;
-			}
-			.map-pointer--canada {
-				top: 17.1%;
-				left: 28.1%;
-			}
-			.map-pointer--new-york {
-				top: 19.9%;
-				left: 27.4%;
-			}
-			.map-pointer--floride {
-				top: 26.0%;
-				left: 25.7%;
-			}
-			.map-pointer--californie {
-				top: 22.0%;
-				left: 15.4%;
-			}
-			.map-pointer--tahiti {
-				top: 48.4%;
-				left: 7.7%;
-			}
-			.map-pointer--bora-bora {
-				top: 48.1%;
-				left: 7.1%;
-			}
+      .map-pointer--turquie {
+        top: 20%;
+        left: 54.5%;
+      }
+      .map-pointer--tunisie {
+        top: 22.1%;
+        left: 49.8%;
+      }
+      .map-pointer--angleterre {
+        top: 13.7%;
+        left: 46.9%;
+      }
+      .map-pointer--irlande {
+        top: 13.3%;
+        left: 45.2%;
+      }
+      .map-pointer--islande {
+        top: 7.8%;
+        left: 41.8%;
+      }
+      .map-pointer--espagne {
+        top: 19.8%;
+        left: 46.8%;
+      }
+      .map-pointer--vienne {
+        top: 16.3%;
+        left: 51.3%;
+      }
+      .map-pointer--canada {
+        top: 17.1%;
+        left: 28.1%;
+      }
+      .map-pointer--new-york {
+        top: 19.9%;
+        left: 27.4%;
+      }
+      .map-pointer--floride {
+        top: 26%;
+        left: 25.7%;
+      }
+      .map-pointer--californie {
+        top: 22%;
+        left: 15.4%;
+      }
+      .map-pointer--tahiti {
+        top: 48.4%;
+        left: 7.7%;
+      }
+      .map-pointer--bora-bora {
+        top: 48.1%;
+        left: 7.1%;
+      }
 
-			.map-pointer--north-carolina {
-				top: 22%;
-				left: 25.5%;
-			}
-			</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<section>
-						<h1>Voyager autrement</h1>
-						<h3>(et avec des enfants)</h3>
-					</section>
-					
-					<section>
-						<h2>Coucou !</h2>
-						<div>
-							<img src="images/usa.png" alt="USA" />
-						</div>
+      .map-pointer--north-carolina {
+        top: 22%;
+        left: 25.5%;
+      }
 
-						<aside class="notes">
-							C'est moi ! <br />
+      .road-container {
+        position: relative;
+      }
 
-							J'avais 4 ans, c'est la première fois que je suis allée aux Etats-Unis.<br />
+      .moving-car {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
 
-							Premier voyage en avion. C'était tellement confortable que j'ai demandé à mes parents au bout de quelques heures : « quand est-ce qu'on décolle ? »
-						</aside>
-					</section>
+      .present .moving-car {
+        animation: movecar 5s infinite;
+        /* transform: translate(360%, 50%) rotate(-90deg); */
+      }
 
-					<section>
-						<div class="map-pointer-container">
-							<img src="./images/earth_noClouds.0330.jpg" alt="earth map" />
+      @keyframes movecar {
+        /* Lyon */
+        0% {
+          transform: translate(230%, 130%) rotate(-85deg);
+        }
+        /* Orange */
+        15% {
+          transform: translate(230%, 350%) rotate(-85deg);
+        }
+        /* Nimes */
+        20% {
+          transform: translate(200%, 430%) rotate(-65deg);
+        }
+        /* Montpellier */
+        35% {
+          transform: translate(120%, 430%) rotate(-30deg);
+        }
+        /* Perpignan */
+        45% {
+          transform: translate(00%, 550%) rotate(10deg);
+        }
+        /* Bordeaux */
+        60% {
+          transform: translate(-300%, 250%) rotate(50deg);
+        }
+        /* Normandie */
+        70% {
+          transform: translate(-400%, -300%) rotate(120deg);
+        }
+        /* Paris */
+        80% {
+          transform: translate(0%, -330%) rotate(200deg);
+        }
+        /* Geneve */
+        90% {
+          transform: translate(360%, 50%) rotate(270deg);
+        }
+        100% {
+          transform: translate(230%, 130%) rotate(275deg);
+        }
+      }
 
-							<div class="map-pointer map-pointer--north-carolina">📍</div>
-							<div class="fragment map-pointer map-pointer--turquie" data-fragment-index="1">📍</div>
-							<div class="fragment map-pointer map-pointer--tunisie" data-fragment-index="2">📍</div>
-							<div class="fragment map-pointer map-pointer--angleterre" data-fragment-index="3">📍</div>
-							<div class="fragment map-pointer map-pointer--irlande" data-fragment-index="3">📍</div>
-							<div class="fragment map-pointer map-pointer--islande" data-fragment-index="3">📍</div>
-							<div class="fragment map-pointer map-pointer--espagne" data-fragment-index="3">📍</div>
-							<div class="fragment map-pointer map-pointer--vienne" data-fragment-index="3">📍</div>
-							<div class="fragment map-pointer map-pointer--canada" data-fragment-index="4">📍</div>
-							<div class="fragment map-pointer map-pointer--new-york" data-fragment-index="4">📍</div>
-							<div class="fragment map-pointer map-pointer--floride" data-fragment-index="4">📍</div>
-							<div class="fragment map-pointer map-pointer--californie" data-fragment-index="4">📍</div>
-							<div class="fragment map-pointer map-pointer--tahiti" data-fragment-index="5">📍</div>
-							<div class="fragment map-pointer map-pointer--bora-bora" data-fragment-index="5">📍</div>
-						</div>
+      figure {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: auto;
+      }
 
-						<aside class="notes">
-							Depuis j'ai pris l'avion pour : 
-							<ul>
-								<li>la Turquie</li>
-								<li>la Tunisie</li>
-								<li>plusieurs destinations en Europe</li>
-								<li>quelques autres voyages en Amérique du Nord</li>
-								<li>et la Polynésie</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-			</div>
-		</div>
+      figcaption {
+        font: italic smaller sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Voyager autrement</h1>
+            <h3>(et avec des enfants)</h3>
+          </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+          <section data-background-image="images/usa.png">
+            <h2
+              style="
+                color: #fff;
+                text-shadow: -5px 5px 15px #ff20c7;
+                font-size: 3em;
+                margin-top: -30%;
+                text-align: right;
+              "
+            >
+              Coucou !
+            </h2>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+            <aside class="notes">
+              C'est moi ! <br />
+
+              C'est moi quand j'avais 4 ans, c'était mon premier voyage aux
+              Etats-Unis.<br />
+
+              C'était mon pemier voyage en avion. C'était tellement confortable
+              que j'ai demandé à mes parents au bout de quelques heures : «
+              quand est-ce qu'on décolle ? »
+            </aside>
+          </section>
+
+          <section>
+            <div class="map-pointer-container">
+              <img src="images/earth_noClouds.0330.jpg" alt="earth map" />
+
+              <div class="map-pointer map-pointer--north-carolina">📍</div>
+              <div
+                class="fragment map-pointer map-pointer--turquie"
+                data-fragment-index="1"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--tunisie"
+                data-fragment-index="2"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--angleterre"
+                data-fragment-index="3"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--irlande"
+                data-fragment-index="3"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--islande"
+                data-fragment-index="3"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--espagne"
+                data-fragment-index="3"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--vienne"
+                data-fragment-index="3"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--canada"
+                data-fragment-index="4"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--new-york"
+                data-fragment-index="4"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--floride"
+                data-fragment-index="4"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--californie"
+                data-fragment-index="4"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--tahiti"
+                data-fragment-index="5"
+              >
+                📍
+              </div>
+              <div
+                class="fragment map-pointer map-pointer--bora-bora"
+                data-fragment-index="5"
+              >
+                📍
+              </div>
+            </div>
+
+            <aside class="notes">
+              Depuis j'ai pris l'avion pour :
+              <ul>
+                <li>la Turquie</li>
+                <li>la Tunisie</li>
+                <li>plusieurs destinations en Europe</li>
+                <li>quelques autres voyages en Amérique du Nord</li>
+                <li>et la Polynésie</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <div class="road-container r-stack">
+              <img src="images/carte-france-routes.png" />
+
+              <div class="moving-car">🚗</div>
+
+              <div class="fragment">
+                <h3
+                  style="
+                    position: absolute;
+                    width: 100%;
+                    margin-top: 1em;
+                    color: white;
+                    text-shadow: 0 0 9px black;
+                  "
+                >
+                  Lyon → Paris → Lyon
+                </h3>
+                <img src="images/match-foot.jpg" />
+              </div>
+            </div>
+
+            <aside class="notes">
+              <div>
+                En France, chaque fois que je voulais aller quelque part, le
+                mode "normal" c'était d'y aller en voiture.
+              </div>
+
+              <div>
+                J'ai déjà fait l'aller-retour Lyon-Paris en voiture sur la
+                journée, pour aller voir un match de foot.
+              </div>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Sauf que…</h1>
+          </section>
+
+          <section>
+            <h2>La planète brûle !</h2>
+            <figure>
+              <img
+                src="images/matt-palmer-kbTp7dBzHyY-unsplash.jpg"
+                alt="Feu de forêt"
+                width="75%"
+              />
+              <figcaption>
+                <a
+                  href="https://unsplash.com/fr/photos/silhouette-darbres-au-coucher-du-soleil-kbTp7dBzHyY"
+                >
+                  © Matt Palmer
+                </a>
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>OSEF : j'aime bien le chaud !</h2>
+            <figure>
+              <img
+                src="images/tim-stief-D_IG_9elRQQ-unsplash.jpg"
+                alt="Glace sur la plage"
+                width="75%"
+              />
+
+              <figcaption>
+                <a
+                  href="https://unsplash.com/fr/photos/photographie-selective-de-la-personne-tenant-des-fruits-pres-de-la-plage-D_IG_9elRQQ"
+                >
+                  © Tim Stief
+                </a>
+              </figcaption>
+            </figure>
+
+            <aside class="notes">
+              On parle souvent de 2 degrés de plus, ça va, non ?…
+            </aside>
+          </section>
+
+          <section>
+            <h2>Mais</h2>
+
+            <div class="r-stack">
+              <p>🧒 + 👶 + 🌍 = 🔮</p>
+            </div>
+
+            <aside class="notes">
+              J'ai eu des enfants, et le concept de "futur" a radicalement
+              changé pour moi.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Si on peut leur éviter ça…</h2>
+
+            <figure>
+              <img
+                src="images/british-library-GQ5ELi84owE-unsplash.jpg"
+                style="max-height: 500px"
+              />
+              <figcaption>
+                <a
+                  href="https://unsplash.com/fr/photos/un-groupe-dhommes-assis-les-uns-a-cote-des-autres-dans-une-tranchee-GQ5ELi84owE"
+                  >© British Library</a
+                >
+              </figcaption>
+            </figure>
+
+            <aside class="notes">
+              Et j'ai pas vraiment envi que leur futur ressemble à ça.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            Atelier myco2 avec Romain et Fabrice… I stand with Romain
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
