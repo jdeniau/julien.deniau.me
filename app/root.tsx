@@ -10,6 +10,7 @@ import {
 } from '@remix-run/react';
 import type { MetaFunction } from '@remix-run/node';
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import cn from 'classnames';
 
 type NavItems = Array<[string, string]>;
@@ -197,6 +198,8 @@ export default function App() {
             </ul>
           </div>
         </section>
+
+        <Analytics />
 
         <ScrollRestoration />
         <Scripts />
