@@ -39,7 +39,7 @@ The only thing that you need is to change the prop `primary` to `$primary` (with
 
 In practice, this helps me cleaning the following code:
  
- ```diff
+```diff
 - /* eslint-disable @typescript-eslint/no-unused-vars,  react/jsx-props-no-spreading */
 - type CardProps = Parameters<typeof MpdCard>[0];
 - const CleanedCard = ({
