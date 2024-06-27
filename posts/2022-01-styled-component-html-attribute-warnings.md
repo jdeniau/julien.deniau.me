@@ -34,9 +34,10 @@ The only thing that you need is to change the prop `primary` to `$primary` (with
      title="Styled-component transient props example fixed"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-   
- In practice, this helps me cleaning the following code:
+></iframe>
+
+
+In practice, this helps me cleaning the following code:
  
  ```diff
 - /* eslint-disable @typescript-eslint/no-unused-vars,  react/jsx-props-no-spreading */
@@ -61,10 +62,9 @@ The only thing that you need is to change the prop `primary` to `$primary` (with
 // …
 
 - <Card isSubscription />
-
-* <Card $isSubscription />
++ <Card $isSubscription />
 
 ```
 
 I opened [a pull request](https://github.com/styled-components/styled-components-website/pull/832) to upgrade the FAQ on the subject.
-```
+
