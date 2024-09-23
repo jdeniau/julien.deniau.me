@@ -1,7 +1,8 @@
 ---
 date: 2024-09-23
 title: Know the latest branches I did work on git
-image: /images/falsy-comparison.png
+emphasis: Go back to a recent git branch
+icon: code
 lang: en
 ---
 
