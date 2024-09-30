@@ -40,6 +40,17 @@ I just have to add a prepare script in the `package.json` file, and it will work
     }
 ```
 
+If you read the [npm script documentation](https://docs.npmjs.com/cli/v6/using-npm/scripts#life-cycle-scripts): 
+
+> prepare (since npm@4.0.0)
+> 
+> - Runs BEFORE the package is packed
+> - Runs BEFORE the package is published
+> - Runs on local npm install without any arguments
+> - Run AFTER prepublish, but BEFORE prepublishOnly
+> - NOTE: If a package being installed through git contains a prepare script, its dependencies and devDependencies will be installed, and the prepare script will be run, before the package is packaged and installed.
+
+
 This way I can add the package doing `yarn add some-package@jdeniau/some-package` and the `dist` folder will be included in the `node_modules`.
 
 ⚠️ Be careful not including that in your PR though, as it should be only a temporary solution until the PR is merged. If it is not, due to inactivity, you might want to use the namespace alternative.
