@@ -118,7 +118,7 @@ function handleNegativeQuantity(item: Item, quantity: number) {
 }
 ```
 
-On a simplement sorti un morceau de code peu important du chemin critique de la fonction. Il est fort probable que l'on travaille souvent avec `buiItem`, mais que l'on ne mette jamais le nez dans `handleNegativeQuantity`. En faisant ce genre de changement, on rend le code vraiment plus facile à comprendre, et ça à chaque fois que l'on va travailler dessus.
+On a simplement sorti un morceau de code peu important du chemin critique de la fonction. Il est fort probable que l'on travaille souvent avec `buyItem`, mais que l'on ne mette jamais le nez dans `handleNegativeQuantity`. En faisant ce genre de changement, on rend le code vraiment plus facile à comprendre, et ça à chaque fois que l'on va travailler dessus.
 
 ### 5. On essaie de tout casser.
 
