@@ -26,6 +26,61 @@ layout: cover
 
 
 ---
+layout: image-left
+
+image: /avatar-poufsouffle-portrait.jpg
+backgroundSize: contain
+---
+
+<style>
+  .social {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+
+  .social .icon {
+    margin: 0 10px 0 0;
+    width: 1em;
+  }
+</style>
+
+# Qui suis-je ?
+
+## Julien Deniau
+
+
+_Fait un peu d'open-source à mes heures perdues…_
+
+
+<div>
+  <div>
+  🏢 Mapado
+  </div>
+
+  _…et essaie de motiver ses collègues à en faire_
+</div>
+
+#### En savoir plus sur moi ?
+
+<div class="social">
+  <span class="icon" style="margin-left: -3px; margin-right: 13px">🌎</span> https://julien.deniau.me
+</div>
+
+<div class="social">
+  <img class="icon" src="/social-github.svg" /> jdeniau
+</div>
+
+<div class="social">
+  <img class="icon" src="/social-x.png" />j_deniau
+</div>
+
+<div class="social">
+<img class="icon" src="/social-mastodon.svg" /> piaille.fr/@jdeniau 
+</div>
+
+
+---
 layout: section
 ---
 
@@ -298,34 +353,9 @@ who: Michael Dowling
 
 </v-click>
 
-
-
 ---
 layout: quizz
-image: https://sindresorhus.com/assets/sindre-sorhus.jpg
-who: Sindre Sorhus
----
-
-
-<v-click>
-
-<div>
-  <div class="flex flex-items-center">
-    <logos-javascript style="font-size: 3em;" class="mr-5" /> 
-    <div>
-      1000+ npm packages
-      <div class="color-neutral">
-        (2 milliards d'install / mois)
-      </div>
-    </div>
-  </div>
-</div>
-
-</v-click>
-
----
-layout: quizz
-position: left
+position: right
 image: https://thediffpodcast.com/assets/images/jordan-2c43ff762e625d49ea58424e3e74188a.jpg
 who: Jordan Walke
 ---
@@ -421,6 +451,28 @@ layout: section
 Ne comptez pas trop dessus 😊
 -->
 
+---
+layout: quote
+---
+
+<h1>Où sont les femmes dans ton quizz ? 🙎‍♀️</h1>
+
+<h2 class="color-neutral mb10">Ou plutôt : « où sont les femmes dans l'open-source ? »</h2>
+
+> Only 1,5% of OSS contributors were women, compared to 28% in proprietary software. <sup>1</sup>
+
+
+<div class="mt10 color-neutral text-right"  style="font-size: .7em">
+
+&nbsp; 1. [Where are women in Open Source?](https://openforumeurope.org/where-are-women-of-open-source/)
+
+</div>
+
+
+<!--
+Dans le développement logiciel, il y a 28% de femmes, mais seulement 1,5% dans l'open-source !  
+-->
+
 
 ---
 layout: section
@@ -464,7 +516,9 @@ Amusez-vous avec des trucs différents (lib de test, bundler, framework)
 <!--
 Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
 
-Et si c'est cool, on l'utilisera à Mapado !
+Et si c'est cool, vous l'utiliserez peut-être ensuite dans votre entreprise !
+
+A Mapado, si on n'avait pas un dev qui avait testé React dans son coin, jamais on ne serait parti dessus (et on serait encore bloqué sur AngularJS 🧌)
 
 -->
 
@@ -485,13 +539,16 @@ layout: center
 - fonctionnement interne,
 - développement de fonctionnalités.
 
+<!--
+Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source, en échangeant avec les gens qui vous remontent des erreurs, en apprenant leur usage, en développant des fonctionnalités sur des prohets qui vous utilisez ou bien en voyant vos utilisateurs proposer des modifications sur vos projets.
+-->
 
 
 ---
 layout: section
 ---
 
-# "Dette" envers l'open-source ?
+# Dette envers l'open-source ? 🤝
 
 --- 
 layout: image
@@ -512,6 +569,7 @@ Vous connaissez peut-être cette image de xkcd ?
 On utilise tous les jours beaucoup de packages open-source, 
 et contribuer est une forme de "remboursement de cette dette" (au même titre que financer directement les créateurs par ex.)
 
+Dans certains cas, c'est peut-être vous la personne random du Nebraska.
 -->
 
 
@@ -559,6 +617,12 @@ style:
   left: 10%
 ---
 
+
+<!--
+Mais je ne suis pas le seul. François Zaninotto, creéateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
+-->
+
+
 ---
 layout: section
 ---
@@ -573,6 +637,8 @@ backgroundSize: contain
 
 <!--
 Ca prend un peu de temps perso !
+
+(attendre un peu)
 -->
 
 ---
@@ -619,7 +685,7 @@ layout: default
 
 ### (et open-sourcez-le)
 
-Pour ma part: 
+À titre perso: 
 
 - [changelog-view](https://github.com/jdeniau/changelog-view): Afficher le détail des changelog des dépendances en ligne de commande
 - [ink-tab](https://github.com/jdeniau/ink-tab): plugin ink (React dans le terminal) pour afficher des onglets (pour changelog-view)
@@ -766,12 +832,12 @@ layout: default
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin: 16 000 téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin : 32 000 téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
 
-- haversine 300 000 téléchargements par semaine (top 1% des projets python)
+- haversine : 350 000 téléchargements par semaine (top 1% des projets python)
 
 </v-click>
 
@@ -820,13 +886,16 @@ layout: default
 
 <v-click>
 
-Cela veut dire quoi ? Que vous allez investir encore plus de temps sans avoir de retour. 
+<ul class="ml10">
+<li>Investir encore plus de temps sans avoir de retour.</li>
+<li>Travailler sur des projets bien plus gros !</li>
+</ul>
 
 </v-click>
 
 <v-click>
 
-Exemple avec immutable.js : 18 000 000 téléchargements / semaine.
+A titre personnel, je suis devenu mainteneur de immutable.js : 18 000 000 téléchargements / semaine.
 
 </v-click>
 
@@ -844,13 +913,13 @@ Refs:
     
      pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
 
-- 3. En accord avec la vision du mainteneur de la vision
+- 3. En accord avec la vision du mainteneur
 - 4. Aidez les mainteneurs sur les issues ou les PRs
 - 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
 
 Vous travaillerez sur des projets surement beaucoup impactants que vos projets perso.
 
-Pour rappel, le top projet Mapado c'est haversine à 300 000 / semaine puis le plugin prettier à 18 000 / semaine
+Pour rappel, le top projet Mapado c'est haversine à 300 000 / semaine puis le plugin prettier à 32 000 / semaine
 -->
 
 
@@ -930,10 +999,10 @@ layout: quote
 > 
 > _Kenny Dits, M6Web ([refonte front end de 6play](https://www.youtube.com/watch?v=6KUXRuNzBwM))_
 
-<img src="/kenny.png" style="max-height: 50vh; margin: 10px auto" />
+<img src="/kenny.png" style="max-height: 45vh; margin: 10px auto" />
 
 <!--
-En 2014, Kenny Dits de M6 hérite de la refonte de 6play, jusqu'alors faite en Flash.
+En 2014, Kenny Dits de M6Web hérite de la refonte de 6play, jusqu'alors faite en Flash.
 
 C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angular à react qu'ils s'est dit "ok c'est ça qu'il nous faut".
 
@@ -957,3 +1026,4 @@ layout: quote
 _Julien D._
 
 </div>
+
