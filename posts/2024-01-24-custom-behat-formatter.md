@@ -107,7 +107,7 @@ class ReviewdogFormatterExtension implements Extension
         $formatterDefinition = $container->register(ReviewdogFormatter::class);
         
         // add some arguments that will be called in the constructor. 
-        // That's not required but in my cas I inject behats base path, to remove it from the absolute file path later, and the printer.
+        // That's not required but in my case I inject behats base path, to remove it from the absolute file path later, and the printer.
         $formatterDefinition->addArgument('%paths.base%');
         $formatterDefinition->addArgument($outputPrinterDefinition);
 
@@ -186,7 +186,7 @@ class ReviewdogFormatter implements Formatter
         return [
             // call the `onBeforeExercise` method on startup
             BeforeExerciseCompleted::BEFORE => 'onBeforeExercise',
-            // cann the `onAfterStepTested` method after each step
+            // call the `onAfterStepTested` method after each step
             StepTested::AFTER => 'onAfterStepTested',
         ];
     }
@@ -420,7 +420,7 @@ default:
   formatters:
     pretty: true
     reviewdog: # "reviewdog" here is the "name" given in our formatter
-      # outputh_path is optional and handled directy by behat
+      # output_path is optional and handled directy by behat
       output_path: 'build/logs/behat'
       # file_name is optional and a custom parameter that we inject into the printer
       file_name: 'reviewdog-behat.json'
