@@ -6,7 +6,7 @@ icon: code
 lang: en
 ---
 
-If you want to know the latest branches that you did workon in git, you can use this simple command
+If you want to know the latest branches that you did workon in git, you can use this command
 
 ```sh
 git reflog | grep 'checkout: moving' | awk -F ' to ' '{print $2}' | awk 'seen[0]++' | head -n 20
