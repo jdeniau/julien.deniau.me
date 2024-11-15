@@ -3,11 +3,6 @@ theme: default # seriph
 # class: text-center
 highlighter: shiki
 lineNumbers: true
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
 drawings:
   persist: false
 defaults:
@@ -72,7 +67,7 @@ _Fait un peu d'open-source à mes heures perdues…_
 </div>
 
 <div class="social">
-  <img class="icon" src="/social-x.png" />j_deniau
+  <img class="icon" src="/social-bluesky.svg" /> @julien.deniau.me
 </div>
 
 <div class="social">
@@ -85,7 +80,7 @@ layout: section
 ---
 
 
-# L'open-source, c'est quoi ?
+# L'<span v-mark.highlight.yellow="0">open-source</span>, c'est quoi ?
 
 ---
 layout: image
@@ -111,7 +106,9 @@ L'open-source c'est un peu ça : des gens qui développent des briques que d'aut
 layout: fact
 ---
 
-## Open-source != gratuit
+# Open-source
+# ≠
+# gratuit
 
 <!--
 Un logiciel open-source PEUT être gratuit (selon sa licence) mais ce n'est pas obligatoirement le cas.
@@ -124,7 +121,7 @@ layout: section
 ---
 
 
-# Quel intérêt exactement ?
+# Quel <span v-mark.highlight.yellow="0">intérêt</span> exactement ?
 
 ---
 layout: image
@@ -161,17 +158,17 @@ L'intérêt pour les entreprises c'est de pouvoir se baser sur le code des autre
 
 <!--
 - Le coût est toujours sensiblement moins élevé que les solutions propriétaires
-- pas de "vendor lock-in" ("enfermement propriétaire" en français) (machine à café + capsules, logiciels avec format de fichiers propriétaire)
+- pas de "vendor lock-in" ("enfermement propriétaire" en français) (machine à café + capsules, logiciels avec format de fichiers propriétaire, logiciel en Sass)
 - si une solution open-source meurt, ça sera d'une mort lente, comparé à une entreprise
 - source libre = tout le monde peut auditer le code et vérifier qu'il fonctionne comme annoncé. La communauté peut trouver et remonter les failles de sécurité. (tous les algo de sécurité actuels sont open-sources, proton pass est open source)
 -->
 
 
 ---
-layout: quote
+layout: statement
 ---
 
-# Mais pour vous ?
+# Mais pour <span v-mark.highlight.yellow="0">vous</span> ?
 
 <!--
 Mais là ce n'est pas des entreprises que je veux parler, mais de vous !
@@ -208,17 +205,6 @@ layout: section
   </li>
 </ul>
 
-<div style="width: 60%; margin: 0 0 auto; margin-top: 30px; float: right; text-align: right"> 
-  <blockquote>
-  Almost nobody makes a living writing free software. As a percentage of all software engineers, it’s so few we can basically round down to zero.
-  </blockquote>
-
-  <a href="https://jacobian.org/2024/feb/16/paying-maintainers-is-good/" style="font-size: 0.5em">
-  Paying people to work on open source is good actually - 
-  Jacob Kaplan-Moss
-  </a>
-</div>
-
 </v-click>
 
   
@@ -226,14 +212,70 @@ layout: section
 C'est bien si vous voulez fondez une société, ou si votre produit marche vraiment bien.
 
 Idem pour les dons, si vous êtes un "énorme" projet, alors vous reussirez à gagner votre vie.
-PostCSS par exemple, qui est utilisé entre autre par meta ou google, ne gagne que 12 000 $ récurrent par an (+ 26 000 $ de don non récurrent)
+
+[click] PostCSS par exemple, qui est utilisé entre autre par meta ou google, ne gagne que 12 000 $ récurrent par an (+ 26 000 $ de don non récurrent),
 -->
 
+---
+layout: quote
+---
+
+
+<blockquote>
+<h2>
+<span v-mark.underline.orange="0">Almost nobody</span> makes a living writing free software. <br />
+As a percentage of all software engineers, 
+it’s <span v-mark.underline.orange="0">so few</span> we can basically round down to <span v-mark.circle="{ at:0, color: 'orange' }">zero</span>.
+</h2>
+</blockquote>
+
+  <p><a href="https://jacobian.org/2024/feb/16/paying-maintainers-is-good/">
+  Paying people to work on open source is good actually - 
+  Jacob Kaplan-Moss
+  </a></p>
+
+<v-click>
+
+<h2 class="text-center" style="margin-top:50px"> Quelques initiatives récentes :</h2>
+
+<div class="flex justify-evenly items-center" style="margin-top: 20px">
+
+  <a href="https://oscollective.org/">
+    <img src="/open-source-collective.png" style="max-height: 50px" />
+  </a>
+  
+  <a href="https://thanks.dev/">
+    <img src="/thanks-dev.svg" />
+  </a>
+
+  <a href="https://github.com/sponsors/">
+    <img src="/github-sponsor.png" style="max-height: 50px; margin: 0 auto" />
+
+    Github sponsors
+  </a>
+</div>
+
+<div class="flex justify-evenly items-center" style="margin-top: 20px">
+  <a href="https://opensourcepledge.com/"><img src="/opensourcepledge.svg" style="max-height: 70px" /></a>
+
+  <a href="https://copiepublique.fr/"><img src="/copie-publique.svg" style="max-height: 70px" /></a>
+</div>
+
+</v-click>
+
+
+<!--
+Persque personne ne vie de l'écriture de logiciel open-source. C'est un pourcentage tellement faible qu'on peut arrondir à zéro.
+
+[click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin de dire que c'est suffisant.
+
+TODO Parler des failles de XZ https://fr.wikipedia.org/wiki/Attaque_de_XZ_Utils_par_porte_d%C3%A9rob%C3%A9e and Apache Log4j https://fr.wikipedia.org/wiki/Log4Shell
+-->
 
 ---
 layout: section
 ---
-# <span class="line-through">Gagner de l'argent ? 💸</span>
+# <span v-mark.crossed-off.black="0">Gagner de l'argent ? 💸</span>
 
 <!--
 Vraiment pas pour les petits projets.
@@ -391,7 +433,7 @@ image: /all-4.png
 <v-click>
 
 <div class="flex flex-items-center ml2">
-  <logos-typescript style="font-size: 2em;" class="mr-2" /> TypeScript
+  <logos-typescript style="font-size: 1.5em;" class="mr-2" /> TypeScript
 </div>
 
 </v-click>
@@ -412,7 +454,7 @@ image: /all-4.png
 </div>
 
 <div class="flex flex-items-center">
-  James Long ?  
+  James Long ? 
   
 <v-after>
 
@@ -439,13 +481,15 @@ image: /all-4.png
 
 <!--
 Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
+
+Peut-être remplacer James Long par Ondřej Mirtes / phpstan ? https://github.com/ondrejmirtes
 -->
 
 
 ---
 layout: section
 ---
-# <span class="line-through">La notoriété ! 😥</span>
+# <span  v-mark.crossed-off.black="0">La notoriété ! 😥</span>
 
 <!--
 Ne comptez pas trop dessus 😊
@@ -457,9 +501,11 @@ layout: quote
 
 <h1>Où sont les femmes dans ton quizz ? 🙎‍♀️</h1>
 
-<h2 class="color-neutral mb10">Ou plutôt : « où sont les femmes dans l'open-source ? »</h2>
+<p>Ou plutôt : « où sont les femmes dans l'open-source ? »</p>
 
-> Only 1,5% of OSS contributors were women, compared to 28% in proprietary software. <sup>1</sup>
+<blockquote>
+  Only <span v-mark.highlight.yellow="0">1,5%</span> of OSS contributors were women, compared to <span v-mark.circle.yellow="0">28%</span> in proprietary software. <sup>1</sup>
+</blockquote>
 
 
 <div class="mt10 color-neutral text-right"  style="font-size: .7em">
@@ -478,7 +524,7 @@ Dans le développement logiciel, il y a 28% de femmes, mais seulement 1,5% dans 
 layout: section
 ---
 
-# Rendre son CV attirant ? 💌
+# Rendre son <span v-mark.highlight.yellow="0">CV</span> attirant ? 💌
 
 ---
 layout: image
@@ -502,14 +548,14 @@ Potentiellement, si vous contribuez sur un package que l'entreprise utilise, c'e
 layout: section
 ---
 
-# Tester des trucs 🧑‍🔬
+# <span v-mark.highlight.yellow="0">Tester</span> des trucs 🧑‍🔬
 
 
 ---
 layout: center
 ---
 
-# Tester des trucs 🧑‍🔬
+# <span v-mark.highlight.yellow="0">Tester</span> des trucs 🧑‍🔬
 
 Amusez-vous avec des trucs différents (lib de test, bundler, framework)
 
@@ -532,12 +578,12 @@ layout: section
 ---
 layout: center
 ---
-# Un grand OUI !
+# Un grand <span v-mark.highlight.yellow="0">OUI</span> !
 
-- remontée d'erreurs,
-- échanges avec les gens,
-- fonctionnement interne,
-- développement de fonctionnalités.
+- remontée d'<span v-mark.underline.gray="0">erreurs</span>,
+- <span v-mark.underline.gray="0">échanges</span> avec les gens,
+-  <span v-mark.underline.gray="0">fonctionnement</span> interne,
+- développement de  <span v-mark.underline.gray="0">fonctionnalités</span>.
 
 <!--
 Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source, en échangeant avec les gens qui vous remontent des erreurs, en apprenant leur usage, en développant des fonctionnalités sur des prohets qui vous utilisez ou bien en voyant vos utilisateurs proposer des modifications sur vos projets.
@@ -548,7 +594,7 @@ Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source
 layout: section
 ---
 
-# Dette envers l'open-source ? 🤝
+# <span v-mark.highlight.yellow="0">Dette</span> envers l'open-source ? 🤝
 
 --- 
 layout: image
@@ -569,7 +615,7 @@ Vous connaissez peut-être cette image de xkcd ?
 On utilise tous les jours beaucoup de packages open-source, 
 et contribuer est une forme de "remboursement de cette dette" (au même titre que financer directement les créateurs par ex.)
 
-Dans certains cas, c'est peut-être vous la personne random du Nebraska.
+Dans certains cas, c'est peut-être vous la personne aléatoire du Nebraska.
 -->
 
 
@@ -577,14 +623,14 @@ Dans certains cas, c'est peut-être vous la personne random du Nebraska.
 layout: section
 ---
 
-## Reconnaissance des utilisateurs ? 😘
+## <span v-mark.highlight.yellow="0">Reconnaissance</span> des utilisateurs ? 😘
 
 ---
 layout: quote
 clicks: 1
 ---
 
-# C'est HYPER gratifiant !
+# C'est <span v-mark.underline.green="0">HYPER</span> gratifiant !
 
 
 <div>
@@ -627,7 +673,7 @@ Mais je ne suis pas le seul. François Zaninotto, creéateur de FakerPHP, est au
 layout: section
 ---
 
-# Des mauvais côté ? 😈
+# Des <span v-mark.highlight.red="0">mauvais</span> côté ? 😈
 
 ---
 layout: image
@@ -653,14 +699,14 @@ Vous allez vous sentir seul :
 
 Il est peu probable que votre projet intéresse beaucoup de monde, et vous allez vous sentir seul à le maintenir.
 
-Quand bien même votre projet est utile, il est peu probable que vous ayez de l'aide malgré tout le temps que vous allez investir. Au mieux vous aurez des bug reportés ou des demandes d'évolutions, mais peu de PRs.
+Quand bien même votre projet est utile, il est peu probable que vous ayez de l'aide malgré tout le temps que vous allez investir. Au mieux vous aurez des bug reportés ou des demandes d'évolutions, mais peu de gens pour vous accompagner dans votre voyage.
 
 -->
 
 ---
 layout: section
 ---
-# Comment fait-on ? 🤔
+# <span v-mark.highlight.yellow="0">Comment</span> fait-on ? 🤔
 
 ## J'aimerai me lancer, mais je n'ai pas d'idée…
 
@@ -668,7 +714,7 @@ layout: section
 layout: quote
 ---
 
-# Développez pour vous !
+# Développez <span v-mark.underline.green="0">pour vous</span> !
 
 Vous êtes les premiers utilisateurs de votre package
 
@@ -681,17 +727,17 @@ Et surement les seuls…
 layout: default
 ---
 
-## Vous ne trouvez rien de dispo qui vous aille ? Codez-le !
+## Vous ne trouvez rien de dispo qui vous aille ? <span v-mark.underline.green="0">Codez-le !</span>
 
-### (et open-sourcez-le)
+### (et open-sourcez-le !)
 
 À titre perso: 
 
-- [changelog-view](https://github.com/jdeniau/changelog-view): Afficher le détail des changelog des dépendances en ligne de commande
-- [ink-tab](https://github.com/jdeniau/ink-tab): plugin ink (React dans le terminal) pour afficher des onglets (pour changelog-view)
-- [prettier-plugin-gherkin](https://github.com/mapado/prettier-plugin-gherkin): j'adore prettier, les plugins gherkins dispos avaient besoin de Go
-- [behat-reviewdog-formatter](https://github.com/jdeniau/behat-reviewdog-formatter): Intégrer behat dans reviewdog
-- [metch-fock](https://github.com/mapado/metch-fock): Librairie simple pour mocker fetch qui fonctionne avec Node 18+
+- [changelog-view](https://github.com/jdeniau/changelog-view): Afficher le détail des <span v-mark.underline.gray="0">changelog des dépendances</span> en ligne de commande
+- [ink-tab](https://github.com/jdeniau/ink-tab): plugin ink (React dans le terminal) pour <span v-mark.underline.gray="0">afficher des onglets</span> (pour changelog-view)
+- [prettier-plugin-gherkin](https://github.com/mapado/prettier-plugin-gherkin): j'adore <span v-mark.underline.gray="0">prettier</span>, les plugins gherkins dispos avaient besoin de Go
+- [behat-reviewdog-formatter](https://github.com/jdeniau/behat-reviewdog-formatter): Intégrer <span v-mark.underline.gray="0">behat dans reviewdog</span>
+- [metch-fock](https://github.com/mapado/metch-fock): Librairie JS simple pour <span v-mark.underline.gray="0">mocker fetch</span> qui fonctionne avec Node 18+
 
 
 
@@ -699,7 +745,7 @@ layout: default
 layout: default
 ---
 
-## Vous avez dev un truc cool au bureau qui ne risque rien ?
+## Vous avez dev un <span v-mark.underline.green="0">truc cool au bureau</span> qui ne risque rien ?
 
 ### Open-sourcez-le !
 
@@ -709,11 +755,11 @@ A Mapado:
 - [rest-client-sdk](https://github.com/mapado/rest-client-sdk): client SDK agnostique PHP
 - [install-deps-from-pr](https://github.com/mapado/install-deps-from-pr): installer les dépendances depuis une PR
 - [generator-mapado](https://github.com/mapado/generator-mapado): générateur yeoman pour créer une lib
-- [haversine](https://github.com/mapado/haversine): distance entre deux points sur terre
+- [haversine](https://github.com/mapado/haversine): <span v-mark.underline.gray="0">distance</span> entre deux points sur terre
 - [watch-module](https://github.com/mapado/watch-module): "watcher" pour travailler en multi-repo en JS
 - [TwigExtensionsBundle](https://github.com/mapado/TwigExtensionsBundle): extension twig pour `parse_url`
-- [pretty-types](https://github.com/mapado/pretty-types): extension doctrine pour avoir des JSON lisibles en base
-- [datection](https://github.com/mapado/datection): détection et rendu de date
+- [pretty-types](https://github.com/mapado/pretty-types): extension doctrine pour avoir des JSON <span v-mark.underline.gray="0">lisibles en base</span>
+- [datection](https://github.com/mapado/datection): détection et rendu de <span v-mark.underline.gray="0">date</span>
 - etc.
 
 ---
@@ -723,12 +769,12 @@ layout: quote
 
 
 <blockquote  style="padding: 25px 30px">
-  <h2>C'est un side-project pour vous "amuser", en assumant que vous ne gagnerez pas d'argent dessus.</h2>
+  <h2>C'est un <span v-mark.highlight.yellow="0">side-project</span> pour vous "amuser", en assumant que vous ne gagnerez <span v-mark.underline.red="0">pas d'argent</span> dessus.</h2>
 </blockquote>
 
 <div class="text-right">
   
-_L'open-source, par JD_
+_L'open-source, par Julien D._
 
 </div>
 
@@ -736,7 +782,7 @@ _L'open-source, par JD_
 layout: section
 ---
 
-# Les clés du succès 📈
+# Les <span v-mark.highlight.yellow="0">clés</span> du succès 📈
 
 ---
 layout: default
@@ -744,33 +790,33 @@ layout: default
 clicks: 3
 ---
 
-# Les clés du succès
+# Les <span v-mark.highlight.yellow="0">clés</span> du succès
 
 Pas de recette magique, sans ces ingrédients, peu de chance de succès : 
 
-- Périmetrer votre projet et garder le simple
-
-<v-click at="0">
-
-- Définir votre vision <sup>1</sup>
-
-</v-click>
+- <span v-mark.underline.green="0">Périmetrer</span> votre projet et garder le simple
 
 <v-click at="1">
 
-- Rendre votre projet qualitatif: 
-  - les tests
-  - la documentation <sup>2</sup>
+- Définir votre  <span v-mark.underline.green="1">vision</span> <sup>1</sup>
 
 </v-click>
 
 <v-click at="2">
 
-- Communiquer <sup>3</sup>
+- Rendre votre projet <span v-mark.underline.green="2">qualitatif</span>: 
+  - les tests
+  - la documentation <sup>2</sup>
 
 </v-click>
 
-<v-click at="0">
+<v-click at="3">
+
+- <span v-mark.underline.green="3">Communiquer</span> <sup>3</sup>
+
+</v-click>
+
+<v-click at="1">
 
 <div class="mt10 color-neutral">
 Refs:
@@ -778,14 +824,14 @@ Refs:
 1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
 
 
-<v-click at="1">
+<v-click at="2">
 
 
 2. Marmelab: [La documentation, clé du succès open source](https://marmelab.com/blog/2024/01/10/open-source-documentation.html)
 
 </v-click>
 
-<v-click at="2">
+<v-click at="3">
 
 3. [Le Twitterix de Dan Abramov](https://twitter.com/dan_abramov2)
 
@@ -807,7 +853,7 @@ Refs:
 layout: section
 ---
 
-# Et si ça marchait ?! 🚀
+# <span v-mark.highlight.yellow="0">Et si</span> ça marchait ?! 🚀
 
 <!--
 Je suis assez pessimiste sur l'avenir de votre projet open-source depuis tout à l'heure, mais en fait, peut-être qu'il fonctionnera 
@@ -818,26 +864,26 @@ Je suis assez pessimiste sur l'avenir de votre projet open-source depuis tout à
 layout: default
 ---
 
-# Et si ça marchait ?! 🚀
+# <span v-mark.highlight.yellow="0">Et si</span> ça marchait ?! 🚀
 
 - metch-fock : 1 téléchargement par semaine
 - watch-module : 1 téléchargement par semaine
 - changelog-view : 4 téléchargements par semaine
-- rest-client-sdk (JS et PHP) : 100 téléchargements par semaine
+- rest-client-sdk (JS et PHP) : <span v-mark.underline.gray="0">100</span> téléchargements par semaine
 
 <v-click>
 
-- ink-tab : 1000 téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">1000</span> téléchargements par semaine
 
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin : 32 000 téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin : <span v-mark.underline.orange="2">32 000</span> téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
 
-- haversine : 350 000 téléchargements par semaine (top 1% des projets python)
+- haversine : <span v-mark.underline.red="1">350 000</span> téléchargements par semaine (top 1% des projets python)
 
 </v-click>
 
@@ -847,13 +893,13 @@ layout: quote
 
 ## C'est très cool pour vous !
 
-(mais ce n'est pas un but en soit)
+(mais ce n'est <span v-mark.underline.cyan="0">pas un but en soit</span>)
 
 ---
 layout: quote
 ---
 
-# Attention : garder une vie perso !
+# Attention : garder une <span v-mark.highlight.red="0">vie perso</span> !
 
 <!--
 (Ca ne vient pas de moi, je n'en suis pas du tout là) 
@@ -864,38 +910,38 @@ On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne 
 layout: section
 ---
 
-# L'open-source,  <br />  ce n'est pas que céer un projet
+# L'open-source,  <br />  ce n'est <span v-mark.highlight.yellow="0">pas que créer</span> un projet
 
 ---
 layout: section
 ---
 
-## Contribuez à des projets existants
+## <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
 
 ---
 layout: default
 ---
 
-# Contribuez à des projets existants
+# <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
 
-1. Rapportez les bugs que vous rencontrez,
-2. Mieux : corrigez les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
-3. Proposez des évolutions que vous aimeriez,
-4. "donner plutôt que recevoir",
-5. Intégrer la "core team" (les mainteneurs).
+1. Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez,
+2. Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
+3. Proposez <span v-mark.underline.gray="0">des évolutions</span> que vous aimeriez,
+4. "<span v-mark.underline.gray="0">donner</span> plutôt que recevoir",
+5. Intégrer la <span v-mark.underline.gray="0">"core team"</span> (les mainteneurs).
 
 <v-click>
 
 <ul class="ml10">
-<li>Investir encore plus de temps sans avoir de retour.</li>
-<li>Travailler sur des projets bien plus gros !</li>
+<li>Investir <span v-mark.underline.gray="1">encore plus de temps</span> sans avoir de retour.</li>
+<li>Travailler sur des projets bien <span v-mark.underline.gray="1">plus gros</span> !</li>
 </ul>
 
 </v-click>
 
 <v-click>
 
-A titre personnel, je suis devenu mainteneur de immutable.js : 18 000 000 téléchargements / semaine.
+A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">18 000 000</span> téléchargements / semaine.
 
 </v-click>
 
@@ -957,7 +1003,7 @@ storybook
 layout: section
 ---
 
-## Participer à des meet-up et conférences 🎙️
+## <span v-mark.highlight.yellow="0">Participer</span> à des meet-up et conférences 🎙️
 
 Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
 
@@ -978,7 +1024,7 @@ backgroundSize: contain
 <h1 
   class="color-black" 
   style="background: rgba(255, 255, 255, 0.8); display: inline-block; border-radius: 8px; padding: .1em .3em;"
->Et c'est très vite très gratifiant</h1>
+>Et c'est très vite très <span v-mark.highlight.yellow="0">gratifiant</span></h1>
 
 <!--
 Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et qui font du bien au moral)
@@ -989,13 +1035,13 @@ Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et
 layout: section
 ---
 
-# Publier des articles de blog 📝
+# Publier des articles de <span v-mark.highlight.yellow="0">blog</span> 📝
 
 ---
 layout: quote
 ---
 
-> On a tous quelque chose à partager.
+> <span style="font-size: 2em">On a <span v-mark.highlight.green="0">tous</span> quelque chose à <span v-mark.underline.green="0">partager</span>.</span>
 > 
 > _Kenny Dits, M6Web ([refonte front end de 6play](https://www.youtube.com/watch?v=6KUXRuNzBwM))_
 
@@ -1015,9 +1061,9 @@ layout: quote
 
 <blockquote style="padding: 25px 30px">
 
-# L'open-source
+# L'<span v-mark.underline.cyan="0">open-source</span>
 
-## C'est gratuit, et c'est **pas** toi le produit ! 
+## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span> ! 
 
 </blockquote>
 
@@ -1027,3 +1073,10 @@ _Julien D._
 
 </div>
 
+
+<!--
+
+Pistes de questions:
+
+- Ma boite ne m'autorise pas à faire de l'open source ?
+-->
