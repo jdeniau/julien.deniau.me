@@ -1,7 +1,7 @@
 import type { LoaderFunction } from '@remix-run/node';
-import { getPosts } from '~/post';
-import type { Post } from '~/post';
-import { uri } from '~/url';
+import { getPosts } from '../post';
+import type { Post } from '../post';
+import { uri } from '../url';
 
 function createRssItem(post: Post): string {
   const link = uri(`/posts/${post.slug}`);

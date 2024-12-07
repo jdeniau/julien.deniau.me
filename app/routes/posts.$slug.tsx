@@ -1,16 +1,16 @@
 import { useLoaderData } from '@remix-run/react';
 import type { MetaFunction, LoaderFunction } from '@remix-run/node';
 import invariant from 'tiny-invariant';
-import { getPost } from '~/post';
-import type { PostWithHTML } from '~/post';
-import styles from '~/styles/posts/$slug.css';
+import { getPost } from '../post';
+import type { PostWithHTML } from '../post';
+import styles from '../styles/posts/$slug.css?url';
 import hljs from 'highlight.js';
 import { useEffect, useState } from 'react';
-// import highligtStyle from 'highlight.js/styles/base16/dracula.css';
-import highligtStyle from '~/styles/highlight-dracula.css';
-import { uri } from '~/url';
-import { formatDate } from '~/date';
-import { useHasShare } from '~/hooks/useHasShare';
+// import highligtStyle from 'highlight.js/styles/base16/dracula.css?url';
+import highligtStyle from '../styles/highlight-dracula.css?url';
+import { uri } from '../url';
+import { formatDate } from '../date';
+import { useHasShare } from '../hooks/useHasShare';
 
 export function links() {
   return [

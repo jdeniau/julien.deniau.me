@@ -1,7 +1,6 @@
 import {
   Link,
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -211,8 +210,6 @@ export default function App() {
         <script src="/theme/assets/js/breakpoints.min.js"></script>
         {/* <script src="/theme/assets/js/util.js"></script> */}
         <script src="/theme/assets/js/main.js"></script>
-
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
   );

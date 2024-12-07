@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction } from '@remix-run/node';
-import { formatDate } from '~/date';
-import { getPosts, Post } from '~/post';
+import { formatDate } from '../date';
+import { getPosts, Post } from '../post';
 
 type Talk = {
   title: string;
@@ -23,7 +23,7 @@ export const loader: LoaderFunction = async () => {
       {
         title:
           "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
-        image: '/timezones/images/World_Time_Zones_Map.png',        
+        image: '/timezones/images/World_Time_Zones_Map.png',
         url: 'https://mixitconf.org/2023/tout-ce-que-vous-n-avez-jamais-voulu-savoir-sur-les-fuseaux-horaires',
         urlText: 'Vidéo',
         secondaryUrl: '/timezones/',
