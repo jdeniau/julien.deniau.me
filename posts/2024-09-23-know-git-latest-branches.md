@@ -4,6 +4,7 @@ title: Know the latest branches I did work on git
 emphasis: Go back to a recent git branch
 icon: code
 lang: en
+blueskyUri: https://bsky.app/profile/julien.deniau.me/post/3lcqsppjcck2v
 ---
 
 If you want to know the latest branches that you did workon in git, you can use this command

@@ -1,6 +1,7 @@
 import { useLoaderData } from '@remix-run/react';
 import type { MetaFunction, LoaderFunction } from '@remix-run/node';
 import invariant from 'tiny-invariant';
+import BlueskyComments from 'bluesky-comments';
 import { getPost } from '../post';
 import type { PostWithHTML } from '../post';
 import styles from '../styles/posts/$slug.css?url';
@@ -8,6 +9,7 @@ import hljs from 'highlight.js';
 import { useEffect, useState } from 'react';
 // import highligtStyle from 'highlight.js/styles/base16/dracula.css?url';
 import highligtStyle from '../styles/highlight-dracula.css?url';
+import blueskyComments from 'bluesky-comments/style.css?url';
 import { uri } from '../url';
 import { formatDate } from '../date';
 import { useHasShare } from '../hooks/useHasShare';
@@ -19,6 +21,7 @@ export function links() {
       rel: 'stylesheet',
       href: highligtStyle,
     },
+    { rel: 'stylesheet', href: blueskyComments },
   ];
 }
 
@@ -61,6 +64,14 @@ export default function PostSlug() {
 
   useEffect(() => {
     hljs.highlightAll();
+  }, []);
+
+  useEffect(() => {
+    const author = 'julien.deniau.me';
+    BlueskyComments.init('bluesky-comments', {
+      author,
+      uri: post.blueskyUri ?? undefined,
+    });
   }, []);
 
   return (
@@ -111,6 +122,8 @@ export default function PostSlug() {
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
+
+      <div id="bluesky-comments"></div>
     </>
   );
 }

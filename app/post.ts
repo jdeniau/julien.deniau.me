@@ -10,7 +10,7 @@ const octokit = new Octokit({
 
 const BRANCHNAME =
   typeof process !== 'undefined'
-    ? process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main'
+    ? (process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main')
     : 'main';
 
 export type Post = {
@@ -22,6 +22,7 @@ export type Post = {
   image?: string;
   imageCredit?: string;
   lang?: string;
+  blueskyUri?: string;
 };
 
 export type PostWithHTML = Post & {
