@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="dist/reveal.css" />
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
     <link rel="stylesheet" href="dist/theme/night.css" />
-    <link rel="stylesheet" href="dist/theme/devoxx-night.css" />
+    <link rel="stylesheet" href="dist/theme/mapado.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <!-- <link rel="stylesheet" href="plugin/highlight/unikitty-light.css" /> -->
@@ -92,28 +92,57 @@
     </style>
   </head>
   <body>
-    <div class="devoxx-logo">
-      DEVOX<span class="highlight">X</span> FRANCE 2024
+    <div class="logo">
+      <img src="images/Mapado-logo-light.png" />
     </div>
 
     <div class="reveal">
       <div class="slides">
         <section>
-          <div style="max-width: 500px; margin: 0 auto">
-            <h2 class="r-fit-text">TOUT CE</h2>
-            <h2 class="r-fit-text">QUE VOUS N'AVEZ JAMAIS</h2>
-            <h2 class="r-fit-text">VOULU SAVOIR</h2>
-            <h2 class="r-fit-text">SUR LES FUSEAUX</h2>
-            <h2 class="r-fit-text">HORAIRES</h2>
-          </div>
+          <section>
+            <div style="max-width: 500px; margin: 0 auto">
+              <h2 class="r-fit-text">TOUT CE</h2>
+              <h2 class="r-fit-text">QUE VOUS N'AVEZ JAMAIS</h2>
+              <h2 class="r-fit-text">VOULU SAVOIR</h2>
+              <h2 class="r-fit-text">SUR LES FUSEAUX</h2>
+              <h2 class="r-fit-text">HORAIRES</h2>
+            </div>
 
-          <aside class="notes">
-            Alors excusez-moi, avant de commencer il faut juste de que passe un
-            coup de téléphone à ma belle-sœur : c'est son anniversaire
-            aujourd'hui ! Elle vit à Tahiti.<br />
-            Ha ben non, mince, chez elle on est encore hier ? Ou déjà demain
-            peut-être ? 🤔
-          </aside>
+            <aside class="notes">
+              Bonjour, <br />
+              Je m'apelle Julien Deniau, je fais parti de l'équipe technique de
+              Mapado, et je voulais vous parler d'un sujet méconnu : les fuseaux
+              horaires. <br />
+              Mais avant de commencer, je voudrais vous partager ce petit sketch
+              de François Morel que l'on aime beaucoup chez Mapado qui résume
+              bien la complexité qui peut être cachée derrière une simplissité
+              apparente.
+            </aside>
+          </section>
+
+          <section>
+            <!-- TODO activer la vidéo -->
+            <video src="images/plus-complique-que-ca.mp4"></video>
+          </section>
+
+          <section>
+            <!-- repeat slide 1-->
+            <div style="max-width: 500px; margin: 0 auto">
+              <h2 class="r-fit-text">TOUT CE</h2>
+              <h2 class="r-fit-text">QUE VOUS N'AVEZ JAMAIS</h2>
+              <h2 class="r-fit-text">VOULU SAVOIR</h2>
+              <h2 class="r-fit-text">SUR LES FUSEAUX</h2>
+              <h2 class="r-fit-text">HORAIRES</h2>
+            </div>
+
+            <aside class="notes">
+              Alors par contre excusez-moi, avant de commencer il faut juste de
+              que passe un coup de téléphone à ma belle-sœur : c'est son
+              anniversaire aujourd'hui ! Elle vit à Tahiti.<br />
+              Ha ben non, mince, chez elle on est encore hier ? Ou déjà demain
+              peut-être ? 🤔
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -121,7 +150,7 @@
             <h2>Qu'est-ce qu'une date exactement ?</h2>
           </section>
           <section>
-            <h3>Un moyen de se repérer dans le temps</h3>
+            <h3>Un moyen de se repérer <br />dans le temps</h3>
             <ul>
               <li>une année</li>
               <li>un mois</li>
@@ -185,12 +214,15 @@
                 </a>
                 , il pose plus de questions qu'il n'apporte de réponse 😅.
               </p>
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
           <section>
-            <h3>Plusieurs façon de représenter un même "point temporel"</h3>
+            <h3>
+              Plusieurs façon de représenter <br />
+              un même "point temporel"
+            </h3>
 
             <ul>
               <li>
@@ -321,7 +353,7 @@
               utilisait six heure différentes ! <br />
               Aux États-Unis, il y a eu jusqu'à 300 heures locales.
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
           <section>
@@ -388,7 +420,7 @@
               Il y a eu tellement de débats qu'une délégation spéciale est même
               envoyée à Rome pour expliquer au pape pourquoi cet écart.
 
-              <!-- <p>=== EFFET ===</p> -->
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -402,7 +434,7 @@
               même fuseau horaire quand on est dans tout le pays.<br />
               Aucune tranche n'est donc vraiment égale, ni "droite".
 
-              <!-- <p>=== EFFET ===</p> -->
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -441,7 +473,9 @@
             <aside class="notes">
               France : 12 fuseaux horaires avec les départements et
               collectivités d'outre-mer. Nous sommes d'ailleurs le pays qui a le
-              plus de fuseau horaires ! (et tout le monde s'en fout)
+              plus de fuseau horaires ! <br />
+              Mais généralement tout le monde s'en fout…<br />
+              … sauf ceux qui habitent dans les dites îles bien sûr.
             </aside>
           </section>
 
@@ -451,13 +485,14 @@
               <img class="fragment" src="images/china-solar-offset.png" />
 
               <img class="fragment" src="images/china-xinjiang.png" />
+              <img class="fragment" src="images/xinjiang-clock.jpg" />
             </div>
 
             <aside class="notes">
               Bon il y a quand même des grands pays ou c'est simple. La Chine :
               un seul fuseaux horaires.<br />
 
-              Sauf que, ben du coup… c'est l'bordel :
+              Sauf que, ben c'est un peu plus compliqué qu'ça :
               <ul>
                 <li>
                   A l'est de la Chine, si l'on respecte le temps solaire, on
@@ -478,7 +513,7 @@
             <h2>Les fuseaux horaires étranges</h2>
 
             <aside class="notes">
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -558,7 +593,7 @@
             <aside class="notes">
               <em> info temps : 9 min 00</em>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -684,7 +719,7 @@
                 horaire !
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -711,7 +746,7 @@
                 des États-Unis) avait duré… deux jours !
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -741,8 +776,12 @@
               <strong>D'accord</strong>, donc tout est politique ou économique
               voila pourquoi c'est le bordel ! Tout change tout le temps en
               fonction des gouvernements ou pour des raisons de gros sous !
-              <p>Sauf qu'en fait... c'est pas si simple</p>
+              <p>Sauf qu'en fait... (next slide)</p>
             </aside>
+          </section>
+
+          <section>
+            <h1>C'est encore plus compliqué qu'ça…</h1>
           </section>
         </section>
         <section>
@@ -834,13 +873,13 @@
                 🤦
               </p>
               <p>
-                Bon depuis 2019, il y a eu le COVID, la guerre aux portes de
-                l'Europe, une inflation record, les catastrophes climatiques, et
-                puis Mbappé qui part du PSG. Donc finalement, en 2024, aucun
-                pays n'a prit de décision en ce sens.<br />
+                Bon depuis 2019, les politiciens trouvent que de légiférer sur
+                l'heure d'été « c'est quand même un peu plus compliqué qu'ça ».
+                Donc finalement, en 2024, aucun pays n'a prit de décision en ce
+                sens.
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -894,7 +933,7 @@
                 du sud au nord !
               </p>
 
-              <!-- <p>=== EFFET ===</p> -->
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -906,8 +945,8 @@
             </div>
 
             <aside class="notes">
-              Evidemment, j'ai oublié de préciser, mais l'heure d'été, dans
-              l'hemisphère sud, c'est en hiver pour nous !
+              Evidemment, c'est toujours « un peu plus compliqué qu'ça ».
+              L'heure d'été, dans l'hemisphère sud, c'est en hiver pour nous !
             </aside>
           </section>
 
@@ -946,13 +985,13 @@
               </p>
 
               <p>
-                Pour le coup, à Mapado, on avait en prod la libicu un peu
-                ancienne, on a failli perdre un client au Maroc car parfois les
-                heures s'affichaient avec 1H de décallage. (le Maroc à décider
-                de rester sur l'heure d'été en 2018)
+                Pour le coup, à Mapado, on a failli perdre un client assez gros
+                au Maroc car parfois les heures s'affichaient avec 1H de
+                décallage. (le Maroc à décider de rester sur l'heure d'été en
+                2018)
               </p>
               <p>
-                Enfin sauf pendant le ramadan…parfois les décisions sont aussi
+                Enfin sauf pendant le ramadan… parfois les décisions sont aussi
                 religieuses !
               </p>
             </aside>
@@ -1004,16 +1043,14 @@
                 bazar exactement ?
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
-          <section>
+          <!-- <section>
             <h2>La norme :</h2>
             <h2 class="text-font">ISO 8601 / RFC 3339</h2>
             <p>« Représentation de la date et l'heure »</p>
-
-            <!-- <video src="images/k/cest-carre.mp4" autoplay loop></video> -->
 
             <aside class="notes">
               En informatique, on aime bien les normes. C'est un peu comme les
@@ -1049,7 +1086,7 @@
                 Phoenix ou bien l'heure de Los Angeles.
               </p>
 
-              <!-- <p>=== EFFET ===</p> -->
+              <p>=== EFFET ===</p>
             </aside>
           </section>
 
@@ -1123,7 +1160,7 @@
                 qui est utilisée (mais pas toujours).
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
         </section>
@@ -1185,9 +1222,10 @@
               Finalement la meilleure façon de ne pas se tromper, c'est d'être
               explicite !
             </aside>
-          </section>
+          </section> -->
+
           <section>
-            <h2>Ruby : Time ou DateTime ?</h2>
+            <h2>Documentation du language Ruby</h2>
 
             <blockquote style="width: 80%">
               <p>
@@ -1206,24 +1244,10 @@
             </div>
 
             <aside class="notes">
-              <p>
-                Ruby à deux classes pour gérer les dates et les heures : Time et
-                DateTime. Time gère les secondes intercalaires et les fuseaux
-                horaires, mais pas les calendriers. DateTime gère les
-                calendriers, mais pas les fuseaux horaires.<br />
-                (vous voulez probablement utiliser `Time`, mais `DateTime` est
-                utile dans un contexte historique)
-              </p>
-
-              <p>
-                La classe DateTime est dépréciée depuis ruby 3.0, sorti le 25
-                décembre 2020.
-              </p>
-
               Et oui, si on doit un contexte historique, alors on va
               probablement devoir travailler avec une heure solaire locale !
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1252,7 +1276,12 @@
                 ></div>
                 <figcaption>
                   Cervantes
-                  <div class="small">☠️ 23 avril 1616</div>
+                  <div class="small fragment strike" data-fragment-index="2">
+                    ☠️ 23 avril 1616
+                  </div>
+                  <div class="small fragment fade-in" data-fragment-index="2">
+                    ☠️ 22 avril 1616
+                  </div>
                 </figcaption>
               </figure>
               <figure>
@@ -1284,13 +1313,16 @@
                 Seulement, Shakespeare est mort le le 23 avril… dans le
                 calendrier Julien, ce qui équivaut au 3 mai dans le calendrier
                 Grégorien.
+                <br />
+                Accessoirement Cervantes n'est pas non plus mort le 23 avril,
+                mais le 22 (il a été enterré le 23)
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
-          <section>
+          <!-- <section>
             <h2>Java</h2>
 
             <p>Semble très bien géré*</p>
@@ -1454,19 +1486,13 @@ d.getMonth() // 0-indexé
                 horaires.
               </p>
             </aside>
-          </section>
+          </section> -->
         </section>
 
-        <section>
+        <!-- <section>
           <section>
             <h2>SQL : c'est compliqué</h2>
 
-            <!-- <video
-              class="fragment"
-              autoplay
-              loop
-              src="images/k/jaurais-dit-merdique.mp4"
-            ></video> -->
 
             <video
               autoplay
@@ -1474,8 +1500,6 @@ d.getMonth() // 0-indexé
               src="images/bad-news-text.mp4"
               width="70%"
             ></video>
-
-            <!-- <img src="images/bad-news.png" /> -->
 
             <aside class="notes">
               <em>Info temps : 31 min</em>
@@ -1533,7 +1557,7 @@ d.getMonth() // 0-indexé
               dans le fuseau indiqué par le paramètre de configuration TimeZone
               avant d'être affichées sur le client.
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1544,13 +1568,6 @@ d.getMonth() // 0-indexé
               <li>2 lignes avec des fuseaux horaires différents ?</li>
               <li>Décalage UTC != fuseau horaire</li>
             </ul>
-
-            <!-- <video
-              src="images/k/complique-mais-complique.mp4"
-              autoplay
-              loop
-              class="fragment"
-            ></video> -->
 
             <aside class="notes">
               <p>
@@ -1608,7 +1625,7 @@ d.getMonth() // 0-indexé
             </ul>
 
             <aside class="notes">
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
 
               Le mieux est probablement de stocker la valeur "datetime" dans une
               colonne et le fuseau horaire dans une autre
@@ -1695,13 +1712,13 @@ d.getMonth() // 0-indexé
                 sur de la donnée, alors le mieux est surement d'avoir deux clés.
               </p>
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
-        </section>
+        </section> -->
 
         <section>
-          <section>
+          <!-- <section>
             <h2>Le bug de 2038</h2>
 
             <img
@@ -1737,10 +1754,10 @@ d.getMonth() // 0-indexé
                 tests !
               </p>
             </aside>
-          </section>
+          </section> -->
 
           <section>
-            <h3>Ça arrive à tout le monde</h3>
+            <h3>C'est compliqué pour tout le monde</h3>
             <div>
               <img src="images/github-tz-issue.png" />
             </div>
@@ -1756,19 +1773,22 @@ d.getMonth() // 0-indexé
             </p>
 
             <aside class="notes">
-              Ca arrive à tout le monde, y compris Github qui a eu ce genre de
-              bug en novembre 2022. Certains utilisateurs ont remontés que leurs
-              commentaires apparaissaient dans le futur !
+              Github est le plus gros service d'hébergement et de gestion de
+              logiciels.<br />
+              C'est notamment sur ce site que sont hébergés la plupart des
+              logiciels open-sources.<br />
+              Ils ont eu ce genre de bug en novembre 2022. Certains utilisateurs
+              ont remontés que leurs commentaires apparaissaient dans le futur !
             </aside>
           </section>
 
           <section>
-            <h3>Ça arrive à tout le monde</h3>
+            <h3>C'est compliqué pour tout le monde</h3>
             <div>
               <img src="images/one-plus.jpg" style="width: 60%" />
             </div>
             <div>
-              <em>Téléphone One Plus</em>
+              <em>Téléphone One Plus (Android)</em>
             </div>
             <p class="small">© S. Grégeois</p>
 
@@ -1777,7 +1797,7 @@ d.getMonth() // 0-indexé
               : Paris n'est pas passé à l'heure d'été, par contre Ruoms, en
               Adrèche, si !
 
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
         </section>
@@ -1859,7 +1879,7 @@ d.getMonth() // 0-indexé
             <aside class="notes">
               Je vous balance tout ça là, mais j'ai pas forcément tout bien pigé
               non plus hein !
-              <!-- <p>=== PAUSE ===</p> -->
+              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1923,10 +1943,12 @@ d.getMonth() // 0-indexé
                 style="
                   display: flex;
                   flex-direction: column;
-                  align-items: flex-start;
+                  justify-content: center;
+                  align-items: center;
                 "
               >
-                <div class="highlight">Julien Deniau</div>
+                <h3 class="highlight">Des questions ?</h3>
+                <!-- <div class="highlight">Julien Deniau</div>
                 <div class="social">
                   <span
                     class="icon"
@@ -1936,33 +1958,15 @@ d.getMonth() // 0-indexé
                   julien.deniau.me
                 </div>
                 <div class="social">
-                  <img class="icon" src="images/social-github-white.svg" />
+                  <img class="icon" src="images/social-github.svg" />
                   jdeniau
-                </div>
-                <div class="social">
-                  <img class="icon" src="images/social-x.png" />
-                  j_deniau
                 </div>
                 <div class="social">
                   <img class="icon" src="images/social-mastodon.svg" />
                   piaille.fr/@jdeniau
                 </div>
+                -->
               </div>
-            </div>
-
-            <!-- <div style="font-size: 0.7em">
-              🕝 RDV à 17 h pour échanger sur
-              <a href="https://immutable-js.com/" class="highlight"
-                >immutable.js</a
-              >
-              (Neuilly 152)
-            </div> -->
-
-            <div style="font-style: 0.7em">
-              🐘 Dev PHP sur Lyon ?
-              <a href="http://mapado.xyz/php" class="highlight"
-                >mapado.xyz/php</a
-              >
             </div>
 
             <aside class="notes">
@@ -2116,8 +2120,8 @@ d.getMonth() // 0-indexé
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
-        controls: true,
-        showNotes: true, // TORESET
+        controls: false,
+        showNotes: false, // TORESET
         // hide progress
         progress: false,
         autoPlayMedia: true,
