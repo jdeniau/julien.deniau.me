@@ -1,0 +1,13 @@
+<!-- ./index.html -->
+<head>
+</head>
+
+<body>
+  <script>
+    // force resize event to fix rough-notation issue when "at" is `0`
+    window.setInterval(function() {
+        window.dispatchEvent(new Event('resize'));
+    }, 1000);
+
+  </script>
+</body>
