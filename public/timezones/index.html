@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/animated-svg.css" />
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
     <link rel="stylesheet" href="dist/theme/night.css" />
     <link rel="stylesheet" href="dist/theme/mapado.css" />
@@ -89,11 +90,20 @@
       .small {
         font-size: 0.5em;
       }
+
+      .transcript {
+        position: absolute;
+        bottom: -130px;
+        right: -90px;
+        font-size: 16px;
+      }
     </style>
+
+    <link rel="stylesheet" href="dist/custom.css" />
   </head>
   <body>
     <div class="logo">
-      <img src="images/Mapado-logo-light.png" />
+      <img src="images/Mapado-logo-light.png" width="150" />
     </div>
 
     <div class="reveal">
@@ -108,6 +118,11 @@
               <h2 class="r-fit-text">HORAIRES</h2>
             </div>
 
+            <div class="transcript">
+              <div>Malentendant ?<br />Transcript ici :</div>
+              <img src="images/transcript-timezone.png" width="120px" />
+            </div>
+
             <aside class="notes">
               Bonjour, <br />
               Je m'apelle Julien Deniau, je fais parti de l'équipe technique de
@@ -117,12 +132,12 @@
               de François Morel que l'on aime beaucoup chez Mapado qui résume
               bien la complexité qui peut être cachée derrière une simplissité
               apparente.
+              <br />
             </aside>
           </section>
 
           <section>
-            <!-- TODO activer la vidéo -->
-            <video src="images/plus-complique-que-ca.mp4"></video>
+            <video data-src="images/plus-complique-que-ca.mp4"></video>
           </section>
 
           <section>
@@ -139,8 +154,9 @@
               Alors par contre excusez-moi, avant de commencer il faut juste de
               que passe un coup de téléphone à ma belle-sœur : c'est son
               anniversaire aujourd'hui ! Elle vit à Tahiti.<br />
-              Ha ben non, mince, chez elle on est encore hier ? Ou déjà demain
-              peut-être ? 🤔
+              Ha ben non, mince, je crois que c'est un peu plus compliqué que
+              ça… <br />
+              Chez elle on est encore hier ? Ou déjà demain peut-être ? 🤔
             </aside>
           </section>
         </section>
@@ -227,12 +243,12 @@
             <ul>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  17 avril 2024 à 14h30 à Paris
+                  21 janvier 2025 à 14h30 à Paris
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  17 avril 2024 à 20h30 à Singapour
+                  21 janvier 2025 à 20h30 à Singapour
                   <img
                     src="images/17h-singapour.png"
                     height="80px"
@@ -242,12 +258,12 @@
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  18 avril 2024 à 00h30 en Nouvelle-Zélande
+                  22 janvier 2025 à 00h30 en Nouvelle-Zélande
                 </div>
               </li>
               <li>
                 <div style="display: flex; align-items: center; height: 100px">
-                  9 nissan 5784 à 14h30 (Paris, calendrier Hébraïque)
+                  21 Tevet 5785 à 14h30 (Paris, cal. Hébraïque)
                 </div>
               </li>
             </ul>
@@ -257,14 +273,14 @@
             On peut ignorer certaines données en fonction du contexte.
 
             <aside class="notes">
-              - Venez mangez dimanche 20 avril 2024 à 12 heure 00, heure de
+              - Venez mangez dimanche 26 janvier 2025 à 12 heure 00, heure de
               Paris dans le calendrier Grégorien… Enfin venez manger ce dimanche
               midi quoi !
             </aside>
           </section>
 
           <section data-transition="slide-in fade-out">
-            <h1 class="r-fit-text">THE END</h1>
+            <h1 class="r-fit-text">&nbsp;FIN&nbsp;</h1>
             <h2 class="text-font">merci</h2>
 
             <aside class="notes">Voila, c'est tout, merci d'être venu !</aside>
@@ -307,16 +323,18 @@
             </aside>
           </section>
           <section>
-            <blockquote>Il est midi !</blockquote>
+            <blockquote>
+              Il est midi ! Ou pas ? <span style="font-style: normal">🤔</span>
+            </blockquote>
             <ul>
-              <li>Paris : 🍕🍷</li>
+              <li>Lyon : 🍕</li>
               <li>Tahiti : 😴🛏️</li>
-              <li class="fragment">Lyon : ☕️</li>
+              <li class="fragment">Paris : 🍻</li>
             </ul>
 
             <aside class="notes">
-              Sauf que quand il est midi Paris, il n'est pas (du tout) midi à
-              Tahiti, ni même à Lyon d'ailleurs ! (en temps solaire)
+              Sauf que quand il est midi à Lyon, il n'est pas (du tout) midi à
+              Tahiti, ni même à Paris d'ailleurs ! (en temps solaire)
             </aside>
           </section>
 
@@ -391,10 +409,12 @@
             <div class="world-slice"></div>
 
             <aside class="notes">
+              Qu'est-ce que c'est que ce système ?<br />
               Il y a 24h dans une journée, on a donc découpé la terre en 24
               portions égales pour créer des fuseaux horaires : l'heure "UTC+0"
               du méridien de Greenwich, jusqu'à UTC-11 à l'ouest, et UTC+12 à
               l'est.<br />
+              C'est pas plus compliqué qu'ça !<br />
             </aside>
           </section>
 
@@ -482,10 +502,49 @@
           <section>
             <div class="r-stack">
               <img src="images/china-timezone.png" />
-              <img class="fragment" src="images/china-solar-offset.png" />
+              <img
+                class="fragment"
+                data-fragment-index="0"
+                src="images/china-solar-offset.png"
+              />
 
-              <img class="fragment" src="images/china-xinjiang.png" />
-              <img class="fragment" src="images/xinjiang-clock.jpg" />
+              <img
+                class="fragment"
+                data-fragment-index="1"
+                src="images/china-xinjiang.png"
+              />
+              <img
+                class="fragment"
+                data-fragment-index="2"
+                src="images/xinjiang-clock.jpg"
+              />
+
+              <div
+                class="fragment"
+                data-fragment-index="2"
+                style="
+                  position: absolute;
+                  color: white;
+                  top: 210px;
+                  left: 0;
+                  width: 100%;
+                  text-shadow: 0 0 3px black;
+                  font-size: 0.9em;
+                  display: flex;
+                  justify-content: center;
+                "
+              >
+                <span>Heure de Pékin<br />⬇️</span>
+                <span
+                  style="
+                    margin-left: 40px; /*! margin-top: 20px; */ /*! display: flex; */ /*! justify-content: flex-start; */
+                    text-align: left;
+                  "
+                  >Heure du Xinjiang<br /><span style="margin-left: 50px"
+                    >⬇️</span
+                  ></span
+                >
+              </div>
             </div>
 
             <aside class="notes">
@@ -496,8 +555,7 @@
               <ul>
                 <li>
                   A l'est de la Chine, si l'on respecte le temps solaire, on
-                  peut se coucher à 20 h, quand à l'ouest on se couchera à
-                  minuit.
+                  peut se lever à 8 h, quand à l'ouest on se levera à 10 h.
                 </li>
                 <li>
                   Les Ouïghours, dans la province du Xinjiang (à l'ouest)
@@ -781,7 +839,18 @@
           </section>
 
           <section>
-            <h1>C'est encore plus compliqué qu'ça…</h1>
+            <!-- <h1>C'est un peu plus compliqué qu'ça…</h1> -->
+
+            <img src="images/francois-morel-portrait-paul-carrier.png" />
+
+            <audio
+              src="images/un-peu-plus-complique-long.mp3"
+              data-autoplay
+            ></audio>
+
+            <aside class="notes">
+              <i>[Audio en autoplay]</i> "C'est un peu plus compliqué qu'ça…"
+            </aside>
           </section>
         </section>
         <section>
@@ -858,6 +927,11 @@
 
             <h3 class="r-stack text-font">
               Vers la fin du changement d'heure ?
+
+              <!-- <span class="fragment">
+
+                <audio src="images/un-peu-plus-complique-quca-je-crois.mp3"></audio>
+              </span> -->
             </h3>
 
             <aside class="notes">
@@ -875,7 +949,7 @@
               <p>
                 Bon depuis 2019, les politiciens trouvent que de légiférer sur
                 l'heure d'été « c'est quand même un peu plus compliqué qu'ça ».
-                Donc finalement, en 2024, aucun pays n'a prit de décision en ce
+                Donc finalement, en 2025, aucun pays n'a prit de décision en ce
                 sens.
               </p>
 
@@ -1039,8 +1113,8 @@
               </p>
 
               <p>
-                Et oui, en informatique, comment on fait pour gérer tout ce
-                bazar exactement ?
+                On va faire un tout petit détour côté informatique : comment
+                est-ce que l'on gère cette complexité ?
               </p>
 
               <p>=== PAUSE ===</p>
@@ -1246,8 +1320,6 @@
             <aside class="notes">
               Et oui, si on doit un contexte historique, alors on va
               probablement devoir travailler avec une heure solaire locale !
-
-              <p>=== PAUSE ===</p>
             </aside>
           </section>
 
@@ -1308,7 +1380,7 @@
             <aside class="notes">
               <p>
                 Le 23 avril a été déclarée journée mondiale du livre pour
-                commémorer la mort de Cervantes et Shakespeare.
+                commémorer la mort de Cervantes et Shakespeare le 23 avril 1616.
                 <br />
                 Seulement, Shakespeare est mort le le 23 avril… dans le
                 calendrier Julien, ce qui équivaut au 3 mai dans le calendrier
@@ -1760,6 +1832,9 @@ d.getMonth() // 0-indexé
             <h3>C'est compliqué pour tout le monde</h3>
             <div>
               <img src="images/github-tz-issue.png" />
+              <blockquote class="small" style="margin-top: 0">
+                XXX à commenté <b>dans 18 minutes</b>
+              </blockquote>
             </div>
             <div>
               <em>Github</em>
@@ -1776,7 +1851,7 @@ d.getMonth() // 0-indexé
               Github est le plus gros service d'hébergement et de gestion de
               logiciels.<br />
               C'est notamment sur ce site que sont hébergés la plupart des
-              logiciels open-sources.<br />
+              logiciels libres de droits.<br />
               Ils ont eu ce genre de bug en novembre 2022. Certains utilisateurs
               ont remontés que leurs commentaires apparaissaient dans le futur !
             </aside>
@@ -1793,9 +1868,19 @@ d.getMonth() // 0-indexé
             <p class="small">© S. Grégeois</p>
 
             <aside class="notes">
-              Un téléphone One Plus plusieurs jours après le changement d'heure
-              : Paris n'est pas passé à l'heure d'été, par contre Ruoms, en
+              Un téléphone Android plusieurs jours après le changement d'heure :
+              Paris n'est pas passé à l'heure d'été, par contre Ruoms, en
               Adrèche, si !
+            </aside>
+          </section>
+
+          <section>
+            <h2>Import de donnée de l'un de nos concurrents</h2>
+            Date : 26/02/24 <b>26</b>:02
+
+            <aside class="notes">
+              Une date dans un fichier contact d'un pro exporté par Sirius :
+              "26/02/24 26:02"
 
               <p>=== PAUSE ===</p>
             </aside>
@@ -1847,13 +1932,6 @@ d.getMonth() // 0-indexé
                 missions longues durées sur la lune car le temps s'écoule
                 "légèrement" plus lentement sur la lune que sur la terre.
               </p>
-              <p>
-                En fait on a simplifié au début de la présentation en disant que
-                le temps est sur une ligne, mais on sait que l'espace-temps est
-                "étiré" à l'approche d'objets super-massifs comme les trou noir.
-                Là encore, comment gérer la conversion ? Est-ce les même valeurs
-                qui s'écoulent juste moins vite ?
-              </p>
             </aside>
           </section>
 
@@ -1877,18 +1955,24 @@ d.getMonth() // 0-indexé
             </div>
 
             <aside class="notes">
-              Je vous balance tout ça là, mais j'ai pas forcément tout bien pigé
-              non plus hein !
+              <p>
+                En fait on a simplifié au début de la présentation en disant que
+                le temps est sur une ligne, mais on sait que l'espace-temps est
+                "étiré" à l'approche d'objets super-massifs comme les trou noir.
+                Là encore, comment gérer la conversion ? Est-ce les même valeurs
+                qui s'écoulent juste moins vite ?
+              </p>
+
               <p>=== PAUSE ===</p>
             </aside>
           </section>
 
           <section>
-            <h2>Un p'ti dernier pour la route ?</h2>
+            <h2>Un dernier pour la route ?</h2>
           </section>
 
           <section data-transition="fade-in slide-out">
-            <h4>Un p'ti dernier pour la route ?</h4>
+            <h4>L'Antarctique</h4>
 
             <div>
               <img
@@ -1922,6 +2006,672 @@ d.getMonth() // 0-indexé
               </ul>
             </aside>
           </section>
+
+          <section>
+            <h2>Alors, quelle heure est-il ?</h2>
+
+            <aside class="notes">
+              <p>
+                Mais pourquoi je vous ai parlé de tout ça a vrai dire ?<br />
+                En fait je suis toujours bluffé par la complexité qui se cache
+                derrière un sujet qui peut paraitre vraiment simple au premier
+                abord.
+              </p>
+
+              <p>
+                Là où se trouve la difficulté, c'est qu'un problème soit percu
+                comme simple et soit accepté par tous malgré la complexité
+                sous-jacente.
+                <br />
+                Dans les fuseaux horaires par exemple, je trouve que ça marche
+                particulièrement bien, car c'est un système que le monde entier
+                à accepté, bien qu'il y ait plein de cas complexes dont je vous
+                ai parlé.
+              </p>
+
+              <p>
+                C'est aussi le cas dans vos métiers : cela fait 12 ans qu'on
+                s'est dit qu'on allait révolutionner la billetterie.<br />
+                On était probablement un peu naïf à l'époque et on voulait
+                seulement simplifier une transaction financière, mais à force de
+                vous cotoier on a compris la complexité de vos métiers. Et
+                finalement maintenant le gros de notre travail c'est de répondre
+                au mieux à vos besoin et aux besoins de vos public,tout en
+                rendand le produit le plus simple possible d'utilisation.
+              </p>
+              <p>
+                Je suppose que c'est la même chose dans vos métier : j'imagine
+                que de monter la programmation d'une saison doit être avec une
+                complexité que je n'ose même pas imaginer, et pourtant le rendu
+                final parait tellement "simple" pour vos publics.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Exemple</h2>
+
+            <figure>
+              <img src="images/visite-tour-eiffel.png" style="width: 80%" />
+              <figcaption>
+                Mail automatique avant le début d'un événement
+              </figcaption>
+            </figure>
+
+            <aside class="notes">
+              <p>
+                Parfois à Mapado on nous demande de développer telle ou telle
+                fonctionnalité, et on s'étonne que l'on refuse de le faire
+                immédiatement.
+              </p>
+              <p>
+                Par exemple, on a un besoin qui est remonté régulièrement : le
+                fait d'envoyer un email automatique aux publics à J-1 avant le
+                début d'un événement.
+              </p>
+
+              <p>Franchement, c'est pas plus compliqué que ça !</p>
+            </aside>
+          </section>
+
+          <section>
+            <div>
+              <svg
+                id="timeline"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1323.9943329453467 71.55717100538311"
+              >
+                <defs>
+                  <style class="style-fonts">
+                    @font-face {
+                      font-family: Excalifont;
+                      src: url(data:font/woff2;base64,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);
+                    }
+                  </style>
+                </defs>
+                <g stroke-linecap="round">
+                  <g
+                    transform="translate(10.927811886742688 11.057171005383111) rotate(0 651 0)"
+                  >
+                    <path
+                      id="main-line"
+                      d="M-0.93 -0.01 C216.05 0.06, 1086.1 -0.41, 1303.07 -0.36 M0.79 -1.06 C217.6 -0.74, 1085.62 0.53, 1302.68 0.99"
+                      stroke="#1e1e1e"
+                      stroke-width="2"
+                      fill="none"
+                    ></path>
+                  </g>
+                  <g
+                    transform="translate(10.927811886742688 11.057171005383111) rotate(0 651 0)"
+                  >
+                    <path
+                      d="M1279.17 9.49 C1288.57 8.07, 1297.33 1, 1302.68 0.99 M1279.17 9.49 C1287.3 6.77, 1293.94 4.71, 1302.68 0.99"
+                      stroke="#1e1e1e"
+                      stroke-width="2"
+                      fill="none"
+                    ></path>
+                  </g>
+                  <g
+                    transform="translate(10.927811886742688 11.057171005383111) rotate(0 651 0)"
+                  >
+                    <path
+                      d="M1279.2 -7.61 C1288.47 -2.23, 1297.22 -2.49, 1302.68 0.99 M1279.2 -7.61 C1287.31 -4.84, 1293.93 -1.42, 1302.68 0.99"
+                      stroke="#1e1e1e"
+                      stroke-width="2"
+                      fill="none"
+                    ></path>
+                  </g>
+                </g>
+                <mask></mask>
+                <g stroke-linecap="round">
+                  <g
+                    transform="translate(1133.9278118867446 13.173308838093703) rotate(0 0 7.5)"
+                  >
+                    <path
+                      d="M0.19 0.47 C0.27 2.95, 0.04 12.3, 0.03 14.73 M-0.38 0.23 C-0.32 2.8, -0.43 12.72, -0.39 15.29"
+                      stroke="#1e1e1e"
+                      stroke-width="2"
+                      fill="none"
+                    ></path>
+                  </g>
+                </g>
+                <mask></mask>
+                <g
+                  transform="translate(1132.9278118867428 34.05717100538311) rotate(0 30.983333587646484 12.5)"
+                >
+                  <text
+                    x="0"
+                    y="17.619999999999997"
+                    font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+                    font-size="20px"
+                    fill="#1e1e1e"
+                    text-anchor="start"
+                    direction="ltr"
+                    dominant-baseline="alphabetic"
+                  >
+                    Jour J
+                  </text>
+                </g>
+
+                <g
+                  transform="translate(1092.9278118867428 36.05717100538311) rotate(0 13.766666412353516 12.5)"
+                >
+                  <text
+                    x="0"
+                    y="17.619999999999997"
+                    font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+                    font-size="20px"
+                    fill="#1e1e1e"
+                    text-anchor="start"
+                    direction="ltr"
+                    dominant-baseline="alphabetic"
+                  >
+                    J-1
+                  </text>
+                </g>
+
+                <g stroke-linecap="round">
+                  <g
+                    transform="translate(1102.13339997202 13.79575581776453) rotate(0 0 7.5)"
+                  >
+                    <path
+                      d="M-0.39 0.05 C-0.36 2.6, 0.33 13.06, 0.33 15.48 M0.4 -0.39 C0.38 1.99, 0.02 12.21, 0.06 14.76"
+                      stroke="#1e1e1e"
+                      stroke-width="2"
+                      fill="none"
+                    ></path>
+                  </g>
+                </g>
+                <mask></mask>
+
+                <g class="fragment" data-fragment-index="1">
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(1070.003165690267 13.937990982029646) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.42 -0.54 C-0.53 1.99, -0.39 12.16, -0.34 14.68 M0.37 0.38 C0.41 3.01, 0.87 12.78, 0.72 15.22"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(1037.9790048802756 13.14966139222031) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.33 0.48 C0.32 2.9, -0.37 12.1, -0.44 14.57 M-0.17 0.25 C0.02 2.72, 0.62 12.7, 0.57 15.04"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+
+                  <g
+                    transform="translate(1026.1611454743893 36.55717100538311) rotate(0 15.883333206176758 12.5)"
+                  >
+                    <text
+                      x="0"
+                      y="17.619999999999997"
+                      font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+                      font-size="20px"
+                      fill="#1e1e1e"
+                      text-anchor="start"
+                      direction="ltr"
+                      dominant-baseline="alphabetic"
+                    >
+                      J-3
+                    </text>
+                  </g>
+                </g>
+                <mask></mask>
+
+                <g class="fragment" data-fragment-index="2">
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(1006.1865321252734 13.714508123942664) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.42 0.11 C-0.53 2.56, -0.36 12.37, -0.22 14.85 M0.36 -0.31 C0.13 2.21, -0.75 12.83, -0.77 15.47"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(974.0869292586523 13.836442477665855) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.44 -0.43 C-0.51 2.03, -0.13 12.63, -0.09 15.25 M0.34 0.53 C0.16 3.07, -0.41 12.11, -0.57 14.42"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(941.7702714719836 13.690393229983783) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.17 -0.29 C-0.21 2.39, -0.02 12.97, -0.05 15.54 M0.75 0.75 C0.61 3.34, -0.51 12.34, -0.51 14.85"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(909.6665372464262 13.448678422519038) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.02 0.28 C-0.05 2.79, -0.48 12.82, -0.42 15.33 M-0.69 -0.05 C-0.54 2.28, 0.46 12.12, 0.6 14.54"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+
+                  <g
+                    transform="translate(894.0444786805659 36.55717100538311) rotate(0 15.383333206176758 12.5)"
+                  >
+                    <text
+                      x="0"
+                      y="17.619999999999997"
+                      font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+                      font-size="20px"
+                      fill="#1e1e1e"
+                      text-anchor="start"
+                      direction="ltr"
+                      dominant-baseline="alphabetic"
+                    >
+                      J-7
+                    </text>
+                  </g>
+                </g>
+
+                <g class="fragment" data-fragment-index="3">
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(813.4862897809513 13.922043464742615) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.35 -0.52 C-0.47 1.85, -0.55 11.92, -0.54 14.52 M0.47 0.4 C0.49 2.79, 0.63 12.41, 0.42 14.98"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(877.6045296438843 13.478456377619978) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.14 0.26 C0.27 2.85, 0.46 12.79, 0.34 15.22 M-0.46 -0.08 C-0.32 2.37, -0.07 11.79, 0.09 14.36"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(782.0441036590845 13.496892785825821) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.09 0.25 C-0.06 2.87, -0.22 12.77, -0.21 15.28 M-0.81 -0.09 C-0.82 2.4, -0.82 12.05, -0.75 14.46"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(845.4721938778367 13.454115852289874) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.21 0.28 C-0.2 2.79, 0.01 12.77, -0.02 15.28 M0.69 -0.05 C0.63 2.27, -0.46 12.05, -0.46 14.46"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(750.017082892702 13.759739103112452) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.22 -0.36 C0.22 2.2, -0.07 12.86, -0.15 15.39 M-0.33 0.65 C-0.41 3.06, -0.6 12.17, -0.65 14.62"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(685.5446576867029 13.290867593595863) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.15 0.39 C-0.22 2.92, -0.17 12.42, -0.21 14.83 M0.78 0.11 C0.6 2.75, -0.75 12.9, -0.75 15.45"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(621.0119144190061 14.128977703982969) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.21 -0.17 C-0.25 2.25, -0.34 12.35, -0.37 14.86 M0.68 -0.73 C0.83 1.73, 0.66 12.79, 0.67 15.49"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(302.17640326791354 14.082551006833114) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.37 -0.14 C-0.4 2.38, -0.44 12.46, -0.39 14.94 M0.44 -0.68 C0.6 1.94, 0.8 12.96, 0.65 15.61"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(429.8835335535449 13.96312764802019) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.39 -0.06 C-0.34 2.42, -0.23 12.21, -0.09 14.74 M0.41 -0.56 C0.41 2, -0.56 12.59, -0.56 15.31"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(557.4203133708799 13.657453385684676) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.09 -0.26 C0.06 2.28, 0.41 12.54, 0.49 15.13 M-0.8 0.8 C-0.65 3.17, 0.14 11.97, 0.31 14.23"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(717.6555415434087 13.702749716797939) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.22 0.12 C0.16 2.68, -0.22 12.88, -0.34 15.44 M-0.33 -0.3 C-0.21 2.11, 0.57 12.2, 0.72 14.7"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(653.2710561659397 13.208818225050436) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.34 0.44 C-0.46 3.01, -0.58 13.01, -0.49 15.51 M0.49 0.19 C0.51 2.61, 0.58 12.41, 0.49 14.81"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(589.3928305795617 13.10059330345132) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.49 0.51 C-0.41 3.02, 0.18 12.98, 0.18 15.45 M0.25 0.3 C0.31 2.62, -0.22 12.36, -0.16 14.72"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(238.55655189425477 13.189639511937344) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.18 0.45 C0.18 2.93, -0.5 12.91, -0.47 15.36 M-0.39 0.21 C-0.18 2.77, 0.42 12.25, 0.52 14.58"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(366.13606966232464 13.333861742476074) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.47 0.36 C-0.44 2.81, 0.31 12.71, 0.37 15.17 M0.29 0.07 C0.27 2.31, 0.27 11.68, 0.13 14.29"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(493.2763113004854 13.619614594066547) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.37 0.17 C0.44 2.63, -0.12 12.73, -0.1 15.11 M-0.1 -0.22 C-0.08 2.03, -0.67 11.7, -0.58 14.2"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(525.1451003975081 14.19813951464846) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.11 -0.21 C-0.06 2.43, -0.53 12.79, -0.49 15.35 M-0.5 -0.8 C-0.55 1.73, 0.38 11.8, 0.49 14.56"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(397.99360286485137 13.354420658447793) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.49 0.35 C-0.46 2.9, 0.16 12.62, 0.33 15.11 M0.26 0.05 C0.24 2.44, 0.04 11.82, 0.08 14.2"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(270.2253020856475 13.708861542218415) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.33 0.11 C0.51 2.6, 0.54 12.84, 0.55 15.29 M-0.16 -0.31 C0.03 1.99, 0.34 11.87, 0.4 14.47"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(461.1467694923796 13.441410057195526) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.55 0.29 C0.56 2.74, 0.47 12.33, 0.38 14.8 M0.17 -0.04 C0.11 2.47, 0.23 12.77, 0.14 15.39"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(334.297253431933 14.184775325083251) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0.38 -0.2 C0.29 2.26, 0.07 12.45, 0 15.07 M-0.09 -0.78 C-0.3 1.76, -0.38 13.23, -0.43 15.81"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(207.0930997116153 13.766068323054355) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M0 0.07 C-0.06 2.69, -0.03 13.03, -0.02 15.51 M-0.66 -0.36 C-0.83 2.13, -0.52 12.16, -0.46 14.81"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                  <g
+                    transform="translate(162.04447868056593 36.55717100538311) rotate(0 22.524999618530273 12.5)"
+                  >
+                    <text
+                      x="0"
+                      y="17.619999999999997"
+                      font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+                      font-size="20px"
+                      fill="#1e1e1e"
+                      text-anchor="start"
+                      direction="ltr"
+                      dominant-baseline="alphabetic"
+                    >
+                      J-30
+                    </text>
+                  </g>
+                  <g stroke-linecap="round">
+                    <g
+                      transform="translate(174.90312390730367 12.271423814729701) rotate(0 0 7.5)"
+                    >
+                      <path
+                        d="M-0.51 0.5 C-0.36 3, 0.33 12.81, 0.46 15.16 M0.22 0.29 C0.38 2.59, 0.3 11.83, 0.27 14.28"
+                        stroke="#1e1e1e"
+                        stroke-width="2"
+                        fill="none"
+                      ></path>
+                    </g>
+                  </g>
+                  <mask></mask>
+                </g>
+              </svg>
+            </div>
+
+            <div class="r-stack">
+              <div
+                class="fragment fade-in-then-out"
+                data-fragment-index="4"
+                style="font-size: 2em"
+              >
+                📧 ? 📱 ?
+              </div>
+
+              <div class="fragment" data-fragment-index="5"></div>
+
+              <div class="fragment fade-in-then-out" data-fragment-index="6">
+                📧📧📧📧📧📧📧📧📧📧
+              </div>
+            </div>
+            <aside class="notes">
+              <ul>
+                <li>Parfois c'est 1 jour, parfois c'est 3 jours</li>
+                <li>Pour les scolaires c'est 7 jours avant</li>
+                <li>
+                  Si l'événement a été acheté il y a longtemps, on veut aussi un
+                  deuxième à J-30
+                </li>
+                <li>Mail, SMS ou les deux ?</li>
+                <li>
+                  Dans certains cas on ne veut pas envoyer de mail automatique
+                </li>
+                <li>
+                  Mais est-ce que c'est le même mail pour tous les évènements et
+                  pour tout le monde ?
+                </li>
+
+                <!-- Eloge de la complexité : a l'image du chemin que l'on a du faire
+                pour dév la solution pertinente de votre métier chemin parcouru
+                depuis 12 ans comprendre et faconner avec vous un outil quelque
+                soit la complexité de vos metiers Complexité doit être invisible
+                pour avoir un bon outil. Peut-être mettre en parallèle avec le
+                fait de monter un spectacle ou une expo construire une
+                programmation qui doit faire echo a tes missions. regard simple
+                simplifier un outil transactionnel, mais finalement on a compris
+                la complexité de vos métier et on la comprend de mieux en mieux.
+                les fuseaux horaires images mentale simple, meme si c'est
+                compliqué -->
+              </ul>
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -1948,6 +2698,14 @@ d.getMonth() // 0-indexé
                 "
               >
                 <h3 class="highlight">Des questions ?</h3>
+
+                <!-- <blockquote>
+                  <p>
+                    Je vous écris une longue lettre parce que je n'ai pas le
+                    temps d'en écrire une courte.
+                  </p>
+                  <em style="font-size: 0.7em">Blaise Pascal</em>
+                </blockquote> -->
                 <!-- <div class="highlight">Julien Deniau</div>
                 <div class="social">
                   <span
@@ -1976,19 +2734,9 @@ d.getMonth() // 0-indexé
                 ça !)
               </p>
               <p>
-                Je m'apelle Julien Deniau, vous pouvez dors et déjà retrouver
-                les slides de la conférence, ainsi que les sources, sur mon
-                blog.<br />
-                Vous pouvez aussi me retrouver sur les différentes plateforme si
-                vous voulez échanger.
-              </p>
-              <p>
-                Merci à vous. Si il reste du temps, je suis dispo pour répondre
-                à vos questions.
-              </p>
-              <p>
-                Je serais aussi à 17 en salle Neuilly 152 pour échanger sur
-                immutable-js
+                En tout cas je vous remercie de m'avoir écouté. Si vous avez des
+                questions sur les fuseaux horaires, je suis disponible pour vous
+                répondre.
               </p>
             </aside>
           </section>
@@ -2128,6 +2876,26 @@ d.getMonth() // 0-indexé
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+        // navigationMode: 'linear',
+        keyboard: {
+          38: 'prev',
+          40: 'next',
+        },
+      });
+
+      Reveal.addEventListener('fragmentshown', function (event) {
+        var audio = event.fragment.querySelector('audio');
+        if (audio) {
+          audio.play();
+        }
+      });
+      Reveal.addEventListener('fragmenthidden', function (event) {
+        var audio = event.fragment.querySelector('audio');
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
       });
     </script>
   </body>
