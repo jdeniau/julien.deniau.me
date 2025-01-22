@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Pirulen RG';
+  src: url('fonts/pirulen\ rg.otf');
+}
+
+@font-face {
+  font-display: optional;
+  font-family: Circular;
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/circular/CircularStd-Book.otf');
+}
+@font-face {
+  font-display: optional;
+  font-family: Circular;
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/circular/CircularStd-Bold.otf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/merriweather/Merriweather-Bold.otf');
+}
+
+:root {
+  --r-background-color: #f7f5f7;
+  --r-main-font: Circular, helvetica, arial, sans-serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #001c3c;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: Merriweather, helvetica, arial, sans-serif;
+  --r-heading-color: #00859c;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: -0.03em;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: normal;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.77em;
+  --r-heading2-size: 1.5em;
+  --r-heading3-size: 1em;
+  --r-heading4-size: 0.85em;
+  --r-code-font: monospace;
+  --r-link-color: #00859c;
+  --r-link-color-dark: #808ea0;
+  --r-link-color-hover: #ff4024;
+  --r-selection-background-color: #ff4024;
+  --r-selection-color: #001c3c;
+}
+
+.text-font {
+  font-family: var(--r-main-font) !important;
+  /* font-size: var(--r-main-font-size)!important; */
+  color: var(--r-main-color) !important;
+}
+
+.highlight {
+  color: #ff4024 !important;
+}
+
+.progress {
+  color: var(--r-heading-color) !important;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  /* background: var(--r-background-color); */
+  /* padding: 10px 40px; */
+  /* color: var(--r-main-color); */
+  /* font-family: var(--r-heading-font); */
+}
+
+.speaker-notes a {
+  color: var(--r-background-color);
+}
