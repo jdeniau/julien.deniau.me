@@ -61,7 +61,7 @@ Mais le pire du pire : c'est lent, mais LENT mais d'une lenteur ! Chaque clic me
 
 Après quelques jours, j'ai donc lancé un appel à l'aide sur Twitter pour essayer de voir les bons côtés de Teams.
 
-https://twitter.com/j_deniau/status/1485532656402059264
+__lien mort car j'ai quitté twitter__
 
 Mais globalement, ma time-line est plutôt pro-Slack !
 
