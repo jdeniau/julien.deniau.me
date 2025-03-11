@@ -154,10 +154,10 @@ export default function App() {
               </li>
               <li>
                 <a
-                  href="https://twitter.com/j_deniau"
-                  className="icon brands fa-twitter"
+                  href="https://bsky.app/profile/julien.deniau.me"
+                  className="icon brands fa-bluesky"
                 >
-                  <span className="label">Twitter</span>
+                  <span className="label">Bluesky</span>
                 </a>
               </li>
               <li>
