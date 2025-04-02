@@ -23,6 +23,8 @@ layout: cover
 Bonjour,
 
 Aujourd'hui je vous propose de parler un peu d'open-source, histoire de démystifier un peu ce que c'est, et de vous donner envie de contribuer, et surtout de savoir ce que vous pourriez en retirer.
+
+│Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
 -->
 
 
@@ -62,7 +64,7 @@ _Fait un peu d'open-source à mes heures perdues…_
   </div>
 
 _…et essaie de motiver ses collègues à en faire_
-
+ 
 </div>
 
 #### <span v-mark.underline.gray="0">En savoir plus sur moi ?</span>
@@ -83,6 +85,14 @@ _…et essaie de motiver ses collègues à en faire_
 <img class="icon" src="/social-mastodon.svg" /> piaille.fr/@jdeniau 
 </div>
 
+
+<!--
+Pourquoi cette présentation ? Peut-être que vous êtes un peu dans le même cas que mes collègues :
+
+- Vous avez envi de contribuer, mais vous ne savez pas vraiment comment faire ?
+- "C'est quoi les bonnes pratiques"
+- "Pourquoi est-ce que je ferais ça à vrai dire ? Je n'ai pas que ça à faire !
+-->
 
 ---
 layout: section
@@ -223,7 +233,13 @@ Non plus sérieusement, comment est-ce qu'on fait pour gagner sa vie en faisant 
   <li>
     <ul>
       <li>
-        PostCSS : 12 000 $ / an récurrent (+ 26 000 $ de don non récurrent)
+        <p>
+          PostCSS:</p> 
+        <ul>
+          <li>téléchargé 80 M de fois par semaine (130 / sec)</li>
+          <li>Utilisé par Meta, Google, etc.</li>
+          <li>17 000 $ / an récurrent (+ 29 000 $ de don non récurrent)</li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -238,7 +254,7 @@ Vendre votre produit, c'est bien si vous voulez fondez une société, ou si votr
 
 Idem pour les dons, si vous êtes un "énorme" projet, alors vous reussirez à gagner votre vie.
 
-[click] PostCSS par exemple, qui est utilisé entre autre par meta ou google, ne gagne que 12 000 $ récurrent par an (+ 26 000 $ de don non récurrent),
+[click] PostCSS par exemple, téléchargé 80M/sem (130x / seconde) qui est utilisé entre autre par meta ou google, n'a gagné en 2024 que 17 000 $ récurrent par an (+ 29 000 $ de don non récurrent),
 -->
 
 ---
@@ -288,11 +304,64 @@ it’s <span v-mark.underline.orange="0">so few</span> we can basically round do
 </v-click>
 
 <!--
-Persque personne ne vie de l'écriture de logiciel open-source. C'est un pourcentage tellement faible qu'on peut arrondir à zéro.
+Presque personne ne vie de l'écritusre de logiciel open-source. C'est un pourcentage tellement faible qu'on peut arrondir à zéro.
 
-[click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin de dire que c'est suffisant.
+[click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin dre dire que c'est suffisant.
 
-TODO Parler des failles de XZ https://fr.wikipedia.org/wiki/Attaque_de_XZ_Utils_par_porte_d%C3%A9rob%C3%A9e and Apache Log4j https://fr.wikipedia.org/wiki/Log4Shell
+Globalement, payer le travail open source permettrait d'éviter ça :
+
+-->
+
+---
+layout: section
+---
+
+# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
+
+<img src="/XZ_logo_contributed_by_Jia_Tan.png" style="margin: 0 auto" />
+
+
+<!--
+En février 2024 , une faille de sécurité par porte dérobée a été injectée dans le code  de la libraire "XZ".
+
+C'est une libraire de compression de donnée, qui est notamment utilisée par OpenSSH et dans quasiment toutes les distributions Linux.
+
+Elle permettait à l'attaquant d'ignorer l'authentification et de se connecter à la machine cible.
+
+Ce qui est assez inédit c'est l'ampleur de la mise en place de la faille :
+
+L'auteur de la faille est une personne surnommé "Jia Tan" qui a contribué au projet pendant 3 ans, ce qui lui a permit d'obtenir la confiance du mainteneur.
+
+Mais ce mainteneur n'avait pas le temps suffisant pour faire évoluer XZ, et après une période de pression sur le mainteneur, ce dernier décide donc de passer Jia Tan co-mainteneur du projet, ce qui lui a permis de mettre à disposition une nouvelle version en injectant la faille de sécurité.
+
+Ce qui est tout autant inédit, c'est la façon dont la faille a été découverte :
+
+Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU.
+
+En creusant, il a réussit a découvrir la faille et avertir les mainteneurs et RedHat et Debian.
+
+Cela aurait pu être l'attaque par porte dérobée la plus importante at la plus efficace au monde si elle n'avait pas été detectée, 
+et il a fallu d'ÉNORMES coincidences pour qu'elle soit détéctée.
+
+
+Apache Log4j a aussi connu une faille dans le genre https://fr.wikipedia.org/wiki/Log4Shell
+
+ffmpeg et teams https://x.com/FFmpeg/status/1775178803129602500?mx=2
+-->
+
+---
+layout: image
+image: /ffmpeg-vs-microsoft.png
+backgroundSize: contain
+style:
+  width: 70%
+  margin: 0 auto
+  border: 1px solid lightgray
+---
+
+<!--
+L'équipe en change de FFMpeg (l'outil de référence pour faire du traitement de vidéo) a aussi réagi sur le sujet en, en pointant du doigt le fait qu'une dépendance à un travail de volontaire non payé peut être risqué.
+Ils expliquent notamment que Microsoft, entreprise qui génère des milliards de dollards, et qui utilise FFMpeg dans le logiciel "Teams" a reporté des problèmes taggués comme "haute priorité" en attendant du support de volontaires.
 -->
 
 ---
@@ -312,6 +381,22 @@ Globalement, il vaut mieux travailler en tant que salarié !
 layout: section
 ---
 # La notoriété ! 😎
+
+
+
+---
+layout: image
+image: /why-fame-and-glory.png
+backgroundSize: contain
+backgroundColor: black
+---
+
+<!--
+Petit questionnement à ma communauté.
+La première réponse que j'ai eu c'est ça : 
+
+Etant donnée que j'ai eu 5 réponses, cette réponse représente 20% des réponses, ce qui est assez énorme. Ca doit surement être vrai…
+-->
 
 
 ---
@@ -364,32 +449,6 @@ who: Dries Buytaert
 
 </v-click>
 
-<!-- 
-
-layout: quizz
-position: left
-image: https://images.ctfassets.net/s5uo95nf6njh/5PpFIeuDxz2T89nZNED1EP/48d62a69f31a3ab6dfc58938eb7b8c2a/evan-you-portrait.jpg?w=1200&fm=avif
-who: Evan You
-
-
-<v-click>
-
-<div>
-  <div class="flex flex-items-center">
-    <logos-vue style="font-size: 3em;" class="mr-5" /> 
-    <div>
-      VueJS
-      <div class="color-neutral">
-        (18 000 000 installations / mois)
-      </div>
-    </div> 
-  </div>
-
-</div>
-
-</v-click> 
--->
-
 ---
 layout: quizz
 image: /zeev-andi.png
@@ -432,7 +491,8 @@ who: Michael Dowling
     <div>
       Guzzle PHP
       <div class="color-neutral">
-        (12 000 000 installations / mois)
+        (12 000 000 installations / mois)<br />
+        (~ 5 installations / seconde)
       </div>
     </div>
   </div>
@@ -456,7 +516,8 @@ who: Jordan Walke
     <div>
     ReactJS
       <div class="color-neutral">
-      (94 000 000 installations / mois)
+      (120 000 000 installations / mois)<br />
+      (~ 50 installations / seconde)
     </div>
   </div>
   </div>
@@ -497,13 +558,14 @@ image: /all-4.png
 </div>
 
 <div class="flex flex-items-center">
-  James Long ? 
-  <!-- Ondřej Mirtes  -->
+  <!-- James Long ?  -->
+  Ondřej Mirtes ?
   
 <v-after>
 
 <div class="flex flex-items-center ml2">
-  <logos-prettier style="font-size: 1em;" class="mr-2" /> Prettier
+  <!-- <logos-prettier style="font-size: 1em;" class="mr-2" /> Prettier -->
+  <img src="/logo.phpstan.png" style="height: 1.2em" class="mr-2" /> PHPStan
   <!-- <logos-phpstan style="font-size: 1em;" class="mr-2" /> PHPStan -->
 </div>
 
@@ -526,8 +588,6 @@ image: /all-4.png
 
 <!--
 Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
-
-Peut-être remplacer James Long par Ondřej Mirtes / phpstan ? https://github.com/ondrejmirtes
 -->
 
 ---
@@ -541,7 +601,10 @@ Ne comptez pas trop dessus 😊
 <hr  style="border-top: 1px solid #ccc" />
 
 Alternative:
+
 Bon vous êtes un public plutôt averti. Maintenant faire le même quizz a votre conjoint ou conjointe pour voir si ces noms leurs parlent.
+
+J'ai mis plutôt des gens de l'univers PHP, mais est-ce que vous auriez été aussi bon sur l'univers Java, ou Python ?
 -->
 
 ---
@@ -563,7 +626,16 @@ layout: quote
 </div>
 
 <!--
+Dans mon quizz, je n'ai mis que des hommes : elle est où la diversité là dedans ?
+
 Dans le développement logiciel, il y a 28% de femmes, mais seulement 1,5% dans l'open-source !
+
+Dans toues les "Releases Manager" de PHP entre la  5.6 et la 8.4, il n'y a eu que deux femmes vs 19 hommes !
+
+- Peu de role model féminin,
+- Plus de résponsabilités familiales (et donc moins de temps pour "s'amuser" à ça)
+- discrimination et sexisme dans les communautés open-source,
+- seule les femmes vraiment expérimentées osent franchir le pas.
 -->
 
 
@@ -584,7 +656,9 @@ Vous recruteriez plus "julien" à gauche ou bien "lienju" à droite ?
 
 En tant que recruteur, on a plus de billes avec un compte github qui a des "trucs" dedans.
 
-Attention, cela ne veut pas dire qu'un github vide est un mauvais développeur, mais qu'on a moins d'info pour comparer.
+Attention, cela ne veut pas dire qu'un github vide est un mauvais développeur-euse, ni d'ailleurs qu'un github plein est le compte d'un bon développeur-euse !
+
+On a cela dit moins d'info pour comparer.
 
 C'est une autre façon de vous connaitre (en plus de votre CV et des entretiens), ça permet d'annexer votre CV.
 
@@ -632,7 +706,11 @@ layout: center
 - développement de <span v-mark.underline.gray="0">fonctionnalités</span>.
 
 <!--
-Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source, en échangeant avec les gens qui vous remontent des erreurs, en apprenant leur usage, en développant des fonctionnalités sur des prohets qui vous utilisez ou bien en voyant vos utilisateurs proposer des modifications sur vos projets.
+Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source, en échangeant avec les gens qui vous remontent des erreurs, en apprenant leur usage, en développant des fonctionnalités sur des projets que vous utilisez ou bien en voyant vos utilisateurs proposer des modifications sur vos projets.
+
+Si il n'y avait qu'une seule raison à retenir de "pourquoi faire de l'open-source", c'est celle-ci !
+
+Ca fait maintenant 20 ans que je développe, et je suis toujours autant surpris des échanges que je peux avoir en faisant de l'open-source (bien plus que dans le monde de l'entreprise !)
 -->
 
 
@@ -640,7 +718,7 @@ Vous allez apprendre beaucoup de choses en travaillant sur un projet open-source
 layout: section
 ---
 
-# <span v-mark.highlight.yellow="0">Dette</span> envers l'open-source ? 🤝
+# <span v-mark.highlight.yellow="0">Dette</span> envers l'open-source ? 💱
 
 ---
 layout: image
@@ -671,7 +749,7 @@ Dans certains cas, c'est peut-être vous la personne aléatoire du Nebraska.
 layout: section
 ---
 
-## <span v-mark.highlight.yellow="0">Reconnaissance</span> des utilisateurs ? 😘
+# <span v-mark.highlight.yellow="0">Reconnaissance</span><br /> des utilisateurs ? 😘
 
 ---
 layout: quote
@@ -699,8 +777,9 @@ Perso quand j'ai un commentaire comme celui-ci, je suis comme ça !
 -->
 
 ---
-layout: iframe
-url: https://fosstodon.org/@francoisz/111857221043784067/embed
+layout: image
+image: /francoisz.png
+backgroundSize: contain
 style:
   width: 70%
   height: 70%
@@ -708,7 +787,7 @@ style:
 ---
 
 <!--
-Mais je ne suis pas le seul. François Zaninotto, creéateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
+Mais je ne suis pas le seul. François Zaninotto, créateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
 -->
 
 
@@ -753,6 +832,10 @@ layout: section
 
 ## J'aimerai me lancer, mais je n'ai pas d'idée…
 
+<!--
+# PAUSE !!!
+-->
+
 ---
 layout: quote
 ---
@@ -778,14 +861,17 @@ layout: default
 
 - [changelog-view](https://github.com/jdeniau/changelog-view): Afficher le détail des <span v-mark.underline.gray="0">changelog des dépendances</span> en ligne de commande
 - [ink-tab](https://github.com/jdeniau/ink-tab): plugin ink (React dans le terminal) pour <span v-mark.underline.gray="0">afficher des onglets</span> (pour changelog-view)
-- [prettier-plugin-gherkin](https://github.com/mapado/prettier-plugin-gherkin): j'adore <span v-mark.underline.gray="0">prettier</span>, les plugins gherkins dispos avaient besoin de Go
+- [prettier-plugin-gherkin](https://github.com/mapado/prettier-plugin-gherkin): j'adore <span v-mark.underline.gray="0">prettier</span>, je travaille avec Behat, j'ai développé le plugin prettier
 - [behat-reviewdog-formatter](https://github.com/jdeniau/behat-reviewdog-formatter): Intégrer <span v-mark.underline.gray="0">behat dans reviewdog</span>
-- [metch-fock](https://github.com/mapado/metch-fock): Librairie JS simple pour <span v-mark.underline.gray="0">mocker fetch</span> qui fonctionne avec Node 18+
-- [Tiana Tables](https://github.com/jdeniau/tiana-tables) Logiciel de <span v-mark.underline.gray="0">requête SQL</span> simple, joli et multi-platforme.
+<!-- - [metch-fock](https://github.com/mapado/metch-fock): Librairie JS simple pour <span v-mark.underline.gray="0">mocker fetch</span> qui fonctionne avec Node 18+ -->
+- [Tiana Tables](https://github.com/jdeniau/tiana-tables): Logiciel de <span v-mark.underline.gray="0">requête SQL</span> simple, joli et multi-platforme.
+- etc.
 
 
 <!--
-Tiana Tables: mysqlworkbench c'est un outil pour les admins, dbeaver pire DX ever. Le mieux que j'ai trouvé c'est HeidiSQL mais ça ne fonctionne que sous Windows.
+
+- reviewdog : permet de remonter les erreurs depuis notre CI jenkins dans les PR github
+- Tiana Tables: mysqlworkbench c'est un outil pour les admins, dbeaver pire DX ever. Le mieux que j'ai trouvé c'est HeidiSQL mais ça ne fonctionne que sous Windows.
 -->
 
 
@@ -806,7 +892,7 @@ A Mapado:
 - [haversine](https://github.com/mapado/haversine): <span v-mark.underline.gray="0">distance</span> entre deux points sur terre
 <!-- - [watch-module](https://github.com/mapado/watch-module): "watcher" pour travailler en multi-repo en JS -->
 <!-- - [TwigExtensionsBundle](https://github.com/mapado/TwigExtensionsBundle): extension twig pour `parse_url` -->
-- [pretty-types](https://github.com/mapado/pretty-types): extension doctrine pour avoir des JSON <span v-mark.underline.gray="0">lisibles en base</span>
+<!-- - [pretty-types](https://github.com/mapado/pretty-types): extension doctrine pour avoir des JSON <span v-mark.underline.gray="0">lisibles en base</span> -->
 - [datection](https://github.com/mapado/datection): détection et rendu de <span v-mark.underline.gray="0">date</span>
 - etc.
 
@@ -890,11 +976,11 @@ Refs:
 </v-click>
 
 <!--
-1. A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? Où est-ce que je vais ?
+[click] 1. A quoi sert vraiment ce que je fais ? Est-ce que c'est pérenne ? Où est-ce que je vais ?
 
-2. tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité.
+[click] 2. tests, docs, changelog: si vous voulez que quelqu'un utilise un jour votre projet, alors vous DEVEZ atteindre un certain niveau de qualité.
 
-3. La communication. Je pense qu'un des meilleurs recrutement de l'équipe de React a été le recrutement de Dan Abramov, qui a passé un temps de dingue à communiquer sur React et son écosystème.
+[click] 3. La communication. Je pense qu'un des meilleurs recrutement de l'équipe de React a été le recrutement de Dan Abramov, qui a passé un temps de dingue à communiquer sur React et son écosystème.
 -->
 
 ---
@@ -914,24 +1000,24 @@ layout: default
 
 # <span v-mark.highlight.yellow="0">Et si</span> ça marchait ?! 🚀
 
-- metch-fock : 1 téléchargement par semaine
+<!-- - metch-fock : 1 téléchargement par semaine -->
 <!-- - watch-module : 1 téléchargement par semaine -->
 - changelog-view : 4 téléchargements par semaine
 - rest-client-sdk (JS et PHP) : <span v-mark.underline.gray="0">100</span> téléchargements par semaine
 
 <v-click>
 
-- ink-tab : <span v-mark.underline.yellow="1">1000</span> téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">600</span> téléchargements par semaine
 
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin : <span v-mark.underline.orange="2">32 000</span> téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin : <span v-mark.underline.orange="2">50 000</span> téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
 
-- haversine : <span v-mark.underline.red="1">350 000</span> téléchargements par semaine (top 1% des projets python)
+- haversine : <span v-mark.underline.red="1">600 000</span> téléchargements par semaine (top 1% des projets python)
 
 </v-click>
 
@@ -947,12 +1033,32 @@ layout: quote
 layout: quote
 ---
 
-# Attention : garder une <span v-mark.highlight.red="0">vie perso</span> !
+# <span style="display: block; text-align: center">Attention : garder une <span v-mark.highlight.red="0">vie perso</span> !</span>
+
+<img src="/duty_calls.png" style="max-height: 38vh; margin: 10px auto" />
+
+<a href="https://xkcd.com/386/">Duty Calls - © xkcd</a>
 
 <!--
 (Ca ne vient pas de moi, je n'en suis pas du tout là)
 On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
 -->
+
+---
+layout: quote
+---
+
+<blockquote>
+<h2>
+Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">with a stranger</span> on the internet over <span v-mark.underline.orange="0">being present</span> at family dinners.
+</h2>
+</blockquote>
+
+  <p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
+  My Open Source Origin Story - 
+  Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
+  </a></p>
+
 
 ---
 layout: section
@@ -964,7 +1070,7 @@ layout: section
 layout: section
 ---
 
-## <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
+# <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants 🤝
 
 ---
 layout: default
@@ -989,7 +1095,7 @@ layout: default
 
 <v-click>
 
-A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">19 000 000</span> téléchargements / semaine.
+A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">22 000 000</span> téléchargements / semaine.
 
 </v-click>
 
@@ -1003,17 +1109,21 @@ Refs:
 </div>
 
 <!--
-- 2. il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
+1. Peu de chance d'avoir un bug corrigé si le mainteneur ne sait pas qu'il existe ! 
+2. il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
 
-     pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
+    pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
 
-- 3. En accord avec la vision du mainteneur
-- 4. Aidez les mainteneurs sur les issues ou les PRs
-- 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
+3. En accord avec la vision du mainteneur
+4. Aidez les mainteneurs sur les issues ou les PRs
+5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
+
+
+[click] Ca veut dire quoi ?
 
 Vous travaillerez sur des projets surement beaucoup impactants que vos projets perso.
 
-Pour rappel, le top projet Mapado c'est haversine à 300 000 / semaine puis le plugin prettier à 32 000 / semaine.
+[click] Pour rappel, le top projet Mapado c'est haversine à 6°° 000 / semaine puis le plugin prettier à 50 000 / semaine.
 ça fait environ 30 téléchargements par seconde. Autant vous dire que quand je dois faire un release, je serre bien les fesses.
 -->
 
@@ -1021,9 +1131,9 @@ Pour rappel, le top projet Mapado c'est haversine à 300 000 / semaine puis le p
 layout: section
 ---
 
-## <span v-mark.highlight.yellow="0">Participer</span> à des meet-up et conférences 🎙️
+# <span v-mark.highlight.yellow="0">Participer</span> à des meet-up et conférences 🎙️
 
-Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
+### Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
 
 <br />
 
@@ -1032,6 +1142,12 @@ Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
 &nbsp;1. Mathieu Mure: [Le leader imposteur](https://tech.bedrockstreaming.com/le-leader-imposteur)
 
 </div>
+
+<!--
+Coder c'est bien, mais il n'y a pas que ça pour faire vivre la communauté open-source.
+
+Vous pouvez participer à des meet-up, des conférences, etc. En tant que spectateur c'est pas mal, mais osez présenter quelque chose : on a tous quelque chose à partager !
+-->
 
 ---
 layout: image
@@ -1067,11 +1183,15 @@ layout: quote
 <img src="/kenny.png" style="max-height: 38vh; margin: 10px auto" />
 
 <!--
-En 2014, Kenny Dits de M6Web hérite de la refonte de 6play, jusqu'alors faite en Flash.
+En 2014, Kenny Dits, co-CTO de M6Web / Bedrock hérite de la refonte de 6play, jusqu'alors faite en Flash (oui oui c'était une autre époque !)
 
-C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angular à react qu'ils s'est dit "ok c'est ça qu'il nous faut".
+Flash étant sur le déclin, et surtout 2014 c'était la sortie de "HTML5" ! On pouvait enfin faire des interface animées, réactives, et qui ressemblent à quelque chose.
 
-Il termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
+Seulement les "gros" projets pour faire de belles interfaces en JS en 2014 c'est AngularJS, Backbone, ou Ember. Et à M6 ils avaient un gros besoin de SEO, chose qui fonctionnaient mal, voir pas du tout, avec ces frameworks.
+
+C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angular à react qu'ils s'est dit "OK en fait c'est ça qu'il nous faut !".
+
+Il a présenté son retour d'epérience à blend web mix en 2015, et termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
 -->
 
 ---
