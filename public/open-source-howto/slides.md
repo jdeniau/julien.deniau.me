@@ -22,9 +22,9 @@ layout: cover
 <!--
 Bonjour,
 
-Aujourd'hui je vous propose de parler un peu d'open-source, histoire de démystifier un peu ce que c'est, et de vous donner envie de contribuer, et surtout de savoir ce que vous pourriez en retirer.
+Aujourd'hui je vous propose de parler un peu d'open-source,
 
-│Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
+Disclaimer : Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
 -->
 
 
@@ -91,7 +91,7 @@ Pourquoi cette présentation ? Peut-être que vous êtes un peu dans le même ca
 
 - Vous avez envi de contribuer, mais vous ne savez pas vraiment comment faire ?
 - "C'est quoi les bonnes pratiques"
-- "Pourquoi est-ce que je ferais ça à vrai dire ? Je n'ai pas que ça à faire !
+- "Pourquoi est-ce que je ferais ça à vrai dire ?
 -->
 
 ---
@@ -123,20 +123,6 @@ Vous connaissez peut-être cette image de xkcd ?
 
 L'open-source c'est un peu ça : des gens qui développent des briques que d'autres peuvent réutiliser comme ils veulent, généralement gratuitement, et en pouvant en modifier le code source.
 
--->
-
----
-layout: fact
----
-
-# Open-source
-# ≠
-# gratuit
-
-<!--
-Un logiciel open-source PEUT être gratuit (selon sa licence) mais ce n'est pas obligatoirement le cas.
-
-Un logiciel gratuit n'est pas forcément open-source (pas accès aux sources, ex. adobe reader)
 -->
 
 ---
@@ -186,9 +172,11 @@ Je suis très content qu'une personne maintienne ce fameux package depuis le Neb
 
 <!--
 - Le coût est toujours sensiblement moins élevé que les solutions propriétaires
-- pas de "vendor lock-in" ("enfermement propriétaire" en français) (machine à café + capsules, logiciels avec format de fichiers propriétaire, logiciel en Sass)
+- pas de "vendor lock-in" ("enfermement propriétaire" en français) (machine à café + capsules)
 - si une solution open-source meurt, ça sera d'une mort lente, comparé à une entreprise
-- source libre = tout le monde peut auditer le code et vérifier qu'il fonctionne comme annoncé. La communauté peut trouver et remonter les failles de sécurité. (tous les algo de sécurité actuels sont open-sources, proton pass ou bitwarden sont open source)
+- source libre = tout le monde peut auditer le code et remonter les failles de sécurité. (tous les algo de sécurité actuels sont open-sources, proton pass ou bitwarden sont open source)
+
+<i>Objectif temps fin : 2 min 30</i>
 -->
 
 
@@ -197,6 +185,8 @@ layout: statement
 ---
 
 # Mais pour <span v-mark.highlight.yellow="0">vous</span> ?
+
+<img src="/finger.webp" style="width: 200px; margin: 0 auto" />
 
 <!--
 Mais là ce n'est pas des entreprises que je veux parler, mais de vous !
@@ -250,9 +240,7 @@ Non plus sérieusement, comment est-ce qu'on fait pour gagner sa vie en faisant 
 <!--
 Globalement, il y a plus ou moins deux façons de gagner de l'argent avec l'open-source : vendre des choses autour de votre produit, ou bien recevoir des dons.
 
-Vendre votre produit, c'est bien si vous voulez fondez une société, ou si votre produit marche vraiment bien.
-
-Idem pour les dons, si vous êtes un "énorme" projet, alors vous reussirez à gagner votre vie.
+C'est bien si vous avez un "gros" projet, mais dans 99% des cas, vous ne gagnerez pas beaucoup d'argent avec.
 
 [click] PostCSS par exemple, téléchargé 80M/sem (130x / seconde) qui est utilisé entre autre par meta ou google, n'a gagné en 2024 que 17 000 $ récurrent par an (+ 29 000 $ de don non récurrent),
 -->
@@ -308,60 +296,6 @@ Presque personne ne vie de l'écritusre de logiciel open-source. C'est un pource
 
 [click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin dre dire que c'est suffisant.
 
-Globalement, payer le travail open source permettrait d'éviter ça :
-
--->
-
----
-layout: section
----
-
-# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
-
-<img src="/XZ_logo_contributed_by_Jia_Tan.png" style="margin: 0 auto" />
-
-
-<!--
-En février 2024 , une faille de sécurité par porte dérobée a été injectée dans le code  de la libraire "XZ".
-
-C'est une libraire de compression de donnée, qui est notamment utilisée par OpenSSH et dans quasiment toutes les distributions Linux.
-
-Elle permettait à l'attaquant d'ignorer l'authentification et de se connecter à la machine cible.
-
-Ce qui est assez inédit c'est l'ampleur de la mise en place de la faille :
-
-L'auteur de la faille est une personne surnommé "Jia Tan" qui a contribué au projet pendant 3 ans, ce qui lui a permit d'obtenir la confiance du mainteneur.
-
-Mais ce mainteneur n'avait pas le temps suffisant pour faire évoluer XZ, et après une période de pression sur le mainteneur, ce dernier décide donc de passer Jia Tan co-mainteneur du projet, ce qui lui a permis de mettre à disposition une nouvelle version en injectant la faille de sécurité.
-
-Ce qui est tout autant inédit, c'est la façon dont la faille a été découverte :
-
-Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU.
-
-En creusant, il a réussit a découvrir la faille et avertir les mainteneurs et RedHat et Debian.
-
-Cela aurait pu être l'attaque par porte dérobée la plus importante at la plus efficace au monde si elle n'avait pas été detectée, 
-et il a fallu d'ÉNORMES coincidences pour qu'elle soit détéctée.
-
-
-Apache Log4j a aussi connu une faille dans le genre https://fr.wikipedia.org/wiki/Log4Shell
-
-ffmpeg et teams https://x.com/FFmpeg/status/1775178803129602500?mx=2
--->
-
----
-layout: image
-image: /ffmpeg-vs-microsoft.png
-backgroundSize: contain
-style:
-  width: 70%
-  margin: 0 auto
-  border: 1px solid lightgray
----
-
-<!--
-L'équipe en change de FFMpeg (l'outil de référence pour faire du traitement de vidéo) a aussi réagi sur le sujet en, en pointant du doigt le fait qu'une dépendance à un travail de volontaire non payé peut être risqué.
-Ils expliquent notamment que Microsoft, entreprise qui génère des milliards de dollards, et qui utilise FFMpeg dans le logiciel "Teams" a reporté des problèmes taggués comme "haute priorité" en attendant du support de volontaires.
 -->
 
 ---
@@ -372,7 +306,7 @@ layout: section
 <!--
 Vraiment pas pour les petits projets.
 
-Globalement, il vaut mieux travailler en tant que salarié !
+Globalement, il vaut mieux travailler en tant que salarié ou faire du free-lance !
 -->
 
 
@@ -385,35 +319,22 @@ layout: section
 
 
 ---
-layout: image
-image: /why-fame-and-glory.png
-backgroundSize: contain
-backgroundColor: black
----
-
-<!--
-Petit questionnement à ma communauté.
-La première réponse que j'ai eu c'est ça : 
-
-Etant donnée que j'ai eu 5 réponses, cette réponse représente 20% des réponses, ce qui est assez énorme. Ca doit surement être vrai…
--->
-
-
----
 layout: fact
 ---
 
 # L'heure du <span v-mark.highlight.yellow="0">quizz</span> !
 
-## Qui connais … ?
+## Qui connait … ?
 
 <!--
 Petit quizz : levez la main si vous connaissez…
+
+<i>Objectif temps : 3 min 30</i>
 -->
 
 ---
 layout: quizz
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Daniel_Stenberg_%28cropped%29.jpg/520px-Daniel_Stenberg_%28cropped%29.jpg
+image: /Daniel_Stenberg.jpg
 who: Daniel Stenberg
 ---
 
@@ -430,7 +351,7 @@ who: Daniel Stenberg
 ---
 layout: quizz
 position: left
-image: https://dri.es/files/cache/press-photos/ua-2016-5-1920w.jpg
+image: /Dries_buytaert.jpg
 who: Dries Buytaert
 ---
 
@@ -479,7 +400,7 @@ Ils ont créé le Zend Engine, le moteur qui fait PHP depuis PHP 4
 ---
 layout: quizz
 position: left
-image: https://avatars.githubusercontent.com/u/190930?v=4
+image: /michael_dowling.png
 who: Michael Dowling
 ---
 
@@ -487,7 +408,7 @@ who: Michael Dowling
 
 <div>
   <div class="flex flex-items-center">
-    <img src="https://avatars.githubusercontent.com/u/638632?s=48&v=4" class="mr-5" /> 
+    <img src="/guzzlephp.png" class="mr-5" /> 
     <div>
       Guzzle PHP
       <div class="color-neutral">
@@ -503,7 +424,7 @@ who: Michael Dowling
 ---
 layout: quizz
 position: right
-image: https://thediffpodcast.com/assets/images/jordan-2c43ff762e625d49ea58424e3e74188a.jpg
+image: /jordan_walke.jpg
 who: Jordan Walke
 
 ---
@@ -593,7 +514,7 @@ Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
 ---
 layout: section
 ---
-# <span  v-mark.crossed-off.black="0">La notoriété ! 😥</span>
+# <span  v-mark.crossed-off.black="0">La notoriété ! <img src="/foreveralone.png" style="height: 1em; display: inline-block;" /></span>
 
 <!--
 Ne comptez pas trop dessus 😊
@@ -605,6 +526,8 @@ Alternative:
 Bon vous êtes un public plutôt averti. Maintenant faire le même quizz a votre conjoint ou conjointe pour voir si ces noms leurs parlent.
 
 J'ai mis plutôt des gens de l'univers PHP, mais est-ce que vous auriez été aussi bon sur l'univers Java, ou Python ?
+
+<i>Objectif temps : 7 min</i>
 -->
 
 ---
@@ -685,7 +608,7 @@ Vous voulez testez ce super outil qui vient de sortir ? C'est l'occasion !
 
 Et si c'est cool, vous l'utiliserez peut-être ensuite dans votre entreprise !
 
-A Mapado, si on n'avait pas un dev qui avait testé React dans son coin, jamais on ne serait parti dessus (et on serait encore bloqué sur AngularJS 🧌)
+Coder sur un projet open-source peut vous servir de "bac à sable" pour tester d'autres librairies.
 
 -->
 
@@ -788,6 +711,8 @@ style:
 
 <!--
 Mais je ne suis pas le seul. François Zaninotto, créateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
+
+<i>Objectif temps : 10 min</i>
 -->
 
 
@@ -806,7 +731,13 @@ backgroundSize: contain
 <!--
 Ca prend un peu de temps perso !
 
-(attendre un peu)
+# Faire une pause !
+
+## Non mais vraiment une grande pause.
+
+### T'es sûr qu'ils ont fini de lire ?
+
+T'as lu toi ?
 -->
 
 ---
@@ -834,6 +765,8 @@ layout: section
 
 <!--
 # PAUSE !!!
+
+<i>Objectif temps: 13 min</i>
 -->
 
 ---
@@ -871,7 +804,7 @@ layout: default
 <!--
 
 - reviewdog : permet de remonter les erreurs depuis notre CI jenkins dans les PR github
-- Tiana Tables: mysqlworkbench c'est un outil pour les admins, dbeaver pire DX ever. Le mieux que j'ai trouvé c'est HeidiSQL mais ça ne fonctionne que sous Windows.
+- Tiana Tables: mysqlworkbench c'est un outil pour les admins, dbeaver pire UX ever. Le mieux que j'ai trouvé c'est HeidiSQL mais ça ne fonctionne que sous Windows.
 -->
 
 
@@ -897,7 +830,7 @@ A Mapado:
 - etc.
 
 <!--
-NDLA. Mapado: 27 packages open-sourcés
+Mapado: 27 packages open-sourcés
 -->
 
 ---
@@ -919,6 +852,10 @@ layout: section
 ---
 
 # Les <span v-mark.highlight.yellow="0">clés</span> du succès 📈
+
+<!--
+<i>Objectif temps: 15 min</i>
+-->
 
 ---
 layout: default
@@ -1007,7 +944,7 @@ layout: default
 
 <v-click>
 
-- ink-tab : <span v-mark.underline.yellow="1">600</span> téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">200</span> téléchargements par semaine
 
 </v-click>
 <v-click>
@@ -1028,6 +965,10 @@ layout: quote
 ## C'est très cool pour vous !
 
 (mais ce n'est <span v-mark.underline.cyan="0">pas un but en soit</span>)
+
+<!--
+<i>Objectif temps: 18 min</i>
+-->
 
 ---
 layout: quote
@@ -1058,6 +999,10 @@ Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">
   My Open Source Origin Story - 
   Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
   </a></p>
+
+<!--
+Le mainteneur de react-query a récemment publié un article de blog dans lequel il explique qu'il a parfois raté des repas avec sa famille car il préférait discuter avec des inconnus sur internet.
+-->
 
 
 ---
@@ -1123,7 +1068,7 @@ Refs:
 
 Vous travaillerez sur des projets surement beaucoup impactants que vos projets perso.
 
-[click] Pour rappel, le top projet Mapado c'est haversine à 6°° 000 / semaine puis le plugin prettier à 50 000 / semaine.
+[click] Pour rappel, le top projet Mapado c'est haversine à 600 000 / semaine puis le plugin prettier à 50 000 / semaine.
 ça fait environ 30 téléchargements par seconde. Autant vous dire que quand je dois faire un release, je serre bien les fesses.
 -->
 
@@ -1147,6 +1092,10 @@ layout: section
 Coder c'est bien, mais il n'y a pas que ça pour faire vivre la communauté open-source.
 
 Vous pouvez participer à des meet-up, des conférences, etc. En tant que spectateur c'est pas mal, mais osez présenter quelque chose : on a tous quelque chose à partager !
+
+Je vous parlais de la communication pour React. Vous pouvez aussi présenter des projets qui vous plaisent et qui valent le détour.
+
+Si Symfony par exemple est devenu ce qu'il est aujourd'hui, c'est aussi grâce à la communauté qui en parle énormément dans tous les évènements de l'AFUP entre autre.
 -->
 
 ---
@@ -1162,7 +1111,7 @@ backgroundSize: contain
 >Et c'est très vite très <span v-mark.highlight.yellow="0">gratifiant</span></h1>
 
 <!--
-Vous aurez des retours beaucoup plus rapide, qui boostent l'égo directement (et qui font du bien au moral)
+En plus de ça a titre perso, même si ça fait toujours peur d'être sur scène, c'est très gratifiant ensuite.
 -->
 
 
