@@ -21,6 +21,11 @@ export const loader: LoaderFunction = async () => {
     posts,
     talks: [
       {
+        title: 'Open-source : pourquoi ? comment ? (in french)',
+        url: '/open-source-howto/dist/presenter/',
+        urlText: 'Slides',
+      },
+      {
         title:
           "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
         image: '/timezones/images/World_Time_Zones_Map.png',
