@@ -25,6 +25,8 @@ Bonjour,
 Aujourd'hui je vous propose de parler un peu d'open-source,
 
 Disclaimer : Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
+
+Comme 20 min de présentation c'est assez court, et que l'open-source, c'est assez vaste, j'ai mis des lien vers mes source que je ne peux que vous encourager à aller lire !
 -->
 
 
@@ -553,7 +555,7 @@ Dans mon quizz, je n'ai mis que des hommes : elle est où la diversité là deda
 
 Dans le développement logiciel, il y a 28% de femmes, mais seulement 1,5% dans l'open-source !
 
-Dans toues les "Releases Manager" de PHP entre la  5.6 et la 8.4, il n'y a eu que deux femmes vs 19 hommes !
+Dans tous les "Releases Manager" de PHP entre la  5.6 et la 8.4, il n'y a eu que deux femmes vs 19 hommes !
 
 - Peu de role model féminin,
 - Plus de résponsabilités familiales (et donc moins de temps pour "s'amuser" à ça)
@@ -980,28 +982,18 @@ layout: quote
 
 <a href="https://xkcd.com/386/">Duty Calls - © xkcd</a>
 
+
+<p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
+My Open Source Origin Story - 
+Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
+</a></p>
+
+
 <!--
 (Ca ne vient pas de moi, je n'en suis pas du tout là)
 On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
--->
 
----
-layout: quote
----
-
-<blockquote>
-<h2>
-Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">with a stranger</span> on the internet over <span v-mark.underline.orange="0">being present</span> at family dinners.
-</h2>
-</blockquote>
-
-  <p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
-  My Open Source Origin Story - 
-  Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
-  </a></p>
-
-<!--
-Le mainteneur de react-query a récemment publié un article de blog dans lequel il explique qu'il a parfois raté des repas avec sa famille car il préférait discuter avec des inconnus sur internet.
+Il y a un super article de Dominik "TkDodo" Dorfmeister (mainteneur de react-query) qui explique qu'il a parfois prioriser des discussions avec des inconnus sur internet plutôt que des repas de familles.
 -->
 
 
@@ -1140,7 +1132,7 @@ Seulement les "gros" projets pour faire de belles interfaces en JS en 2014 c'est
 
 C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angular à react qu'ils s'est dit "OK en fait c'est ça qu'il nous faut !".
 
-Il a présenté son retour d'epérience à blend web mix en 2015, et termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
+Il a présenté son retour d'expérience à blend web mix en 2015, et termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
 -->
 
 ---
@@ -1160,8 +1152,6 @@ layout: quote
 _Julien D._
 
 </div>
-
-On recrute ! http://mapado.xyz/php
 
 <!--
 
