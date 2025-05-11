@@ -178,7 +178,6 @@ Je suis très content qu'une personne maintienne ce fameux package depuis le Neb
 - si une solution open-source meurt, ça sera d'une mort lente, comparé à une entreprise
 - source libre = tout le monde peut auditer le code et remonter les failles de sécurité. (tous les algo de sécurité actuels sont open-sources, proton pass ou bitwarden sont open source)
 
-<i>Objectif temps fin : 2 min 30</i>
 -->
 
 
@@ -331,7 +330,6 @@ layout: fact
 <!--
 Petit quizz : levez la main si vous connaissez…
 
-<i>Objectif temps : 3 min 30</i>
 -->
 
 ---
@@ -520,16 +518,6 @@ layout: section
 
 <!--
 Ne comptez pas trop dessus 😊
-
-<hr  style="border-top: 1px solid #ccc" />
-
-Alternative:
-
-Bon vous êtes un public plutôt averti. Maintenant faire le même quizz a votre conjoint ou conjointe pour voir si ces noms leurs parlent.
-
-J'ai mis plutôt des gens de l'univers PHP, mais est-ce que vous auriez été aussi bon sur l'univers Java, ou Python ?
-
-<i>Objectif temps : 7 min</i>
 -->
 
 ---
@@ -714,7 +702,6 @@ style:
 <!--
 Mais je ne suis pas le seul. François Zaninotto, créateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
 
-<i>Objectif temps : 10 min</i>
 -->
 
 
@@ -732,14 +719,6 @@ backgroundSize: contain
 
 <!--
 Ca prend un peu de temps perso !
-
-# Faire une pause !
-
-## Non mais vraiment une grande pause.
-
-### T'es sûr qu'ils ont fini de lire ?
-
-T'as lu toi ?
 -->
 
 ---
@@ -766,9 +745,8 @@ layout: section
 ## J'aimerai me lancer, mais je n'ai pas d'idée…
 
 <!--
-# PAUSE !!!
 
-<i>Objectif temps: 13 min</i>
+
 -->
 
 ---
@@ -856,7 +834,6 @@ layout: section
 # Les <span v-mark.highlight.yellow="0">clés</span> du succès 📈
 
 <!--
-<i>Objectif temps: 15 min</i>
 -->
 
 ---
@@ -969,7 +946,6 @@ layout: quote
 (mais ce n'est <span v-mark.underline.cyan="0">pas un but en soit</span>)
 
 <!--
-<i>Objectif temps: 18 min</i>
 -->
 
 ---
