@@ -36,14 +36,19 @@ const style = computed(() => ({
 
   <div class="slidev-layout quizz" :class="props.class">
   
-<h1>Quizz</h1>
+<h1>
+  <span v-mark.highlight.yellow="0">
+    Quizz
+  </span>
+</h1>
 
 <h2>Qui connait ?</h2>
 
 <br />
 <br />
 
-<h3>{{ props.who }}</h3>
+
+<h3 v-if="props.who"><span v-mark.box.cyan="0">{{ props.who }}</span></h3>
 
 <br />
 
@@ -58,3 +63,5 @@ const style = computed(() => ({
     />
   </div>
 </template>
+
+
