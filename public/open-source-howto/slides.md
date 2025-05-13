@@ -1115,18 +1115,28 @@ Il a présenté son retour d'expérience à blend web mix en 2015, et termine sa
 layout: quote
 ---
 
-<blockquote style="padding: 25px 30px">
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+<div>
+  <blockquote style="padding: 25px 30px">
 
-# L'<span v-mark.underline.cyan="0">open-source</span>
+  # L'<span v-mark.underline.cyan="0">open-source</span>
 
-## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span> !
+  ## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span> !
 
-</blockquote>
+  </blockquote>
 
-<div class="text-right">
+  <div class="text-right">
 
-_Julien D._
+  _Julien D._
 
+  </div>
+</div>
+
+<div>
+  Notez-moi sur openfeedback !
+
+  <img src="/qrcode.colored.svg" style="max-height: 200px; margin: 0 auto" />
+</div>
 </div>
 
 <!--
