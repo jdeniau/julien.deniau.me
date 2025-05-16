@@ -20,11 +20,11 @@ export const loader: LoaderFunction = async () => {
   return {
     posts,
     talks: [
-      // {
-      //   title: 'Open-source : pourquoi ? comment ? (in french)',
-      //   url: '/open-source-howto/dist/presenter/',
-      //   urlText: 'Slides',
-      // },
+      {
+        title: 'Open-source : pourquoi ? comment ? (in french)',
+        url: '/open-source-howto/dist/',
+        urlText: 'Slides',
+      },
       {
         title:
           "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
