@@ -8,7 +8,7 @@
     "build": "npm run talk:build && remix vite:build",
     "dev": "node -r dotenv/config node_modules/.bin/remix vite:dev",
     "talk:dev": "vite talk/reveal-bootstrap",
-    "talk:build": "rm -rf public/reveal-bootstrap && vite build talk/reveal-bootstrap --base reveal-bootstrap --emptyOutDir && mv talk/reveal-bootstrap/dist public/reveal-bootstrap"
+    "talk:build": "node build-talk.js reveal-bootstrap"
   },
   "dependencies": {
     "@octokit/rest": "^18.12.0",
