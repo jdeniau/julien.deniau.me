@@ -5,10 +5,10 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "remix vite:build",
+    "build": "npm run conf:build && remix vite:build",
     "dev": "node -r dotenv/config node_modules/.bin/remix vite:dev",
     "conf:dev": "vite conf/reveal-bootstrap",
-    "conf:build": "vite build conf/reveal-bootstrap --emptyOutDir --outDir=../../public/reveal-bootstrap"
+    "conf:build": "rm -rf public/reveal-bootstrap && vite build conf/reveal-bootstrap --base reveal-bootstrap --emptyOutDir && mv conf/reveal-bootstrap/dist public/reveal-bootstrap"
   },
   "dependencies": {
     "@octokit/rest": "^18.12.0",
