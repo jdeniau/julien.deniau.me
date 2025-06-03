@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Pirulen RG';
-  src: url('fonts/pirulen\ rg.otf');
+  src: url('./fonts/pirulen-rg.otf');
 }
 
 :root {

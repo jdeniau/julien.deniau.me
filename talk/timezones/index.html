@@ -11,15 +11,15 @@
       Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires
     </title>
 
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
+    <!-- removed <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" /> -->
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
-    <link rel="stylesheet" href="dist/theme/night.css" />
-    <link rel="stylesheet" href="dist/theme/devoxx-night.css" />
+    <!-- removed <link rel="stylesheet" href="dist/theme/night.css" />
+    <link rel="stylesheet" href="dist/theme/devoxx-night.css" /> -->
 
     <!-- Theme used for syntax highlighted code -->
     <!-- <link rel="stylesheet" href="plugin/highlight/unikitty-light.css" /> -->
-    <link rel="stylesheet" href="plugin/highlight/dracula.css" />
+    <!-- removed <link rel="stylesheet" href="plugin/highlight/dracula.css" /> -->
 
     <style>
       #title {
@@ -2102,7 +2102,9 @@ d.getMonth() // 0-indexé
       </div>
     </div>
 
-    <script src="dist/reveal.js"></script>
+    <script type="module" src="./index.ts"></script>
+
+    <!-- <script src="dist/reveal.js"></script>
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
@@ -2125,6 +2127,6 @@ d.getMonth() // 0-indexé
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
       });
-    </script>
+    </script> -->
   </body>
 </html>

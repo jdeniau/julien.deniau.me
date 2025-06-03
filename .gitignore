@@ -16,7 +16,6 @@ public/*/
 !public/phpstan/
 !public/react-2019-2020/
 !public/retour-es/
-!public/timezones/
 !public/typescript/
 
 api/_build
