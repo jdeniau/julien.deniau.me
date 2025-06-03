@@ -1,0 +1,103 @@
+/* .present #timeline {
+  scale: 3;
+  transform: translate(-314px, 0);
+} */
+
+.present #main-line {
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 0;
+}
+
+.present[data-fragment='-1'] #timeline {
+  scale: 3;
+  transform: translate(-314px, 0);
+}
+
+.present[data-fragment='-1'] #main-line {
+  /* animation: main-line-fragment-0 500ms linear forwards; */
+
+  stroke-dashoffset: -1000;
+}
+.present[data-fragment='0'] #timeline {
+  animation: svg-fragment-0 500ms linear forwards;
+}
+
+.present[data-fragment='0'] #main-line {
+  animation: main-line-fragment-0 500ms linear forwards;
+}
+
+.present[data-fragment='1'] #timeline {
+  animation: svg-fragment-1 600ms linear forwards;
+}
+
+.present[data-fragment='1'] #main-line {
+  animation: main-line-fragment-1 500ms linear forwards;
+}
+
+.present[data-fragment='2'] #timeline {
+  animation: svg-fragment-2 1000ms linear forwards;
+}
+
+.present[data-fragment='2'] #main-line {
+  animation: main-line-fragment-2 500ms linear forwards;
+}
+
+@keyframes svg-fragment-0 {
+  from {
+    scale: 3;
+    transform: translate(-314px, 0);
+  }
+  to {
+    scale: 2.5;
+    transform: translate(-282px, 0);
+  }
+}
+
+@keyframes main-line-fragment-0 {
+  from {
+    stroke-dashoffset: -1000;
+  }
+  to {
+    stroke-dashoffset: -940;
+  }
+}
+
+@keyframes svg-fragment-1 {
+  from {
+    scale: 2.5;
+    transform: translate(-282px, 0);
+  }
+  to {
+    scale: 2;
+    transform: translate(-234px, 0);
+  }
+}
+
+@keyframes main-line-fragment-1 {
+  from {
+    stroke-dashoffset: -940;
+  }
+  to {
+    stroke-dashoffset: -800;
+  }
+}
+
+@keyframes svg-fragment-2 {
+  from {
+    scale: 2;
+    transform: translate(-234px, 0);
+  }
+  to {
+    scale: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes main-line-fragment-2 {
+  from {
+    stroke-dashoffset: -80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
