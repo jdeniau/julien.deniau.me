@@ -7,8 +7,8 @@
   "scripts": {
     "build": "npm run talk:build && remix vite:build",
     "dev": "node -r dotenv/config node_modules/.bin/remix vite:dev",
-    "talk:dev": "vite talk/reveal-bootstrap",
-    "talk:build": "node build-talk.js reveal-bootstrap"
+    "talk:dev": "node start-talk.js",
+    "talk:build": "node build-talk.js"
   },
   "dependencies": {
     "@octokit/rest": "^18.12.0",
