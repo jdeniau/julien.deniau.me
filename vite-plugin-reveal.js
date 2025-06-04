@@ -8,7 +8,7 @@ function randomString(length = 8) {
 }
 
 /**
- * This plugin copies assets referenced in data-background and data-background-iframe attributes
+ * This plugin copies assets referenced in data-background and data-background-image attributes
  * to the output directory during the build process.
  *
  * @return {import('vite').Plugin}
@@ -26,8 +26,8 @@ export default function revealDataBackgroundPlugin() {
       return true;
     },
     async transformIndexHtml(html, ctx) {
-      // Find all data-background and data-background-iframe attributes
-      const regex = /data-background(?:-iframe)?=["']([^"']+)["']/g;
+      // Find all data-background and data-background-image attributes
+      const regex = /data-background(?:-image)?=["']([^"']+)["']/g;
       let match;
       const assetPaths = new Set();
       while ((match = regex.exec(html))) {
