@@ -12,8 +12,8 @@ public/*/
 !public/3d-to-flat-animation/
 # and keep old talks
 !public/dev-ux/
-!public/js-lib-watch-module-dependencies/
 !public/open-source-howto/
+# talks to migrate
 !public/phpstan/
 !public/react-2019-2020/
 !public/retour-es/

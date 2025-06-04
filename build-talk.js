@@ -16,7 +16,7 @@ if (!args.length) {
     .filter((file) => fs.statSync(path.join('talk', file)).isDirectory())
     .map((file) => path.basename(file));
 } else {
-  projects = args;
+  projects = args.map((file) => file.replace(/^talk\//, ''));
   console.log(`Building talk in directory: ${projects.join(', ')}`);
 }
 
