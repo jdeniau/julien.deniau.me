@@ -7,15 +7,13 @@ const args = process.argv.slice(2);
 const PUBLIC_DIR = path.resolve('public');
 
 // ensure a directory is provided
-let projects;
 if (!args.length) {
-  console.log('No directory provided.');
-  process.exit(1);
+  console.warn('No directory provided, using "talk" directory.');
 }
 
-const talkDir = args[0];
+const talkDir = args[0] ?? null;
 
-const fullDir = path.resolve('talk', talkDir);
+const fullDir = talkDir ? path.resolve('talk', talkDir) : path.resolve('talk');
 
 // ensure the directory exists
 const isDirectory = fs
@@ -23,11 +21,9 @@ const isDirectory = fs
   ?.isDirectory();
 
 if (!isDirectory) {
-  console.error(`The path "${talkDir}" is not a talk directory.`);
+  console.error(`The path "${fullDir}" is not a talk directory.`);
   process.exit(1);
 }
-
-const outDir = path.join(PUBLIC_DIR, talkDir);
 
 // start dev server vite
 try {
@@ -35,6 +31,7 @@ try {
     configFile: false,
     root: fullDir,
     base: '/',
+    publicDir: PUBLIC_DIR,
     server: {
       host: '0.0.0.0',
       port: 5137,
@@ -49,10 +46,6 @@ try {
 
   server.printUrls();
   server.bindCLIShortcuts({ print: true });
-
-  console.log(
-    `Started dev server for talk "${talkDir}" at http://localhost:3000/${talkDir}/`
-  );
 } catch (error) {
   console.error(`Failed to start dev server for talk "${talkDir}":`, error);
   process.exit(1);

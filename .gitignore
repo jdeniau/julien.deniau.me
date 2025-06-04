@@ -9,6 +9,7 @@ public/*/
 # but keep non-talks
 !public/.well-known/
 !public/images/
+!public/3d-to-flat-animation/
 # and keep old talks
 !public/dev-ux/
 !public/js-lib-watch-module-dependencies/

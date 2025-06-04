@@ -1,8 +1,8 @@
 import Reveal from 'reveal.js';
 import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
 import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js';
-import './3d-to-flat-animation/app.js';
-import './3d-to-flat-animation/three.js';
+// import '../../public/3d-to-flat-animation/app.js';
+// import '../../public/3d-to-flat-animation/three.js';
 
 import './dist/reveal.css';
 import './dist/theme/black.css';
