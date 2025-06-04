@@ -6,28 +6,6 @@
 
         <title>Analyse statique avec PHPStan</title>
         <link rel="icon" type="image/png" href="favicon.png" />
-
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/white.css">
-
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="lib/css/tomorrow.css">
-        <!--
-        <link rel="stylesheet" href="lib/css/atom-one-light.css">
-        <link rel="stylesheet" href="lib/css/default.css">
-        <link rel="stylesheet" href="lib/css/github.css">
-        <link rel="stylesheet" href="lib/css/github-gist.css">
-        -->
-        <link rel="stylesheet" href="css/phpstan.css">
-
-        <!-- Printing and PDF exports -->
-        <script>
-var link = document.createElement( 'link' );
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
     </head>
     <body>
         <div class="reveal">
@@ -921,18 +899,9 @@ class UserFactory implements Factory {
             </div>
         </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
+    <script type="module" src="./index.ts"></script>
 
         <script>
-// More info about config & dependencies:
-// - https://github.com/hakimel/reveal.js#configuration
-// - https://github.com/hakimel/reveal.js#dependencies
-Reveal.configure({
-    showSlideNumber: 'speaker',
-    slideNumber: 'c/t',
-});
-
 function ready(fn) {
     if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
         fn();
@@ -940,51 +909,6 @@ function ready(fn) {
         document.addEventListener('DOMContentLoaded', fn);
     }
 }
-
-Reveal.initialize({
-    controls: true,
-    showNotes: true,
-
-    dependencies: [
-        { src: 'i18n.js' },
-        { src: 'plugin/markdown/marked.js' },
-        { src: 'plugin/markdown/markdown.js' },
-        { src: 'plugin/notes/notes.js', async: true },
-        {
-            src: 'plugin/highlight/highlight.js',
-            async: true,
-            callback: function() {
-                ready(function() {
-                    hljs.initHighlighting();
-
-                    // // Rebuild ...
-                    // var pre = document.querySelectorAll('pre'),
-                    //     code, data, html;
-
-                    // for (var i = 0, len = pre.length; i < len; ++i) {
-                    //     code = pre[i].firstChild;
-                    //     if (/(^| )hljs( |$)/.test(code.className)) {
-                    //         data = code.innerHTML;
-                    //         html = '<code class="' + code.className + '">' + data + '</code>';
-                    //         html += '<span class="line-number-clear"></span>';
-                    //         pre[i].innerHTML = html;
-                    //     }
-                    // }
-                })
-            }
-        },
-        {
-            src: 'plugin/twemoji/2/twemoji.min.js',
-            async: true,
-            callback: function() {
-                twemoji.base = './plugin/twemoji/2/';
-                twemoji.ext = '.svg';
-                twemoji.size = 'svg';
-                twemoji.parse(document.body);
-            },
-        },
-    ]
-});
         </script>
     </body>
 </html>
