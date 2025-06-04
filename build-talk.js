@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { build } from 'vite';
+import vitePluginReveal from './vite-plugin-reveal.js';
 
 const args = process.argv.slice(2);
 
@@ -39,6 +40,7 @@ await projects.forEach(async (talkDir) => {
     await build({
       root: fullDir,
       base: `/${talkDir}/`,
+      plugins: [vitePluginReveal()],
       build: {
         outDir,
         emptyOutDir: true,

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createServer } from 'vite';
+import vitePluginReveal from './vite-plugin-reveal.js';
 
 const args = process.argv.slice(2);
 
@@ -32,6 +33,7 @@ try {
     root: fullDir,
     base: '/',
     publicDir: PUBLIC_DIR,
+    plugins: [vitePluginReveal()],
     server: {
       host: '0.0.0.0',
       port: 5137,
