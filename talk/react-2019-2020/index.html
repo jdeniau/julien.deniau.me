@@ -9,24 +9,6 @@
 
     <title>ReactJS : les évolutions de 2018-2019</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/white.css" />
-    <link rel="stylesheet" href="css/code-full-screen.css" />
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/tomorrow.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi)
-        ? "css/print/pdf.css"
-        : "css/print/paper.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
-    </script>
   </head>
   <body>
     <div class="reveal">
@@ -128,7 +110,7 @@
             <section>
                 <h3>Passage de ref</h3>
 
-                <pre><code data-trim class="hljs language-js" data-line-numbers=>
+                <pre><code data-trim class="hljs language-js" data-line-numbers="">
                     const FancyButton = React.forwardRef((props, ref) => (
                         &lt;button ref={ref} className="FancyButton"&gt;
                             {props.children}
@@ -593,33 +575,6 @@
       </div>
     </div>
 
-    <script src="js/reveal.js"></script>
-
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        hash: true,
-        // width: 900,
-        // height: 900, 
-        dependencies: [
-          { src: "plugin/markdown/marked.js" },
-          { src: "plugin/markdown/markdown.js" },
-          { src: "plugin/highlight/highlight.js" },
-          { src: "plugin/notes/notes.js", async: true },
-          {
-              src: 'plugin/twemoji/2/twemoji.min.js',
-              async: true,
-              callback: function() {
-                  twemoji.base = './plugin/twemoji/2/';
-                  twemoji.ext = '.svg';
-                  twemoji.size = 'svg';
-                  twemoji.parse(document.body);
-              },
-          },
-        ]
-      });
-    </script>
+    <script type="module" src="./index.ts"></script>
   </body>
 </html>
