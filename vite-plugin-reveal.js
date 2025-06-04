@@ -1,6 +1,12 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+function randomString(length = 8) {
+  return Math.random()
+    .toString(36)
+    .substring(2, length + 2);
+}
+
 /**
  * This plugin copies assets referenced in data-background and data-background-iframe attributes
  * to the output directory during the build process.
@@ -31,12 +37,11 @@ export default function revealDataBackgroundPlugin() {
       // Copy each asset to the output dir if needed
       if (ctx && ctx.server) return html; // Only run during build
 
+      let outHtml = html;
+
       for (const asset of assetPaths) {
         // Only handle relative paths
-        if (
-          // asset.startsWith('.')
-          !asset.startsWith('/')
-        ) {
+        if (!asset.startsWith('/')) {
           const srcPath = path.resolve(
             ctx.filename ? path.dirname(ctx.filename) : process.cwd(),
             asset
@@ -52,10 +57,16 @@ export default function revealDataBackgroundPlugin() {
             continue;
           }
 
+          // add hash before the file extension if it exists
+          const finalAssetName = asset.replace(
+            /(\.[^.]+)$/,
+            (match) => `.${randomString()}${match}`
+          );
+
           const finalDestPath = path.resolve(
             destPath,
             // 'assets',
-            asset.replace(/^\//, '')
+            finalAssetName
           );
           console.log({
             asset,
@@ -64,9 +75,16 @@ export default function revealDataBackgroundPlugin() {
 
           await fs.mkdir(path.dirname(finalDestPath), { recursive: true });
           await fs.copyFile(srcPath, finalDestPath);
+
+          // Replace the asset path in the HTML with the new path
+          outHtml = outHtml.replace(
+            new RegExp(`(["'])${asset}(["'])`, 'g'),
+            `$1${finalAssetName}$2`
+          );
         }
       }
-      return html;
+
+      return outHtml;
     },
   };
 }
