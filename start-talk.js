@@ -14,7 +14,9 @@ if (!args.length) {
 
 const talkDir = args[0] ?? null;
 
-const fullDir = talkDir ? path.resolve('talk', talkDir) : path.resolve('talk');
+const fullDir = talkDir
+  ? path.resolve('talk', talkDir.replace(/^talk\//, ''))
+  : path.resolve('talk');
 
 // ensure the directory exists
 const isDirectory = fs
