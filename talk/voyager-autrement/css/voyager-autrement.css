@@ -1,0 +1,96 @@
+tr.fragment:not(.visible) td {
+  border-bottom: none;
+}
+
+/* Routes animation */
+.routes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 50px;
+  width: 100%;
+}
+
+.route {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.trees {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.trees-top {
+  top: 0;
+}
+
+.trees-bottom {
+  bottom: 0;
+}
+
+.road {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #666;
+  transform: translateY(-50%);
+}
+
+.road::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #fff 0,
+    #fff 30px,
+    transparent 30px,
+    transparent 60px
+  );
+  transform: translateY(-50%);
+}
+
+.vehicle {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  font-size: 40px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+section.present.route-animation .vehicle {
+  animation: drive 10s linear;
+}
+
+section.present.route-animation .route-car .vehicle {
+  animation-duration: 1.17s;
+  animation-delay: 8s;
+}
+
+section.present.route-animation .route-bike .vehicle {
+  animation-duration: 10s;
+}
+
+@keyframes drive {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 50px);
+  }
+}
