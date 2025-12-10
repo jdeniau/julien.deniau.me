@@ -26,7 +26,6 @@ Aujourd'hui je vous propose de parler un peu d'open-source,
 
 Disclaimer : Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
 
-Comme 20 min de présentation c'est assez court, et que l'open-source, c'est assez vaste, j'ai mis des lien vers mes source que je ne peux que vous encourager à aller lire !
 -->
 
 
@@ -125,6 +124,20 @@ Vous connaissez peut-être cette image de xkcd ?
 
 L'open-source c'est un peu ça : des gens qui développent des briques que d'autres peuvent réutiliser comme ils veulent, généralement gratuitement, et en pouvant en modifier le code source.
 
+-->
+
+---
+layout: fact
+---
+
+# Open-source
+# ≠
+# Gratuit
+
+<!--
+Un logiciel open-source PEUT être gratuit (selon sa licence) mais ce n'est pas obligatoirement le cas.
+
+Un logiciel gratuit n'est pas forcément open-source (pas accès aux sources, ex. adobe reader)
 -->
 
 ---
@@ -298,7 +311,79 @@ Presque personne ne vie de l'écritusre de logiciel open-source. C'est un pource
 
 [click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin dre dire que c'est suffisant.
 
+payer le travail open source permettrait d'éviter ça :
 -->
+
+---
+layout: section
+---
+
+# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
+
+<img src="/XZ_logo_contributed_by_Jia_Tan.png" style="margin: 0 auto" />
+
+<!--
+En février 2024 , une faille de sécurité par porte dérobée a été injectée dans le code  de la libraire "XZ".
+
+C'est une libraire de compression de donnée, qui est notamment utilisée par OpenSSH et dans quasiment toutes les distributions Linux.
+
+Elle permettait à l'attaquant d'ignorer l'authentification et de se connecter à la machine cible.
+
+Ce qui est assez inédit c'est l'ampleur de la mise en place de la faille :
+
+L'auteur de la faille est une personne surnommé "Jia Tan" qui a contribué au projet pendant 3 ans, ce qui lui a permit d'obtenir la confiance du mainteneur.
+
+Mais ce mainteneur n'avait pas le temps suffisant pour faire évoluer XZ, et après une période de pression sur le mainteneur, ce dernier décide donc de passer Jia Tan co-mainteneur du projet, ce qui lui a permis de mettre à disposition une nouvelle version en injectant la faille de sécurité.
+-->
+
+---
+layout: section
+---
+
+# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
+
+<img src="/andres-freund.jpg" style="margin: 0 auto; height: 30vh" />
+
+
+<div class="color-neutral">
+
+Andres Freund
+
+</div>
+
+
+<!--
+Ce qui est tout autant inédit, c'est la façon dont la faille a été découverte :
+
+Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU, et qu'il lui fallait une demi seconde dep lus pour se connecter en SSH. Une demi seconde. .
+
+En creusant, il a réussit a découvrir la faille et avertir les mainteneurs et RedHat et Debian.
+
+Cela aurait pu être l'attaque par porte dérobée la plus importante at la plus efficace au monde si elle n'avait pas été detectée, 
+et il a fallu d'ÉNORMES coincidences pour qu'elle soit détéctée.
+
+
+Apache Log4j a aussi connu une faille dans le genre https://fr.wikipedia.org/wiki/Log4Shell
+-->
+
+---
+layout: image
+image: /ffmpeg-vs-microsoft.png
+backgroundSize: contain
+style:
+  width: 70%
+  margin: 0 auto
+  border: 1px solid lightgray
+---
+
+
+<!--
+L'équipe en change de FFMpeg (l'outil de référence pour faire du traitement de vidéo) a aussi réagi sur le sujet en pointant du doigt le fait qu'une dépendance à un travail de volontaire non payé peut être risqué.
+
+Ils expliquent notamment que Microsoft, entreprise qui génère des milliards de dollards, et qui utilise FFMpeg dans le logiciel "Teams" a reporté des problèmes taggués comme "haute priorité" en attendant du support gratuit de volontaires.
+-->
+
+
 
 ---
 layout: section
@@ -318,6 +403,20 @@ layout: section
 ---
 # La notoriété ! 😎
 
+
+---
+layout: image
+image: /why-fame-and-glory.png
+backgroundSize: contain
+backgroundColor: black
+---
+
+<!--
+Petit questionnement à ma communauté.
+La première réponse que j'ai eu c'est ça : 
+
+Etant donnée que j'ai eu 5 réponses, cette réponse représente 20% des réponses, ce qui est assez énorme. Ca doit surement être vrai…
+-->
 
 
 ---
@@ -882,7 +981,7 @@ layout: default
 
 <v-click>
 
-- ink-tab : <span v-mark.underline.yellow="1">200</span> téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">600</span> téléchargements par semaine
 
 </v-click>
 <v-click>
@@ -919,19 +1018,30 @@ layout: quote
 <a href="https://xkcd.com/386/">Duty Calls - © xkcd</a>
 
 
+
+<!--
+(Ca ne vient pas de moi, je n'en suis pas du tout là)
+On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
+-->
+
+---
+layout: quote
+---
+
+<blockquote>
+<h2>
+Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">with a stranger</span> on the internet over <span v-mark.underline.orange="0">being present</span> at family dinners.
+</h2>
+</blockquote>
+
 <p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
 My Open Source Origin Story - 
 Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
 </a></p>
 
-
-<!--
-(Ca ne vient pas de moi, je n'en suis pas du tout là)
-On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
-
-Il y a un super article de Dominik "TkDodo" Dorfmeister (mainteneur de react-query) qui explique qu'il a parfois prioriser des discussions avec des inconnus sur internet plutôt que des repas de familles.
+<!-- 
+Dominik "TkDodo" Dorfmeister, le mainteneur de react-query, a publié un article de blog dans lequel il explique qu'il a parfois parfois priorisé des discussions avec des inconnus sur internet plutôt que des repas de familles.
 -->
-
 
 ---
 layout: section
@@ -1039,7 +1149,7 @@ backgroundSize: contain
 >Et c'est très vite très <span v-mark.highlight.yellow="0">gratifiant</span></h1>
 
 <!--
-En plus de ça a titre perso, même si ça fait toujours peur d'être sur scène, c'est très gratifiant ensuite.
+En plus de ça a titre perso, même si ça fait toujours peur d'être sur scène, c'est très gratifiant et enrichissant ensuite, je vous assure !
 -->
 
 
