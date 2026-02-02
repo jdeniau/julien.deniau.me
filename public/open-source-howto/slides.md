@@ -355,7 +355,7 @@ Andres Freund
 <!--
 Ce qui est tout autant inédit, c'est la façon dont la faille a été découverte :
 
-Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU, et qu'il lui fallait une demi seconde dep lus pour se connecter en SSH. Une demi seconde. .
+Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU, et qu'il lui fallait une demi seconde dep lus pour se connecter en SSH. Une demi seconde... Quel est le pourcentage de personne qui s'inquiéterait de ça honnêtement ??
 
 En creusant, il a réussit a découvrir la faille et avertir les mainteneurs et RedHat et Debian.
 
@@ -501,26 +501,29 @@ Ils ont créé le Zend Engine, le moteur qui fait PHP depuis PHP 4
 ---
 layout: quizz
 position: left
-image: /michael_dowling.png
-who: Michael Dowling
+image: /james-gosling.png
+who: James Gosling
 ---
 
 <v-click>
 
 <div>
   <div class="flex flex-items-center">
-    <img src="/guzzlephp.png" class="mr-5" /> 
+    <logos-java style="font-size: 3em;" class="mr-5" /> 
     <div>
-      Guzzle PHP
+      Java
       <div class="color-neutral">
-        (12 000 000 installations / mois)<br />
-        (~ 5 installations / seconde)
+        Un langage de programmation un peu utilisé.
       </div>
     </div>
   </div>
 </div>
 
 </v-click>
+
+<!--
+ un petit language de programmation qui a surtout permit la naissance de JavaScript ! :troll:
+-->
 
 ---
 layout: quizz
@@ -547,6 +550,71 @@ who: Jordan Walke
 </div>
 
 </v-click>
+
+---
+layout: quizz
+image: /all-4.png
+---
+
+<div class="flex flex-items-center">
+  Anders Hejlsberg ? 
+  
+<v-click>
+
+<div class="flex flex-items-center ml2">
+  <logos-typescript style="font-size: 1.5em;" class="mr-2" /> TypeScript
+</div>
+
+</v-click>
+
+</div>
+
+<div class="flex flex-items-center">
+  Guido Van Rossum ? 
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <logos-python style="font-size: 1em;" class="mr-2" /> Python
+</div>
+
+</v-after>
+
+</div>
+
+<div class="flex flex-items-center">
+  <!-- James Long ?  -->
+  Ondřej Mirtes ?
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <!-- <logos-prettier style="font-size: 1em;" class="mr-2" /> Prettier -->
+  <img src="/logo.phpstan.png" style="height: 1.2em" class="mr-2" /> PHPStan
+  <!-- <logos-phpstan style="font-size: 1em;" class="mr-2" /> PHPStan -->
+</div>
+
+</v-after>
+
+</div>
+
+<div class="flex flex-items-center">
+  Michael Widenius ? 
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <logos-mysql style="font-size: 1em;" class="mr-2" /> MySQL
+</div>
+
+</v-after>
+
+</div>
+
+<!--
+Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
+-->
+
 
 ---
 layout: section
@@ -929,8 +997,8 @@ Pas de recette magique, sans ces ingrédients, peu de chance de succès :
 <v-click at="1">
 
 <div class="mt10 color-neutral">
-Refs:
 
+Refs:
 1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
 
 <v-click at="2">
@@ -1056,10 +1124,19 @@ layout: section
 # <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants 🤝
 
 ---
+layout: section
+---
+
+TODO parler d'open-source et IA 
+
+---
 layout: default
 ---
 
 # <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
+
+
+TODO : découper cette slides en plein de slides, et mettre un gros point sur le point 2 où il faut aussi débuggez pour comprendre pour pouvoir contribuer ! (peut-être faire un clin d'oeil à Andres Freund)
 
 1. Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez,
 2. Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
@@ -1078,14 +1155,13 @@ layout: default
 
 <v-click>
 
-A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">22 000 000</span> téléchargements / semaine.
+A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">30 000 000</span> téléchargements / semaine.
 
 </v-click>
 
 <div class="color-gray">
 
 Refs:
-
 1. [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
 2. [PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
 
@@ -1181,17 +1257,174 @@ C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angu
 Il a présenté son retour d'expérience à blend web mix en 2015, et termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
 -->
 
+
+---
+layout: section
+---
+
+# Open-source et <span v-mark.highlight.yellow="0">IA Générative</span> 🤖
+
+
+<!--
+Je fais juste une petite appartiée sur l'IA générative et l'open-source.
+
+Sur, l'IA, j'ai l'impression que le monde se divise en deux :
+- les optimistes super hypés par les possibilités
+- les pessimistes qui sont plutôt réfractaires à l'IA
+-->
+
+
+---
+layout: default
+---
+
+<h1>L'IA c'est le mal 👿</h1>
+
+<ul>
+<li>Utilisation de <span v-mark.underline.gray="0">TOUT</span> le code open-source pour générer ses modèles</li>
+<li v-click="1">L'IA est utilisé à tord et à travers pour <span v-mark.underline.gray="0">remonter des bugs hallucinés</span></li>
+<li v-click="3">Beaucoup de gens "donnent" des issues à manger à copilot, mais le résultat n'est pas souvent bon.</li>
+</ul>
+
+<div v-click="1" class="color-gray"  style="font-size: .8em">
+
+Refs:
+
+<v-switch>
+
+  <template #1>
+
+  - Qui déjà ? : [The end of the curl bug-bounty](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
+  
+  </template>
+
+  <template #2-4>
+
+  - Daniel Stenberg : [The end of the curl bug-bounty](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
+
+</template>
+
+</v-switch>
+
+<div  v-click="3">
+
+- François Best : [« The problem with adding "help wanted" issues on @github.com is that people just feed those to their agent, and loop over PR review comments like drones 🫠 »](https://bsky.app/profile/did:plc:rfoxp4hc5fgthjfaaigyw3c2/post/3m7f3mw55fk2s?ref_src=embed&ref_url=https%253A%252F%252Ftylur.blog%252Fharmful-prs%252F)
+
+</div>
+
+</div>
+
+<!--
+- En même temps, c'est litéralement écrit dans la licence que vous accordez l'usage ! (sauf les licences plus strictes, comme AGPL)
+- curl a arrêté son programme de "bounty hunt", car l'IA générait trop de faux positifs (20% des rapports de bugs venaient d'utilisations de l'IA). 
+  Avant 2025, 15% des bugs reportés étaient confirmés. En 2025, c'est tombé a 5%.
+- Si c'était si simple, les mainteneurs n'auraient pas autant de mal a clore certaines issues. Une librairie open source doit rester maintenable, et l'IA fait pas vraiment ça.
+-->
+
+---
+layout: default
+---
+<h1>Oui mais l'IA c'est incroyable 🧙‍♂️</h1>
+
+- <span v-mark.underline.gray="0">Shipper vite</span> ! Ex: Clawbobot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
+
+<v-switch>
+
+  <template #1>
+
+  <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none;">
+
+  <img src="/fire-bomb.gif" width="60%" />
+
+  </div>
+
+  </template>
+
+  <template #2>
+
+- Permet de <span v-mark.underline.gray="0">générer</span> de la doc propre, et même de la <span v-mark.underline.gray="0">traduire</span>.
+  - les agents IA ont <span v-mark.underline.gray="0">besoin</span> de doc propre pour les guider… 
+  - mais c'est aussi ce dont ont besoin les <span v-mark.underline.gray="0">contributeurs</span> pour vous aider !
+
+</template>
+
+</v-switch>
+
+
+
+
+<div class="color-gray"  style="font-size: .8em">
+
+Refs:
+
+- Peter Steinberger: [Introducing OpenClaw](https://openclaw.ai/blog/introducing-openclaw)
+
+</div>
+
+
+<!--
+- Clawdbot / Openclaw : assistant personnel qui fait tout pour vous en chattant avec lui sur whatsapp ou telegram. A
+Atention, c'est connecté à tous les services possibles internet, ça a toutes vos données personnelles, et vous lui avez donné accès à tout faire à votre place ! (EFFET !! what could go wrong ?)
+
+- Ecrire de la doc, c'est généralement ce que détestent les développeurs-euses, mais c'est aussi ce qui est le plus utile pour les utilisateurs et contributeurs.
+-->
+
+
 ---
 layout: quote
 ---
 
-<div style="display: flex; flex-direction: row; justify-content: space-between;">
-<div>
+
+<blockquote style="padding: 25px 30px">
+
+### La technologie n’est ni bonne ni mauvaise et elle n’est pas neutre.
+
+</blockquote>
+
+<div class="text-right color-gray">
+
+_Melvin Kranzberg_
+
+[Les six lois de la technologie de Melvin Kranzberg](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
+
+</div>
+
+<!--
+Rappelez-vous : l'IA générative c'est un outil comme un autre. Elle vous permettra de faire ce que vous en voulez, alors utilisez là a bon escient !
+-->
+
+---
+layout: quote
+---
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; height: 250px">
+
+<v-switch>
+<template #0>
+
+  <blockquote style="padding: 25px 30px">
+
+  # Le monde <span v-mark.underline.cyan="0">réel</span>
+
+  ## Si c'est <span v-mark.highlight.yellow="0">gratuit</span>, c'est toi le produit !
+
+  </blockquote>
+
+  <div class="text-right">
+&nbsp;
+  </div>
+
+</template>
+
+<template #1>
+  
   <blockquote style="padding: 25px 30px">
 
   # L'<span v-mark.underline.cyan="0">open-source</span>
 
-  ## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span> !
+  ## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span>* !
+
+  <p class="text-right" style="font-size: .8em"><br /> * sauf pour l'IA</p>
 
   </blockquote>
 
@@ -1200,18 +1433,22 @@ layout: quote
   _Julien D._
 
   </div>
-</div>
+
+</template>
+</v-switch>
+
+
 
 <div>
   Notez-moi sur openfeedback !
 
-  <img src="/qrcode.colored.svg" style="max-height: 200px; margin: 0 auto" />
+  <img src="/qrcode.touraine.svg" style="max-height: 200px; margin: 0 auto" />
 </div>
 </div>
 
 <!--
 
-Pour conclure, finalement, je crois que ce que je préfère dans l'open-source, c'est que c'est gratuit, et que ce n'est pas toi le produit.
+Pour conclure, finalement, je crois que ce que je préfère dans l'open-source, c'est que c'est gratuit, et que ce n'est pas toi le produit (sauf pour l'IA).
 
 Pistes de questions:
 
