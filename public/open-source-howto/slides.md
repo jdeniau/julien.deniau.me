@@ -1268,6 +1268,26 @@ layout: section
 <!--
 Je fais juste une petite appartiée sur l'IA générative et l'open-source.
 
+Vous connaissez peut-être…
+-->
+
+
+---
+layout: image
+image: /ai-dep.gif
+backgroundSize: contain
+class: flex flex-items-end flex-justify-end
+---
+
+<div class="color-neutral">
+
+&copy; unknown source
+
+</div>
+
+<!--
+…cette  image de xkcd revisitée
+
 Sur, l'IA, j'ai l'impression que le monde se divise en deux :
 - les optimistes super hypés par les possibilités
 - les pessimistes qui sont plutôt réfractaires à l'IA
@@ -1281,9 +1301,11 @@ layout: default
 <h1>L'IA c'est le mal 👿</h1>
 
 <ul>
-<li>Utilisation de <span v-mark.underline.gray="0">TOUT</span> le code open-source pour générer ses modèles</li>
-<li v-click="1">L'IA est utilisé à tord et à travers pour <span v-mark.underline.gray="0">remonter des bugs hallucinés</span></li>
-<li v-click="3">Beaucoup de gens "donnent" des issues à manger à copilot, mais le résultat n'est pas souvent bon.</li>
+<li>Utilisation de <span v-mark.underline.purple="0">TOUT</span> le code open-source pour générer ses modèles</li>
+<li v-click="1">L'IA est utilisé à tord et à travers pour remonter <span v-mark.underline.yellow="0">des bugs hallucinés</span></li>
+<li v-click="3">Beaucoup de gens "donnent" des issues à manger à copilot, mais le résultat n'est <span v-mark.underline.lime="0">pas souvent bon</span>.</li>
+<li v-click="4">L'IA <span v-mark.underline.red="0">tue</span> les projets (car les gens ne vont plus sur la doc !).</li>
+<li v-click="5">Vous n'allez <span v-mark.underline.orange="0">rien apprendre !</span>  (à part tester un outil payant)</li>
 </ul>
 
 <div v-click="1" class="color-gray"  style="font-size: .8em">
@@ -1298,7 +1320,7 @@ Refs:
   
   </template>
 
-  <template #2-4>
+  <template #2-6>
 
   - Daniel Stenberg : [The end of the curl bug-bounty](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
 
@@ -1312,13 +1334,21 @@ Refs:
 
 </div>
 
+<div  v-click="4">
+
+- [Tailwind CSS lays off 75% of engineering team as AI impacts revenue](https://github.com/tailwindlabs/tailwindcss.com/pull/2388?ref=ppc.land#issuecomment-3717222957)
+
+</div>
+
+
 </div>
 
 <!--
-- En même temps, c'est litéralement écrit dans la licence que vous accordez l'usage ! (sauf les licences plus strictes, comme AGPL)
+- En même temps, c'est litéralement écrit dans la licence que vous accordez l'usage ! (sauf les licences plus strictes, comme AGPL, mais est-ce respecté ?)
 - curl a arrêté son programme de "bounty hunt", car l'IA générait trop de faux positifs (20% des rapports de bugs venaient d'utilisations de l'IA). 
   Avant 2025, 15% des bugs reportés étaient confirmés. En 2025, c'est tombé a 5%.
 - Si c'était si simple, les mainteneurs n'auraient pas autant de mal a clore certaines issues. Une librairie open source doit rester maintenable, et l'IA fait pas vraiment ça.
+- Tailwind CSS a licencié 75% de son équipe d'ingénierie, le site officiel a perdu 40% de trafic depuis 2023, et du coup ne voient pas l'offre de support de tailwind (ils ont perdu 80% de revenus)
 -->
 
 ---
@@ -1326,7 +1356,9 @@ layout: default
 ---
 <h1>Oui mais l'IA c'est incroyable 🧙‍♂️</h1>
 
-- <span v-mark.underline.gray="0">Shipper vite</span> ! Ex: Clawbobot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
+- <span v-mark.underline.gray="0">Shipper vite</span> !
+
+  - Ex: Clawbobot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
 
 <v-switch>
 
@@ -1340,11 +1372,19 @@ layout: default
 
   </template>
 
-  <template #2>
+  <template #2-4>
 
-- Permet de <span v-mark.underline.gray="0">générer</span> de la doc propre, et même de la <span v-mark.underline.gray="0">traduire</span>.
+<ul style="list-style: square; margin-left: 1.3em">
+  <li><a href="https://transi-store.com">Transi-store.com</a> : projet open-source pour gérer les <span v-mark.underline.lime="0">traductions de vos applications</span>, bootstrapé avec Claude code, pour tester.</li>
+</ul>
+  
+</template>
+
+  <template #3>
+
+- Permet de générer de <span v-mark.underline.purple="0">la doc propre</span>, et même de la <span v-mark.underline.gray="0">traduire</span>.
   - les agents IA ont <span v-mark.underline.gray="0">besoin</span> de doc propre pour les guider… 
-  - mais c'est aussi ce dont ont besoin les <span v-mark.underline.gray="0">contributeurs</span> pour vous aider !
+  - mais c'est aussi ce dont ont besoin les <span v-mark.underline.cyan="0">contributeurs</span> pour vous aider !
 
 </template>
 
@@ -1365,6 +1405,8 @@ Refs:
 <!--
 - Clawdbot / Openclaw : assistant personnel qui fait tout pour vous en chattant avec lui sur whatsapp ou telegram. A
 Atention, c'est connecté à tous les services possibles internet, ça a toutes vos données personnelles, et vous lui avez donné accès à tout faire à votre place ! (EFFET !! what could go wrong ?)
+
+- Transi-store
 
 - Ecrire de la doc, c'est généralement ce que détestent les développeurs-euses, mais c'est aussi ce qui est le plus utile pour les utilisateurs et contributeurs.
 -->
