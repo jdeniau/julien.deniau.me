@@ -1476,6 +1476,8 @@ layout: quote
 
   </div>
 
+Retrouvez tous mes projets sur <a href="https://github.com/jdeniau">github.com/jdeniau</a>
+
 </template>
 </v-switch>
 
