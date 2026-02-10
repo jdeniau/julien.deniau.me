@@ -1123,26 +1123,95 @@ layout: section
 
 # <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants 🤝
 
----
-layout: section
----
-
-TODO parler d'open-source et IA 
 
 ---
-layout: default
+layout: image-right
+image: /new-issue.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
 ---
 
-# <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
+<h2>Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez</h2>
 
 
-TODO : découper cette slides en plein de slides, et mettre un gros point sur le point 2 où il faut aussi débuggez pour comprendre pour pouvoir contribuer ! (peut-être faire un clin d'oeil à Andres Freund)
 
-1. Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez,
-2. Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
-3. Proposez <span v-mark.underline.gray="0">des évolutions</span> que vous aimeriez,
-4. "<span v-mark.underline.gray="0">donner</span> plutôt que recevoir",
-5. Intégrer la <span v-mark.underline.gray="0">"core team"</span> (les mainteneurs).
+<!--
+Peu de chance d'avoir un bug corrigé si le mainteneur ne sait pas qu'il existe ! 
+-->
+
+---
+layout: image-right
+image: /create-pr.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !)</h2>
+
+<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+
+Refs:
+
+[PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
+
+</div>
+
+
+
+<!--
+il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
+
+pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
+-->
+
+---
+layout: image-right
+image: /new-discussion.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Proposez <span v-mark.underline.gray="0">des évolutions</span> que vous aimeriez</h2>
+
+
+
+<!--
+En accord avec la vision du mainteneur
+-->
+
+---
+layout: image-right
+image: /give-more.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>"<span v-mark.underline.gray="0">donner</span> plutôt que recevoir"</h2>
+
+
+<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+
+Refs:
+
+[Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
+
+
+</div>
+
+
+<!--
+Aidez les mainteneurs sur les issues ou les PRs
+-->
+
+---
+layout: image-right
+image: /org-invite.jpg
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Intégrez la <span v-mark.underline.gray="0">"core team"</span> (les mainteneurs)</h2>
+
 
 <v-click>
 
@@ -1159,22 +1228,10 @@ A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.co
 
 </v-click>
 
-<div class="color-gray">
 
-Refs:
-1. [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
-2. [PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
-
-</div>
 
 <!--
-1. Peu de chance d'avoir un bug corrigé si le mainteneur ne sait pas qu'il existe ! 
-2. il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
 
-    pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
-
-3. En accord avec la vision du mainteneur
-4. Aidez les mainteneurs sur les issues ou les PRs
 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
 
 
@@ -1358,7 +1415,7 @@ layout: default
 
 - <span v-mark.underline.gray="0">Shipper vite</span> !
 
-  - Ex: Clawbobot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
+  - Ex: Clawdbot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
 
 <v-switch>
 
@@ -1427,7 +1484,7 @@ layout: quote
 
 _Melvin Kranzberg_
 
-[Les six lois de la technologie de Melvin Kranzberg](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
+[Les six lois de la technologie](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
 
 </div>
 
@@ -1476,7 +1533,9 @@ layout: quote
 
   </div>
 
-Retrouvez tous mes projets sur <a href="https://github.com/jdeniau">github.com/jdeniau</a>
+<div class="flex flex-items-center">
+<img style="width: 1em; margin-right: 0.5em;" src="/social-github.svg" />  <a href="https://github.com/jdeniau">github.com/jdeniau</a>
+</div>
 
 </template>
 </v-switch>
