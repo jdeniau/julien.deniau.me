@@ -26,7 +26,6 @@ Aujourd'hui je vous propose de parler un peu d'open-source,
 
 Disclaimer : Cette présentation est un mélange de retour d'expérience personnelle, et du fruit de mes recherches sur le sujet.
 
-Comme 20 min de présentation c'est assez court, et que l'open-source, c'est assez vaste, j'ai mis des lien vers mes source que je ne peux que vous encourager à aller lire !
 -->
 
 
@@ -125,6 +124,20 @@ Vous connaissez peut-être cette image de xkcd ?
 
 L'open-source c'est un peu ça : des gens qui développent des briques que d'autres peuvent réutiliser comme ils veulent, généralement gratuitement, et en pouvant en modifier le code source.
 
+-->
+
+---
+layout: fact
+---
+
+# Open-source
+# ≠
+# Gratuit
+
+<!--
+Un logiciel open-source PEUT être gratuit (selon sa licence) mais ce n'est pas obligatoirement le cas.
+
+Un logiciel gratuit n'est pas forcément open-source (pas accès aux sources, ex. adobe reader)
 -->
 
 ---
@@ -298,7 +311,79 @@ Presque personne ne vie de l'écritusre de logiciel open-source. C'est un pource
 
 [click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin dre dire que c'est suffisant.
 
+payer le travail open source permettrait d'éviter ça :
 -->
+
+---
+layout: section
+---
+
+# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
+
+<img src="/XZ_logo_contributed_by_Jia_Tan.png" style="margin: 0 auto" />
+
+<!--
+En février 2024 , une faille de sécurité par porte dérobée a été injectée dans le code  de la libraire "XZ".
+
+C'est une libraire de compression de donnée, qui est notamment utilisée par OpenSSH et dans quasiment toutes les distributions Linux.
+
+Elle permettait à l'attaquant d'ignorer l'authentification et de se connecter à la machine cible.
+
+Ce qui est assez inédit c'est l'ampleur de la mise en place de la faille :
+
+L'auteur de la faille est une personne surnommé "Jia Tan" qui a contribué au projet pendant 3 ans, ce qui lui a permit d'obtenir la confiance du mainteneur.
+
+Mais ce mainteneur n'avait pas le temps suffisant pour faire évoluer XZ, et après une période de pression sur le mainteneur, ce dernier décide donc de passer Jia Tan co-mainteneur du projet, ce qui lui a permis de mettre à disposition une nouvelle version en injectant la faille de sécurité.
+-->
+
+---
+layout: section
+---
+
+# La faille <span v-mark.highlight.yellow="0">XZ Utils</span>
+
+<img src="/andres-freund.jpg" style="margin: 0 auto; height: 30vh" />
+
+
+<div class="color-neutral">
+
+Andres Freund
+
+</div>
+
+
+<!--
+Ce qui est tout autant inédit, c'est la façon dont la faille a été découverte :
+
+Un employé de Microsoft, mainteneur de PostgreSQL faisait du micro-benchmarking sur la dernière version de Debian, et s'est aperçu que des processus sshd consommaient étonnement beaucoup de CPU, et qu'il lui fallait une demi seconde dep lus pour se connecter en SSH. Une demi seconde... Quel est le pourcentage de personne qui s'inquiéterait de ça honnêtement ??
+
+En creusant, il a réussit a découvrir la faille et avertir les mainteneurs et RedHat et Debian.
+
+Cela aurait pu être l'attaque par porte dérobée la plus importante at la plus efficace au monde si elle n'avait pas été detectée, 
+et il a fallu d'ÉNORMES coincidences pour qu'elle soit détéctée.
+
+
+Apache Log4j a aussi connu une faille dans le genre https://fr.wikipedia.org/wiki/Log4Shell
+-->
+
+---
+layout: image
+image: /ffmpeg-vs-microsoft.png
+backgroundSize: contain
+style:
+  width: 70%
+  margin: 0 auto
+  border: 1px solid lightgray
+---
+
+
+<!--
+L'équipe en change de FFMpeg (l'outil de référence pour faire du traitement de vidéo) a aussi réagi sur le sujet en pointant du doigt le fait qu'une dépendance à un travail de volontaire non payé peut être risqué.
+
+Ils expliquent notamment que Microsoft, entreprise qui génère des milliards de dollards, et qui utilise FFMpeg dans le logiciel "Teams" a reporté des problèmes taggués comme "haute priorité" en attendant du support gratuit de volontaires.
+-->
+
+
 
 ---
 layout: section
@@ -318,6 +403,20 @@ layout: section
 ---
 # La notoriété ! 😎
 
+
+---
+layout: image
+image: /why-fame-and-glory.png
+backgroundSize: contain
+backgroundColor: black
+---
+
+<!--
+Petit questionnement à ma communauté.
+La première réponse que j'ai eu c'est ça : 
+
+Etant donnée que j'ai eu 5 réponses, cette réponse représente 20% des réponses, ce qui est assez énorme. Ca doit surement être vrai…
+-->
 
 
 ---
@@ -402,26 +501,29 @@ Ils ont créé le Zend Engine, le moteur qui fait PHP depuis PHP 4
 ---
 layout: quizz
 position: left
-image: /michael_dowling.png
-who: Michael Dowling
+image: /james-gosling.png
+who: James Gosling
 ---
 
 <v-click>
 
 <div>
   <div class="flex flex-items-center">
-    <img src="/guzzlephp.png" class="mr-5" /> 
+    <logos-java style="font-size: 3em;" class="mr-5" /> 
     <div>
-      Guzzle PHP
+      Java
       <div class="color-neutral">
-        (12 000 000 installations / mois)<br />
-        (~ 5 installations / seconde)
+        Un langage de programmation un peu utilisé.
       </div>
     </div>
   </div>
 </div>
 
 </v-click>
+
+<!--
+ un petit language de programmation qui a surtout permit la naissance de JavaScript ! :troll:
+-->
 
 ---
 layout: quizz
@@ -448,6 +550,71 @@ who: Jordan Walke
 </div>
 
 </v-click>
+
+---
+layout: quizz
+image: /all-4.png
+---
+
+<div class="flex flex-items-center">
+  Anders Hejlsberg ? 
+  
+<v-click>
+
+<div class="flex flex-items-center ml2">
+  <logos-typescript style="font-size: 1.5em;" class="mr-2" /> TypeScript
+</div>
+
+</v-click>
+
+</div>
+
+<div class="flex flex-items-center">
+  Guido Van Rossum ? 
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <logos-python style="font-size: 1em;" class="mr-2" /> Python
+</div>
+
+</v-after>
+
+</div>
+
+<div class="flex flex-items-center">
+  <!-- James Long ?  -->
+  Ondřej Mirtes ?
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <!-- <logos-prettier style="font-size: 1em;" class="mr-2" /> Prettier -->
+  <img src="/logo.phpstan.png" style="height: 1.2em" class="mr-2" /> PHPStan
+  <!-- <logos-phpstan style="font-size: 1em;" class="mr-2" /> PHPStan -->
+</div>
+
+</v-after>
+
+</div>
+
+<div class="flex flex-items-center">
+  Michael Widenius ? 
+  
+<v-after>
+
+<div class="flex flex-items-center ml2">
+  <logos-mysql style="font-size: 1em;" class="mr-2" /> MySQL
+</div>
+
+</v-after>
+
+</div>
+
+<!--
+Dans la liste des gens que vous avez vu, qui connaissait plus de 2 personnes ?
+-->
+
 
 ---
 layout: section
@@ -830,8 +997,8 @@ Pas de recette magique, sans ces ingrédients, peu de chance de succès :
 <v-click at="1">
 
 <div class="mt10 color-neutral">
-Refs:
 
+Refs:
 1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
 
 <v-click at="2">
@@ -882,7 +1049,7 @@ layout: default
 
 <v-click>
 
-- ink-tab : <span v-mark.underline.yellow="1">200</span> téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">600</span> téléchargements par semaine
 
 </v-click>
 <v-click>
@@ -919,19 +1086,30 @@ layout: quote
 <a href="https://xkcd.com/386/">Duty Calls - © xkcd</a>
 
 
+
+<!--
+(Ca ne vient pas de moi, je n'en suis pas du tout là)
+On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
+-->
+
+---
+layout: quote
+---
+
+<blockquote>
+<h2>
+Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">with a stranger</span> on the internet over <span v-mark.underline.orange="0">being present</span> at family dinners.
+</h2>
+</blockquote>
+
 <p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
 My Open Source Origin Story - 
 Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
 </a></p>
 
-
-<!--
-(Ca ne vient pas de moi, je n'en suis pas du tout là)
-On peut vite se laisser entrainer, voir maltraiter, par ses utilisateurs qui ne sont pas forcément toujours bienveillants
-
-Il y a un super article de Dominik "TkDodo" Dorfmeister (mainteneur de react-query) qui explique qu'il a parfois prioriser des discussions avec des inconnus sur internet plutôt que des repas de familles.
+<!-- 
+Dominik "TkDodo" Dorfmeister, le mainteneur de react-query, a publié un article de blog dans lequel il explique qu'il a parfois parfois priorisé des discussions avec des inconnus sur internet plutôt que des repas de familles.
 -->
-
 
 ---
 layout: section
@@ -945,17 +1123,95 @@ layout: section
 
 # <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants 🤝
 
+
 ---
-layout: default
+layout: image-right
+image: /new-issue.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
 ---
 
-# <span v-mark.highlight.yellow="0">Contribuez</span> à des projets existants
+<h2>Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez</h2>
 
-1. Rapportez les <span v-mark.underline.gray="0">bugs</span> que vous rencontrez,
-2. Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !), <sup>1, 2</sup>
-3. Proposez <span v-mark.underline.gray="0">des évolutions</span> que vous aimeriez,
-4. "<span v-mark.underline.gray="0">donner</span> plutôt que recevoir",
-5. Intégrer la <span v-mark.underline.gray="0">"core team"</span> (les mainteneurs).
+
+
+<!--
+Peu de chance d'avoir un bug corrigé si le mainteneur ne sait pas qu'il existe ! 
+-->
+
+---
+layout: image-right
+image: /create-pr.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !)</h2>
+
+<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+
+Refs:
+
+[PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
+
+</div>
+
+
+
+<!--
+il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
+
+pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
+-->
+
+---
+layout: image-right
+image: /new-discussion.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Proposez <span v-mark.underline.gray="0">des évolutions</span> que vous aimeriez</h2>
+
+
+
+<!--
+En accord avec la vision du mainteneur
+-->
+
+---
+layout: image-right
+image: /give-more.png
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>"<span v-mark.underline.gray="0">donner</span> plutôt que recevoir"</h2>
+
+
+<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+
+Refs:
+
+[Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
+
+
+</div>
+
+
+<!--
+Aidez les mainteneurs sur les issues ou les PRs
+-->
+
+---
+layout: image-right
+image: /org-invite.jpg
+backgroundSize: contain
+class: flex flex-col flex-items-center justify-center
+---
+
+<h2>Intégrez la <span v-mark.underline.gray="0">"core team"</span> (les mainteneurs)</h2>
+
 
 <v-click>
 
@@ -968,27 +1224,14 @@ layout: default
 
 <v-click>
 
-A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">22 000 000</span> téléchargements / semaine.
+A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.com/">immutable.js</a> : <span v-mark.underline.purple="2">30 000 000</span> téléchargements / semaine.
 
 </v-click>
 
-<div class="color-gray">
 
-Refs:
-
-1. [Awesome First PR Opportunities](https://github.com/MunGell/awesome-for-beginners)
-2. [PR faite sur sli.dev pendant la rédaction de cette présentation: "fix: prev might be undefined"](https://github.com/antfu/markdown-it-mdc/pull/7)
-
-</div>
 
 <!--
-1. Peu de chance d'avoir un bug corrigé si le mainteneur ne sait pas qu'il existe ! 
-2. il y a des projets qui ont des "issues" taggées "good first issue" ou "help wanted"
 
-    pendant la rédaction de ce talk où j'ai testé sli.dev, j'ai rencontré deux bugs, pour lesquels j'ai soumis des PRs
-
-3. En accord avec la vision du mainteneur
-4. Aidez les mainteneurs sur les issues ou les PRs
 5. Après beaucoup d'effort, vous passerez peut-être dans la "core team".
 
 
@@ -1039,7 +1282,7 @@ backgroundSize: contain
 >Et c'est très vite très <span v-mark.highlight.yellow="0">gratifiant</span></h1>
 
 <!--
-En plus de ça a titre perso, même si ça fait toujours peur d'être sur scène, c'est très gratifiant ensuite.
+En plus de ça a titre perso, même si ça fait toujours peur d'être sur scène, c'est très gratifiant et enrichissant ensuite, je vous assure !
 -->
 
 
@@ -1071,17 +1314,216 @@ C'est en tombant sur un blogpost d'une agence hongroise sur la migration de angu
 Il a présenté son retour d'expérience à blend web mix en 2015, et termine sa conférence en insistant sur le fait que si il n'était pas tombé sur cet article, jamais ils n'auraient envisagé d'utiliser cette techno.
 -->
 
+
+---
+layout: section
+---
+
+# Open-source et <span v-mark.highlight.yellow="0">IA Générative</span> 🤖
+
+
+<!--
+Je fais juste une petite appartiée sur l'IA générative et l'open-source.
+
+Vous connaissez peut-être…
+-->
+
+
+---
+layout: image
+image: /ai-dep.gif
+backgroundSize: contain
+class: flex flex-items-end flex-justify-end
+---
+
+<div class="color-neutral">
+
+&copy; unknown source
+
+</div>
+
+<!--
+…cette  image de xkcd revisitée
+
+Sur, l'IA, j'ai l'impression que le monde se divise en deux :
+- les optimistes super hypés par les possibilités
+- les pessimistes qui sont plutôt réfractaires à l'IA
+-->
+
+
+---
+layout: default
+---
+
+<h1>L'IA c'est le mal 👿</h1>
+
+<ul>
+<li>Utilisation de <span v-mark.underline.purple="0">TOUT</span> le code open-source pour générer ses modèles</li>
+<li v-click="1">L'IA est utilisé à tord et à travers pour remonter <span v-mark.underline.yellow="0">des bugs hallucinés</span></li>
+<li v-click="3">Beaucoup de gens "donnent" des issues à manger à copilot, mais le résultat n'est <span v-mark.underline.lime="0">pas souvent bon</span>.</li>
+<li v-click="4">L'IA <span v-mark.underline.red="0">tue</span> les projets (car les gens ne vont plus sur la doc !).</li>
+<li v-click="5">Vous n'allez <span v-mark.underline.orange="0">rien apprendre !</span>  (à part tester un outil payant)</li>
+</ul>
+
+<div v-click="1" class="color-gray"  style="font-size: .8em">
+
+Refs:
+
+<v-switch>
+
+  <template #1>
+
+  - Qui déjà ? : [The end of the curl bug-bounty](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
+  
+  </template>
+
+  <template #2-6>
+
+  - Daniel Stenberg : [The end of the curl bug-bounty](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
+
+</template>
+
+</v-switch>
+
+<div  v-click="3">
+
+- François Best : [« The problem with adding "help wanted" issues on @github.com is that people just feed those to their agent, and loop over PR review comments like drones 🫠 »](https://bsky.app/profile/did:plc:rfoxp4hc5fgthjfaaigyw3c2/post/3m7f3mw55fk2s?ref_src=embed&ref_url=https%253A%252F%252Ftylur.blog%252Fharmful-prs%252F)
+
+</div>
+
+<div  v-click="4">
+
+- [Tailwind CSS lays off 75% of engineering team as AI impacts revenue](https://github.com/tailwindlabs/tailwindcss.com/pull/2388?ref=ppc.land#issuecomment-3717222957)
+
+</div>
+
+
+</div>
+
+<!--
+- En même temps, c'est litéralement écrit dans la licence que vous accordez l'usage ! (sauf les licences plus strictes, comme AGPL, mais est-ce respecté ?)
+- curl a arrêté son programme de "bounty hunt", car l'IA générait trop de faux positifs (20% des rapports de bugs venaient d'utilisations de l'IA). 
+  Avant 2025, 15% des bugs reportés étaient confirmés. En 2025, c'est tombé a 5%.
+- Si c'était si simple, les mainteneurs n'auraient pas autant de mal a clore certaines issues. Une librairie open source doit rester maintenable, et l'IA fait pas vraiment ça.
+- Tailwind CSS a licencié 75% de son équipe d'ingénierie, le site officiel a perdu 40% de trafic depuis 2023, et du coup ne voient pas l'offre de support de tailwind (ils ont perdu 80% de revenus)
+-->
+
+---
+layout: default
+---
+<h1>Oui mais l'IA c'est incroyable 🧙‍♂️</h1>
+
+- <span v-mark.underline.gray="0">Shipper vite</span> !
+
+  - Ex: Clawdbot / Openclaw - codé en un week-end avec Claude Code, publié en open-source, 150 000 ⭐ sur Github.
+
+<v-switch>
+
+  <template #1>
+
+  <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none;">
+
+  <img src="/fire-bomb.gif" width="60%" />
+
+  </div>
+
+  </template>
+
+  <template #2-4>
+
+<ul style="list-style: square; margin-left: 1.3em">
+  <li><a href="https://transi-store.com">Transi-store.com</a> : projet open-source pour gérer les <span v-mark.underline.lime="0">traductions de vos applications</span>, bootstrapé avec Claude code, pour tester.</li>
+</ul>
+  
+</template>
+
+  <template #3>
+
+- Permet de générer de <span v-mark.underline.purple="0">la doc propre</span>, et même de la <span v-mark.underline.gray="0">traduire</span>.
+  - les agents IA ont <span v-mark.underline.gray="0">besoin</span> de doc propre pour les guider… 
+  - mais c'est aussi ce dont ont besoin les <span v-mark.underline.cyan="0">contributeurs</span> pour vous aider !
+
+</template>
+
+</v-switch>
+
+
+
+
+<div class="color-gray"  style="font-size: .8em">
+
+Refs:
+
+- Peter Steinberger: [Introducing OpenClaw](https://openclaw.ai/blog/introducing-openclaw)
+
+</div>
+
+
+<!--
+- Clawdbot / Openclaw : assistant personnel qui fait tout pour vous en chattant avec lui sur whatsapp ou telegram. A
+Atention, c'est connecté à tous les services possibles internet, ça a toutes vos données personnelles, et vous lui avez donné accès à tout faire à votre place ! (EFFET !! what could go wrong ?)
+
+- Transi-store
+
+- Ecrire de la doc, c'est généralement ce que détestent les développeurs-euses, mais c'est aussi ce qui est le plus utile pour les utilisateurs et contributeurs.
+-->
+
+
 ---
 layout: quote
 ---
 
-<div style="display: flex; flex-direction: row; justify-content: space-between;">
-<div>
+
+<blockquote style="padding: 25px 30px">
+
+### La technologie n’est ni bonne ni mauvaise et elle n’est pas neutre.
+
+</blockquote>
+
+<div class="text-right color-gray">
+
+_Melvin Kranzberg_
+
+[Les six lois de la technologie](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
+
+</div>
+
+<!--
+Rappelez-vous : l'IA générative c'est un outil comme un autre. Elle vous permettra de faire ce que vous en voulez, alors utilisez là a bon escient !
+-->
+
+---
+layout: quote
+---
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; height: 250px">
+
+<v-switch>
+<template #0>
+
+  <blockquote style="padding: 25px 30px">
+
+  # Le monde <span v-mark.underline.cyan="0">réel</span>
+
+  ## Si c'est <span v-mark.highlight.yellow="0">gratuit</span>, c'est toi le produit !
+
+  </blockquote>
+
+  <div class="text-right">
+&nbsp;
+  </div>
+
+</template>
+
+<template #1>
+  
   <blockquote style="padding: 25px 30px">
 
   # L'<span v-mark.underline.cyan="0">open-source</span>
 
-  ## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span> !
+  ## C'est gratuit, et c'est <span v-mark.highlight.yellow="0">**pas** toi le produit</span>* !
+
+  <p class="text-right" style="font-size: .8em"><br /> * sauf pour l'IA</p>
 
   </blockquote>
 
@@ -1090,18 +1532,26 @@ layout: quote
   _Julien D._
 
   </div>
+
+<div class="flex flex-items-center">
+<img style="width: 1em; margin-right: 0.5em;" src="/social-github.svg" />  <a href="https://github.com/jdeniau">github.com/jdeniau</a>
 </div>
+
+</template>
+</v-switch>
+
+
 
 <div>
   Notez-moi sur openfeedback !
 
-  <img src="/qrcode.colored.svg" style="max-height: 200px; margin: 0 auto" />
+  <img src="/qrcode.touraine.svg" style="max-height: 200px; margin: 0 auto" />
 </div>
 </div>
 
 <!--
 
-Pour conclure, finalement, je crois que ce que je préfère dans l'open-source, c'est que c'est gratuit, et que ce n'est pas toi le produit.
+Pour conclure, finalement, je crois que ce que je préfère dans l'open-source, c'est que c'est gratuit, et que ce n'est pas toi le produit (sauf pour l'IA).
 
 Pistes de questions:
 
