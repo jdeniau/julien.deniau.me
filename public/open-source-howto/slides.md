@@ -47,6 +47,17 @@ backgroundSize: contain
     margin: 0 10px 0 0;
     width: 1em;
   }
+
+ .refs {
+    margin-top: 2rem;
+    color: #aaa;
+    font-size: 0.8em;
+  }
+
+  .refs p {
+    margin: 0 0;
+  }
+  
 </style>
 
 # Qui suis-je ?
@@ -176,7 +187,7 @@ Je suis très content qu'une personne maintienne ce fameux package depuis le Neb
 <style>
   </style>
 
-<div class="grid grid-cols-2" style="margin-top: 2rem; font-size: 2rem; height: 280px">
+<div class="grid grid-cols-2" style="margin-top: 2rem; font-size: 2rem; height: 200px">
 
 <figure class="flex flex-col flex-items-center">💰 <figcaption>coût</figcaption></figure>
 <figure class="flex flex-col flex-items-center">⛓️‍💥 <figcaption>non-dépendance</figcaption></figure>
@@ -185,13 +196,22 @@ Je suis très content qu'une personne maintienne ce fameux package depuis le Neb
 
 </div>
 
+
+<div class="refs">
+
+Refs :
+
+- [The Storybook Story](https://storybook.js.org/blog/the-storybook-story/)
+- [Proton Pass is open source and audited for security](https://proton.me/blog/pass-open-source-security-audit)
+
+</div>
+
 <!--
 - Le coût est toujours sensiblement moins élevé que les solutions propriétaires
 - pas de "vendor lock-in" ("enfermement propriétaire" en français) (machine à café + capsules)
-- si une solution open-source meurt, ça sera d'une mort lente, comparé à une entreprise
+- si une solution open-source meurt, ça sera d'une mort lente, comparé à une entreprise. revivre de ses cendres ? (storybook par Kadira au Sri Lanka)
 - source libre = tout le monde peut auditer le code et remonter les failles de sécurité. (tous les algo de sécurité actuels sont open-sources, proton pass ou bitwarden sont open source)
 
-<i>Objectif temps fin : 2 min 30</i>
 -->
 
 
@@ -272,10 +292,11 @@ it’s <span v-mark.underline.orange="0">so few</span> we can basically round do
 </h2>
 </blockquote>
 
-  <p><a href="https://jacobian.org/2024/feb/16/paying-maintainers-is-good/">
-  Paying people to work on open source is good actually - 
-  Jacob Kaplan-Moss
-  </a></p>
+  <p class="refs">
+    
+[Paying people to work on open source is good actually - Jacob Kaplan-Moss](https://jacobian.org/2024/feb/16/paying-maintainers-is-good/)
+
+  </p>
 
 <v-click>
 
@@ -312,6 +333,9 @@ Presque personne ne vie de l'écritusre de logiciel open-source. C'est un pource
 [click] Il y a quelques initiatives qui vont dans le bon sens, mais on est quand même très loin dre dire que c'est suffisant.
 
 payer le travail open source permettrait d'éviter ça :
+
+<i style="color: darkgreen">Objectif temps: 5 min</i>
+
 -->
 
 ---
@@ -394,6 +418,8 @@ layout: section
 Vraiment pas pour les petits projets.
 
 Globalement, il vaut mieux travailler en tant que salarié ou faire du free-lance !
+
+<i style="color: darkgreen">Objectif temps: 10 min</i>
 -->
 
 
@@ -430,7 +456,6 @@ layout: fact
 <!--
 Petit quizz : levez la main si vous connaissez…
 
-<i>Objectif temps : 3 min 30</i>
 -->
 
 ---
@@ -632,7 +657,8 @@ Bon vous êtes un public plutôt averti. Maintenant faire le même quizz a votre
 
 J'ai mis plutôt des gens de l'univers PHP, mais est-ce que vous auriez été aussi bon sur l'univers Java, ou Python ?
 
-<i>Objectif temps : 7 min</i>
+<i style="color: darkgreen">Objectif temps: 13 min</i>
+
 -->
 
 ---
@@ -691,6 +717,8 @@ On a cela dit moins d'info pour comparer.
 C'est une autre façon de vous connaitre (en plus de votre CV et des entretiens), ça permet d'annexer votre CV.
 
 Potentiellement, si vous contribuez sur un package que l'entreprise utilise, c'est un "match" direct.
+
+Conf. de ce matin de "Hugo Massing" : "Valoriser sans survendre"
 -->
 
 ---
@@ -779,6 +807,10 @@ layout: section
 
 # <span v-mark.highlight.yellow="0">Reconnaissance</span><br /> des utilisateurs ? 😘
 
+<!--
+<i style="color: darkgreen">Objectif temps: 18 min</i>
+-->
+
 ---
 layout: quote
 clicks: 1
@@ -817,7 +849,6 @@ style:
 <!--
 Mais je ne suis pas le seul. François Zaninotto, créateur de FakerPHP, est aussi toujours refait quand il reçoit des messages de remerciement.
 
-<i>Objectif temps : 10 min</i>
 -->
 
 
@@ -871,7 +902,6 @@ layout: section
 <!--
 # PAUSE !!!
 
-<i>Objectif temps: 13 min</i>
 -->
 
 ---
@@ -946,7 +976,7 @@ layout: quote
   <h2>C'est un <span v-mark.highlight.yellow="0">side-project</span> pour vous "amuser", en assumant que vous ne gagnerez <span v-mark.underline.red="0">pas d'argent</span> dessus.</h2>
 </blockquote>
 
-<div class="text-right">
+<div class="text-right color-gray">
   
 _L'open-source, par Julien D._
 
@@ -959,7 +989,7 @@ layout: section
 # Les <span v-mark.highlight.yellow="0">clés</span> du succès 📈
 
 <!--
-<i>Objectif temps: 15 min</i>
+<i style="color: darkgreen">Objectif temps: 23 min</i>
 -->
 
 ---
@@ -996,7 +1026,7 @@ Pas de recette magique, sans ces ingrédients, peu de chance de succès :
 
 <v-click at="1">
 
-<div class="mt10 color-neutral">
+<div class="refs">
 
 Refs:
 1. Thomas JARRAND: [Comment (enfin) sortir vos side projects](https://youtu.be/DCudohbJ6gU)
@@ -1072,7 +1102,6 @@ layout: quote
 (mais ce n'est <span v-mark.underline.cyan="0">pas un but en soit</span>)
 
 <!--
-<i>Objectif temps: 18 min</i>
 -->
 
 ---
@@ -1083,7 +1112,12 @@ layout: quote
 
 <img src="/duty_calls.png" style="max-height: 38vh; margin: 10px auto" />
 
-<a href="https://xkcd.com/386/">Duty Calls - © xkcd</a>
+<div class="refs">
+
+[Duty Calls - © xkcd](https://xkcd.com/386/)
+
+
+</div>
 
 
 
@@ -1102,10 +1136,17 @@ Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">
 </h2>
 </blockquote>
 
-<p><a href="https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source">
-My Open Source Origin Story - 
+<div class="text-right color-gray">
+
 Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
-</a></p>
+
+</div>
+
+<div class="refs">
+
+[My Open Source Origin Story](https://tkdodo.eu/blog/my-open-source-origin-story#the-dark-side-of-open-source)
+
+</div>
 
 <!-- 
 Dominik "TkDodo" Dorfmeister, le mainteneur de react-query, a publié un article de blog dans lequel il explique qu'il a parfois parfois priorisé des discussions avec des inconnus sur internet plutôt que des repas de familles.
@@ -1116,6 +1157,10 @@ layout: section
 ---
 
 # L'open-source, <br /> ce n'est <span v-mark.highlight.yellow="0">pas que créer</span> un projet
+
+<!--
+<i style="color: darkgreen">Objectif temps: 28 min</i>
+-->
 
 ---
 layout: section
@@ -1148,7 +1193,7 @@ class: flex flex-col flex-items-center justify-center
 
 <h2>Mieux : <span v-mark.underline.gray="0">corrigez</span> les bugs que vous rencontrez (et soumettez des PRs !)</h2>
 
-<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+<div class="refs" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
 
 Refs:
 
@@ -1189,7 +1234,7 @@ class: flex flex-col flex-items-center justify-center
 <h2>"<span v-mark.underline.gray="0">donner</span> plutôt que recevoir"</h2>
 
 
-<div class="color-gray" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
+<div class="refs" style="position: absolute; bottom: 1em; left: 1em; width: calc(50% - 2em)">
 
 Refs:
 
@@ -1249,13 +1294,13 @@ layout: section
 
 # <span v-mark.highlight.yellow="0">Participer</span> à des meet-up et conférences 🎙️
 
-### Combattez votre syndrôme de l'imposteur ! <sup>1</sup>
+### Combattez votre syndrôme de l'imposteur !
 
 <br />
 
-<div class="color-gray text-right" style="font-size: .7em">
+<div class="refs text-left">
 
-&nbsp;1. Mathieu Mure: [Le leader imposteur](https://tech.bedrockstreaming.com/le-leader-imposteur)
+Mathieu Mure: [Le leader imposteur](https://tech.bedrockstreaming.com/le-leader-imposteur)
 
 </div>
 
@@ -1326,6 +1371,9 @@ layout: section
 Je fais juste une petite appartiée sur l'IA générative et l'open-source.
 
 Vous connaissez peut-être…
+
+
+<i style="color: darkgreen">Objectif temps: 35 min</i>
 -->
 
 
@@ -1365,7 +1413,7 @@ layout: default
 <li v-click="5">Vous n'allez <span v-mark.underline.orange="0">rien apprendre !</span>  (à part tester un outil payant)</li>
 </ul>
 
-<div v-click="1" class="color-gray"  style="font-size: .8em">
+<div v-click="1" class="refs">
 
 Refs:
 
@@ -1450,7 +1498,7 @@ layout: default
 
 
 
-<div class="color-gray"  style="font-size: .8em">
+<div class="refs">
 
 Refs:
 
@@ -1484,7 +1532,11 @@ layout: quote
 
 _Melvin Kranzberg_
 
-[Les six lois de la technologie](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
+</div>
+
+<div class="refs">
+
+Ref: [Les six lois de la technologie](https://siecledigital.fr/2017/12/04/6-lois-scientifiques-technologie-comprendre-ecosysteme/)
 
 </div>
 
