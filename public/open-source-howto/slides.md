@@ -292,11 +292,11 @@ it’s <span v-mark.underline.orange="0">so few</span> we can basically round do
 </h2>
 </blockquote>
 
-  <p class="refs">
+<div class="refs">
     
 [Paying people to work on open source is good actually - Jacob Kaplan-Moss](https://jacobian.org/2024/feb/16/paying-maintainers-is-good/)
 
-  </p>
+</div>
 
 <v-click>
 
@@ -1079,12 +1079,12 @@ layout: default
 
 <v-click>
 
-- ink-tab : <span v-mark.underline.yellow="1">600</span> téléchargements par semaine
+- ink-tab : <span v-mark.underline.yellow="1">1 000</span> téléchargements par semaine
 
 </v-click>
 <v-click>
 
-- prettier-plugin-gherkin : <span v-mark.underline.orange="2">50 000</span> téléchargements par semaine (et ça monte !)
+- prettier-plugin-gherkin : <span v-mark.underline.orange="2">100 000</span> téléchargements par semaine (et ça monte !)
 
 </v-click>
 <v-click>
@@ -1138,7 +1138,7 @@ Sometimes, I prioritized discussing something <span v-mark.underline.orange="0">
 
 <div class="text-right color-gray">
 
-Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
+Dominik "TkDodo" Dorfmeister, mainteneur de (tanstack) react-query
 
 </div>
 
@@ -1149,7 +1149,7 @@ Dominik "TkDodo" Dorfmeister (mainteneur de react-query)
 </div>
 
 <!-- 
-Dominik "TkDodo" Dorfmeister, le mainteneur de react-query, a publié un article de blog dans lequel il explique qu'il a parfois parfois priorisé des discussions avec des inconnus sur internet plutôt que des repas de familles.
+Dominik "TkDodo" Dorfmeister, le mainteneur de react-query / tanstack query, a publié un article de blog dans lequel il explique qu'il a parfois parfois priorisé des discussions avec des inconnus sur internet plutôt que des repas de familles.
 -->
 
 ---
@@ -1284,8 +1284,10 @@ A titre personnel, je suis devenu mainteneur de <a href="https://immutable-js.co
 
 Vous travaillerez sur des projets surement beaucoup impactants que vos projets perso.
 
-[click] Pour rappel, le top projet Mapado c'est haversine à 600 000 / semaine puis le plugin prettier à 50 000 / semaine.
-ça fait environ 30 téléchargements par seconde. Autant vous dire que quand je dois faire un release, je serre bien les fesses.
+[click] Pour rappel, le top projet Mapado c'est haversine à 600 000 / semaine puis le plugin prettier à 100 000 / semaine.
+ça fait environ 30 téléchargements par seconde. 
+Depuis le début du talk : 50 000 téléchargements.
+Autant vous dire que quand je dois faire un release, je serre bien les fesses.
 -->
 
 ---
@@ -1508,8 +1510,8 @@ Refs:
 
 
 <!--
-- Clawdbot / Openclaw : assistant personnel qui fait tout pour vous en chattant avec lui sur whatsapp ou telegram. A
-Atention, c'est connecté à tous les services possibles internet, ça a toutes vos données personnelles, et vous lui avez donné accès à tout faire à votre place ! (EFFET !! what could go wrong ?)
+- Clawdbot / Openclaw : assistant personnel qui fait tout pour vous en chattant avec lui sur whatsapp ou telegram. 
+Attention, c'est connecté à tous les services possibles internet, ça a toutes vos données personnelles, et vous lui avez donné accès à tout faire à votre place ! (EFFET !! what could go wrong ?)
 
 - Transi-store
 
@@ -1541,7 +1543,11 @@ Ref: [Les six lois de la technologie](https://siecledigital.fr/2017/12/04/6-lois
 </div>
 
 <!--
-Rappelez-vous : l'IA générative c'est un outil comme un autre. Elle vous permettra de faire ce que vous en voulez, alors utilisez là a bon escient !
+Rappelez-vous : l'IA générative c'est un outil comme un autre. 
+
+Pour citer Melvin Kranzbert : "la technologie n'est ni bonne, ni mauvaise, et elle n'est pas (non plus) neutre", 
+
+alors utilisez là a bon escient !
 -->
 
 ---
@@ -1602,6 +1608,8 @@ layout: quote
 </div>
 
 <!--
+Le monde réel = si c'est gratuit, c'est toi le produit
+
 
 Pour conclure, finalement, je crois que ce que je préfère dans l'open-source, c'est que c'est gratuit, et que ce n'est pas toi le produit (sauf pour l'IA).
 
