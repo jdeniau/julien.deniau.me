@@ -3,5 +3,15 @@
     "env": {
       "ENABLE_FILE_SYSTEM_API": "1"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "open-source-howto/dist/(.*)",
+      "destination": "open-source-howto/dist/index.html"
+    },
+    {
+      "source": "open-source-howto/(.*)",
+      "destination": "open-source-howto/dist/index.html"
+    }
+  ]
 }
