@@ -12,12 +12,11 @@ import { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import cn from 'classnames';
 
-type NavItems = Array<[string, string, string?]>;
+type NavItems = Array<[string, string]>;
 const NAV_ITEMS: NavItems = [
   ['intro', 'Welcome'],
   ['blog', 'Blog'],
   ['talks', 'My talks'],
-  ['github', 'GitHub', 'https://github.com/jdeniau'],
 ];
 
 export const meta: MetaFunction = () => {
@@ -62,12 +61,10 @@ function Nav({ items, prefix, onClick }: NavProps): JSX.Element {
   return (
     <nav id="nav">
       <ul>
-        {items.map(([href, label, external], index) => (
+        {items.map(([href, label], index) => (
           <li key={href}>
             <Link
-              to={external ?? `${prefix}#${href}`}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener' : undefined}
+              to={`${prefix}#${href}`}
               onClick={onClick}
               className={cn(index === 0 && 'active')}
             >

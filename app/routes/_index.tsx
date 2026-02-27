@@ -24,14 +24,11 @@ export const loader: LoaderFunction = async () => {
         title: 'Open-source : pourquoi ? comment ? (in french)',
         url: '/open-source-howto/dist/',
         urlText: 'Slides',
-        image: '/images/open-source-howto.png',
-        description:
-          "Vous souhaitez faire de l'open source, mais vous ne savez pas vraiment comment faire ? D'ailleurs, à quoi ça sert vraiment l'open-source ? Pourquoi est-ce qu'on en ferait ? Qu'est-ce qu'on y gagne vraiment ?",
       },
       {
         title:
           "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires (in french)",
-        image: '/images/World_Time_Zones.png',
+        image: '/timezones/images/World_Time_Zones_Map.png',
         url: 'https://mixitconf.org/2023/tout-ce-que-vous-n-avez-jamais-voulu-savoir-sur-les-fuseaux-horaires',
         urlText: 'Vidéo',
         secondaryUrl: '/timezones/',
