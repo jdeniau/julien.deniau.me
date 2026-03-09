@@ -132,8 +132,8 @@ export default function App() {
               <Link to="/">Julien Deniau</Link>
             </h1>
             <p>
-              I am a french web developer <br />
-              and sometimes, I talk about things.
+              I am a french web developer, open-source enthusiast, speaker, and
+              blogger.
             </p>
           </header>
           <Nav

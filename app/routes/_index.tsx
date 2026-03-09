@@ -22,11 +22,13 @@ export const loader: LoaderFunction = async () => {
     talks: [
       {
         title: 'Open-source : pourquoi ? comment ? (in french)',
-        url: '/open-source-howto/dist/',
-        urlText: 'Slides',
         image: '/images/open-source-howto.png',
         description:
           "Vous souhaitez faire de l'open source, mais vous ne savez pas vraiment comment faire ? D'ailleurs, à quoi ça sert vraiment l'open-source ? Pourquoi est-ce qu'on en ferait ? Qu'est-ce qu'on y gagne vraiment ?",
+        url: 'https://youtu.be/6BM_71gtano?si=4MbrDR3nK41ZvmAe',
+        urlText: 'Vidéo',
+        secondaryUrl: '/open-source-howto/dist/',
+        secondaryUrlText: 'Slides',
       },
       {
         title:
@@ -119,6 +121,11 @@ export default function Index() {
         <div className="container">
           <header className="major">
             <h2>Julien Deniau</h2>
+
+            <p>
+              I am a french web developer, open-source enthusiast, speaker, and
+              blogger.
+            </p>
             {/*
             <p>
               Just an incredibly simple responsive site
