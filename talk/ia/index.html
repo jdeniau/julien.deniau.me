@@ -1,0 +1,1407 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>L'IA et le développement : entre hype et réalité</title>
+
+    <style>
+      .highlight-orange {
+        color: #f88224;
+      }
+      .highlight-purple {
+        color: #8877d4;
+      }
+      .highlight-pink {
+        color: #df57bc;
+      }
+      .highlight-green {
+        color: #0de07d;
+      }
+      .highlight-red {
+        color: #ff4444;
+      }
+      .highlight-blue {
+        color: #44aaff;
+      }
+
+      .small {
+        font-size: 0.5em;
+      }
+
+      .medium {
+        font-size: 0.7em;
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .social .icon {
+        margin: 0 10px 0 0;
+        width: 1em;
+      }
+
+      blockquote {
+        padding: 20px 30px;
+        border-left: 4px solid #f88224;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .two-columns {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .two-columns > * {
+        flex: 1;
+      }
+
+      .stat-big {
+        font-size: 3em;
+        font-weight: bold;
+        color: #f88224;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .stat-label {
+        font-size: 0.6em;
+        color: #ccc;
+      }
+
+      .emoji-big {
+        font-size: 3em;
+      }
+
+      .source {
+        font-size: 0.35em;
+        color: #888;
+        margin-top: 20px;
+      }
+
+      .bar-chart {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+        justify-content: center;
+        height: 300px;
+        margin: 20px auto;
+      }
+
+      .bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 80px;
+      }
+
+      .bar-fill {
+        width: 100%;
+        background: linear-gradient(to top, #f88224, #df57bc);
+        border-radius: 4px 4px 0 0;
+        min-height: 10px;
+        transition: height 0.8s ease-out;
+      }
+
+      .bar-label {
+        font-size: 0.5em;
+        margin-top: 8px;
+        color: #ccc;
+      }
+
+      .bar-value {
+        font-size: 0.6em;
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+
+      .timeline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin: 40px 0;
+      }
+
+      .timeline-item {
+        text-align: center;
+        padding: 0 15px;
+        position: relative;
+      }
+
+      .timeline-item::after {
+        content: '→';
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #f88224;
+        font-size: 1.2em;
+      }
+
+      .timeline-item:last-child::after {
+        content: '';
+      }
+
+      .timeline-year {
+        font-size: 0.8em;
+        color: #f88224;
+        font-weight: bold;
+      }
+
+      .timeline-label {
+        font-size: 0.5em;
+        color: #ccc;
+      }
+
+      .pros-cons {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+      }
+
+      .pros-cons > div {
+        flex: 1;
+        max-width: 45%;
+      }
+
+      .pros-cons h3 {
+        margin-bottom: 10px;
+      }
+
+      .pros-cons ul {
+        font-size: 0.7em;
+        text-align: left;
+      }
+
+      .code-comparison {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .code-comparison pre {
+        flex: 1;
+        font-size: 0.4em !important;
+      }
+
+      .warning-box {
+        background: rgba(255, 68, 68, 0.1);
+        border: 2px solid #ff4444;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 80%;
+      }
+
+      .success-box {
+        background: rgba(13, 224, 125, 0.1);
+        border: 2px solid #0de07d;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 80%;
+      }
+
+      .checklist {
+        text-align: left;
+        font-size: 0.8em;
+        list-style: none;
+        padding: 0;
+      }
+
+      .checklist li {
+        padding: 5px 0;
+      }
+
+      .checklist li::before {
+        content: '✅ ';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- ============================================ -->
+        <!-- SLIDE 1 : Titre -->
+        <!-- ============================================ -->
+        <section>
+          <div style="max-width: 600px; margin: 0 auto">
+            <h2 class="r-fit-text">L'IA</h2>
+            <h2 class="r-fit-text">ET LE DÉVELOPPEMENT</h2>
+            <h2 class="r-fit-text" style="color: #f88224">
+              ENTRE HYPE ET RÉALITÉ
+            </h2>
+          </div>
+
+          <aside class="notes">
+            Bonjour à tous ! Aujourd'hui on va parler d'un sujet qui est
+            absolument partout : l'IA dans le développement logiciel. C'est un
+            sujet qui divise, qui passionne, et qui surtout évolue à une vitesse
+            folle. On va essayer de démêler le vrai du faux, de regarder ce qui
+            marche vraiment, ce qui pose problème, et comment on s'adapte
+            concrètement.
+          </aside>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 2 : Qui suis-je -->
+        <!-- ============================================ -->
+        <section>
+          <h2>Julien Deniau</h2>
+          <div class="social">
+            <span class="icon">🐙</span>
+            <span>github.com/jdeniau</span>
+          </div>
+          <div class="social">
+            <span class="icon">🌐</span>
+            <span>julien.deniau.me</span>
+          </div>
+
+          <aside class="notes">
+            Je suis Julien Deniau, développeur depuis plus de 15 ans. J'utilise
+            l'IA au quotidien depuis maintenant un bon moment, et j'ai envie de
+            partager avec vous ce que j'ai observé, lu, et expérimenté.
+          </aside>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 3 : La promesse -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">LA PROMESSE</h1>
+            <h3 class="fragment" style="color: #f88224">
+              « L'IA va coder à notre place »
+            </h3>
+
+            <aside class="notes">
+              On commence par la promesse. On nous vend l'idée que l'IA va coder
+              à notre place. Que les développeurs vont être remplacés. Que
+              n'importe qui va pouvoir créer des applications sans savoir coder.
+              C'est le fameux "vibe coding".
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 4 : Les chiffres impressionnants -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Des chiffres impressionnants</h2>
+
+            <div class="two-columns">
+              <div>
+                <p class="stat-big">97%</p>
+                <p class="stat-label">
+                  des développeurs utilisent<br />des outils IA
+                </p>
+              </div>
+              <div>
+                <p class="stat-big">+25%</p>
+                <p class="stat-label">
+                  de code pushé en plus<br />sur GitHub en 2024
+                </p>
+              </div>
+            </div>
+
+            <p class="source">Source : GitHub Octoverse 2024</p>
+
+            <aside class="notes">
+              Les chiffres parlent d'eux-mêmes. Selon GitHub Octoverse 2024, 97%
+              des développeurs utilisent des outils d'IA de manière régulière ou
+              occasionnelle. Et on a vu +25% de code pushé en plus sur GitHub en
+              un an. Le Python a dépassé JavaScript comme langage le plus
+              utilisé, en partie grâce à l'IA et la data science.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 5 : L'explosion des outils -->
+          <!-- ============================================ -->
+          <section>
+            <h2>L'explosion des outils</h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-label">Copilot</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2023</div>
+                <div class="timeline-label">ChatGPT / GPT-4</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-label">
+                  Claude 3.5<br />Cursor / Windsurf
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-label">
+                  Claude Code<br />Copilot Agent
+                </div>
+              </div>
+            </div>
+
+            <aside class="notes">
+              En quelques années, on est passé de "l'autocomplétion un peu
+              améliorée" à des agents autonomes qui peuvent gérer des PR
+              complètes. L'évolution est vertigineuse. On a Copilot en 2022, les
+              LLM généralistes en 2023, les IDE augmentés comme Cursor en 2024,
+              et les agents autonomes en 2025 avec Claude Code, Copilot Coding
+              Agent, etc.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 6 : Claude Code écrit son propre code -->
+          <!-- ============================================ -->
+          <section>
+            <blockquote>
+              « Claude Code écrit 90% de son propre code »
+            </blockquote>
+            <p class="fragment highlight-orange">
+              L'IA qui s'auto-améliore ? 🤯
+            </p>
+
+            <aside class="notes">
+              Anthropic a annoncé que Claude Code écrit 90% de son propre code.
+              C'est impressionnant, mais ça pose des questions. Est-ce que c'est
+              vraiment bien ? On va voir que la réponse est nuancée. Car le fait
+              de pouvoir générer du code ne signifie pas que ce code est bon, ni
+              maintenable, ni sécurisé.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 7 : Section - Le code IA ça marche mais... -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">ÇA MARCHE</h1>
+            <h1 class="r-fit-text" style="color: #ff4444">MAIS…</h1>
+
+            <aside class="notes">
+              OK, l'IA génère du code. Ça compile. Les tests passent parfois.
+              Mais quand on regarde de plus près…
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 8 : 19 000 lignes de code IA -->
+          <!-- ============================================ -->
+          <section>
+            <h2>19 000 lignes de code générées par IA</h2>
+            <p>dans un seul projet</p>
+
+            <div class="fragment warning-box">
+              <p>🔍 Résultat de la revue de code :</p>
+              <ul style="font-size: 0.7em; text-align: left">
+                <li>Duplication massive</li>
+                <li>Abstractions inexistantes</li>
+                <li>Aucune cohérence architecturale</li>
+                <li>Tests superficiels</li>
+              </ul>
+            </div>
+
+            <aside class="notes">
+              Benjamin Sicard raconte l'histoire de 19 000 lignes de code
+              générées par IA dans un projet. Ça compile. Ça fonctionne en
+              surface. Mais à la revue de code : de la duplication partout, pas
+              d'abstractions, aucune cohérence architecturale, des tests qui
+              testent… rien de pertinent. L'IA optimise pour "ça compile" et "les
+              tests passent", pas pour "c'est maintenable sur 5 ans".
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 9 : La dette de compréhension -->
+          <!-- ============================================ -->
+          <section>
+            <h2>La dette de compréhension</h2>
+            <p class="medium">
+              <span class="highlight-orange">Comprehension debt</span>
+            </p>
+
+            <div class="fragment">
+              <p class="emoji-big">🧠 → 🤖 → 📦</p>
+              <p class="medium">
+                J'ai du code.<br />
+                Je ne sais pas <em>pourquoi</em> il est comme ça.
+              </p>
+            </div>
+
+            <p class="source">Source : Addy Osmani – "Comprehension Debt"</p>
+
+            <aside class="notes">
+              Addy Osmani a théorisé un concept essentiel : la "comprehension
+              debt", la dette de compréhension. Quand l'IA écrit du code, même
+              s'il fonctionne, le développeur ne comprend pas forcément POURQUOI
+              ce code est écrit de cette manière. Et ça, c'est très dangereux.
+              Parce que quand il faudra debugger, faire évoluer, ou refactorer…
+              personne ne comprend le code. C'est comme hériter d'un projet sans
+              documentation, écrit par quelqu'un qui est parti.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 10 : Le code est cheap, le logiciel non -->
+          <!-- ============================================ -->
+          <section>
+            <blockquote>
+              « Code is cheap now.<br />
+              <span class="highlight-orange">Software isn't.</span> »
+            </blockquote>
+
+            <p class="source">Source : Chris Gregori</p>
+
+            <aside class="notes">
+              Chris Gregori résume parfaitement la situation : le code est devenu
+              cheap, facile à produire. Mais le logiciel, lui, ne l'est pas. Un
+              logiciel, c'est de l'architecture, de la maintenabilité, de la
+              sécurité, de l'expérience utilisateur, de la performance, de la
+              cohérence. Le code n'est qu'une petite partie du logiciel. Et c'est
+              la seule partie que l'IA sait produire.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 11 : Analogie - Le code c'est pas le produit -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Écrire du code ≠ Construire un logiciel</h2>
+
+            <div class="two-columns fragment">
+              <div style="text-align: center">
+                <p class="emoji-big">🧱</p>
+                <p>Poser des briques</p>
+                <p class="small">(ce que fait l'IA)</p>
+              </div>
+              <div style="text-align: center">
+                <p class="emoji-big">🏛️</p>
+                <p>Concevoir un bâtiment</p>
+                <p class="small">(ce qu'on fait nous)</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              L'analogie que j'aime bien c'est la construction. L'IA est très
+              bonne pour poser des briques. Elle pose des briques très vite,
+              plutôt proprement. Mais construire un bâtiment, c'est autre chose :
+              il faut un architecte, il faut savoir résister aux intempéries, il
+              faut penser aux fondations, à l'agencement. L'IA ne fait pas ça.
+              Et sans cette vision d'ensemble, vous avez un tas de briques, pas
+              une maison.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 12 : Section - Le coût caché -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">LE COÛT</h1>
+            <h1 class="r-fit-text" style="color: #ff4444">CACHÉ</h1>
+
+            <aside class="notes">
+              On parle beaucoup de la productivité gagnée, mais rarement des
+              coûts. Et pourtant, il y en a plusieurs, et ils sont significatifs.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 13 : Le coût financier -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le coût financier 💸</h2>
+
+            <ul>
+              <li>Copilot : ~19$/mois</li>
+              <li>Claude Pro : ~20$/mois</li>
+              <li class="fragment" style="color: #f88224">
+                Claude Max : <strong>200$/mois</strong>
+              </li>
+              <li class="fragment" style="color: #ff4444">
+                Claude Code (API) : <strong>~$XX/jour</strong> en usage intensif
+              </li>
+            </ul>
+
+            <p class="fragment medium">
+              … et les limites de rate-limiting<br />
+              font rage même à 200$/mois 😅
+            </p>
+
+            <aside class="notes">
+              Le coût financier est souvent sous-estimé. On commence avec
+              Copilot, pas cher. Puis on passe à Claude Pro, un peu plus. Puis
+              on se rend compte qu'on a besoin de Claude Max à 200$ par mois.
+              Et même là, les utilisateurs se plaignent de limites de
+              rate-limiting sur Reddit ! Et si on utilise Claude Code via l'API,
+              la facture peut exploser très vite. Un développeur peut facilement
+              dépenser 50-100$ par jour en tokens. L'étude de Mathieu Grenier
+              montre qu'on peut facilement optimiser la consommation de tokens,
+              mais ça demande de la discipline.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 14 : Le coût environnemental -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le coût environnemental 🌍</h2>
+
+            <div class="fragment">
+              <p class="stat-big">x10</p>
+              <p class="stat-label">
+                Une requête LLM consomme ~10x plus d'énergie<br />
+                qu'une recherche Google classique
+              </p>
+            </div>
+
+            <aside class="notes">
+              Jérémie Samson a calculé l'empreinte carbone de son assistant IA.
+              Les résultats font réfléchir. Une requête à un LLM consomme
+              environ 10 fois plus d'énergie qu'une recherche Google standard.
+              Quand on multiplie ça par des millions de développeurs qui font des
+              centaines de requêtes par jour… Et les data centers nécessaires
+              pour faire tourner ces modèles consomment des quantités massives
+              d'eau et d'électricité.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 15 : Empreinte carbone concrète -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Concrètement…</h2>
+
+            <div class="two-columns">
+              <div style="text-align: center">
+                <p class="emoji-big">🔍</p>
+                <p class="medium">Recherche Google</p>
+                <p class="stat-big" style="font-size: 2em">0,2 g CO₂</p>
+              </div>
+              <div style="text-align: center">
+                <p class="emoji-big">🤖</p>
+                <p class="medium">Requête ChatGPT</p>
+                <p class="stat-big" style="font-size: 2em">~2-10 g CO₂</p>
+              </div>
+            </div>
+
+            <p class="fragment source" style="font-size: 0.5em">
+              ×100 requêtes/jour × 250 jours/an × millions de devs = 🔥
+            </p>
+
+            <aside class="notes">
+              Pour mettre des chiffres concrets : une recherche Google c'est
+              environ 0,2g de CO2. Une requête à un LLM, selon le modèle et la
+              complexité, c'est entre 2 et 10g de CO2. Ça ne semble pas
+              beaucoup, mais multipliez par le nombre de requêtes quotidiennes,
+              par le nombre de jours, par le nombre de développeurs dans le
+              monde… on arrive à des chiffres astronomiques. Et c'est sans
+              compter l'entraînement des modèles eux-mêmes.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 16 : Le burnout du développeur IA -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le burnout du dev × IA</h2>
+
+            <blockquote class="fragment">
+              « Vendredi dernier, j'ai pris ma première cuite à cause de Claude
+              Code »
+            </blockquote>
+
+            <p class="fragment medium">
+              Fatigue décisionnelle permanente<br />
+              Revue de code 24h/24<br />
+              Perte de créativité<br />
+            </p>
+
+            <aside class="notes">
+              Un aspect dont on parle peu : le burnout lié à l'IA. Un
+              témoignage poignant raconte comment l'utilisation intensive de
+              Claude Code a mené à l'épuisement. Parce que quand l'IA génère du
+              code en permanence, vous devenez un revieweur de code à plein
+              temps. Vous devez constamment évaluer, corriger, orienter. C'est
+              épuisant mentalement. On passe notre temps à superviser au lieu de
+              créer. Et certains perdent le plaisir de coder.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 17 : Section - L'impact sur le métier -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">L'IMPACT</h1>
+            <h1 class="r-fit-text">SUR LE MÉTIER</h1>
+
+            <aside class="notes">
+              Parlons maintenant de l'impact concret sur notre métier de
+              développeur. C'est peut-être la partie la plus importante de cette
+              présentation.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 18 : Le danger pour les juniors -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le danger pour les juniors</h2>
+
+            <blockquote>
+              « Lettre ouverte à toi qui veux devenir développeur »
+            </blockquote>
+
+            <div class="fragment">
+              <p class="emoji-big">🐣 → 🤖 → ❓</p>
+              <p class="medium">
+                Comment apprendre quand l'IA fait tout ?
+              </p>
+            </div>
+
+            <aside class="notes">
+              Elisa Cappannelli a écrit une lettre ouverte aux futurs
+              développeurs. Le problème est clair : si un junior utilise l'IA dès
+              le départ, il ne comprend jamais les fondamentaux. Il ne sait pas
+              pourquoi on fait les choses de telle manière. Il n'a pas construit
+              sa compréhension. C'est comme apprendre à conduire avec un
+              autopilote : le jour où il faut prendre le volant, on ne sait pas
+              faire.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 19 : L'IA ne remplace pas les compétences -->
+          <!-- ============================================ -->
+          <section>
+            <h2>L'IA ne remplace pas les compétences</h2>
+
+            <blockquote>
+              « L'IA ne remplace pas les compétences,<br />
+              elle les <span class="highlight-orange">amplifie</span>. »
+            </blockquote>
+
+            <p class="source">Source : Amélie Raoul</p>
+
+            <div class="fragment">
+              <p class="medium">
+                Un bon développeur + IA = <span class="highlight-green">💪</span
+                ><br />
+                Un mauvais développeur + IA =
+                <span class="highlight-red">💣</span>
+              </p>
+            </div>
+
+            <aside class="notes">
+              Amélie Raoul résume parfaitement : l'IA ne remplace pas les
+              compétences, elle les amplifie. Si vous êtes un bon développeur,
+              l'IA vous rend meilleur et plus rapide. Si vous ne maîtrisez pas
+              les fondamentaux, l'IA amplifie vos lacunes. Vous produisez plus
+              de mauvais code, plus vite. C'est un multiplicateur, pas un
+              remplaçant.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 20 : Si l'IA accélère, pourquoi... -->
+          <!-- ============================================ -->
+          <section>
+            <blockquote style="border-left-color: #ff4444">
+              « Si l'IA accélère vraiment,<br />
+              pourquoi on ne livre pas<br />
+              plus vite&nbsp;? »
+            </blockquote>
+
+            <p class="source">Source : Marek Kalnik</p>
+
+            <aside class="notes">
+              C'est la question qui fâche, posée par Marek Kalnik. Si l'IA nous
+              rend tellement plus productifs, pourquoi est-ce qu'on ne livre pas
+              plus vite ? Parce que le goulot d'étranglement n'a jamais été
+              l'écriture du code. C'est la compréhension du besoin, la
+              coordination entre équipes, les choix d'architecture, la gestion
+              de la complexité, les revues de code, les tests, le déploiement.
+              L'IA accélère la partie facile. Le dur reste dur.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 21 : Le nouveau rôle du développeur -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le métier évolue</h2>
+
+            <div class="two-columns">
+              <div>
+                <h3 class="highlight-purple">Avant</h3>
+                <ul class="medium">
+                  <li>Écrire du code</li>
+                  <li>Debugger</li>
+                  <li>Tester</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="highlight-orange">Maintenant</h3>
+                <ul class="medium">
+                  <li>Piloter l'IA</li>
+                  <li>Relire et valider</li>
+                  <li>Architecturer</li>
+                  <li>Spécifier</li>
+                  <li>…et toujours coder</li>
+                </ul>
+              </div>
+            </div>
+
+            <aside class="notes">
+              Le métier évolue. On passe d'un rôle de "producteur de code" à un
+              rôle de "chef d'orchestre". On pilote l'IA, on relit ce qu'elle
+              produit, on architecte, on spécifie. Mais attention : on n'arrête
+              pas de coder. Il faut toujours être capable de comprendre et
+              modifier le code. Xavier Gorse parle de "notre métier en pleine
+              mue" : on ne change pas de métier, on en fait une version
+              augmentée.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 22 : Depuis quand avez-vous honte de votre code -->
+          <!-- ============================================ -->
+          <section>
+            <blockquote>
+              « Depuis quand avez-vous<br />
+              <span class="highlight-red">honte de votre code</span>&nbsp;? »
+            </blockquote>
+
+            <p class="source">Source : Frédéric Bouchery</p>
+
+            <aside class="notes">
+              Frédéric Bouchery pose une question provocatrice. Quand on vibe
+              code, quand on laisse l'IA tout faire, est-ce qu'on est fier du
+              résultat ? Est-ce qu'on mettrait son nom dessus ? Avant, on avait
+              un rapport artisanal au code. On était fier de nos solutions
+              élégantes. Avec l'IA, on accepte du code "qui marche" sans plus.
+              On perd le craftsmanship. On perd la fierté de notre travail.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 23 : Section - L'open source en danger -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">L'OPEN SOURCE</h1>
+            <h1 class="r-fit-text" style="color: #ff4444">EN DANGER</h1>
+
+            <aside class="notes">
+              Un aspect crucial dont on parle trop peu : l'impact de l'IA sur
+              l'open source. Et c'est dramatique.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 24 : curl ferme son bug bounty -->
+          <!-- ============================================ -->
+          <section>
+            <h2>curl ferme son bug bounty 🔒</h2>
+
+            <blockquote class="fragment">
+              Submergé par les rapports de bugs<br />
+              <span class="highlight-red">générés par IA</span><br />
+              (faux positifs massifs)
+            </blockquote>
+
+            <aside class="notes">
+              Daniel Stenberg, le créateur de curl — un outil utilisé
+              littéralement partout — a été contraint de fermer son programme de
+              bug bounty. Pourquoi ? Parce qu'il était submergé par des rapports
+              de bugs générés par IA. Des gens utilisent ChatGPT ou Claude pour
+              analyser le code, produire des rapports de "vulnérabilités" qui
+              n'en sont pas, et essayer de toucher la récompense. Le ratio
+              signal/bruit est devenu insupportable. Le temps des mainteneurs
+              est gaspillé à trier du "AI slop".
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 25 : Le vibe coding tue l'open source -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le vibe coding<br />menace l'open source</h2>
+
+            <ul class="medium">
+              <li class="fragment">
+                🗑️ Issues et PRs de mauvaise qualité en masse
+              </li>
+              <li class="fragment">
+                😴 Épuisement des mainteneurs bénévoles
+              </li>
+              <li class="fragment">
+                🤖 Code généré sans compréhension du projet
+              </li>
+              <li class="fragment">📉 Baisse de la qualité globale</li>
+            </ul>
+
+            <aside class="notes">
+              Jeff Geerling et Korben ont tous les deux tiré la sonnette d'alarme
+              : le vibe coding est en train de tuer l'open source. Les
+              mainteneurs reçoivent des avalanches de PRs générées par IA :
+              souvent inutiles, mal documentées, qui ne respectent pas les
+              conventions du projet. Les issues sont remplies de faux rapports
+              de bugs. Les mainteneurs bénévoles n'en peuvent plus. Et on
+              fragilise l'infrastructure sur laquelle repose toute l'industrie.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 26 : 112 bugs Firefox -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Mais aussi des succès</h2>
+
+            <div class="success-box">
+              <h3>
+                112 bugs corrigés dans
+                <span class="highlight-orange">Firefox</span>
+              </h3>
+              <p class="medium">
+                Claude (Anthropic) a trouvé des bugs<br />
+                que les fuzzers traditionnels avaient ratés
+              </p>
+            </div>
+
+            <p class="source">Source : ZDNet</p>
+
+            <aside class="notes">
+              Pour être juste, l'IA a aussi des succès remarquables dans l'open
+              source. Anthropic a utilisé Claude pour analyser le code de
+              Firefox et a trouvé 112 bugs que les fuzzers traditionnels
+              n'avaient pas détectés. Donc l'IA peut être un outil puissant
+              QUAND elle est utilisée par des experts qui savent ce qu'ils font.
+              La différence entre "utiliser l'IA pour aider" et "balancer du
+              slop IA sur les mainteneurs", c'est l'expertise humaine derrière.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 27 : Section - Repenser nos outils -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">REPENSER</h1>
+            <h1 class="r-fit-text">NOS OUTILS</h1>
+
+            <aside class="notes">
+              On est à un moment charnière pour nos outils de développement. Les
+              IDE, les workflows, tout est en train de changer.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 28 : La mort de l'IDE ? -->
+          <!-- ============================================ -->
+          <section>
+            <h2>La mort de l'IDE&nbsp;?</h2>
+
+            <div class="fragment">
+              <p class="medium">
+                <span class="highlight-purple">VS Code</span> →
+                <span class="highlight-orange">Cursor</span> →
+                <span class="highlight-green">Claude Code (terminal)</span> →
+                <span class="highlight-pink">???</span>
+              </p>
+            </div>
+
+            <p class="fragment medium">
+              L'interface de développement<br />
+              migre vers le <strong>langage naturel</strong>
+            </p>
+
+            <aside class="notes">
+              Addy Osmani pose la question de la "mort de l'IDE". On passe
+              progressivement de VS Code à Cursor (IDE augmenté), puis à Claude
+              Code qui fonctionne dans le terminal, sans IDE du tout. L'interface
+              de développement migre vers le langage naturel. On décrit ce qu'on
+              veut, et l'agent l'implémente. Mais est-ce qu'on perd quelque
+              chose en route ? La vision structurelle du code, la navigation
+              dans l'architecture, le refactoring guidé… l'IDE nous donnait des
+              super-pouvoirs qu'on est en train d'abandonner.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 29 : Context-driven engineering -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Context-Driven Engineering</h2>
+
+            <blockquote>
+              « En 2026, le contexte est roi »
+            </blockquote>
+
+            <div class="fragment">
+              <ul class="medium">
+                <li>📝 Spécifications de qualité</li>
+                <li>📐 Architecture documentée</li>
+                <li>🧪 Tests comme documentation vivante</li>
+                <li>📚 ADRs (Architecture Decision Records)</li>
+              </ul>
+            </div>
+
+            <p class="source">Source : Eventually Coding</p>
+
+            <aside class="notes">
+              Hugo Lassiège (Eventually Coding) propose le concept de
+              Context-Driven Engineering. L'idée est que dans un monde avec IA,
+              le contexte devient la ressource la plus importante. Plus votre
+              codebase est bien documentée, plus vos spécifications sont
+              claires, plus vos ADRs sont à jour, plus l'IA sera efficace. Et
+              inversement, si votre contexte est pauvre, l'IA produira du code
+              générique et inadapté. C'est un changement de paradigme : on
+              investit dans la documentation et la spécification, pas dans
+              l'écriture du code.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 30 : Spec-driven development -->
+          <!-- ============================================ -->
+          <section>
+            <h2>2025 : l'année de la spec</h2>
+
+            <blockquote>
+              « Cette année 2025 a été<br />
+              l'année de la spec. »
+            </blockquote>
+
+            <p class="source">Source : Olivier Mansour</p>
+
+            <div class="fragment medium">
+              <p>
+                Mieux on spécifie,<br />
+                mieux l'IA <span class="highlight-green">délivre</span>.
+              </p>
+            </div>
+
+            <aside class="notes">
+              Olivier Mansour confirme cette tendance : 2025 a été l'année de la
+              spec. Les équipes qui réussissent le mieux avec l'IA sont celles
+              qui investissent dans des spécifications de qualité. Des specs
+              claires, non ambiguës, avec des critères d'acceptation précis.
+              C'est ironique : l'IA nous force à être meilleurs dans les
+              pratiques qu'on aurait dû suivre depuis toujours !
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 31 : Section - Comment on fait -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h1 class="r-fit-text">COMMENT</h1>
+            <h1 class="r-fit-text" style="color: #0de07d">ON FAIT ?</h1>
+
+            <aside class="notes">
+              Bon, assez parlé des problèmes. On passe à la partie pratique :
+              comment utiliser l'IA de manière intelligente au quotidien.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 32 : agents.md -->
+          <!-- ============================================ -->
+          <section>
+            <h2>agents.md / CLAUDE.md</h2>
+
+            <pre><code data-trim data-noescape data-line-numbers class="language-markdown">
+# Conventions du projet
+
+## Architecture
+- Clean Architecture avec couches séparées
+- Pas de logique métier dans les contrôleurs
+
+## Style de code
+- Fonctions pures quand c'est possible
+- Nommage explicite, pas d'abréviations
+
+## Tests
+- Un test par comportement, pas par méthode
+- Utiliser des builders pour les fixtures
+            </code></pre>
+
+            <p class="source">
+              Source : GitHub Blog – "How to write a great agents.md"
+            </p>
+
+            <aside class="notes">
+              Le fichier agents.md (ou CLAUDE.md selon l'outil) est devenu
+              essentiel. C'est un fichier à la racine de votre projet qui
+              explique à l'IA les conventions, l'architecture, le style de code.
+              GitHub a analysé plus de 2500 repositories et a publié un guide
+              pour écrire un bon agents.md. Plus ce fichier est riche et précis,
+              plus l'IA respectera vos conventions. C'est comme un onboarding
+              document, mais pour l'IA.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 33 : Rendre sa codebase "agent-ready" -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Rendre sa codebase<br />"agent-ready"</h2>
+
+            <ul class="checklist">
+              <li>Un bon README à jour</li>
+              <li>Des conventions documentées</li>
+              <li>Des tests fiables et rapides</li>
+              <li>Du linting strict</li>
+              <li>Des petits fichiers bien découpés</li>
+              <li>Des noms explicites partout</li>
+            </ul>
+
+            <p class="source">
+              Source : Damien Lehaire – "Make your codebase agent-ready"
+            </p>
+
+            <aside class="notes">
+              Damien Lehaire a écrit un guide pratique pour rendre sa codebase
+              "agent-ready". Ce sont des bonnes pratiques qu'on connaît
+              depuis toujours, mais qui deviennent CRUCIALES avec l'IA : un
+              README à jour, des conventions documentées, des tests fiables et
+              rapides (pour que l'IA puisse valider son travail), du linting
+              strict (pour forcer un style cohérent), des petits fichiers bien
+              découpés (les LLM ont des fenêtres de contexte limitées), et des
+              noms explicites. C'est amusant : l'IA nous force à appliquer les
+              bonnes pratiques qu'on prêche depuis des années.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 34 : Utiliser l'IA comme un skill -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Un <span class="highlight-orange">skill</span> à maîtriser</h2>
+
+            <blockquote>
+              « Treat AI-assisted coding<br />as a skill to develop,<br />
+              not a shortcut to take. »
+            </blockquote>
+
+            <p class="source">Source : Andrej Karpathy / Didier Girard</p>
+
+            <aside class="notes">
+              Andrej Karpathy, et sa communauté, proposent de traiter
+              l'utilisation de l'IA comme un skill à part entière. Pas un
+              raccourci, mais une compétence. Comme on a appris Git, comme on a
+              appris Docker, on doit apprendre à utiliser l'IA efficacement.
+              Ça veut dire apprendre à prompter, apprendre à donner du contexte,
+              apprendre à valider la sortie, apprendre quand NE PAS utiliser
+              l'IA. C'est un vrai investissement d'apprentissage.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 35 : Colin Damon - retour d'expérience -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Retour d'expérience</h2>
+
+            <blockquote>
+              « Claude Code, pour moi, depuis plus d'un mois »
+            </blockquote>
+
+            <ul class="fragment medium">
+              <li>✅ Excellent pour le boilerplate</li>
+              <li>✅ Bon pour les tâches répétitives</li>
+              <li>⚠️ Nécessite une revue attentive</li>
+              <li>❌ Mauvais pour l'architecture globale</li>
+            </ul>
+
+            <p class="source">Source : Colin Damon</p>
+
+            <aside class="notes">
+              Colin Damon a partagé un retour d'expérience très honnête après un
+              mois d'utilisation intensive de Claude Code. C'est excellent pour
+              le boilerplate, les tâches répétitives, les migrations. C'est bon
+              pour l'implémentation quand la direction est claire. Mais il faut
+              toujours relire attentivement, et l'IA est mauvaise pour les
+              décisions d'architecture globale. Il faut toujours garder le
+              contrôle et la vision d'ensemble.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 36 : Dominik Dorfmeister (TanStack) -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Même les experts<br />restent prudents</h2>
+
+            <blockquote>
+              Dominik Dorfmeister (TanStack Query) a réécrit<br />
+              son blog avec l'IA…<br />
+              <span class="fragment highlight-orange"
+                >et a dû tout retravailler ensuite.</span
+              >
+            </blockquote>
+
+            <aside class="notes">
+              Même les développeurs très expérimentés comme Dominik Dorfmeister,
+              le mainteneur de TanStack Query (React Query), racontent leurs
+              expériences mitigées. Il a voulu réécrire son blog depuis 2022, et
+              l'a finalement fait avec l'IA. Mais le résultat n'était pas à la
+              hauteur : il a dû retravailler massivement le code généré. L'IA
+              est un point de départ, pas une fin en soi.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 37 : Les bonnes pratiques -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Les bonnes pratiques</h2>
+
+            <ol class="medium">
+              <li class="fragment">
+                <strong>Petit périmètre</strong> : une tâche à la fois
+              </li>
+              <li class="fragment">
+                <strong>Contexte riche</strong> : agents.md, specs, tests
+              </li>
+              <li class="fragment">
+                <strong>Review systématique</strong> : lire chaque ligne générée
+              </li>
+              <li class="fragment">
+                <strong>Tests d'abord</strong> : écrire les tests AVANT de
+                laisser l'IA coder
+              </li>
+              <li class="fragment">
+                <strong>Savoir dire non</strong> : rejeter et recommencer
+              </li>
+              <li class="fragment">
+                <strong>Rester compétent</strong> : continuer à coder soi-même
+              </li>
+            </ol>
+
+            <aside class="notes">
+              En synthèse, voici les bonnes pratiques qui émergent de tous ces
+              retours d'expérience. 1. Travailler en petit périmètre : une
+              tâche clairement définie à la fois. 2. Fournir un contexte riche :
+              le agents.md, des specs claires, des tests existants. 3. Review
+              systématique : lire chaque ligne comme si c'était un code de PR
+              d'un collègue junior. 4. TDD : écrire les tests d'abord, puis
+              laisser l'IA implémenter. 5. Savoir dire non : si le résultat
+              n'est pas bon, on rejette et on recommence. 6. Rester compétent :
+              continuer à coder soi-même pour ne pas perdre la main.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 38 : Le meilleur test pour l'IA -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Le vrai test</h2>
+
+            <blockquote>
+              « Le meilleur test pour une IA,<br />
+              ce n'est pas ce qu'elle sait faire.<br />
+              C'est ce que <span class="highlight-orange">vous</span> savez
+              faire <span class="highlight-green">avec</span>. »
+            </blockquote>
+
+            <p class="source">Source : Olivier Loverde</p>
+
+            <aside class="notes">
+              Olivier Loverde résume parfaitement la situation. Ce qui compte, ce
+              n'est pas la puissance du modèle. C'est votre capacité à
+              l'utiliser intelligemment. L'IA est un outil. Un marteau ne
+              construit pas une maison tout seul. C'est le menuisier qui fait la
+              différence. Et un bon menuisier avec un marteau électrique va
+              plus vite qu'avec un marteau classique, mais un mauvais menuisier
+              avec un marteau électrique fera juste plus de dégâts.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 39 : Use your good brain -->
+        <!-- ============================================ -->
+        <section>
+          <section>
+            <h2>
+              Use your
+              <span class="highlight-green">good brain</span>
+              🧠
+            </h2>
+
+            <p class="fragment medium">
+              L'IA est un outil extraordinaire.<br />
+              <span class="highlight-orange"
+                >Mais c'est vous, le développeur.</span
+              >
+            </p>
+
+            <p class="source">Source : Cassidy Williams</p>
+
+            <aside class="notes">
+              Cassidy Williams, avec son article "Use your good brain", nous
+              rappelle l'essentiel. Oui, l'IA est un outil extraordinaire. Oui,
+              elle change notre façon de travailler. Mais à la fin, c'est votre
+              cerveau qui fait la différence. C'est votre compréhension du
+              problème, votre sens de l'architecture, votre empathie pour
+              l'utilisateur, votre capacité à anticiper les problèmes. Gardez
+              votre cerveau affûté. Utilisez l'IA pour aller plus vite, pas pour
+              arrêter de réfléchir.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 40 : Ce qui ne change pas -->
+          <!-- ============================================ -->
+          <section>
+            <h2>Ce qui ne change pas</h2>
+
+            <ul style="list-style: none; font-size: 0.9em">
+              <li class="fragment">💡 Comprendre le besoin</li>
+              <li class="fragment">🏗️ Architecturer la solution</li>
+              <li class="fragment">🤝 Communiquer avec l'équipe</li>
+              <li class="fragment">🧪 Valider la qualité</li>
+              <li class="fragment">📈 Faire évoluer le produit</li>
+              <li class="fragment">
+                ❤️ Prendre soin de son code<br />
+                <span class="small"
+                  >(et de la personne qui le maintiendra)</span
+                >
+              </li>
+            </ul>
+
+            <aside class="notes">
+              Pour conclure, voici ce qui ne change pas, quel que soit l'outil
+              qu'on utilise. Comprendre le besoin : l'IA ne sait pas ce que veut
+              l'utilisateur. Architecturer : l'IA ne voit pas le système dans
+              son ensemble. Communiquer : le développement reste un sport
+              d'équipe. Valider : quelqu'un doit toujours vérifier que ça
+              marche vraiment. Faire évoluer : un produit vit et change, il faut
+              le faire grandir. Et prendre soin de son code et des personnes
+              qui le maintiendront après vous.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 41 : Conclusion -->
+          <!-- ============================================ -->
+          <section data-transition="slide-in fade-out">
+            <div style="max-width: 600px; margin: 0 auto">
+              <h2 class="r-fit-text">L'IA NE VA PAS</h2>
+              <h2 class="r-fit-text">VOUS REMPLACER</h2>
+            </div>
+
+            <div class="fragment">
+              <h3>
+                Mais un développeur<br />
+                qui <span class="highlight-orange">maîtrise</span> l'IA<br />
+                vous <span class="highlight-red">remplacera</span>.
+              </h3>
+            </div>
+
+            <aside class="notes">
+              Le message final, que beaucoup ont entendu mais qui reste
+              profondément vrai : l'IA ne va pas vous remplacer. Mais un
+              développeur qui maîtrise l'IA, lui, pourrait bien vous remplacer.
+              Alors formez-vous, expérimentez, gardez votre esprit critique, et
+              surtout : restez des artisans du code. L'IA est le nouvel outil
+              dans notre boîte à outils. Apprenez à l'utiliser, mais n'oubliez
+              jamais que c'est vous, l'artisan.
+            </aside>
+          </section>
+
+          <!-- ============================================ -->
+          <!-- SLIDE 42 : Merci -->
+          <!-- ============================================ -->
+          <section data-transition="fade-in slide-out">
+            <h1 class="r-fit-text">MERCI !</h1>
+
+            <div style="margin-top: 40px">
+              <div class="social">
+                <span class="icon">🐙</span>
+                <span>github.com/jdeniau</span>
+              </div>
+              <div class="social">
+                <span class="icon">🌐</span>
+                <span>julien.deniau.me</span>
+              </div>
+            </div>
+
+            <p class="fragment medium" style="margin-top: 40px">
+              <em>
+                Ces slides ont-elles été générées par IA ?<br />
+                <span class="highlight-orange">Bien sûr.</span><br />
+                Mais je les ai <strong>relues</strong>,
+                <strong>réécrites</strong>,<br />
+                et <strong>approuvées</strong>. 😉
+              </em>
+            </p>
+
+            <aside class="notes">
+              Merci beaucoup ! Et oui, ces slides ont été en partie générées par
+              IA. Mais je les ai relues, réécrites, approuvées, et j'assume
+              chaque mot. C'est exactement ce qu'on a dit pendant cette
+              présentation : l'IA aide, mais c'est l'humain qui valide. Des
+              questions ?
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SLIDE BONUS : Ressources -->
+        <!-- ============================================ -->
+        <section>
+          <h2>Ressources</h2>
+          <ul style="font-size: 0.45em; text-align: left; columns: 2">
+            <li>Addy Osmani – "Comprehension Debt"</li>
+            <li>Chris Gregori – "Code is cheap now, software isn't"</li>
+            <li>Cassidy Williams – "Use your good brain"</li>
+            <li>Korben – "Le vibe coding tue l'open source"</li>
+            <li>Jeff Geerling – "AI is destroying open source"</li>
+            <li>GitHub Octoverse 2024</li>
+            <li>GitHub Blog – "How to write a great agents.md"</li>
+            <li>Eventually Coding – Context-Driven Engineering</li>
+            <li>Damien Lehaire – "Make your codebase agent-ready"</li>
+            <li>Socket.dev – curl bug bounty / AI slop</li>
+            <li>Addyo – "Death of the IDE"</li>
+            <li>Laravel France – "Le code à l'ère de l'IA"</li>
+            <li>ZDNet – 112 bugs Firefox / Claude Anthropic</li>
+            <li>Arxiv – 2601.20245</li>
+            <li>Frédéric Bouchery – "Depuis quand avez-vous honte…"</li>
+            <li>Amélie Raoul – "L'IA ne remplace pas les compétences"</li>
+          </ul>
+
+          <aside class="notes">
+            Voici toutes les ressources citées dans cette présentation. N'hésitez
+            pas à les consulter pour approfondir chaque sujet.
+          </aside>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
