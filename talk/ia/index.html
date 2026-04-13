@@ -10,25 +10,38 @@
     <title>L'IA et le développement : entre hype et réalité</title>
 
     <style>
-      .highlight-orange {
-        color: #f88224;
-      }
-      .highlight-purple {
-        color: #8877d4;
-      }
-      .highlight-pink {
-        color: #df57bc;
-      }
-      .highlight-green {
-        color: #0de07d;
-      }
-      .highlight-red {
-        color: #ff4444;
-      }
-      .highlight-blue {
-        color: #44aaff;
+      /* ── Claude palette tokens ── */
+      :root {
+        --c-accent: #d97757;
+        --c-accent-dark: #a85c3c;
+        --c-accent-light: #f5ddd5;
+        --c-muted: #6b6760;
+        --c-border: #e0d9d0;
+        --c-bg: #faf9f5;
+        --c-code-bg: #f0ede6;
       }
 
+      /* ── Highlight utility classes ── */
+      .highlight-orange {
+        color: var(--c-accent);
+      }
+      .highlight-purple {
+        color: #7c6fcd;
+      }
+      .highlight-pink {
+        color: #b5547a;
+      }
+      .highlight-green {
+        color: #2e8a59;
+      }
+      .highlight-red {
+        color: #c0392b;
+      }
+      .highlight-blue {
+        color: #2980b9;
+      }
+
+      /* ── Typography helpers ── */
       .small {
         font-size: 0.5em;
       }
@@ -37,6 +50,7 @@
         font-size: 0.7em;
       }
 
+      /* ── Social links ── */
       .social {
         display: flex;
         align-items: center;
@@ -48,12 +62,16 @@
         width: 1em;
       }
 
+      /* ── Blockquote (override reveal base) ── */
       blockquote {
-        padding: 20px 30px;
-        border-left: 4px solid #f88224;
-        background: rgba(255, 255, 255, 0.05);
+        padding: 16px 24px;
+        border-left: 5px solid var(--c-accent);
+        background: var(--c-accent-light);
+        border-radius: 0 6px 6px 0;
+        color: #1a1a19;
       }
 
+      /* ── Layout helpers ── */
       .two-columns {
         display: flex;
         gap: 40px;
@@ -65,29 +83,33 @@
         flex: 1;
       }
 
+      /* ── Stats ── */
       .stat-big {
         font-size: 3em;
-        font-weight: bold;
-        color: #f88224;
+        font-weight: 700;
+        color: var(--c-accent);
         margin: 0;
         line-height: 1.2;
       }
 
       .stat-label {
         font-size: 0.6em;
-        color: #ccc;
+        color: var(--c-muted);
       }
 
+      /* ── Emoji ── */
       .emoji-big {
         font-size: 3em;
       }
 
+      /* ── Source citation ── */
       .source {
         font-size: 0.35em;
-        color: #888;
+        color: var(--c-muted);
         margin-top: 20px;
       }
 
+      /* ── Bar chart ── */
       .bar-chart {
         display: flex;
         align-items: flex-end;
@@ -107,7 +129,7 @@
 
       .bar-fill {
         width: 100%;
-        background: linear-gradient(to top, #f88224, #df57bc);
+        background: linear-gradient(to top, var(--c-accent), var(--c-accent-dark));
         border-radius: 4px 4px 0 0;
         min-height: 10px;
         transition: height 0.8s ease-out;
@@ -116,15 +138,17 @@
       .bar-label {
         font-size: 0.5em;
         margin-top: 8px;
-        color: #ccc;
+        color: var(--c-muted);
       }
 
       .bar-value {
         font-size: 0.6em;
         margin-bottom: 4px;
         font-weight: bold;
+        color: var(--c-accent-dark);
       }
 
+      /* ── Timeline ── */
       .timeline {
         display: flex;
         align-items: center;
@@ -145,7 +169,7 @@
         right: -8px;
         top: 50%;
         transform: translateY(-50%);
-        color: #f88224;
+        color: var(--c-accent);
         font-size: 1.2em;
       }
 
@@ -155,15 +179,16 @@
 
       .timeline-year {
         font-size: 0.8em;
-        color: #f88224;
+        color: var(--c-accent);
         font-weight: bold;
       }
 
       .timeline-label {
         font-size: 0.5em;
-        color: #ccc;
+        color: var(--c-muted);
       }
 
+      /* ── Pros / cons ── */
       .pros-cons {
         display: flex;
         gap: 40px;
@@ -184,6 +209,7 @@
         text-align: left;
       }
 
+      /* ── Code comparison ── */
       .code-comparison {
         display: flex;
         gap: 20px;
@@ -195,24 +221,28 @@
         font-size: 0.4em !important;
       }
 
+      /* ── Callout boxes ── */
       .warning-box {
-        background: rgba(255, 68, 68, 0.1);
-        border: 2px solid #ff4444;
+        background: rgba(192, 57, 43, 0.07);
+        border: 2px solid #c0392b;
         border-radius: 8px;
         padding: 20px;
         margin: 20px auto;
         max-width: 80%;
+        color: #1a1a19;
       }
 
       .success-box {
-        background: rgba(13, 224, 125, 0.1);
-        border: 2px solid #0de07d;
+        background: rgba(46, 138, 89, 0.08);
+        border: 2px solid #2e8a59;
         border-radius: 8px;
         padding: 20px;
         margin: 20px auto;
         max-width: 80%;
+        color: #1a1a19;
       }
 
+      /* ── Checklist ── */
       .checklist {
         text-align: left;
         font-size: 0.8em;
@@ -239,7 +269,7 @@
           <div style="max-width: 600px; margin: 0 auto">
             <h2 class="r-fit-text">L'IA</h2>
             <h2 class="r-fit-text">ET LE DÉVELOPPEMENT</h2>
-            <h2 class="r-fit-text" style="color: #f88224">
+            <h2 class="r-fit-text" style="color: var(--c-accent)">
               ENTRE HYPE ET RÉALITÉ
             </h2>
           </div>
@@ -281,7 +311,7 @@
         <section>
           <section>
             <h1 class="r-fit-text">LA PROMESSE</h1>
-            <h3 class="fragment" style="color: #f88224">
+            <h3 class="fragment" style="color: var(--c-accent)">
               « L'IA va coder à notre place »
             </h3>
 
@@ -531,7 +561,7 @@
             <ul>
               <li>Copilot : ~19$/mois</li>
               <li>Claude Pro : ~20$/mois</li>
-              <li class="fragment" style="color: #f88224">
+              <li class="fragment" style="color: var(--c-accent)">
                 Claude Max : <strong>200$/mois</strong>
               </li>
               <li class="fragment" style="color: #ff4444">
