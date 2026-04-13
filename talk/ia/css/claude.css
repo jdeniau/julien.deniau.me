@@ -9,9 +9,10 @@
  *   Heading    : #3D3929  (dark warm brown)
  *   Code bg    : #F0EDE6  (slightly darker beige)
  *
- * Font: DM Sans (closest freely available approximation of Söhne)
+ * Font: Lora (serif, closest freely available match to Claude's Tiempos Text)
+ *       + Source Code Pro for code blocks
  */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Code+Pro:wght@400;500&display=swap');
 
 section.has-dark-background,
 section.has-dark-background h1,
@@ -28,12 +29,12 @@ section.has-dark-background h6 {
  *********************************************/
 :root {
   --r-background-color: #faf9f5;
-  --r-main-font: 'DM Sans', sans-serif;
+  --r-main-font: 'Lora', Georgia, 'Times New Roman', serif;
   --r-main-font-size: 38px;
   --r-main-color: #1a1a19;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: 'DM Sans', sans-serif;
+  --r-heading-font: 'Lora', Georgia, 'Times New Roman', serif;
   --r-heading-color: #3d3929;
   --r-heading-line-height: 1.15;
   --r-heading-letter-spacing: -0.02em;
@@ -45,7 +46,7 @@ section.has-dark-background h6 {
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.2em;
   --r-heading4-size: 1em;
-  --r-code-font: 'DM Mono', 'Fira Mono', 'Courier New', monospace;
+  --r-code-font: 'Source Code Pro', 'Fira Mono', 'Courier New', monospace;
   --r-link-color: #d97757;
   --r-link-color-dark: #a85c3c;
   --r-link-color-hover: #bf5f40;
