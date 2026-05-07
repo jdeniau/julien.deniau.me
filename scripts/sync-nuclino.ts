@@ -128,8 +128,6 @@ async function syncItem(
   const fileIds = item.contentMeta?.fileIds ?? [];
   let imageCount = 0;
 
-  console.log(item);
-  process.exit(1);
   if (fileIds.length > 0) {
     await ensureDir(imageDir);
     for (const fileId of fileIds) {
