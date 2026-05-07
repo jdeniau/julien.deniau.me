@@ -1,0 +1,31 @@
+name: Sync Nuclino
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync articles from Nuclino
+        run: npm run sync-nuclino
+        env:
+          NUCLINO_API_KEY: ${{ secrets.NUCLINO_API_KEY }}
+          NUCLINO_PUBLISHED_CLUSTER_ID: ${{ secrets.NUCLINO_PUBLISHED_CLUSTER_ID }}
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'posts-nuclino public/images/nuclino'
+          message: 'chore: sync articles from Nuclino'
+          default_author: github_actions

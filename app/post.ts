@@ -1,17 +1,7 @@
 import parseFrontMatter from 'front-matter';
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
-import { Octokit } from '@octokit/rest';
 import { embedMarkdown } from './embed';
-
-const octokit = new Octokit({
-  auth: typeof process !== 'undefined' ? process.env.GITHUB_TOKEN : '', // weirdly needed by the RSS page. Probably an issue with remix
-});
-
-const BRANCHNAME =
-  typeof process !== 'undefined'
-    ? (process.env.GIT_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main')
-    : 'main';
 
 export type Post = {
   title: string;
@@ -29,6 +19,19 @@ export type PostWithHTML = Post & {
   html: string;
 };
 
+const postModules = {
+  ...(import.meta.glob('/posts/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }) as Record<string, string>),
+  ...(import.meta.glob('/posts-nuclino/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }) as Record<string, string>),
+};
+
 function isValidPostAttributes(attributes: any): attributes is Post {
   if (!attributes?.title) {
     return false;
@@ -40,7 +43,6 @@ function isValidPostAttributes(attributes: any): attributes is Post {
 
   if (!(attributes.date instanceof Date)) {
     if (!attributes.date.match(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/)) {
-      // wrong date pattern
       return false;
     } else {
       attributes.date = new Date(attributes.date);
@@ -50,64 +52,44 @@ function isValidPostAttributes(attributes: any): attributes is Post {
   return true;
 }
 
-async function getPostContent(path: string): Promise<{
+function slugFromPath(filePath: string): string {
+  const file = filePath.split('/').pop() ?? filePath;
+  return file.replace(/\.md$/, '');
+}
+
+function readPost(filePath: string, raw: string): {
   attributes: Post;
   body: string;
-}> {
-  const fileResponse = await octokit.rest.repos.getContent({
-    owner: 'jdeniau',
-    repo: 'julien.deniau.me',
-    path: path,
-    ref: BRANCHNAME,
-    headers: {
-      accept: 'application/vnd.github.v3.raw',
-    },
-  });
-
-  invariant(
-    typeof fileResponse.data === 'string',
-    'fileResponse.data is not a string'
-  );
-
-  const { attributes, body } = parseFrontMatter(fileResponse.data);
+} {
+  const { attributes, body } = parseFrontMatter(raw);
   invariant(
     isValidPostAttributes(attributes),
-    `Post ${path} is missing attributes`
+    `Post ${filePath} is missing attributes`
   );
-
   return { attributes, body };
 }
 
-export async function getPosts() {
-  const dirResponse = await octokit.rest.repos.getContent({
-    owner: 'jdeniau',
-    repo: 'julien.deniau.me',
-    path: 'posts',
-    ref: BRANCHNAME,
+export async function getPosts(): Promise<Post[]> {
+  const posts = Object.entries(postModules).map(([filePath, raw]): Post => {
+    const { attributes } = readPost(filePath, raw);
+    return {
+      ...convertAttributes(attributes),
+      slug: slugFromPath(filePath),
+    };
   });
 
-  invariant(
-    Array.isArray(dirResponse.data),
-    'dirResponse.data is not an array'
-  );
-
-  return Promise.all(
-    dirResponse.data
-      .map(async (file): Promise<Post> => {
-        const { attributes } = await getPostContent(file.path);
-
-        return {
-          ...convertAttributes(attributes),
-          slug: file.name.replace(/\.md$/, ''),
-        };
-      })
-      .reverse()
-  );
+  posts.sort((a, b) => +b.date - +a.date);
+  return posts;
 }
 
 export async function getPost(slug: string): Promise<PostWithHTML> {
-  const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
+  const entry = Object.entries(postModules).find(
+    ([filePath]) => slugFromPath(filePath) === slug
+  );
+  invariant(entry, `Post ${slug} not found`);
 
+  const [filePath, raw] = entry;
+  const { attributes, body } = readPost(filePath, raw);
   const html = marked(await embedMarkdown(body));
 
   return {
