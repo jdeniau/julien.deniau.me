@@ -24,7 +24,7 @@ jobs:
           NUCLINO_API_KEY: ${{ secrets.NUCLINO_API_KEY }}
           NUCLINO_PUBLISHED_CLUSTER_ID: ${{ secrets.NUCLINO_PUBLISHED_CLUSTER_ID }}
 
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v10
         with:
           add: 'posts-nuclino public/images/nuclino'
           message: 'chore: sync articles from Nuclino'
