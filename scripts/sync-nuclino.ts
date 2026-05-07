@@ -128,11 +128,15 @@ async function syncItem(
   const fileIds = item.contentMeta?.fileIds ?? [];
   let imageCount = 0;
 
+  console.log(item);
+  process.exit(1);
   if (fileIds.length > 0) {
     await ensureDir(imageDir);
     for (const fileId of fileIds) {
       const file = await nuclinoGet<NuclinoFile>(`/files/${fileId}`);
-      const target = path.join(imageDir, file.fileName);
+      const fileName = `${file.id}-${file.fileName}`;
+
+      const target = path.join(imageDir, fileName);
       await downloadFile(file.download.url, target);
       imageCount += 1;
 
@@ -140,10 +144,7 @@ async function syncItem(
         `https://files\\.nuclino\\.com/files/${fileId}/[^\\s)\\]"']+`,
         'g'
       );
-      body = body.replace(
-        urlPattern,
-        `/images/nuclino/${slug}/${file.fileName}`
-      );
+      body = body.replace(urlPattern, `/images/nuclino/${slug}/${fileName}`);
     }
   }
 
