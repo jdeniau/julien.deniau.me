@@ -17,4 +17,6 @@ public/*/
 !public/retour-es/
 
 api/_build
+build/
+
 .env

@@ -50,6 +50,8 @@ function isValidPostAttributes(attributes: any): attributes is Post {
   return true;
 }
 
+const POST_DIRS = ['posts', 'posts-nuclino'] as const;
+
 async function getPostContent(path: string): Promise<{
   attributes: Post;
   body: string;
@@ -78,13 +80,21 @@ async function getPostContent(path: string): Promise<{
   return { attributes, body };
 }
 
-export async function getPosts() {
-  const dirResponse = await octokit.rest.repos.getContent({
-    owner: 'jdeniau',
-    repo: 'julien.deniau.me',
-    path: 'posts',
-    ref: BRANCHNAME,
-  });
+async function listPostsInDir(dir: string): Promise<Post[]> {
+  let dirResponse;
+  try {
+    dirResponse = await octokit.rest.repos.getContent({
+      owner: 'jdeniau',
+      repo: 'julien.deniau.me',
+      path: dir,
+      ref: BRANCHNAME,
+    });
+  } catch (err) {
+    if ((err as { status?: number }).status === 404) {
+      return [];
+    }
+    throw err;
+  }
 
   invariant(
     Array.isArray(dirResponse.data),
@@ -93,6 +103,7 @@ export async function getPosts() {
 
   return Promise.all(
     dirResponse.data
+      .filter((file) => file.name.endsWith('.md'))
       .map(async (file): Promise<Post> => {
         const { attributes } = await getPostContent(file.path);
 
@@ -101,12 +112,31 @@ export async function getPosts() {
           slug: file.name.replace(/\.md$/, ''),
         };
       })
-      .reverse()
   );
 }
 
+export async function getPosts() {
+  const lists = await Promise.all(POST_DIRS.map(listPostsInDir));
+  const all = lists.flat();
+  all.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  return all;
+}
+
 export async function getPost(slug: string): Promise<PostWithHTML> {
-  const { attributes, body } = await getPostContent(`/posts/${slug}.md`);
+  let attributes: Post | undefined;
+  let body: string | undefined;
+  for (const dir of POST_DIRS) {
+    try {
+      ({ attributes, body } = await getPostContent(`/${dir}/${slug}.md`));
+      break;
+    } catch (err) {
+      if ((err as { status?: number }).status === 404) {
+        continue;
+      }
+      throw err;
+    }
+  }
+  invariant(attributes && body !== undefined, `Post ${slug} not found`);
 
   const html = marked(await embedMarkdown(body));
 
