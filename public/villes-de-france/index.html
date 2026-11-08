@@ -184,7 +184,7 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   // Corrigé de la fiche. dx/dy : léger décalage d'affichage (Lyon et Oullins se touchent sinon). side : côté de l'étiquette.
   const CITIES = [
     { id: 1, name: "Paris", lat: 48.8566, lon: 2.3522 },
-    { id: 2, name: "Lyon", lat: 45.77, lon: 4.88 },
+    { id: 2, name: "Lyon", lat: 45.77, lon: 4.88, sides: ["tr", "r"] },
     { id: 3, name: "Marseille", lat: 43.2965, lon: 5.3698, side: "b" },
     { id: 4, name: "Toulouse", lat: 43.6047, lon: 1.4442 },
     { id: 5, name: "Nice", lat: 43.7102, lon: 7.262 },
@@ -196,7 +196,7 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     { id: 11, name: "Rennes", lat: 48.1173, lon: -1.6778 },
     { id: 12, name: "Reims", lat: 49.2583, lon: 4.0317 },
     { id: 13, name: "Le Havre", lat: 49.4944, lon: 0.1079, side: "l" },
-    { id: 14, name: "Saint-Étienne", alts: ["St-Étienne", "St Étienne"], lat: 45.4397, lon: 4.3872, side: "l" },
+    { id: 14, name: "Saint-Étienne", alts: ["St-Étienne", "St Étienne"], lat: 45.4397, lon: 4.3872, sides: ["b", "bl", "br"] },
     { id: 15, name: "Toulon", lat: 43.1242, lon: 5.928, side: "b" },
     { id: 16, name: "Perpignan", lat: 42.6887, lon: 2.8948, side: "l" },
     { id: 17, name: "Mulhouse", lat: 47.7508, lon: 7.3359 },
@@ -218,7 +218,7 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     { id: 33, name: "Le Mans", lat: 48.0061, lon: 0.1996, side: "t" },
     { id: 34, name: "Angers", lat: 47.4784, lon: -0.5632, side: "b" },
     { id: 35, name: "Nîmes", lat: 43.8367, lon: 4.3601, side: "t" },
-    { id: 36, name: "Oullins", lat: 45.705, lon: 4.74, side: "l" },
+    { id: 36, name: "Oullins", lat: 45.705, lon: 4.74, sides: ["l", "bl"], prio: 2.5 },
     { id: 37, name: "Nancy", lat: 48.6921, lon: 6.1844 },
     { id: 38, name: "Cherbourg", lat: 49.6337, lon: -1.6222, side: "t" }
   ];
@@ -307,12 +307,12 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     const dots = CITIES.map(c => [c.x - dr, c.y - dr, c.x + dr, c.y + dr, c.id]);
     const placed = [];
     const overlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
-    CITIES.forEach(c => {
+    [...CITIES].sort((a, b) => (a.prio ?? a.id) - (b.prio ?? b.id)).forEach(c => {
       const e = els[c.id], s = e.t.textContent;
       if (!s) return;
       const w = textWidth(s) * u;
       const pref = c.side || "r";
-      const sides = [pref, ...ORDER.filter(o => o !== pref)];
+      const sides = c.sides || [pref, ...ORDER.filter(o => o !== pref)];
       let best = null;
       for (const sd of sides) {
         let x0;
