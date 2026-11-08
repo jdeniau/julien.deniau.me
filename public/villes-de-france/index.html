@@ -84,7 +84,6 @@ svg#map.dragging { cursor: grabbing; }
 .btn.primary { background: var(--ink); border-color: var(--ink); color: var(--panel); }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
 .btn:focus-visible, .zoom button:focus-visible { outline: 3px solid color-mix(in srgb, var(--ink) 50%, transparent); outline-offset: 2px; }
-.icon-btn { padding: 10px 11px; }
 
 footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 10px 12px; }
@@ -116,7 +115,6 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   </svg>
   <form class="editor" id="editor" hidden autocomplete="off">
     <input id="cityInput" type="text" placeholder="Nom de la ville" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" aria-label="Nom de la ville">
-    <button type="button" class="btn icon-btn" id="nextBtn" title="Point suivant à remplir" aria-label="Point suivant à remplir">→</button>
     <button type="submit" class="btn primary">OK</button>
   </form>
   <div class="zoom">
@@ -391,15 +389,6 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 
   editor.addEventListener("submit", e => { e.preventDefault(); commit(); close(); });
   input.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
-  document.getElementById("nextBtn").onclick = () => {
-    commit();
-    const start = CITIES.findIndex(c => c.id === current);
-    for (let i = 1; i <= CITIES.length; i++) {
-      const c = CITIES[(start + i) % CITIES.length];
-      if (!(answers[c.id] || "").trim()) { select(c.id); return; }
-    }
-    close();
-  };
 
   document.getElementById("validateBtn").onclick = () => {
     commit(); current = null; editor.hidden = true;
