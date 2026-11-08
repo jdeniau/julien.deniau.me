@@ -287,7 +287,7 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }, { passive: false });
 
   const pointers = new Map();
-  let moved = false, downTarget = null, pinch = null, start = null;
+  let moved = false, downTarget = null, pinch = null, start = null, pendingTap = null;
   svg.addEventListener("pointerdown", e => {
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
@@ -323,7 +323,8 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     pointers.delete(e.pointerId);
     if (pointers.size === 0) {
       svg.classList.remove("dragging");
-      if (!moved && downTarget && e.type === "pointerup") select(+downTarget.dataset.id);
+      // La sélection se fait au "click" : sur téléphone, c'est le seul geste qui autorise le focus du champ (et donc le clavier).
+      pendingTap = !moved && downTarget && e.type === "pointerup" ? +downTarget.dataset.id : null;
       start = null; pinch = null; downTarget = null;
     } else if (pointers.size === 1) {
       pinch = null;
@@ -333,6 +334,9 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
   svg.addEventListener("pointerup", endPointer);
   svg.addEventListener("pointercancel", endPointer);
+  svg.addEventListener("click", () => {
+    if (pendingTap != null) { const id = pendingTap; pendingTap = null; select(id); }
+  });
   new ResizeObserver(applyView).observe(svg);
 
   // ---- Correction ----
