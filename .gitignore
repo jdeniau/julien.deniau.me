@@ -10,6 +10,7 @@ public/*/
 !public/.well-known/
 !public/images/
 !public/3d-to-flat-animation/
+!public/villes-de-france/
 # and keep old talks
 !public/dev-ux/
 !public/open-source-howto/
