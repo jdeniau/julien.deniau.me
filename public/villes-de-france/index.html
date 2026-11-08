@@ -398,6 +398,8 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 
   editor.addEventListener("submit", e => { e.preventDefault(); commit(); close(); });
   input.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  // Quitter le champ enregistre la saisie, comme un appui sur OK.
+  input.addEventListener("blur", () => { if (current != null) { commit(); close(); } });
 
   document.getElementById("validateBtn").onclick = () => {
     commit(); current = null; editor.hidden = true;
