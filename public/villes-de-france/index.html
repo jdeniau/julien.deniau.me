@@ -97,7 +97,22 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 .legend span { display: inline-flex; align-items: center; gap: 5px; }
 .legend b { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .confirm { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: .85rem; width: 100%; }
-@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+.overlay { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(10,14,22,.45);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px)); }
+.modal { width: 100%; max-width: 340px; background: var(--panel); color: var(--text); border-radius: 14px; padding: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25); display: flex; flex-direction: column; gap: 14px; animation: pop .22s ease-out; }
+.modal h2 { margin: 0; font-size: 1.2rem; text-wrap: balance; }
+.modal .bravo { font-family: var(--font-hand); font-size: 2.2rem; line-height: 1; color: var(--ok); margin: 0; }
+.modal p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+.scores { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.scores li { display: flex; align-items: center; gap: 10px; font-size: .92rem; }
+.scores li b { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.scores li span { flex: 1 1 auto; min-width: 0; }
+.scores li strong { font-variant-numeric: tabular-nums; font-size: 1.05rem; }
+.modal .btn { align-self: stretch; }
+@keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } .modal { animation: none; } }
 </style>
 </head>
 <body>
@@ -146,6 +161,20 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     <button type="button" class="btn primary" id="confirmYes">Tout effacer</button>
   </div>
 </footer>
+
+<div class="overlay" id="resultOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <p class="bravo" id="bravo" hidden>Bravo !</p>
+    <h2 id="resultTitle">Résultat</h2>
+    <ul class="scores">
+      <li><b style="background:var(--ok)"></b><span>Justes</span><strong id="nOk">0</strong></li>
+      <li><b style="background:var(--warn)"></b><span>Fautes d'orthographe</span><strong id="nWarn">0</strong></li>
+      <li><b style="background:var(--bad)"></b><span>Mauvaises villes</span><strong id="nBad">0</strong></li>
+    </ul>
+    <p id="resultMsg"></p>
+    <button type="button" class="btn primary" id="resultClose">Voir la carte</button>
+  </div>
+</div>
 
 <script>
 (function () {
@@ -406,7 +435,28 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     results = {};
     CITIES.forEach(c => { results[c.id] = grade(c, answers[c.id] || ""); });
     validated = true; render();
+    showResult();
   };
+  const overlay = document.getElementById("resultOverlay");
+  function showResult() {
+    const n = { ok: 0, warn: 0, bad: 0 };
+    Object.values(results).forEach(r => n[r]++);
+    document.getElementById("nOk").textContent = n.ok;
+    document.getElementById("nWarn").textContent = n.warn;
+    document.getElementById("nBad").textContent = n.bad;
+    const perfect = n.ok === CITIES.length;
+    document.getElementById("bravo").hidden = !perfect;
+    document.getElementById("resultTitle").textContent = perfect ? "Toutes les villes sont justes" : `${n.ok} / ${CITIES.length} villes justes`;
+    document.getElementById("resultMsg").textContent = perfect
+      ? "Aucune faute, la carte est parfaite."
+      : "Corrige les points jaunes et rouges sur la carte, puis valide à nouveau.";
+    overlay.hidden = false;
+    document.getElementById("resultClose").focus();
+  }
+  const closeResult = () => { overlay.hidden = true; };
+  document.getElementById("resultClose").onclick = closeResult;
+  overlay.addEventListener("click", e => { if (e.target === overlay) closeResult(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !overlay.hidden) closeResult(); });
   const confirmBox = document.getElementById("confirmBox");
   document.getElementById("clearBtn").onclick = () => { confirmBox.hidden = false; };
   document.getElementById("confirmNo").onclick = () => { confirmBox.hidden = true; };
