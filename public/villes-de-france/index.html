@@ -259,20 +259,20 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
       // Encadré des Shetland, en haut à droite comme sur la fiche
       inset: (p, W) => { const [x0, y0] = p(-0.1, 57.75); return `M${x0} 0L${x0} ${y0}L${W} ${y0}`; },
       points: [
-        { id: 1, name: "Londres", lat: 51.5074, lon: -0.1278 },
+        { id: 1, name: "Londres", alts: ["London"], lat: 51.5074, lon: -0.1278 },
         { id: 2, name: "Cardiff", lat: 51.4816, lon: -3.1791, side: "b" },
         { id: 3, name: "Glasgow", lat: 55.8642, lon: -4.2518, side: "l" },
         { id: 4, name: "Belfast", lat: 54.5973, lon: -5.9301 },
         { id: 5, name: "Liverpool", lat: 53.4084, lon: -2.9916, side: "l" },
         { id: 6, name: "Manchester", lat: 53.4808, lon: -2.2426, side: "t" },
         { id: 7, name: "Birmingham", lat: 52.4862, lon: -1.8904 },
-        { id: 8, name: "Édimbourg", alts: ["Edimbourg"], lat: 55.9533, lon: -3.1883 },
+        { id: 8, name: "Édimbourg", alts: ["Edimbourg", "Edinburgh"], lat: 55.9533, lon: -3.1883 },
         { id: 9, name: "Leeds", lat: 53.8008, lon: -1.5491 },
-        { id: 10, name: "Douvres", lat: 51.1279, lon: 1.3134, side: "b" },
-        { id: 11, name: "England", zone: true, lat: 52.25, lon: -0.6 },
-        { id: 12, name: "Wales", zone: true, lat: 52.35, lon: -3.7, side: "l" },
-        { id: 13, name: "Scotland", zone: true, lat: 57.1, lon: -4.4 },
-        { id: 14, name: "Ulster", zone: true, lat: 54.62, lon: -6.95, side: "l" }
+        { id: 10, name: "Douvres", alts: ["Dover"], lat: 51.1279, lon: 1.3134, side: "b" },
+        { id: 11, name: "England", alts: ["Angleterre"], zone: true, lat: 52.25, lon: -0.6 },
+        { id: 12, name: "Wales", alts: ["Pays de Galles", "pays de Galles"], zone: true, lat: 52.35, lon: -3.7, side: "l" },
+        { id: 13, name: "Scotland", alts: ["Écosse", "Ecosse"], zone: true, lat: 57.1, lon: -4.4 },
+        { id: 14, name: "Ulster", alts: ["Irlande du Nord"], zone: true, lat: 54.62, lon: -6.95, side: "l" }
       ]
     }
   };
@@ -502,9 +502,11 @@ footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     const nt = norm(t);
     if (!nt) return "bad";
     // La réponse la plus proche de ce qui a été écrit, sur cette carte : si c'est la bonne et que l'écart reste petit, c'est une faute d'orthographe.
-    let best = null, bestD = Infinity;
-    P.forEach(o => { const d = lev(nt, norm(o.name)); if (d < bestD) { bestD = d; best = o; } });
-    const tol = Math.max(1, Math.floor(norm(c.name).length / 3));
+    let best = null, bestD = Infinity, bestN = "";
+    P.forEach(o => [o.name, ...(o.alts || [])].forEach(n => {
+      const d = lev(nt, norm(n)); if (d < bestD) { bestD = d; best = o; bestN = norm(n); }
+    }));
+    const tol = Math.max(1, Math.floor(bestN.length / 3));
     return best.id === c.id && bestD <= tol ? "warn" : "bad";
   }
 
